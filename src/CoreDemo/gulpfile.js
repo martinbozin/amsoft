@@ -5,6 +5,8 @@
     gp_typescript = require('gulp-typescript'),
     gp_uglify = require('gulp-uglify');
 
+var cleanCSS = require('gulp-clean-css');
+
 /// Define paths
 var srcPaths = {
     app: ['Scripts/app/main.ts', 'Scripts/app/**/*.ts'],
@@ -15,6 +17,9 @@ var srcPaths = {
         'node_modules/reflect-metadata/Reflect.js',
         'node_modules/systemjs/dist/system.src.js',
         'node_modules/typescript/lib/typescript.js'
+    ],
+    css: [
+        'Content/css/*.css'
     ],
     js_angular: [
         'node_modules/@angular/**'
@@ -27,6 +32,7 @@ var srcPaths = {
 var destPaths = {
     app: 'wwwroot/app/',
     js: 'wwwroot/js/',
+    css:'wwwroot/css/',
     js_angular: 'wwwroot/js/@angular/',
     js_rxjs: 'wwwroot/js/rxjs/'
 };
@@ -65,11 +71,18 @@ gulp.task('js_clean', function () {
 
 // Watch specified files and define what to do upon file changes
 gulp.task('watch', function () {
-    gulp.watch([srcPaths.app, srcPaths.js], ['app', 'js']);
+    gulp.watch([srcPaths.app, srcPaths.js], ['app', 'js','css']);
 });
 
 // Global cleanup task
-gulp.task('cleanup', ['app_clean', 'js_clean']);
+gulp.task('cleanup', ['app_clean', 'js_clean','minify-css']);
 
 // Define the default task so it will launch all other tasks
-gulp.task('default', ['app', 'js', 'watch']);
+gulp.task('default', ['app', 'js', 'watch','minify-css']);
+
+gulp.task('minify-css', function () {
+    return gulp.src('Content/css/*.css')
+        .pipe(cleanCSS())
+        .pipe(gulp.dest(destPaths.css));
+});
+

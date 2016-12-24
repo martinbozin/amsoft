@@ -80,7 +80,12 @@
       <Version>9.0.1</Version>
     </PackageReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Content\fonts\" />
+  </ItemGroup>
+  <PropertyGroup Label="Configuration">
+    <OutputPath>bin</OutputPath>
+  </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
     <DefineConstants>$(DefineConstants);RELEASE</DefineConstants>
   </PropertyGroup>
