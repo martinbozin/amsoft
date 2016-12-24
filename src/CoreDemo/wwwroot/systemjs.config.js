@@ -3,13 +3,15 @@
     var map = {
         'app': 'app', // our application files
         '@angular': 'js/@angular', // angular2 packages
-        'rxjs': 'js/rxjs' // Rxjs package
+        'rxjs': 'js/rxjs', // Rxjs package
+        'ng2-bootstrap': 'node_modules/ng2-bootstrap'
     };
 
     // packages tells the System loader which filename and/or extensions to look for by default (when none are specified)
     var packages = {
         'app': { main: 'main.js', defaultExtension: 'js' },
-        'rxjs': { defaultExtension: 'js' }
+        'rxjs': { defaultExtension: 'js' },
+        'ng2-bootstrap': { main: 'ng2-bootstrap.js', defaultExtension: 'js' }
     };
 
     // configure @angular packages

@@ -19,6 +19,7 @@
     "zone.js": "^0.6.12"
   },
   "devDependencies": {
+    "@types/node": "^6.0.53",
     "gulp": "3.9.1",
     "gulp-clean": "0.3.2",
     "gulp-clean-css": "^2.3.2",
@@ -27,7 +28,9 @@
     "gulp-sourcemaps": "^1.9.1",
     "gulp-typescript": "3.0.2",
     "gulp-uglify": "2.0.0",
-    "typescript": "2.0.6"
+    "ng2-bootstrap": "1.1.16-9",
+    "typescript": "2.0.6",
+    "webpack": "^1.14.0"
   },
   "scripts": {
     "postinstall": "typings install dt~core-js --global"
