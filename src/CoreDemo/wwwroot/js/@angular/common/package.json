@@ -2,7 +2,7 @@
   "_args": [
     [
       "@angular/common@2.0.0-rc.5",
-      "c:\\Users\\Personal Programmer\\Documents\\Visual Studio 2015\\Projects\\CoreDemo\\src\\CoreDemo"
+      "C:\\Projects\\amsoft\\src\\CoreDemo"
     ]
   ],
   "_from": "@angular/common@2.0.0-rc.5",
@@ -35,7 +35,7 @@
   "_shasum": "8aabd14ca6aa288b3eece0fff86cfc256c502d48",
   "_shrinkwrap": null,
   "_spec": "@angular/common@2.0.0-rc.5",
-  "_where": "c:\\Users\\Personal Programmer\\Documents\\Visual Studio 2015\\Projects\\CoreDemo\\src\\CoreDemo",
+  "_where": "C:\\Projects\\amsoft\\src\\CoreDemo",
   "author": {
     "name": "angular"
   },
