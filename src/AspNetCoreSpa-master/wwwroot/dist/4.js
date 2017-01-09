@@ -1,6 +1,13 @@
 webpackJsonp([4],{
 
-/***/ 58:
+/***/ 106:
+/***/ function(module, exports) {
+
+module.exports = "<div class=\"row\">\n    <h1>Admin section</h1>\n        \n    <button class=\"btn btn-primary\" (click)=\"doAdminOperation()\">\n        Do Admin Operation\n    </button>\n    \n    {{message?.message}}\n</div>";
+
+/***/ },
+
+/***/ 73:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -15,10 +22,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = __webpack_require__(0);
-var shared_module_1 = __webpack_require__(20);
-var admin_component_1 = __webpack_require__(65);
-var admin_service_1 = __webpack_require__(66);
-var admin_routes_1 = __webpack_require__(78);
+var shared_module_1 = __webpack_require__(19);
+var admin_component_1 = __webpack_require__(80);
+var admin_service_1 = __webpack_require__(81);
+var admin_routes_1 = __webpack_require__(93);
 var AdminModule = (function () {
     function AdminModule() {
     }
@@ -37,7 +44,7 @@ exports.AdminModule = AdminModule;
 
 /***/ },
 
-/***/ 65:
+/***/ 80:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -52,7 +59,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = __webpack_require__(0);
-var admin_service_1 = __webpack_require__(66);
+var admin_service_1 = __webpack_require__(81);
 var AdminComponent = (function () {
     function AdminComponent(adminService) {
         this.adminService = adminService;
@@ -67,7 +74,7 @@ var AdminComponent = (function () {
 AdminComponent = __decorate([
     core_1.Component({
         selector: 'appc--admin',
-        template: __webpack_require__(91)
+        template: __webpack_require__(106)
     }),
     __metadata("design:paramtypes", [admin_service_1.AdminService])
 ], AdminComponent);
@@ -76,7 +83,7 @@ exports.AdminComponent = AdminComponent;
 
 /***/ },
 
-/***/ 66:
+/***/ 81:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -111,25 +118,18 @@ exports.AdminService = AdminService;
 
 /***/ },
 
-/***/ 78:
+/***/ 93:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 
 var router_1 = __webpack_require__(2);
-var admin_component_1 = __webpack_require__(65);
+var admin_component_1 = __webpack_require__(80);
 var routes = [
     { path: '', component: admin_component_1.AdminComponent }
 ];
 exports.routing = router_1.RouterModule.forChild(routes);
 
-
-/***/ },
-
-/***/ 91:
-/***/ function(module, exports) {
-
-module.exports = "<div class=\"row\">\n    <h1>Admin section</h1>\n        \n    <button class=\"btn btn-primary\" (click)=\"doAdminOperation()\">\n        Do Admin Operation\n    </button>\n    \n    {{message?.message}}\n</div>";
 
 /***/ }
 

@@ -1,20 +1,58 @@
 webpackJsonp([3],{
 
-/***/ 101:
+/***/ 103:
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var RegisterModel = (function () {
+    function RegisterModel(username, password, email, firstname, lastname) {
+        this.username = username;
+        this.password = password;
+        this.email = email;
+        this.firstname = firstname;
+        this.lastname = lastname;
+    }
+    return RegisterModel;
+}());
+exports.RegisterModel = RegisterModel;
+
+
+/***/ },
+
+/***/ 104:
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var router_1 = __webpack_require__(2);
+var register_component_1 = __webpack_require__(91);
+var register_confirmation_component_1 = __webpack_require__(90);
+var routes = [
+    { path: '', redirectTo: 'registerhome', pathMatch: 'full' },
+    { path: 'registerhome', component: register_component_1.RegisterComponent },
+    { path: 'registerconfirmation', component: register_confirmation_component_1.RegisterConfirmationComponent }
+];
+exports.routing = router_1.RouterModule.forChild(routes);
+
+
+/***/ },
+
+/***/ 116:
 /***/ function(module, exports) {
 
 module.exports = "<div>\n    <appc-page-heading text=\"Registration confirmed\">\n    </appc-page-heading>\n\n    <p *ngIf=\"!emailConfirmed\">\n        We have sent you a confirmation email, please visit your inbox and confirm by clicking the confirmation link.\n    </p>\n\n    <p *ngIf=\"emailConfirmed\">\n        Thank you for confirming your email, please <a routerLink=\"../../login\">Login</a> now.\n    </p>\n</div>#";
 
 /***/ },
 
-/***/ 102:
+/***/ 117:
 /***/ function(module, exports) {
 
 module.exports = "<div class=\"col-md-6 offset-md-3\">\n    <div class=\"card\">\n        <div class=\"card-header\">\n            Register\n        </div>\n        \n        <div class=\"card-block\">\n            <appc-error-summary [errors]=\"errors\"></appc-error-summary>\n            <appc-dynamic-form (formsubmit)=\"register($event)\" [controls]=\"controls\" [btnText]=\"'Register'\"></appc-dynamic-form>\n\n        </div>\n    </div>\n</div>";
 
 /***/ },
 
-/***/ 62:
+/***/ 77:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -29,11 +67,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = __webpack_require__(0);
-var shared_module_1 = __webpack_require__(20);
-var register_component_1 = __webpack_require__(76);
-var register_confirmation_component_1 = __webpack_require__(75);
-var register_service_1 = __webpack_require__(77);
-var register_routes_1 = __webpack_require__(89);
+var shared_module_1 = __webpack_require__(19);
+var register_component_1 = __webpack_require__(91);
+var register_confirmation_component_1 = __webpack_require__(90);
+var register_service_1 = __webpack_require__(92);
+var register_routes_1 = __webpack_require__(104);
 var RegisterModule = (function () {
     function RegisterModule() {
     }
@@ -52,7 +90,7 @@ exports.RegisterModule = RegisterModule;
 
 /***/ },
 
-/***/ 64:
+/***/ 79:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -62,7 +100,7 @@ var __extends = (this && this.__extends) || function (d, b) {
     function __() { this.constructor = d; }
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
-var control_base_1 = __webpack_require__(21);
+var control_base_1 = __webpack_require__(20);
 var ControlTextbox = (function (_super) {
     __extends(ControlTextbox, _super);
     function ControlTextbox(options) {
@@ -78,7 +116,7 @@ exports.ControlTextbox = ControlTextbox;
 
 /***/ },
 
-/***/ 75:
+/***/ 90:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -116,7 +154,7 @@ var RegisterConfirmationComponent = (function () {
 RegisterConfirmationComponent = __decorate([
     core_1.Component({
         selector: 'appc-register-confirmation',
-        template: __webpack_require__(101)
+        template: __webpack_require__(116)
     }),
     __metadata("design:paramtypes", [router_1.Router, router_1.ActivatedRoute])
 ], RegisterConfirmationComponent);
@@ -125,7 +163,7 @@ exports.RegisterConfirmationComponent = RegisterConfirmationComponent;
 
 /***/ },
 
-/***/ 76:
+/***/ 91:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -141,9 +179,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = __webpack_require__(0);
 var router_1 = __webpack_require__(2);
-var register_model_1 = __webpack_require__(88);
-var register_service_1 = __webpack_require__(77);
-var control_textbox_1 = __webpack_require__(64);
+var register_model_1 = __webpack_require__(103);
+var register_service_1 = __webpack_require__(92);
+var control_textbox_1 = __webpack_require__(79);
 var RegisterComponent = (function () {
     function RegisterComponent(registerService, router, route) {
         this.registerService = registerService;
@@ -221,7 +259,7 @@ var RegisterComponent = (function () {
 RegisterComponent = __decorate([
     core_1.Component({
         selector: 'appc-register',
-        template: __webpack_require__(102)
+        template: __webpack_require__(117)
     }),
     __metadata("design:paramtypes", [register_service_1.RegisterService, router_1.Router, router_1.ActivatedRoute])
 ], RegisterComponent);
@@ -230,7 +268,7 @@ exports.RegisterComponent = RegisterComponent;
 
 /***/ },
 
-/***/ 77:
+/***/ 92:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -261,44 +299,6 @@ RegisterService = __decorate([
     __metadata("design:paramtypes", [data_service_1.DataService])
 ], RegisterService);
 exports.RegisterService = RegisterService;
-
-
-/***/ },
-
-/***/ 88:
-/***/ function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var RegisterModel = (function () {
-    function RegisterModel(username, password, email, firstname, lastname) {
-        this.username = username;
-        this.password = password;
-        this.email = email;
-        this.firstname = firstname;
-        this.lastname = lastname;
-    }
-    return RegisterModel;
-}());
-exports.RegisterModel = RegisterModel;
-
-
-/***/ },
-
-/***/ 89:
-/***/ function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var router_1 = __webpack_require__(2);
-var register_component_1 = __webpack_require__(76);
-var register_confirmation_component_1 = __webpack_require__(75);
-var routes = [
-    { path: '', redirectTo: 'registerhome', pathMatch: 'full' },
-    { path: 'registerhome', component: register_component_1.RegisterComponent },
-    { path: 'registerconfirmation', component: register_confirmation_component_1.RegisterConfirmationComponent }
-];
-exports.routing = router_1.RouterModule.forChild(routes);
 
 
 /***/ }
