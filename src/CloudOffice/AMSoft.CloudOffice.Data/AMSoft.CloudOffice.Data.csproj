@@ -1,16 +1,35 @@
-<Project Sdk="Microsoft.NET.Sdk" ToolsVersion="15.0">
-
+﻿<Project Sdk="Microsoft.NET.Sdk" ToolsVersion="15.0">
   <PropertyGroup>
-    <TargetFramework>netstandard1.4</TargetFramework>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp1.1</TargetFramework>
+    <PreserveCompilationContext>true</PreserveCompilationContext>
   </PropertyGroup>
-
+  <PropertyGroup>
+    <PackageTargetFallback>$(PackageTargetFallback);portable-net45+win8+wp8+wpa81;</PackageTargetFallback>
+    <UserSecretsId>21b688fb-86df-46d8-89f6-db3ae5d3ad69</UserSecretsId>
+    <NuGetPackageRoot> $(USERPROFILE)\.nuget\packages\</NuGetPackageRoot>
+  </PropertyGroup>
   <ItemGroup>
     <Compile Include="**\*.cs" />
     <EmbeddedResource Include="**\*.resx" />
   </ItemGroup>
-
   <ItemGroup>
-    <PackageReference Include="NETStandard.Library" Version="1.6" />
+    <Content Include="update database.txt" />
+    <Content Include="add migration.txt" />
   </ItemGroup>
-
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="1.2.0-preview1-22878" />
+    <PackageReference Include="Microsoft.NETCore.App" Version="1.0.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="1.2.0-preview1-22878" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="1.2.0-preview1-22878" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="1.2.0-preview1-22878" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="1.2.0-preview4-22878" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools.DotNet" Version="1.1.0-preview4" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AMSoft.CloudOffice.Domain\AMSoft.CloudOffice.Domain.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Migrations\" />
+  </ItemGroup>
 </Project>
