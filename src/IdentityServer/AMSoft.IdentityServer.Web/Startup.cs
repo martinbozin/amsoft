@@ -14,6 +14,8 @@ namespace AMSoft.IdentityServer.Web
             app.UseDeveloperExceptionPage();
 
             app.UseIdentityServer();
+
+            app.UseWelcomePage();
         }
 
         public void ConfigureServices(IServiceCollection services)

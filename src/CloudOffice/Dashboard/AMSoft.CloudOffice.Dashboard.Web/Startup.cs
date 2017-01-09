@@ -27,6 +27,8 @@ namespace AMSoft.CloudOffice.Dashboard.Web
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+
+
             // Add framework services.
             services.AddMvc();
         }
@@ -48,6 +50,16 @@ namespace AMSoft.CloudOffice.Dashboard.Web
             }
 
             app.UseStaticFiles();
+
+
+            //app.UseIdentityServerAuthentication(new IdentityServerAuthenticationOptions
+            //{
+            //    Authority = "http://localhost:5000",
+            //    RequireHttpsMetadata = false,
+
+            //    ApiName = "api1"
+            //});
+
 
             app.UseMvc(routes =>
             {
