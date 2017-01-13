@@ -12,7 +12,7 @@ namespace AMSoft.IdentityServer.Web
 
             var host = new WebHostBuilder()
                 .UseKestrel()
-                .UseUrls("http://localhost:8080/")
+               .UseUrls("http://localhost:6010/")
                 .UseContentRoot(Directory.GetCurrentDirectory())
                 .UseIISIntegration()
                 .UseStartup<Startup>()

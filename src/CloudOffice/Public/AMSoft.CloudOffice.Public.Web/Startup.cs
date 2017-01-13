@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Threading.Tasks;
 using AMSoft.Base.Multitenancy;
@@ -53,6 +54,39 @@ namespace AMSoft.CloudOffice.Public.Web
             {
                 app.UseExceptionHandler("/Home/Error");
             }
+
+
+            app.UseCookieAuthentication(new CookieAuthenticationOptions
+            {
+                AuthenticationScheme = "Cookies"
+            });
+
+            JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Clear();
+
+            app.UseOpenIdConnectAuthentication(new OpenIdConnectOptions
+            {
+                AuthenticationScheme = "oidc",
+                SignInScheme = "Cookies",
+
+                Authority = "http://localhost:6010",
+                RequireHttpsMetadata = false,
+               
+                ClientId = "hybrid",
+                ClientSecret = "secret",
+
+                ResponseType = "code id_token",
+                Scope = { "cloudoffice_api", "offline_access" },
+
+                GetClaimsFromUserInfoEndpoint = true,
+                SaveTokens = true
+            });
+
+            app.UseIdentityServerAuthentication(new IdentityServerAuthenticationOptions
+            {
+                Authority = "http://localhost:6010",
+                RequireHttpsMetadata = false,
+                ApiName = "cloudoffice_api"
+            });
 
             app.UseStaticFiles();
             app.UseMultitenancy<AppTenant>();

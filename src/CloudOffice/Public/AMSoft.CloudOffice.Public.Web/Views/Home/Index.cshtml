@@ -1,6 +1,13 @@
-﻿@{
+﻿@using Microsoft.AspNetCore.Authentication
+@{
     ViewData["Title"] = "Home Page";
 }
+
+<dt>access token</dt>
+<dd>@await ViewContext.HttpContext.Authentication.GetTokenAsync("access_token")</dd>
+
+<dt>refresh token</dt>
+<dd>@await ViewContext.HttpContext.Authentication.GetTokenAsync("refresh_token")</dd>
 
 <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="6000">
     <ol class="carousel-indicators">
