@@ -18,11 +18,12 @@ namespace AMSoft.CloudOffice.Data
             modelBuilder.Entity<AppTenant>().HasKey("AppTenantId");
             modelBuilder.Entity<AppTenant>().Property("Name");
             modelBuilder.Entity<AppTenant>().Property("Hostname");
+            modelBuilder.Entity<AppTenant>().Ignore(e => e.Hostnames);
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            optionsBuilder.UseSqlServer(@"Server=DESKTOP-N6F8S1N\SQLEXPRESS;Database=AMSoft.CloudOffice;Trusted_Connection=True;");
+        { 
+            optionsBuilder.UseSqlServer(@"Server=amsoft.database.windows.net;Database=AMSoft.CloudOffice;User Id=amsoftadmin;Password=P@ssw0rd123!;");
         }
     }
 }

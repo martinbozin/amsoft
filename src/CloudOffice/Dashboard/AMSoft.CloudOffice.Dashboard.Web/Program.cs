@@ -14,7 +14,8 @@ namespace AMSoft.CloudOffice.Dashboard.Web
             var host = new WebHostBuilder()
                 .UseKestrel()
                 .UseContentRoot(Directory.GetCurrentDirectory())
-                .UseIISIntegration()
+                 .UseUrls("http://localhost:6001", "http://localhost:6002", "http://localhost:6003", "http://localhost:6004")
+                //.UseIISIntegration()
                 .UseStartup<Startup>()
                 .Build();
 

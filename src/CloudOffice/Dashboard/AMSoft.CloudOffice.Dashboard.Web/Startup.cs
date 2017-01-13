@@ -2,8 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AMSoft.Base.Multitenancy;
+using AMSoft.CloudOffice.Data;
+using AMSoft.CloudOffice.Domain;
+using AMSoft.CloudOffice.Dashboard.Web;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
@@ -27,10 +32,12 @@ namespace AMSoft.CloudOffice.Dashboard.Web
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
-
+            services.AddEntityFramework().AddDbContext<CloudOfficeDbContext>();
             // Add framework services.
             services.AddMvc();
+            // Add Multitenancy service
+            services.AddMultitenancy<AppTenant, AppTenantResolver>();
+            // Make Tenant and TenantContext injectable
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -60,7 +67,7 @@ namespace AMSoft.CloudOffice.Dashboard.Web
             //    ApiName = "api1"
             //});
 
-
+            app.UseMultitenancy<AppTenant>();
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
