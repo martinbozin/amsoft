@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using AMSoft.Base.Multitenancy;
+﻿using AMSoft.Base.Multitenancy;
 using AMSoft.CloudOffice.Data;
-using AMSoft.CloudOffice.Domain;
-using AMSoft.CloudOffice.Dashboard.Web;
+using AMSoft.CloudOffice.Domain.CoreModels;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore.Infrastructure;
@@ -32,7 +27,7 @@ namespace AMSoft.CloudOffice.Dashboard.Web
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddEntityFramework().AddDbContext<CloudOfficeDbContext>();
+            services.AddEntityFramework().AddDbContext<SqlServerApplicationDbContext>();
             // Add framework services.
             services.AddMvc();
             // Add Multitenancy service

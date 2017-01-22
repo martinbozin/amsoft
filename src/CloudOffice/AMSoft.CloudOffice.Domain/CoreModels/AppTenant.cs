@@ -1,6 +1,6 @@
 ﻿using System.Collections.ObjectModel;
 
-namespace AMSoft.CloudOffice.Domain
+namespace AMSoft.CloudOffice.Domain.CoreModels
 {
     public class AppTenant
     {
@@ -8,5 +8,6 @@ namespace AMSoft.CloudOffice.Domain
         public string Name { get; set; }
         public string Hostname { get; set; }
         public string[] Hostnames { get; set; }
+        public string ConnectionString { get; set; }
     }
 }

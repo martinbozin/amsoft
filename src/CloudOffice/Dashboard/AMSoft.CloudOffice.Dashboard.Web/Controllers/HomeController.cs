@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using AMSoft.CloudOffice.Domain;
+﻿using AMSoft.CloudOffice.Data;
+using AMSoft.CloudOffice.Domain.CoreModels;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AMSoft.CloudOffice.Dashboard.Web.Controllers
@@ -16,6 +13,10 @@ namespace AMSoft.CloudOffice.Dashboard.Web.Controllers
         }
         public IActionResult Index()
         {
+            using (var contextDb = new SqlServerApplicationDbContext(tenant))
+            {
+                var exist = contextDb.ToString();
+            }
             ViewData["Tenant"] = tenant.Name;
             return View();
         }

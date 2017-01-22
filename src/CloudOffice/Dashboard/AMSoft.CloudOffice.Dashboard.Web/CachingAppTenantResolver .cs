@@ -3,7 +3,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using AMSoft.Base.Multitenancy;
 using AMSoft.CloudOffice.Data;
-using AMSoft.CloudOffice.Domain;
+using AMSoft.CloudOffice.Domain.CoreModels;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.Logging;
@@ -16,6 +16,7 @@ namespace AMSoft.CloudOffice.Dashboard.Web
         private readonly IEnumerable<AppTenant> tenants;
         public CachingAppTenantResolver(IMemoryCache cache, ILoggerFactory loggerFactory, IOptions<MultitenancyOptions> options)
         : base(cache, loggerFactory)
+
 
         {
             this.tenants = options.Value.Tenants;
