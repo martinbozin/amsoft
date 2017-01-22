@@ -5,12 +5,32 @@ using AMSoft.Base.Multitenancy;
 using AMSoft.CloudOffice.Data;
 using AMSoft.CloudOffice.Domain;
 using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Caching.Memory;
+using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
 
 namespace AMSoft.CloudOffice.Dashboard.Web
 {
-    public class AppTenantResolver : ITenantResolver<AppTenant>
+    public class CachingAppTenantResolver : MemoryCacheTenantResolver<AppTenant>
     {
-        public async Task<TenantContext<AppTenant>> ResolveAsync(HttpContext context)
+        private readonly IEnumerable<AppTenant> tenants;
+        public CachingAppTenantResolver(IMemoryCache cache, ILoggerFactory loggerFactory, IOptions<MultitenancyOptions> options)
+        : base(cache, loggerFactory)
+
+        {
+            this.tenants = options.Value.Tenants;
+        }
+
+        protected override string GetContextIdentifier(HttpContext context)
+        {
+            return context.Request.Host.Value.ToLower();
+        }
+
+        protected override IEnumerable<string> GetTenantIdentifiers(TenantContext<AppTenant> context)
+        {
+            return context.Tenant.Hostnames;
+        }
+        protected override Task<TenantContext<AppTenant>> ResolveAsync(HttpContext context)
         {
             TenantContext<AppTenant> tenantContext = null;
             IEnumerable<AppTenant> tenants = new List<AppTenant>();
@@ -44,7 +64,7 @@ namespace AMSoft.CloudOffice.Dashboard.Web
                 tenantContext = new TenantContext<AppTenant>(tenant);
             }
 
-            return tenantContext;
+            return Task.FromResult(tenantContext);
         }
     }
 }

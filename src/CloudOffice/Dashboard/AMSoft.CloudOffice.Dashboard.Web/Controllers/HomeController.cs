@@ -11,7 +11,6 @@ namespace AMSoft.CloudOffice.Dashboard.Web.Controllers
     {
         private AppTenant tenant;
         public HomeController(AppTenant tenant)
-
         {
             this.tenant = tenant;
         }

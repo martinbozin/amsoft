@@ -36,7 +36,7 @@ namespace AMSoft.CloudOffice.Dashboard.Web
             // Add framework services.
             services.AddMvc();
             // Add Multitenancy service
-            services.AddMultitenancy<AppTenant, AppTenantResolver>();
+            services.AddMultitenancy<AppTenant, CachingAppTenantResolver>();
             // Make Tenant and TenantContext injectable
         }
 
