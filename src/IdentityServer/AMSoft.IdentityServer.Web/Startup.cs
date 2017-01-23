@@ -5,11 +5,11 @@ using Microsoft.Extensions.Logging;
 using System.Collections.Generic;
 using System.Security.Claims;
 using IdentityServer4;
-using IdentityServer4.Quickstart.UI;
 using IdentityServer4.Test;
 using IdentityServer4.Validation;
 using Microsoft.IdentityModel.Tokens;
 using System.Reflection;
+using AMSoft.IdentityServer.Web.Controllers;
 using Microsoft.EntityFrameworkCore;
 using IdentityServer4.EntityFramework.DbContexts;
 

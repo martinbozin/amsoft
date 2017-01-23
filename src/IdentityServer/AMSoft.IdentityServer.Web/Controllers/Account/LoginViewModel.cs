@@ -5,7 +5,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace IdentityServer4.Quickstart.UI
+namespace AMSoft.IdentityServer.Web.Controllers.Account
 {
     public class LoginViewModel : LoginInputModel
     {
