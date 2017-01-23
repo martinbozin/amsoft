@@ -1,4 +1,4 @@
-﻿<Project ToolsVersion="15.0" Sdk="Microsoft.NET.Sdk.Web">
+<Project ToolsVersion="15.0" Sdk="Microsoft.NET.Sdk.Web">
   <PropertyGroup>
     <OutputType>exe</OutputType>
     <TargetFramework>netcoreapp1.1</TargetFramework>
@@ -9,7 +9,12 @@
     <UserSecretsId>21b688fb-86df-46d8-89f6-db3ae5d3ad69</UserSecretsId>
   </PropertyGroup>
   <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="5.2.0" />
     <PackageReference Include="IdentityServer4" Version="1.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="1.1.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="1.1.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="1.1.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="1.1.0" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.Cookies" Version="1.1.0" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.Google" Version="1.1.0" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.OpenIdConnect" Version="1.1.0" />
@@ -22,7 +27,7 @@
     <PackageReference Include="Microsoft.AspNetCore.StaticFiles" Version="1.0.0" />
     <PackageReference Include="Microsoft.Extensions.Configuration.EnvironmentVariables" Version="1.0.0" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="1.0.0" />
-    <PackageReference Include="Microsoft.Extensions.Logging" Version="1.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="1.1.0" />
     <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="1.0.0" />
     <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="1.0.0" />
     <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="1.0.0" />
@@ -31,5 +36,8 @@
   <ItemGroup>
     <Folder Include="Controllers\" />
     <Folder Include="wwwroot\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AMSoft.IdentityServer.Data.EntityFramework\AMSoft.IdentityServer.Data.EntityFramework.csproj" />
   </ItemGroup>
 </Project>

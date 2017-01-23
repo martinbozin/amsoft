@@ -46,6 +46,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspNetCoreSpa-master", "src
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AMSoft.IdentityServer.Web.Tests", "src\IdentityServer\AMSoft.IdentityServer.Web.Tests\AMSoft.IdentityServer.Web.Tests.csproj", "{AD9DB1FF-4E8D-4138-B8DD-52428122BE27}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AMSoft.IdentityServer.Data.EntityFramework", "src\IdentityServer\AMSoft.IdentityServer.Data.EntityFramework\AMSoft.IdentityServer.Data.EntityFramework.csproj", "{6F0BA810-F9FF-4F04-B2BB-3A90EE5885B6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -176,6 +178,18 @@ Global
 		{AD9DB1FF-4E8D-4138-B8DD-52428122BE27}.Release|x64.Build.0 = Release|x64
 		{AD9DB1FF-4E8D-4138-B8DD-52428122BE27}.Release|x86.ActiveCfg = Release|x86
 		{AD9DB1FF-4E8D-4138-B8DD-52428122BE27}.Release|x86.Build.0 = Release|x86
+		{6F0BA810-F9FF-4F04-B2BB-3A90EE5885B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F0BA810-F9FF-4F04-B2BB-3A90EE5885B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F0BA810-F9FF-4F04-B2BB-3A90EE5885B6}.Debug|x64.ActiveCfg = Debug|x64
+		{6F0BA810-F9FF-4F04-B2BB-3A90EE5885B6}.Debug|x64.Build.0 = Debug|x64
+		{6F0BA810-F9FF-4F04-B2BB-3A90EE5885B6}.Debug|x86.ActiveCfg = Debug|x86
+		{6F0BA810-F9FF-4F04-B2BB-3A90EE5885B6}.Debug|x86.Build.0 = Debug|x86
+		{6F0BA810-F9FF-4F04-B2BB-3A90EE5885B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F0BA810-F9FF-4F04-B2BB-3A90EE5885B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F0BA810-F9FF-4F04-B2BB-3A90EE5885B6}.Release|x64.ActiveCfg = Release|x64
+		{6F0BA810-F9FF-4F04-B2BB-3A90EE5885B6}.Release|x64.Build.0 = Release|x64
+		{6F0BA810-F9FF-4F04-B2BB-3A90EE5885B6}.Release|x86.ActiveCfg = Release|x86
+		{6F0BA810-F9FF-4F04-B2BB-3A90EE5885B6}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -199,5 +213,6 @@ Global
 		{2F5FF08F-8C33-4C1C-B4CD-47C913776E80} = {66375B56-4CFB-47F0-8333-240F85988AE3}
 		{F4B1111B-947F-49FD-A96B-A7058AAAAA83} = {58D5C1A9-C30B-450C-8BD3-982D48FD3654}
 		{AD9DB1FF-4E8D-4138-B8DD-52428122BE27} = {8DA91FC7-9A81-4A47-A026-6FE1B1B859E5}
+		{6F0BA810-F9FF-4F04-B2BB-3A90EE5885B6} = {8DA91FC7-9A81-4A47-A026-6FE1B1B859E5}
 	EndGlobalSection
 EndGlobal

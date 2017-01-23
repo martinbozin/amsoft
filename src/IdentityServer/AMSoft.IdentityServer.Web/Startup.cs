@@ -5,8 +5,13 @@ using Microsoft.Extensions.Logging;
 using System.Collections.Generic;
 using System.Security.Claims;
 using IdentityServer4;
+using IdentityServer4.Quickstart.UI;
 using IdentityServer4.Test;
+using IdentityServer4.Validation;
 using Microsoft.IdentityModel.Tokens;
+using System.Reflection;
+using Microsoft.EntityFrameworkCore;
+using IdentityServer4.EntityFramework.DbContexts;
 
 namespace AMSoft.IdentityServer.Web
 {
@@ -57,15 +62,35 @@ namespace AMSoft.IdentityServer.Web
 
         public void ConfigureServices(IServiceCollection services)
         {
+            const string connectionString = @"Data Source=amsoft.database.windows.net;database=AMSoft.IdentityServer;user id=amsoftadmin;password=P@ssw0rd123!";
+
             services.AddMvc();
 
-            // configure identity server with in-memory stores, keys, clients and scopes
+            var migrationsAssembly = typeof(Startup).GetTypeInfo().Assembly.GetName().Name;
+
             services.AddIdentityServer()
                 .AddTemporarySigningCredential()
-                .AddInMemoryIdentityResources(Config.GetIdentityResources())
-                .AddInMemoryApiResources(Config.GetApiResources())
-                .AddInMemoryClients(Config.GetClients())
-                .AddTestUsers(Config.GetUsers());
+                .AddSecretParser<ClientAssertionSecretParser>()
+                .AddSecretValidator<PrivateKeyJwtSecretValidator>()
+                .AddTestUsers(TestUsers.Users)
+                .AddConfigurationStore(builder =>
+                    //builder.UseSqlServer(connectionString,options => options.MigrationsAssembly(migrationsAssembly))
+                    builder.UseSqlServer(connectionString)
+                )
+                .AddOperationalStore(builder =>
+                 //builder.UseSqlServer(connectionString,options => options.MigrationsAssembly(migrationsAssembly))
+                 builder.UseSqlServer(connectionString)
+                )
+                ;
+
+            
+            // configure identity server with in-memory stores, keys, clients and scopes
+            //services.AddIdentityServer()
+            //    .AddTemporarySigningCredential()
+            //    .AddInMemoryIdentityResources(Config.GetIdentityResources())
+            //    .AddInMemoryApiResources(Config.GetApiResources())
+            //    .AddInMemoryClients(Config.GetClients())
+            //    .AddTestUsers(Config.GetUsers());
         }
     }
 

@@ -1,0 +1,1 @@
+﻿Update-Database -Context "IdentityServer4.EntityFramework.DbContexts.ConfigurationDbContext" -Project "AMSoft.IdentityServer.Web"  -StartupProject "AMSoft.IdentityServer.Web"
