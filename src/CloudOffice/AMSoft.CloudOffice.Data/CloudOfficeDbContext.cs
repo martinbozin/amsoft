@@ -18,6 +18,7 @@ namespace AMSoft.CloudOffice.Data
             modelBuilder.Entity<AppTenant>().HasKey("AppTenantId");
             modelBuilder.Entity<AppTenant>().Property("Name");
             modelBuilder.Entity<AppTenant>().Property("Hostname");
+            modelBuilder.Entity<AppTenant>().Property("Theme");
             modelBuilder.Entity<AppTenant>().Property("ConnectionString");
             modelBuilder.Entity<AppTenant>().Ignore(e => e.Hostnames);
         }

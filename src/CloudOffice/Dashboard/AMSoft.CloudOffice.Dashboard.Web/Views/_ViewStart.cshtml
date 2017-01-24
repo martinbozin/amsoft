@@ -1,3 +1,6 @@
-﻿@{
-    Layout = "_Layout";
+﻿@using AMSoft.CloudOffice.Domain.CoreModels
+@inject  AppTenant Tenant
+@{
+    Layout = $"_Layout_{Tenant.Theme}";
 }
+
