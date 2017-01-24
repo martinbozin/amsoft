@@ -1,8 +1,4 @@
-﻿// Copyright (c) Brock Allen & Dominick Baier. All rights reserved.
-// Licensed under the Apache License, Version 2.0. See LICENSE in the project root for license information.
-
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Claims;
@@ -74,7 +70,7 @@ namespace AMSoft.IdentityServer.Web.Controllers.Account
                 if (_users.ValidateCredentials(model.Username, model.Password))
                 {
                     AuthenticationProperties props = null;
-                    // only set explicit expiration here if persistent. 
+                    // only set explicit expiration here if persistent.
                     // otherwise we reply upon expiration configured in cookie middleware.
                     if (AccountOptions.AllowRememberLogin && model.RememberLogin)
                     {
@@ -137,13 +133,13 @@ namespace AMSoft.IdentityServer.Web.Controllers.Account
                 try
                 {
                     // hack: try/catch to handle social providers that throw
-                    await HttpContext.Authentication.SignOutAsync(vm.ExternalAuthenticationScheme, 
+                    await HttpContext.Authentication.SignOutAsync(vm.ExternalAuthenticationScheme,
                         new AuthenticationProperties { RedirectUri = url });
                 }
-                catch(NotSupportedException) // this is for the external providers that don't have signout
+                catch (NotSupportedException) // this is for the external providers that don't have signout
                 {
                 }
-                catch(InvalidOperationException) // this is for Windows/Negotiate
+                catch (InvalidOperationException) // this is for Windows/Negotiate
                 {
                 }
             }
@@ -259,7 +255,7 @@ namespace AMSoft.IdentityServer.Web.Controllers.Account
             }
 
             // issue authentication cookie for user
-            await HttpContext.Authentication.SignInAsync(user.SubjectId, user.Username,  provider, props, additionalClaims.ToArray());
+            await HttpContext.Authentication.SignInAsync(user.SubjectId, user.Username, provider, props, additionalClaims.ToArray());
 
             // delete temporary cookie used during external authentication
             await HttpContext.Authentication.SignOutAsync(IdentityServerConstants.ExternalCookieAuthenticationScheme);

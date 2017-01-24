@@ -83,7 +83,6 @@ namespace AMSoft.IdentityServer.Web
                 )
                 ;
 
-            
             // configure identity server with in-memory stores, keys, clients and scopes
             //services.AddIdentityServer()
             //    .AddTemporarySigningCredential()
@@ -105,7 +104,6 @@ namespace AMSoft.IdentityServer.Web
             };
         }
 
-
         public static IEnumerable<ApiResource> GetApiResources()
         {
             return new List<ApiResource>
@@ -113,7 +111,6 @@ namespace AMSoft.IdentityServer.Web
                 new ApiResource("cloudoffice_api", "CloudOffice API")
             };
         }
-
 
         public static IEnumerable<Client> GetClients()
         {
@@ -177,7 +174,7 @@ namespace AMSoft.IdentityServer.Web
                         new Secret("secret".Sha256())
                     },
                     RequireConsent= false,
-                  
+
                     // where to redirect to after login
                     RedirectUris = { "http://localhost:7001/signin-oidc" },
 

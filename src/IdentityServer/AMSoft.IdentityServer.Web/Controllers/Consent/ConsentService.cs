@@ -1,8 +1,4 @@
-﻿// Copyright (c) Brock Allen & Dominick Baier. All rights reserved.
-// Licensed under the Apache License, Version 2.0. See LICENSE in the project root for license information.
-
-
-using System.Linq;
+﻿using System.Linq;
 using System.Threading.Tasks;
 using IdentityServer4;
 using IdentityServer4.Models;
@@ -123,8 +119,8 @@ namespace AMSoft.IdentityServer.Web.Controllers.Consent
         }
 
         private ConsentViewModel CreateConsentViewModel(
-            ConsentInputModel model, string returnUrl, 
-            AuthorizationRequest request, 
+            ConsentInputModel model, string returnUrl,
+            AuthorizationRequest request,
             Client client, Resources resources)
         {
             var vm = new ConsentViewModel();
@@ -189,4 +185,3 @@ namespace AMSoft.IdentityServer.Web.Controllers.Consent
         }
     }
 }
-
