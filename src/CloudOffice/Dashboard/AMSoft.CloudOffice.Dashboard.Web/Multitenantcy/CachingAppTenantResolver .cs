@@ -9,7 +9,7 @@ using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 
-namespace AMSoft.CloudOffice.Dashboard.Web
+namespace AMSoft.CloudOffice.Dashboard.Web.Multitenantcy
 {
     public class CachingAppTenantResolver : MemoryCacheTenantResolver<AppTenant>
     {

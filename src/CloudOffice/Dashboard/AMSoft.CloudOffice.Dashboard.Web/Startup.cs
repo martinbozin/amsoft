@@ -1,4 +1,5 @@
 ﻿using AMSoft.Base.Multitenancy;
+using AMSoft.CloudOffice.Dashboard.Web.Multitenantcy;
 using AMSoft.CloudOffice.Data;
 using AMSoft.CloudOffice.Domain.CoreModels;
 using Microsoft.AspNetCore.Builder;
