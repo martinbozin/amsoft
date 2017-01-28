@@ -1,7 +1,6 @@
-﻿
-Microsoft Visual Studio Solution File, Format Version 12.00
+﻿Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26020.0
+VisualStudioVersion = 15.0.26127.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{9A6C0B7D-7D3E-4F26-BEC3-8FA78E5E5CDD}"
 EndProject
@@ -22,7 +21,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentation", "Documentat
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AMSoft.IdentityServer.Web", "src\IdentityServer\AMSoft.IdentityServer.Web\AMSoft.IdentityServer.Web.csproj", "{86AC24E3-A4D2-4087-8DC2-9B393CCA6E96}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Base Class Library (AMSoft)", "Base Class Library (AMSoft)", "{35FA897F-F411-41EC-AEE6-C828C4168E3A}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Base Class Library", "Base Class Library", "{35FA897F-F411-41EC-AEE6-C828C4168E3A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CloudOffice", "CloudOffice", "{9426EF08-4114-4834-80D6-E7720D672ECA}"
 EndProject
@@ -47,6 +46,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AMSoft.IdentityServer.Web.Tests", "src\IdentityServer\AMSoft.IdentityServer.Web.Tests\AMSoft.IdentityServer.Web.Tests.csproj", "{AD9DB1FF-4E8D-4138-B8DD-52428122BE27}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AMSoft.IdentityServer.Data.EntityFramework", "src\IdentityServer\AMSoft.IdentityServer.Data.EntityFramework\AMSoft.IdentityServer.Data.EntityFramework.csproj", "{6F0BA810-F9FF-4F04-B2BB-3A90EE5885B6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AMSoft.IdentityServer.Configurator", "src\IdentityServer\AMSoft.IdentityServer.Configurator\AMSoft.IdentityServer.Configurator.csproj", "{E6550616-CB3C-4B49-8524-4C920B2AE948}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -190,6 +191,18 @@ Global
 		{6F0BA810-F9FF-4F04-B2BB-3A90EE5885B6}.Release|x64.Build.0 = Release|x64
 		{6F0BA810-F9FF-4F04-B2BB-3A90EE5885B6}.Release|x86.ActiveCfg = Release|x86
 		{6F0BA810-F9FF-4F04-B2BB-3A90EE5885B6}.Release|x86.Build.0 = Release|x86
+		{E6550616-CB3C-4B49-8524-4C920B2AE948}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E6550616-CB3C-4B49-8524-4C920B2AE948}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E6550616-CB3C-4B49-8524-4C920B2AE948}.Debug|x64.ActiveCfg = Debug|x64
+		{E6550616-CB3C-4B49-8524-4C920B2AE948}.Debug|x64.Build.0 = Debug|x64
+		{E6550616-CB3C-4B49-8524-4C920B2AE948}.Debug|x86.ActiveCfg = Debug|x86
+		{E6550616-CB3C-4B49-8524-4C920B2AE948}.Debug|x86.Build.0 = Debug|x86
+		{E6550616-CB3C-4B49-8524-4C920B2AE948}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E6550616-CB3C-4B49-8524-4C920B2AE948}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E6550616-CB3C-4B49-8524-4C920B2AE948}.Release|x64.ActiveCfg = Release|x64
+		{E6550616-CB3C-4B49-8524-4C920B2AE948}.Release|x64.Build.0 = Release|x64
+		{E6550616-CB3C-4B49-8524-4C920B2AE948}.Release|x86.ActiveCfg = Release|x86
+		{E6550616-CB3C-4B49-8524-4C920B2AE948}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -214,5 +227,6 @@ Global
 		{F4B1111B-947F-49FD-A96B-A7058AAAAA83} = {58D5C1A9-C30B-450C-8BD3-982D48FD3654}
 		{AD9DB1FF-4E8D-4138-B8DD-52428122BE27} = {8DA91FC7-9A81-4A47-A026-6FE1B1B859E5}
 		{6F0BA810-F9FF-4F04-B2BB-3A90EE5885B6} = {8DA91FC7-9A81-4A47-A026-6FE1B1B859E5}
+		{E6550616-CB3C-4B49-8524-4C920B2AE948} = {8DA91FC7-9A81-4A47-A026-6FE1B1B859E5}
 	EndGlobalSection
 EndGlobal

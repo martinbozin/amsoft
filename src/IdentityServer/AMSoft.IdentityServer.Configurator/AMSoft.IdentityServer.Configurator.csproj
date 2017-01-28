@@ -7,8 +7,15 @@
     <EmbeddedResource Include="**\*.resx" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="IdentityModel" Version="2.3.1" />
+    <Content Include="clients.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
     <PackageReference Include="Microsoft.NETCore.App" Version="1.0.1" />
     <PackageReference Include="Newtonsoft.Json" Version="9.0.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AMSoft.IdentityServer.Data.EntityFramework\AMSoft.IdentityServer.Data.EntityFramework.csproj" />
   </ItemGroup>
 </Project>

@@ -10,7 +10,6 @@
     <NuGetPackageRoot> $(USERPROFILE)\.nuget\packages\</NuGetPackageRoot>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="**\*.cs" />
     <EmbeddedResource Include="**\*.resx" />
   </ItemGroup>
   <ItemGroup>
