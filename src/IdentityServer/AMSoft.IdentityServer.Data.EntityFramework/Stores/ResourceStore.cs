@@ -1,20 +1,15 @@
-﻿
-
-
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using IdentityServer4.EntityFramework.Interfaces;
-using IdentityServer4.EntityFramework.Mappers;
+using AMSoft.IdentityServer.Data.EntityFramework.Interfaces;
+using AMSoft.IdentityServer.Data.EntityFramework.Mappers;
 using IdentityServer4.Models;
 using IdentityServer4.Stores;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
-using IdentityServer4.EntityFramework.DbContexts;
 
-namespace IdentityServer4.EntityFramework.Stores
+namespace AMSoft.IdentityServer.Data.EntityFramework.Stores
 {
     public class ResourceStore : IResourceStore
     {

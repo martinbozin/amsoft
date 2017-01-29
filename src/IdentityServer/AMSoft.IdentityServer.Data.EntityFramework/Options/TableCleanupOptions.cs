@@ -1,8 +1,4 @@
-﻿
-
-
-
-namespace IdentityServer4.EntityFramework.Options
+﻿namespace AMSoft.IdentityServer.Data.EntityFramework.Options
 {
     public class TokenCleanupOptions
     {

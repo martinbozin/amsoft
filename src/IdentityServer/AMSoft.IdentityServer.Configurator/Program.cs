@@ -3,98 +3,133 @@ using System.Collections.Generic;
 using System.Dynamic;
 using System.IO;
 using System.Linq;
+using System.Threading;
 using AMSoft.IdentityServer.Configurator.Console_Menu;
-using IdentityServer4.EntityFramework.DbContexts;
-using IdentityServer4.EntityFramework.Entities;
-using IdentityServer4.EntityFramework.Options;
+using AMSoft.IdentityServer.Data.EntityFramework.DbContexts;
+using AMSoft.IdentityServer.Data.EntityFramework.Entities;
+using AMSoft.IdentityServer.Data.EntityFramework.Options;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Infrastructure;
-using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
-class Program
+namespace AMSoft.IdentityServer.Configurator
 {
-
-    static void Main(string[] args)
+    class Program
     {
-        Console.WriteLine("Please select the action: ");
-        var mainMenu = new CMenu(MenuType.Numbers)
+
+        static void Main(string[] args)
         {
-            new MenuEntry("Create/Update the clients", CreateOrUpdateTheClients)
-        };
-
-        Console.WriteLine(mainMenu.PrintMenu('.', '\t'));
-        while (!mainMenu.ExecuteEntry(int.Parse(Console.ReadLine())))
-            Console.WriteLine("Selection not allowed!");
-
-        Console.ReadKey();
-    }
-
-    private static void CreateOrUpdateTheClients()
-    {
-        var clients = JArray.Parse(File.ReadAllText(@"clients.json"));
-
-        var options = new DbContextOptions<ConfigurationDbContext>();
-        var storeOptions = new ConfigurationStoreOptions();
-
-        foreach (JToken jsclient in clients)
-        {
-            try
+            Console.WriteLine("Please select the action: ");
+            var mainMenu = new CMenu(MenuType.Numbers)
             {
-                dynamic dynObject = ConvertJTokenToObject(jsclient);
+                new MenuEntry("Create/Update the clients", CreateOrUpdateTheClients),
+                new MenuEntry("Create/Update api resources", CreateOrUpdateTheApiResources),
+                new MenuEntry("Create/Update identity resources", CreateOrUpdateTheIdentityResources),
+                new MenuEntry("Create/Update persisted grants", CreateOrUpdateThePersistedGrants),
+            };
 
+            Console.WriteLine(mainMenu.PrintMenu('.', '\t'));
+            while (!mainMenu.ExecuteEntry(int.Parse(Console.ReadLine())))
+                Console.WriteLine("Selection not allowed!");
 
-                using (var ctx = new ConfigurationDbContext(options, storeOptions))
+            Console.ReadKey();
+        }
+
+        private static void CreateOrUpdateTheApiResources()
+        {
+            throw new NotImplementedException();
+        }
+
+        private static void CreateOrUpdateThePersistedGrants()
+        {
+            throw new NotImplementedException();
+        }
+
+        private static void CreateOrUpdateTheIdentityResources()
+        {
+            throw new NotImplementedException();
+        }
+
+        private static void CreateOrUpdateTheClients()
+        {
+            var options = new DbContextOptions<ConfigurationDbContext>();
+            var storeOptions = new ConfigurationStoreOptions();
+
+            var clientFiles = GetFiles("Clients");
+            foreach (var clientFile in clientFiles)
+            {
+                var clientAsJson = JArray.Parse(File.ReadAllText(clientFile.FullName));
+            
+                foreach (JToken jToken in clientAsJson)
                 {
-                    string clientName = dynObject.ClientName.ToString();
-                    var client = ctx.Clients.FirstOrDefault(x=>x.ClientName == clientName);
-
-                    ctx.Clients.Add(new Client()
+                    try
                     {
+                        dynamic dynObject = ConvertJTokenToObject(jToken);
 
-                    });
+
+                        using (var ctx = new ConfigurationDbContext(options, storeOptions))
+                        {
+                            string clientName = dynObject.ClientName.ToString();
+                            var client = ctx.Clients.FirstOrDefault(x => x.ClientName == clientName);
+
+                            if (client == null)
+                            {
+                                client = new Client();
+                                ctx.Clients.Add(client);
+                            }
+
+                            client.ClientName = clientName;
+
+                            ctx.SaveChanges();
+                        }
+
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine(ex);
+                    }
+
                 }
-
             }
-            catch (Exception ex)
+        }
+
+        private static IEnumerable<FileInfo> GetFiles(string folder)
+        {
+            var dirInfo  =new DirectoryInfo(folder);
+            return dirInfo.GetFiles("*.json");
+        }
+
+        private static dynamic ConvertJTokenToObject(JToken token)
+        {
+            var value = token as JValue;
+            if (value != null)
             {
-                Console.WriteLine(ex);
+                return value.Value;
             }
 
-        }
-    }
-
-    public static dynamic ConvertJTokenToObject(JToken token)
-    {
-        var value = token as JValue;
-        if (value != null)
-        {
-            return value.Value;
-        }
-
-        var o = token as JObject;
-        if (o != null)
-        {
-            var expando = new ExpandoObject();
-            (from childToken in token where childToken is JProperty select childToken as JProperty).ToList().ForEach(property => {
-                ((IDictionary<string, object>)expando).Add(property.Name, ConvertJTokenToObject(property.Value));
-            });
-            return expando;
-        }
-
-        var items = token as JArray;
-        if (items != null)
-        {
-            object[] array = new object[items.Count];
-            int index = 0;
-            foreach (JToken arrayItem in items)
+            var o = token as JObject;
+            if (o != null)
             {
-                array[index] = ConvertJTokenToObject(arrayItem);
-                index++;
+                var expando = new ExpandoObject();
+                (from childToken in token where childToken is JProperty select childToken as JProperty).ToList().ForEach(property => {
+                    ((IDictionary<string, object>)expando).Add(property.Name, ConvertJTokenToObject(property.Value));
+                });
+                return expando;
             }
-            return array;
-        }
 
-        throw new ArgumentException(string.Format("Unknown token type '{0}'", token.GetType()), nameof(token));
+            var items = token as JArray;
+            if (items != null)
+            {
+                object[] array = new object[items.Count];
+                int index = 0;
+                foreach (JToken arrayItem in items)
+                {
+                    array[index] = ConvertJTokenToObject(arrayItem);
+                    index++;
+                }
+                return array;
+            }
+
+            throw new ArgumentException(string.Format("Unknown token type '{0}'", token.GetType()), nameof(token));
+        }
     }
 }

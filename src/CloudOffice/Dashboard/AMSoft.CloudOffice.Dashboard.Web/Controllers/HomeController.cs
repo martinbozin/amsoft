@@ -2,7 +2,7 @@
 using AMSoft.CloudOffice.Domain.CoreModels;
 using Microsoft.AspNetCore.Mvc;
 
-namespace AMSoft.CloudOffice.Dashboard.Web.Controllers
+namespace AMSoft.CloudOffice.Web.Controllers
 {
     public class HomeController : Controller
     {

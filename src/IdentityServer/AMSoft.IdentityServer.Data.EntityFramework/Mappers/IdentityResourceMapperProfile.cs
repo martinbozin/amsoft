@@ -1,12 +1,8 @@
-﻿
-
-
-
-using System.Linq;
+﻿using System.Linq;
+using AMSoft.IdentityServer.Data.EntityFramework.Entities;
 using AutoMapper;
-using IdentityServer4.EntityFramework.Entities;
 
-namespace IdentityServer4.EntityFramework.Mappers
+namespace AMSoft.IdentityServer.Data.EntityFramework.Mappers
 {
     /// <summary>
     /// AutoMapper configuration for identity resource
@@ -20,11 +16,11 @@ namespace IdentityServer4.EntityFramework.Mappers
         public IdentityResourceMapperProfile()
         {
             // entity to model
-            CreateMap<IdentityResource, Models.IdentityResource>(MemberList.Destination)
+            CreateMap<IdentityResource, IdentityServer4.Models.IdentityResource>(MemberList.Destination)
                 .ForMember(x => x.UserClaims, opt => opt.MapFrom(src => src.UserClaims.Select(x => x.Type)));
 
             // model to entity
-            CreateMap<Models.IdentityResource, IdentityResource>(MemberList.Source)
+            CreateMap<IdentityServer4.Models.IdentityResource, IdentityResource>(MemberList.Source)
                 .ForMember(x => x.UserClaims, opts => opts.MapFrom(src => src.UserClaims.Select(x => new IdentityClaim { Type = x })));
         }
     }

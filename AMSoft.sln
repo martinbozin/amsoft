@@ -1,4 +1,5 @@
-﻿Microsoft Visual Studio Solution File, Format Version 12.00
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26127.0
 MinimumVisualStudioVersion = 10.0.40219.1
@@ -13,7 +14,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CentralAdministration", "Ce
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Demo", "Demo", "{58D5C1A9-C30B-450C-8BD3-982D48FD3654}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dashboard", "Dashboard", "{9FB06C3F-249A-4696-B626-5139CB62F6CD}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Host", "Host", "{9FB06C3F-249A-4696-B626-5139CB62F6CD}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Identity Server", "Identity Server", "{8DA91FC7-9A81-4A47-A026-6FE1B1B859E5}"
 EndProject
@@ -33,7 +34,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AMSoft.CloudOffice.Infrastr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AMSoft.Base", "src\BCL\AMSoft.Base\AMSoft.Base.csproj", "{0D38E298-76C8-428C-9410-B46490E34BA0}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AMSoft.CloudOffice.Dashboard.Web", "src\CloudOffice\Dashboard\AMSoft.CloudOffice.Dashboard.Web\AMSoft.CloudOffice.Dashboard.Web.csproj", "{9B5751F7-792C-4A6D-B1E0-4DA6709C8CC0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AMSoft.CloudOffice.Web", "src\CloudOffice\Dashboard\AMSoft.CloudOffice.Dashboard.Web\AMSoft.CloudOffice.Web.csproj", "{9B5751F7-792C-4A6D-B1E0-4DA6709C8CC0}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AMSoft.CloudOffice.CentralAdministration.Web", "src\CloudOffice\CentralAdministration\AMSoft.CloudOffice.CentralAdministration.Web\AMSoft.CloudOffice.CentralAdministration.Web.csproj", "{E2489D90-AFC6-45FA-8A74-28208C5EE185}"
 EndProject
@@ -48,6 +49,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AMSoft.IdentityServer.Data.EntityFramework", "src\IdentityServer\AMSoft.IdentityServer.Data.EntityFramework\AMSoft.IdentityServer.Data.EntityFramework.csproj", "{6F0BA810-F9FF-4F04-B2BB-3A90EE5885B6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AMSoft.IdentityServer.Configurator", "src\IdentityServer\AMSoft.IdentityServer.Configurator\AMSoft.IdentityServer.Configurator.csproj", "{E6550616-CB3C-4B49-8524-4C920B2AE948}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modules", "Modules", "{49D6490A-9258-40B6-95F4-6F6BBAE73B4E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -228,5 +231,6 @@ Global
 		{AD9DB1FF-4E8D-4138-B8DD-52428122BE27} = {8DA91FC7-9A81-4A47-A026-6FE1B1B859E5}
 		{6F0BA810-F9FF-4F04-B2BB-3A90EE5885B6} = {8DA91FC7-9A81-4A47-A026-6FE1B1B859E5}
 		{E6550616-CB3C-4B49-8524-4C920B2AE948} = {8DA91FC7-9A81-4A47-A026-6FE1B1B859E5}
+		{49D6490A-9258-40B6-95F4-6F6BBAE73B4E} = {9426EF08-4114-4834-80D6-E7720D672ECA}
 	EndGlobalSection
 EndGlobal

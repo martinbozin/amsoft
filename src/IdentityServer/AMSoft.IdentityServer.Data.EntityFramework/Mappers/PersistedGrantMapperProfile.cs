@@ -1,10 +1,6 @@
-﻿
+﻿using AutoMapper;
 
-
-
-using AutoMapper;
-
-namespace IdentityServer4.EntityFramework.Mappers
+namespace AMSoft.IdentityServer.Data.EntityFramework.Mappers
 {
     /// <summary>
     /// AutoMapper Config for PersistedGrant
@@ -12,7 +8,7 @@ namespace IdentityServer4.EntityFramework.Mappers
     /// <seealso cref="https://github.com/AutoMapper/AutoMapper/wiki/Configuration">
     /// </seealso>
     /// </summary>
-    public class PersistedGrantMapperProfile:Profile
+    public class PersistedGrantMapperProfile : Profile
     {
         /// <summary>
         /// <see cref="PersistedGrantMapperProfile">
@@ -21,10 +17,10 @@ namespace IdentityServer4.EntityFramework.Mappers
         public PersistedGrantMapperProfile()
         {
             // entity to model
-            CreateMap<Entities.PersistedGrant, Models.PersistedGrant>(MemberList.Destination);
+            CreateMap<Entities.PersistedGrant, IdentityServer4.Models.PersistedGrant>(MemberList.Destination);
 
             // model to entity
-            CreateMap<Models.PersistedGrant, Entities.PersistedGrant>(MemberList.Source);
+            CreateMap<IdentityServer4.Models.PersistedGrant, Entities.PersistedGrant>(MemberList.Source);
         }
     }
 }

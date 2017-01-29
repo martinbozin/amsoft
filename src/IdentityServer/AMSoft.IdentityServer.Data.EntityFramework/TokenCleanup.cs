@@ -1,17 +1,13 @@
-﻿
-
-
-
-using System;
+﻿using System;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using IdentityServer4.EntityFramework.DbContexts;
-using IdentityServer4.EntityFramework.Options;
+using AMSoft.IdentityServer.Data.EntityFramework.DbContexts;
+using AMSoft.IdentityServer.Data.EntityFramework.Options;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 
-namespace IdentityServer4.EntityFramework
+namespace AMSoft.IdentityServer.Data.EntityFramework
 {
     internal class TokenCleanup
     {
@@ -26,7 +22,7 @@ namespace IdentityServer4.EntityFramework
             if (logger == null) throw new ArgumentNullException(nameof(logger));
             if (options == null) throw new ArgumentNullException(nameof(options));
             if (options.Interval < 1) throw new ArgumentException("interval must be more than 1 second");
-            
+
             _logger = logger;
             _serviceProvider = serviceProvider;
             _interval = TimeSpan.FromSeconds(options.Interval);
@@ -87,7 +83,7 @@ namespace IdentityServer4.EntityFramework
             try
             {
                 _logger.LogTrace("Querying for tokens to clear");
-                
+
                 using (var serviceScope = _serviceProvider.GetRequiredService<IServiceScopeFactory>().CreateScope())
                 {
                     using (var context = serviceScope.ServiceProvider.GetService<PersistedGrantDbContext>())

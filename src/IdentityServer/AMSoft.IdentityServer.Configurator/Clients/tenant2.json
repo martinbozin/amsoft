@@ -30,22 +30,32 @@
     "SlidingRefreshTokenLifetime": 1296000,
     "UpdateAccessTokenClaimsOnRefresh": false,
     "ClientSecrets": [
-
+      {
+        "Description": "",
+        "Value": "",
+        "Expiration": "",
+        "Type": "SecretTypes.SharedSecret"
+      }
     ],
     "RedirectUris": [
-
+      { "RedirectUri": "" }
     ],
     "PostLogoutRedirectUris": [
-
+      { "PostLogoutRedirectUri": "" }
     ],
     "IdentityProviderRestrictions": [
-
+      { "Provider": "" }
     ],
     "ClientClaim": [
-
+      {
+        "Type" : "",
+        "Value": ""
+      }
     ],
     "ClientCorsOrigin": [
-
+      {
+        "Origin": "" 
+      }
     ]
   }
 ]

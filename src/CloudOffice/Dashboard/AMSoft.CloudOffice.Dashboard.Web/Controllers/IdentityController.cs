@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace AMSoft.CloudOffice.Dashboard.Web.Controllers
+namespace AMSoft.CloudOffice.Web.Controllers
 {
     [Route("identity")]
     [Authorize]

@@ -1,17 +1,13 @@
-﻿
-
-
-
-using AutoMapper;
+﻿using AutoMapper;
 using IdentityServer4.Models;
 
-namespace IdentityServer4.EntityFramework.Mappers
+namespace AMSoft.IdentityServer.Data.EntityFramework.Mappers
 {
     public static class PersistedGrantMappers
     {
         static PersistedGrantMappers()
         {
-            Mapper = new MapperConfiguration(cfg =>cfg.AddProfile<PersistedGrantMapperProfile>())
+            Mapper = new MapperConfiguration(cfg => cfg.AddProfile<PersistedGrantMapperProfile>())
                 .CreateMapper();
         }
 

@@ -1,7 +1,7 @@
 ﻿using System.Collections.ObjectModel;
 using AMSoft.CloudOffice.Domain.CoreModels;
 
-namespace AMSoft.CloudOffice.Dashboard.Web.Multitenantcy
+namespace AMSoft.CloudOffice.Web.Multitenantcy
 {
     public class MultitenancyOptions
     {

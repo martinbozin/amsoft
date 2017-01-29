@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace IdentityServer4.EntityFramework.Entities
+namespace AMSoft.IdentityServer.Data.EntityFramework.Entities
 {
     public class PersistedGrant
     {

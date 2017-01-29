@@ -1,16 +1,12 @@
-﻿
-
-
-
-using System;
+﻿using System;
 using System.Threading.Tasks;
-using IdentityServer4.EntityFramework.Entities;
-using IdentityServer4.EntityFramework.Extensions;
-using IdentityServer4.EntityFramework.Interfaces;
-using IdentityServer4.EntityFramework.Options;
+using AMSoft.IdentityServer.Data.EntityFramework.Entities;
+using AMSoft.IdentityServer.Data.EntityFramework.Extensions;
+using AMSoft.IdentityServer.Data.EntityFramework.Interfaces;
+using AMSoft.IdentityServer.Data.EntityFramework.Options;
 using Microsoft.EntityFrameworkCore;
 
-namespace IdentityServer4.EntityFramework.DbContexts
+namespace AMSoft.IdentityServer.Data.EntityFramework.DbContexts
 {
     public class ConfigurationDbContext : DbContext, IConfigurationDbContext
     {

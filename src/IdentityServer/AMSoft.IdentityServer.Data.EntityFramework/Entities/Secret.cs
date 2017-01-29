@@ -1,7 +1,7 @@
 ﻿using System;
-using static IdentityServer4.IdentityServerConstants;
+using IdentityServer4;
 
-namespace IdentityServer4.EntityFramework.Entities
+namespace AMSoft.IdentityServer.Data.EntityFramework.Entities
 {
     public abstract class Secret
     {
@@ -9,6 +9,6 @@ namespace IdentityServer4.EntityFramework.Entities
         public string Description { get; set; }
         public string Value { get; set; }
         public DateTime? Expiration { get; set; }
-        public string Type { get; set; } = SecretTypes.SharedSecret;
+        public string Type { get; set; } = IdentityServerConstants.SecretTypes.SharedSecret;
     }
 }

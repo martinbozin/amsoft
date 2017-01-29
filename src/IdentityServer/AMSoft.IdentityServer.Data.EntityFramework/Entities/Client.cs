@@ -1,15 +1,15 @@
-﻿using IdentityServer4.Models;
-using System.Collections.Generic;
-using static IdentityServer4.IdentityServerConstants;
+﻿using System.Collections.Generic;
+using IdentityServer4;
+using IdentityServer4.Models;
 
-namespace IdentityServer4.EntityFramework.Entities
+namespace AMSoft.IdentityServer.Data.EntityFramework.Entities
 {
     public class Client
     {
         public int Id { get; set; }
         public bool Enabled { get; set; } = true;
         public string ClientId { get; set; }
-        public string ProtocolType { get; set; } = ProtocolTypes.OpenIdConnect;
+        public string ProtocolType { get; set; } = IdentityServerConstants.ProtocolTypes.OpenIdConnect;
         public List<ClientSecret> ClientSecrets { get; set; }
         public bool RequireClientSecret { get; set; } = true;
         public string ClientName { get; set; }

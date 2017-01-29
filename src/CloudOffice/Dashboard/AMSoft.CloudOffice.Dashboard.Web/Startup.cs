@@ -1,7 +1,7 @@
 ﻿using AMSoft.Base.Multitenancy;
-using AMSoft.CloudOffice.Dashboard.Web.Multitenantcy;
 using AMSoft.CloudOffice.Data;
 using AMSoft.CloudOffice.Domain.CoreModels;
+using AMSoft.CloudOffice.Web.Multitenantcy;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore.Infrastructure;
@@ -9,7 +9,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 
-namespace AMSoft.CloudOffice.Dashboard.Web
+namespace AMSoft.CloudOffice.Web
 {
     public class Startup
     {

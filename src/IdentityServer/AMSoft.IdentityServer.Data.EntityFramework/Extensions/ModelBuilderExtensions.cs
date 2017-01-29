@@ -1,12 +1,11 @@
-﻿using IdentityServer4.EntityFramework.Entities;
-using IdentityServer4.EntityFramework.Options;
+﻿using AMSoft.IdentityServer.Data.EntityFramework.Entities;
+using AMSoft.IdentityServer.Data.EntityFramework.Options;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace IdentityServer4.EntityFramework.Extensions
+namespace AMSoft.IdentityServer.Data.EntityFramework.Extensions
 {
-
     public static class ModelBuilderExtensions
     {
         private static EntityTypeBuilder<TEntity> ToTable<TEntity>(this EntityTypeBuilder<TEntity> entityTypeBuilder, TableConfiguration configuration)
@@ -108,7 +107,7 @@ namespace IdentityServer4.EntityFramework.Extensions
                 grant.Property(x => x.CreationTime).IsRequired();
                 grant.Property(x => x.Data).IsRequired();
 
-                grant.HasKey(x => new {x.Key, x.Type});
+                grant.HasKey(x => new { x.Key, x.Type });
 
                 grant.HasIndex(x => x.SubjectId);
                 grant.HasIndex(x => new { x.SubjectId, x.ClientId });
@@ -139,7 +138,6 @@ namespace IdentityServer4.EntityFramework.Extensions
 
                 claim.Property(x => x.Type).HasMaxLength(200).IsRequired();
             });
-
 
             modelBuilder.Entity<ApiResource>(apiResource =>
             {

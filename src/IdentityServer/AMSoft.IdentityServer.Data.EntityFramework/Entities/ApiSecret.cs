@@ -1,7 +1,4 @@
-﻿using System;
-using static IdentityServer4.IdentityServerConstants;
-
-namespace IdentityServer4.EntityFramework.Entities
+﻿namespace AMSoft.IdentityServer.Data.EntityFramework.Entities
 {
     public class ApiSecret : Secret
     {

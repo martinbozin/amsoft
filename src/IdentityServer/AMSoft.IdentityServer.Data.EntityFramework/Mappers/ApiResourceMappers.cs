@@ -1,11 +1,7 @@
-﻿
-
-
-
+﻿using AMSoft.IdentityServer.Data.EntityFramework.Entities;
 using AutoMapper;
-using IdentityServer4.EntityFramework.Entities;
 
-namespace IdentityServer4.EntityFramework.Mappers
+namespace AMSoft.IdentityServer.Data.EntityFramework.Mappers
 {
     public static class ApiResourceMappers
     {
@@ -17,12 +13,12 @@ namespace IdentityServer4.EntityFramework.Mappers
 
         internal static IMapper Mapper { get; }
 
-        public static Models.ApiResource ToModel(this ApiResource resource)
+        public static IdentityServer4.Models.ApiResource ToModel(this ApiResource resource)
         {
-            return resource == null ? null : Mapper.Map<Models.ApiResource>(resource);
+            return resource == null ? null : Mapper.Map<IdentityServer4.Models.ApiResource>(resource);
         }
 
-        public static ApiResource ToEntity(this Models.ApiResource resource)
+        public static ApiResource ToEntity(this IdentityServer4.Models.ApiResource resource)
         {
             return resource == null ? null : Mapper.Map<ApiResource>(resource);
         }

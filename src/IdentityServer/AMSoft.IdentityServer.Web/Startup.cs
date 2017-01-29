@@ -9,9 +9,9 @@ using IdentityServer4.Test;
 using IdentityServer4.Validation;
 using Microsoft.IdentityModel.Tokens;
 using System.Reflection;
+using AMSoft.IdentityServer.Data.EntityFramework.Extensions;
 using AMSoft.IdentityServer.Web.Controllers;
 using Microsoft.EntityFrameworkCore;
-using IdentityServer4.EntityFramework.DbContexts;
 
 namespace AMSoft.IdentityServer.Web
 {

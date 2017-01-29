@@ -1,13 +1,9 @@
-﻿
-
-
-
+﻿using System;
 using Microsoft.Extensions.Logging;
-using System;
 
-namespace IdentityServer4.EntityFramework
+namespace AMSoft.IdentityServer.Data.EntityFramework
 {
-    class NopLogger : ILogger, IDisposable
+    internal class NopLogger : ILogger, IDisposable
     {
         public IDisposable BeginScope<TState>(TState state)
         {
@@ -28,7 +24,7 @@ namespace IdentityServer4.EntityFramework
         }
     }
 
-    class NopLogger<T> : NopLogger, ILogger<T>
+    internal class NopLogger<T> : NopLogger, ILogger<T>
     {
     }
 }

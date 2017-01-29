@@ -1,0 +1,16 @@
+﻿[
+  {
+    "Enabled": "bool",
+    "Name": "string",
+    "DisplayName": "string",
+    "Description": "string",
+    "Required": "bool",
+    "Emphasize": "bool",
+    "ShowInDiscoveryDocument": "bool",
+    "UserClaims": [
+      {
+        "Type": ""
+      }
+    ]
+  }
+]

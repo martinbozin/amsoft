@@ -1,20 +1,14 @@
-﻿
-
-
-
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using IdentityServer4.EntityFramework.Interfaces;
-using IdentityServer4.EntityFramework.Mappers;
+using AMSoft.IdentityServer.Data.EntityFramework.Interfaces;
+using AMSoft.IdentityServer.Data.EntityFramework.Mappers;
 using IdentityServer4.Models;
 using IdentityServer4.Stores;
-using Microsoft.Extensions.Logging;
 using Microsoft.EntityFrameworkCore;
-using IdentityServer4.EntityFramework.DbContexts;
+using Microsoft.Extensions.Logging;
 
-namespace IdentityServer4.EntityFramework.Stores
+namespace AMSoft.IdentityServer.Data.EntityFramework.Stores
 {
     public class PersistedGrantStore : IPersistedGrantStore
     {
@@ -26,8 +20,7 @@ namespace IdentityServer4.EntityFramework.Stores
             _context = context;
             _logger = logger;
 
-    //        ((PersistedGrantDbContext)_context).Database.Migrate();
-
+            //        ((PersistedGrantDbContext)_context).Database.Migrate();
         }
 
         public Task StoreAsync(PersistedGrant token)
@@ -82,7 +75,7 @@ namespace IdentityServer4.EntityFramework.Stores
         public Task RemoveAsync(string key)
         {
             var persistedGrant = _context.PersistedGrants.FirstOrDefault(x => x.Key == key);
-            if (persistedGrant!= null)
+            if (persistedGrant != null)
             {
                 _logger.LogDebug("removing {persistedGrantKey} persisted grant from database", key);
 
@@ -92,7 +85,7 @@ namespace IdentityServer4.EntityFramework.Stores
                 {
                     _context.SaveChanges();
                 }
-                catch(DbUpdateConcurrencyException ex)
+                catch (DbUpdateConcurrencyException ex)
                 {
                     _logger.LogInformation("exception removing {persistedGrantKey} persisted grant from database: {error}", key, ex.Message);
                 }

@@ -1,15 +1,11 @@
-﻿
-
-
-
-using System;
-using System.Threading.Tasks;
-using IdentityServer4.Services;
+﻿using System;
 using System.Linq;
-using IdentityServer4.EntityFramework.Interfaces;
+using System.Threading.Tasks;
+using AMSoft.IdentityServer.Data.EntityFramework.Interfaces;
+using IdentityServer4.Services;
 using Microsoft.Extensions.Logging;
 
-namespace IdentityServer4.EntityFramework.Services
+namespace AMSoft.IdentityServer.Data.EntityFramework.Services
 {
     public class CorsPolicyService : ICorsPolicyService
     {

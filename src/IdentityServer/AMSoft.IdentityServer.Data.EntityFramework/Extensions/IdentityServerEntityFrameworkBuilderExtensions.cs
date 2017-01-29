@@ -1,22 +1,22 @@
-﻿using IdentityServer4.EntityFramework.DbContexts;
-using IdentityServer4.EntityFramework.Interfaces;
-using IdentityServer4.EntityFramework.Services;
-using IdentityServer4.EntityFramework.Stores;
+﻿using System;
+using AMSoft.IdentityServer.Data.EntityFramework.DbContexts;
+using AMSoft.IdentityServer.Data.EntityFramework.Interfaces;
+using AMSoft.IdentityServer.Data.EntityFramework.Options;
+using AMSoft.IdentityServer.Data.EntityFramework.Services;
+using AMSoft.IdentityServer.Data.EntityFramework.Stores;
 using IdentityServer4.Services;
 using IdentityServer4.Stores;
-using Microsoft.EntityFrameworkCore;
-using System;
-using IdentityServer4.EntityFramework.Options;
-using IdentityServer4.EntityFramework;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 
-namespace Microsoft.Extensions.DependencyInjection
+namespace AMSoft.IdentityServer.Data.EntityFramework.Extensions
 {
     public static class IdentityServerEntityFrameworkBuilderExtensions
     {
         public static IIdentityServerBuilder AddConfigurationStore(
-            this IIdentityServerBuilder builder, 
+            this IIdentityServerBuilder builder,
             Action<DbContextOptionsBuilder> dbContextOptionsAction = null,
             Action<ConfigurationStoreOptions> storeOptionsAction = null)
         {
@@ -70,14 +70,14 @@ namespace Microsoft.Extensions.DependencyInjection
             tokenCleanUpOptions?.Invoke(tokenCleanupOptions);
             builder.Services.AddSingleton(tokenCleanupOptions);
             builder.Services.AddSingleton<TokenCleanup>();
-            
+
             return builder;
         }
 
         public static IApplicationBuilder UseIdentityServerEfTokenCleanup(this IApplicationBuilder app, IApplicationLifetime applicationLifetime)
         {
             var tokenCleanup = app.ApplicationServices.GetService<TokenCleanup>();
-            if(tokenCleanup == null)
+            if (tokenCleanup == null)
             {
                 throw new InvalidOperationException("AddOperationalStore must be called on the service collection.");
             }

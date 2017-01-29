@@ -1,12 +1,7 @@
-﻿
-
-
-
-using System;
-using System.Collections.Generic;
+﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace Host.Migrations.IdentityServer.PersistedGrantDb
+namespace AMSoft.IdentityServer.Data.EntityFramework.Migrations.IdentityServer.PersistedGrantDb
 {
     public partial class Grants : Migration
     {

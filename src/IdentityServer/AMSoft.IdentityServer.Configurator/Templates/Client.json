@@ -1,0 +1,56 @@
+﻿[
+  {
+    "AbsoluteRefreshTokenLifetime": 2592000,
+    "AccessTokenLifetime": 3600,
+    "AccessTokenType": 1,
+    "AllowAccessTokensViaBrowser": false,
+    "AllowOfflineAccess": false,
+    "AllowPlainTextPkce": false,
+    "AllowRememberConsent": true,
+    "AlwaysIncludeUserClaimsInIdToken": false,
+    "AlwaysSendClientClaims": false,
+    "AuthorizationCodeLifetime": 300,
+    "ClientId": "",
+    "ClientName": "",
+    "ClientUri": "",
+    "EnableLocalLogin": false,
+    "Enabled": false,
+    "IdentityTokenLifetime": 300,
+    "IncludeJwtId": false,
+    "LogoUri": "",
+    "LogoutSessionRequired": false,
+    "LogoutUri": "",
+    "PrefixClientClaims": true,
+    "ProtocolType": "oidc",
+    "RefreshTokenExpiration": 1,
+    "RefreshTokenUsage": 1,
+    "RequireClientSecret": false,
+    "RequireConsent": true,
+    "RequirePkce": false,
+    "SlidingRefreshTokenLifetime": 1296000,
+    "UpdateAccessTokenClaimsOnRefresh": false,
+    "ClientSecrets": [
+      {
+        "Description": "",
+        "Value": "",
+        "Expiration": "",
+        "Type": "SecretTypes.SharedSecret"
+      }
+    ],
+    "RedirectUris": [
+      
+    ],
+    "PostLogoutRedirectUris": [
+     
+    ],
+    "IdentityProviderRestrictions": [
+     
+    ],
+    "CientClaim": [
+      
+    ],
+    "ClientCorsOrigin": [
+      
+    ]
+  }
+]

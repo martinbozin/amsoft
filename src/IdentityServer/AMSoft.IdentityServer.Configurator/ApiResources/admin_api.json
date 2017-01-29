@@ -1,0 +1,12 @@
+﻿{
+  "Enabled": "true",
+  "Name": "admin_api",
+  "DisplayName": "Admin API",
+  "Description": "",
+  "Secrets": [
+  ],
+  "Scopes": [
+  ],
+  "UserClaims": [
+  ]
+}

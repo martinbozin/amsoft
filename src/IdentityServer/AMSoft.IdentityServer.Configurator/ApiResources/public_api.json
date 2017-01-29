@@ -1,0 +1,12 @@
+﻿{
+  "Enabled": "true",
+  "Name": "public_api",
+  "DisplayName": "Public API",
+  "Description": "",
+  "Secrets": [
+  ],
+  "Scopes": [
+  ],
+  "UserClaims": [
+  ]
+}

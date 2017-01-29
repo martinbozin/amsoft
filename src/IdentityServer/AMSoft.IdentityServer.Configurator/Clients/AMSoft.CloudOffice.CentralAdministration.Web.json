@@ -1,0 +1,59 @@
+﻿  {
+    "AbsoluteRefreshTokenLifetime": 2592000,
+    "AccessTokenLifetime": 3600,
+    "AccessTokenType": 1,
+    "AllowAccessTokensViaBrowser": false,
+    "AllowOfflineAccess": true,
+    "AllowPlainTextPkce": false,
+    "AllowRememberConsent": true,
+    "AlwaysIncludeUserClaimsInIdToken": false,
+    "AlwaysSendClientClaims": false,
+    "AuthorizationCodeLifetime": 300,
+    "ClientId": "AMSoft.CloudOffice.CentralAdministration.Web",
+    "ClientName": "AMSoft.CloudOffice.CentralAdministration.Web",
+    "ClientUri": "",
+    "EnableLocalLogin": false,
+    "Enabled": false,
+    "IdentityTokenLifetime": 300,
+    "IncludeJwtId": false,
+    "LogoUri": "",
+    "LogoutSessionRequired": false,
+    "LogoutUri": "",
+    "PrefixClientClaims": true,
+    "ProtocolType": "oidc",
+    "RefreshTokenExpiration": 1,
+    "RefreshTokenUsage": 1,
+    "RequireClientSecret": false,
+    "RequireConsent": false,
+    "RequirePkce": false,
+    "SlidingRefreshTokenLifetime": 1296000,
+    "UpdateAccessTokenClaimsOnRefresh": false,
+    "AllowedGrantTypes": [
+      "hybrid",
+      "client_credentials"
+    ],
+    "ClientSecrets": [
+      {
+        "Description": "",
+        "Value": "secret",
+        "Expiration": "",
+        "Type": "SecretTypes.SharedSecret"
+      }
+    ],
+    "AllowedScopes": [
+      "openid",
+      "profile",
+      "offline_access",
+      "cloudoffice_api"
+    ],
+    "RedirectUris": [
+      "http://localhost:5000/signin-oidc"
+    ],
+    "PostLogoutRedirectUris": [
+      "http://localhost:5000"
+    ],
+    "IdentityProviderRestrictions": [
+    ],
+    "ClientClaim": [],
+    "ClientCorsOrigin": []
+  }

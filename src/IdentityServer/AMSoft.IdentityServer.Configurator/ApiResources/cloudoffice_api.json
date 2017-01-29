@@ -1,0 +1,12 @@
+﻿{
+  "Enabled": "true",
+  "Name": "cloudoffice_api",
+  "DisplayName": "CloudOffice API",
+  "Description": "",
+  "Secrets": [
+  ],
+  "Scopes": [
+  ],
+  "UserClaims": [
+  ]
+}

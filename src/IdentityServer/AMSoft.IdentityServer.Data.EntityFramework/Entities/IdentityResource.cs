@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace IdentityServer4.EntityFramework.Entities
+namespace AMSoft.IdentityServer.Data.EntityFramework.Entities
 {
     public class IdentityResource
     {

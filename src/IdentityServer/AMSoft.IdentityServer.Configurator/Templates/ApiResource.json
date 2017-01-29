@@ -1,0 +1,36 @@
+﻿[
+  {
+    "Enabled": "false",
+    "Name": "",
+    "DisplayName": "",
+    "Description": "",
+    "Secrets": [
+      {
+        "Description": "",
+        "Value": "",
+        "Expiration": "",
+        "Type": "SecretTypes.SharedSecret"
+      }
+    ],
+    "Scopes": [
+      {
+        "Name": "string",
+        "DisplayName": "string",
+        "Description": "string",
+        "Required": "bool",
+        "Emphasize": "bool",
+        "ShowInDiscoveryDocument": "true",
+        "UserClaims": [
+          {
+            "Type": ""
+          }
+        ]
+      }
+    ],
+    "UserClaims": [
+      {
+        "Type": ""
+      }
+    ]
+  }
+]
