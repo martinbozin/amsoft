@@ -9,7 +9,7 @@ namespace AMSoft.IdentityServer.Configurator.Console_Menu
 
         public CMenu(MenuType type, params MenuEntry[] entries)
         {
-            this.AddRange(entries);
+            AddRange(entries);
             Type = type;
             if ((Type == MenuType.UpperLetters || Type == MenuType.LowerLetters) && this.Count > 26)
                 throw new ArgumentOutOfRangeException("If 'Letters' is chosen as the MenuType, the entries should be equal or less than 26!");
@@ -18,80 +18,84 @@ namespace AMSoft.IdentityServer.Configurator.Console_Menu
         /// <summary>
         /// Returns a string with the menu printed on it
         /// </summary>
-        /// <param name="SeparatorChar">This is the char which separates the Letter/Number from the description</param>
-        /// <param name="FinalChar">This is the char which is always put at the end of each Entry description (I.E. the last char to be appended to the description of each entry)</param>
+        /// <param name="separatorChar">This is the char which separates the Letter/Number from the description</param>
+        /// <param name="finalChar">This is the char which is always put at the end of each Entry description (I.E. the last char to be appended to the description of each entry)</param>
         /// <returns></returns>
-        public string PrintMenu(char SeparatorChar = '.', char FinalChar = '\n')
+        public string PrintMenu(char separatorChar = '.', char finalChar = '\n')
         {
-            string Menu = "";
-            char Letter = Type == MenuType.LowerLetters ? 'a' : 'A';
-            ushort Numbers = 1;
-            foreach (MenuEntry ME in this)
+            string menu = "";
+            char letter = Type == MenuType.LowerLetters ? 'a' : 'A';
+            ushort numbers = 0;
+            foreach (MenuEntry me in this)
             {
                 switch (Type)
                 {
                     case MenuType.LowerLetters:
                     case MenuType.UpperLetters:
-                        Menu += string.Format("{0}{1} {2}{3}", Letter++, SeparatorChar, ME.Description, FinalChar);
+                        menu += $"{letter++}{separatorChar} {me.Description}{finalChar}";
+                        Console.WriteLine($"{letter}{separatorChar} {me.Description}{finalChar}");
                         break;
                     case MenuType.Numbers:
-                        Menu += string.Format("{0}{1} {2}{3}", Numbers++, SeparatorChar, ME.Description, FinalChar);
+                        menu += $"{numbers++}{separatorChar} {me.Description}{finalChar}";
+                        Console.WriteLine($"{numbers}{separatorChar} {me.Description}{finalChar}");
                         break;
                 }
             }
-            return Menu;
+            return menu;
         }
 
         /// <summary>
         /// Returns a string with the menu printed on it
         /// </summary>
-        /// <param name="Separatorstring">This is the string which separates the Letter/Number from the description</param>
-        /// <param name="Finalstring">This is the string which is always put at the end of each Entry description (I.E. the last string to be appended to the description of each entry)</param>
+        /// <param name="separatorString">This is the string which separates the Letter/Number from the description</param>
+        /// <param name="finalString">This is the string which is always put at the end of each Entry description (I.E. the last string to be appended to the description of each entry)</param>
         /// <returns></returns>
-        public string PrintMenu(string SeparatorString = ".", string FinalString = "\n")
+        public string PrintMenu(string separatorString = ".", string finalString = "\n")
         {
-            string Menu = "";
-            char Letter = Type == MenuType.LowerLetters ? 'a' : 'A';
-            ushort Numbers = 1;
-            foreach (MenuEntry ME in this)
+            string menu = "";
+            char letter = Type == MenuType.LowerLetters ? 'a' : 'A';
+            ushort numbers = 0;
+            foreach (MenuEntry me in this)
             {
                 switch (Type)
                 {
                     case MenuType.LowerLetters:
                     case MenuType.UpperLetters:
-                        Menu += string.Format("{0}{1} {2}{3}", Letter++, SeparatorString, ME.Description, FinalString);
+                        menu += $"{letter++}{separatorString} {me.Description}{finalString}";
+                        Console.WriteLine($"{letter}{separatorString} {me.Description}{finalString}");
                         break;
                     case MenuType.Numbers:
-                        Menu += string.Format("{0}{1} {2}{3}", Numbers++, SeparatorString, ME.Description, FinalString);
+                        menu += $"{numbers++}{separatorString} {me.Description}{finalString}";
+                        Console.WriteLine($"{numbers}{separatorString} {me.Description}{finalString}");
                         break;
                 }
             }
-            return Menu;
+            return menu;
         }
         /// <summary>
         /// This will execute an entry characterised by the letter given in input (the letter of the menu)
         /// It returns false if the index is out of range
         /// </summary>
-        /// <param name="Letter">The correspondant letter of the menu</param>
-        public bool ExecuteEntry(char Letter)
+        /// <param name="letter">The correspondant letter of the menu</param>
+        public bool ExecuteEntry(char letter)
         {
             if (Type == MenuType.LowerLetters)
             {
-                int Index = (int)Letter - 97;
-                if (Index >= this.Count)
+                int index = letter - 97;
+                if (index >= Count)
                 {
                     return false;
                 }
-                this[Index].ExecuteEntry();
+                this[index].ExecuteEntry();
             }
             else if (Type == MenuType.UpperLetters)
             {
-                int Index = (int)Letter - 65;
-                if (Index >= this.Count)
+                int index = letter - 65;
+                if (index >= Count)
                 {
                     return false;
                 }
-                this[Index].ExecuteEntry();
+                this[index].ExecuteEntry();
             }
             return true;
         }
@@ -99,24 +103,24 @@ namespace AMSoft.IdentityServer.Configurator.Console_Menu
         /// This will execute the entry characterised by the menu index given
         /// It returns false if the index is out of range
         /// </summary>
-        /// <param name="MenuIndex">Index of the entry in the menu</param>
-        public bool ExecuteEntry(int MenuIndex)
+        /// <param name="menuIndex">Index of the entry in the menu</param>
+        public bool ExecuteEntry(int menuIndex)
         {
-            if (MenuIndex > this.Count)
+            if (menuIndex > this.Count)
             {
                 return false;
             }
-            this[MenuIndex-1].ExecuteEntry();
+            this[menuIndex-1].ExecuteEntry();
             return true;
         }
         /// <summary>
         /// This will execute an Entry based on its index in the Menuthis list. To be used only for debugging purposes.
         /// </summary>
         /// <remarks>This method is not intended to be normally used! Use <see cref="ExecuteEntry">ExecuteEntry</see> instead </remarks>
-        /// <param name="ListIndex">The index of the Entry in the list</param>
-        public void ExecuteEntryWithListIndex(int ListIndex)
+        /// <param name="listIndex">The index of the Entry in the list</param>
+        public void ExecuteEntryWithListIndex(int listIndex)
         {
-            this[ListIndex].ExecuteEntry();
+            this[listIndex].ExecuteEntry();
         }
     }
 }

@@ -16,6 +16,10 @@
     <Content Include="ApiResources\cloudoffice_api.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="appsettings.json">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Clients\AMSoft.CloudOffice.CentralAdministration.Web.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -48,11 +52,20 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Microsoft.NETCore.App" Version="1.1.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="1.1.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.FileExtensions" Version="1.1.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="1.1.0" />
     <PackageReference Include="Newtonsoft.Json" Version="9.0.1" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\AMSoft.IdentityServer.Data.EntityFramework\AMSoft.IdentityServer.Data.EntityFramework.csproj" />
+    <ProjectReference Include="..\..\BCL\AMSoft.Base\AMSoft.Base.csproj">
+      <ReferenceOutputAssembly>true</ReferenceOutputAssembly>
+      <Private>true</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\AMSoft.IdentityServer.Data.EntityFramework\AMSoft.IdentityServer.Data.EntityFramework.csproj">
+      <ReferenceOutputAssembly>true</ReferenceOutputAssembly>
+      <Private>true</Private>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="PersistedGrants\" />
