@@ -7,47 +7,47 @@
     <EmbeddedResource Include="**\*.resx" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="ApiResources\public_api.json">
+    <Content Include="Database\ApiResources\public_api.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="ApiResources\admin_api.json">
+    <Content Include="Database\ApiResources\admin_api.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="ApiResources\cloudoffice_api.json">
+    <Content Include="Database\ApiResources\cloudoffice_api.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="appsettings.json">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Clients\AMSoft.CloudOffice.CentralAdministration.Web.json">
+    <Content Include="Database\Clients\AMSoft.CloudOffice.CentralAdministration.Web.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Clients\tenant2.json">
+    <Content Include="Database\Clients\tenant2.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Clients\tenant1.json">
+    <Content Include="Database\Clients\tenant1.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Clients\AMSoft.CloudOffice.Public.Web.json">
+    <Content Include="Database\Clients\AMSoft.CloudOffice.Public.Web.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="IdentityResources\profile.json">
+    <Content Include="Database\IdentityResources\profile.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="IdentityResources\openid.json">
+    <Content Include="Database\IdentityResources\openid.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Templates\PersistedGrant.json">
+    <Content Include="Database\Templates\PersistedGrant.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Templates\IdentityResource.json">
+    <Content Include="Database\Templates\IdentityResource.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Templates\ApiResource.json">
+    <Content Include="Database\Templates\ApiResource.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Templates\Client.json">
+    <Content Include="Database\Templates\Client.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
@@ -68,6 +68,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="PersistedGrants\" />
+    <Folder Include="Database\PersistedGrants\" />
   </ItemGroup>
 </Project>

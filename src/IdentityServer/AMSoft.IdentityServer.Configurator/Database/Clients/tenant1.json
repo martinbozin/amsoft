@@ -48,15 +48,11 @@
   ],
   "RedirectUris": [
     "http://localhost:6001/signin-oidc",
-    "http://localhost:6002/signin-oidc",
-    "http://localhost:6003/signin-oidc",
-    "http://localhost:6004/signin-oidc"
+    "http://localhost:6002/signin-oidc"
   ],
   "PostLogoutRedirectUris": [
     "http://localhost:6001",
-    "http://localhost:6002",
-    "http://localhost:6003",
-    "http://localhost:6004"
+    "http://localhost:6002"
   ],
   "IdentityProviderRestrictions": [
   ],
