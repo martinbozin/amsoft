@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <Authors>Dmitry Sikorsky</Authors>
+    <TargetFramework>netstandard1.6</TargetFramework>
+    <AssemblyName>WebApplication.Modules.TestModule</AssemblyName>
+    <PackageId>WebApplication.ExtensionA</PackageId>
+    <RootNamespace>WebApplication.Modules.TestModule</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\TestModule\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="NETStandard.Library" Version="1.6.0" />
+    <PackageReference Include="ExtCore.Mvc.Infrastructure" Version="1.1.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="1.1.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Scripts\" />
+    <Folder Include="Styles\" />
+  </ItemGroup>
+</Project>
