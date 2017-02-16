@@ -4,7 +4,7 @@ using ExtCore.Mvc.Infrastructure;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Routing;
 
-namespace WebApplication.Modules.TestModule
+namespace AMSoft.Modules.TestModule
 {
   public class TestModule : ExtensionBase
   {

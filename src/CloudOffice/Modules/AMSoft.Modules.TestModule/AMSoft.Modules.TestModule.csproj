@@ -14,7 +14,6 @@ if errorlevel 1 exit 1
     <EmbeddedResource Include="Views\TestModule\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="NETStandard.Library" Version="1.6.0" />
     <PackageReference Include="ExtCore.Mvc.Infrastructure" Version="1.1.0" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="1.1.0" />
   </ItemGroup>

@@ -5,7 +5,7 @@
     <AssemblyName>AMSoft.Modules.TestModule</AssemblyName>
     <PackageId>WebApplication.ExtensionA</PackageId>
     <RootNamespace>AMSoft.Modules.TestModule</RootNamespace>
-    <PostBuildEvent>xcopy  /e /y "C:\Projects\amsoft\src\CloudOffice\Modules\AMSoft.Modules.TestModule\*" "C:\Projects\amsoft\src\CloudOffice\Dashboard\AMSoft.CloudOffice.Dashboard.Web\Extensions" &gt;nul
+    <PostBuildEvent>xcopy  /d /e /y "C:\Projects\amsoft\src\CloudOffice\Modules\AMSoft.Modules.TestModule*" "C:\Projects\amsoft\src\CloudOffice\Dashboard\AMSoft.CloudOffice.Dashboard.Web\Extensions" &gt;nul
 if errorlevel 1 exit 1
 
 </PostBuildEvent>
@@ -14,9 +14,8 @@ if errorlevel 1 exit 1
     <EmbeddedResource Include="Views\TestModule\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="NETStandard.Library" Version="1.6.0" />
     <PackageReference Include="ExtCore.Mvc.Infrastructure" Version="1.1.0" />
-    <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="1.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="1.1.0" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Scripts\" />
