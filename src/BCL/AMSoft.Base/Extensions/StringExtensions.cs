@@ -55,5 +55,18 @@ namespace AMSoft.Base.Extensions
 
             return result;
         }
+
+        public static DateTime? ToDateTimeSafe(string value)
+        {
+            DateTime result;
+
+            if (string.IsNullOrEmpty(value))
+                return null;
+
+            if (DateTime.TryParse(value, out result))
+                return result;
+
+            return null;
+        }
     }
 }
