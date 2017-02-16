@@ -7,7 +7,6 @@ using System.Security.Claims;
 using IdentityServer4;
 using IdentityServer4.Test;
 using IdentityServer4.Validation;
-using Microsoft.IdentityModel.Tokens;
 using System.Reflection;
 using AMSoft.IdentityServer.Data.EntityFramework.Extensions;
 using AMSoft.IdentityServer.Web.Controllers;
@@ -19,7 +18,7 @@ namespace AMSoft.IdentityServer.Web
     {
         public void Configure(IApplicationBuilder app, ILoggerFactory loggerFactory)
         {
-            loggerFactory.AddConsole();
+            loggerFactory.AddConsole(LogLevel.Trace);
             app.UseDeveloperExceptionPage();
 
             app.UseIdentityServer();
@@ -69,21 +68,21 @@ namespace AMSoft.IdentityServer.Web
             var migrationsAssembly = typeof(Startup).GetTypeInfo().Assembly.GetName().Name;
 
             services.AddIdentityServer()
-                .AddTemporarySigningCredential()
-                .AddSecretParser<ClientAssertionSecretParser>()
-                .AddSecretValidator<PrivateKeyJwtSecretValidator>()
-                .AddTestUsers(TestUsers.Users)
+                //.AddSecretParser<ClientAssertionSecretParser>()
+                //.AddSecretValidator<PrivateKeyJwtSecretValidator>()
                 .AddConfigurationStore(builder =>
-                    //builder.UseSqlServer(connectionString,options => options.MigrationsAssembly(migrationsAssembly))
                     builder.UseSqlServer(connectionString)
                 )
                 .AddOperationalStore(builder =>
-                 //builder.UseSqlServer(connectionString,options => options.MigrationsAssembly(migrationsAssembly))
-                 builder.UseSqlServer(connectionString)
+                    builder.UseSqlServer(connectionString)
                 )
+                .AddTemporarySigningCredential()
+                .AddTestUsers(TestUsers.Users)
                 ;
 
-            // configure identity server with in-memory stores, keys, clients and scopes
+
+          
+            ////  configure identity server with in-memory stores, keys, clients and scopes
             //services.AddIdentityServer()
             //    .AddTemporarySigningCredential()
             //    .AddInMemoryIdentityResources(Config.GetIdentityResources())
@@ -93,135 +92,135 @@ namespace AMSoft.IdentityServer.Web
         }
     }
 
-    public class Config
-    {
-        public static IEnumerable<IdentityResource> GetIdentityResources()
-        {
-            return new List<IdentityResource>
-            {
-                new IdentityResources.OpenId(),
-                new IdentityResources.Profile(),
-            };
-        }
+    //public class Config
+    //{
+    //    public static IEnumerable<IdentityResource> GetIdentityResources()
+    //    {
+    //        return new List<IdentityResource>
+    //        {
+    //            new IdentityResources.OpenId(),
+    //            new IdentityResources.Profile(),
+    //        };
+    //    }
 
-        public static IEnumerable<ApiResource> GetApiResources()
-        {
-            return new List<ApiResource>
-            {
-                new ApiResource("cloudoffice_api", "CloudOffice API")
-            };
-        }
+    //    public static IEnumerable<ApiResource> GetApiResources()
+    //    {
+    //        return new List<ApiResource>
+    //        {
+    //            new ApiResource("cloudoffice_api", "CloudOffice API")
+    //        };
+    //    }
 
-        public static IEnumerable<Client> GetClients()
-        {
-            return new List<Client>
-            {
-                ////Client Credentials
-                //new Client
-                //{
-                //    ClientId = "client",
+    //    public static IEnumerable<Client> GetClients()
+    //    {
+    //        return new List<Client>
+    //        {
+    //            ////Client Credentials
+    //            //new Client
+    //            //{
+    //            //    ClientId = "client",
 
-                //    // no interactive user, use the clientid/secret for authentication
-                //    AllowedGrantTypes = GrantTypes.ClientCredentials,
+    //            //    // no interactive user, use the clientid/secret for authentication
+    //            //    AllowedGrantTypes = GrantTypes.ClientCredentials,
 
-                //    // secret for authentication
-                //    ClientSecrets =
-                //    {
-                //        new Secret("secret".Sha256())
-                //    },
+    //            //    // secret for authentication
+    //            //    ClientSecrets =
+    //            //    {
+    //            //        new Secret("secret".Sha256())
+    //            //    },
 
-                //    // scopes that client has access to
-                //    AllowedScopes = {"cloudoffice_api"}
-                //},
-                //// resource owner password grant client
-                //new Client
-                //{
-                //    ClientId = "ro.client",
-                //    AllowedGrantTypes = GrantTypes.ResourceOwnerPassword,
-                //    ClientSecrets =
-                //    {
-                //        new Secret("secret".Sha256())
-                //    },
-                //    AllowedScopes = {"cloudoffice_api"}
-                //},
-                //// OpenID Connect implicit flow client (MVC)
-                //new Client
-                //{
-                //    ClientId = "mvc",
-                //    ClientName = "MVC Client",
-                //    AllowedGrantTypes = GrantTypes.Implicit,
+    //            //    // scopes that client has access to
+    //            //    AllowedScopes = {"cloudoffice_api"}
+    //            //},
+    //            //// resource owner password grant client
+    //            //new Client
+    //            //{
+    //            //    ClientId = "ro.client",
+    //            //    AllowedGrantTypes = GrantTypes.ResourceOwnerPassword,
+    //            //    ClientSecrets =
+    //            //    {
+    //            //        new Secret("secret".Sha256())
+    //            //    },
+    //            //    AllowedScopes = {"cloudoffice_api"}
+    //            //},
+    //            //// OpenID Connect implicit flow client (MVC)
+    //            //new Client
+    //            //{
+    //            //    ClientId = "mvc",
+    //            //    ClientName = "MVC Client",
+    //            //    AllowedGrantTypes = GrantTypes.Implicit,
 
-                //    // where to redirect to after login
-                //    RedirectUris = {"http://localhost:7001"},
+    //            //    // where to redirect to after login
+    //            //    RedirectUris = {"http://localhost:7001"},
 
-                //    // where to redirect to after logout
-                //    PostLogoutRedirectUris = {"http://localhost:7001"},
+    //            //    // where to redirect to after logout
+    //            //    PostLogoutRedirectUris = {"http://localhost:7001"},
 
-                //    AllowedScopes = new List<string>
-                //    {
-                //        IdentityServerConstants.StandardScopes.OpenId,
-                //        IdentityServerConstants.StandardScopes.Profile
-                //    }
-                //},
-                //Hybrid flow
-                new Client
-                {
-                    ClientId = "hybrid",
-                    ClientName = "AMSoft.CloudOffice.Public.Web",
-                    AllowedGrantTypes = GrantTypes.HybridAndClientCredentials,
-                    ClientSecrets =
-                    {
-                        new Secret("secret".Sha256())
-                    },
-                    RequireConsent= false,
+    //            //    AllowedScopes = new List<string>
+    //            //    {
+    //            //        IdentityServerConstants.StandardScopes.OpenId,
+    //            //        IdentityServerConstants.StandardScopes.Profile
+    //            //    }
+    //            //},
+    //            //Hybrid flow
+    //            new Client
+    //            {
+    //                ClientId = "AMSoft.CloudOffice.Public.Web",
+    //                ClientName = "AMSoft.CloudOffice.Public.Web",
+    //                AllowedGrantTypes = GrantTypes.HybridAndClientCredentials,
+    //                ClientSecrets =
+    //                {
+    //                    new Secret("secret".Sha256())
+    //                },
+    //                RequireConsent= false,
 
-                    // where to redirect to after login
-                    RedirectUris = { "http://localhost:7001/signin-oidc" },
+    //                // where to redirect to after login
+    //                RedirectUris = { "http://localhost:7001/signin-oidc" },
 
-                    // where to redirect to after logout
-                    PostLogoutRedirectUris = { "http://localhost:7001" },
+    //                // where to redirect to after logout
+    //                PostLogoutRedirectUris = { "http://localhost:7001" },
 
-                    AllowedScopes =
-                    {
-                        IdentityServerConstants.StandardScopes.OpenId,
-                        IdentityServerConstants.StandardScopes.Profile,
-                        IdentityServerConstants.StandardScopes.OfflineAccess,
-                        "cloudoffice_api"
-                    },
-                    AllowOfflineAccess = true
-                }
-            };
-        }
+    //                AllowedScopes =
+    //                {
+    //                    IdentityServerConstants.StandardScopes.OpenId,
+    //                    IdentityServerConstants.StandardScopes.Profile,
+    //                    IdentityServerConstants.StandardScopes.OfflineAccess,
+    //                    "cloudoffice_api"
+    //                },
+    //                AllowOfflineAccess = true
+    //            }
+    //        };
+    //    }
 
-        public static List<TestUser> GetUsers()
-        {
-            return new List<TestUser>
-            {
-                new TestUser
-                {
-                    SubjectId = "1",
-                    Username = "alice",
-                    Password = "password",
+    //    public static List<TestUser> GetUsers()
+    //    {
+    //        return new List<TestUser>
+    //        {
+    //            new TestUser
+    //            {
+    //                SubjectId = "1",
+    //                Username = "alice",
+    //                Password = "password",
 
-                    Claims = new[]
-                    {
-                        new Claim("name", "Alice"),
-                        new Claim("website", "https://alice.com")
-                    }
-                },
-                new TestUser
-                {
-                    SubjectId = "2",
-                    Username = "bob",
-                    Password = "password",
+    //                Claims = new[]
+    //                {
+    //                    new Claim("name", "Alice"),
+    //                    new Claim("website", "https://alice.com")
+    //                }
+    //            },
+    //            new TestUser
+    //            {
+    //                SubjectId = "2",
+    //                Username = "bob",
+    //                Password = "password",
 
-                    Claims = new[]
-                    {
-                        new Claim("name", "Bob"),
-                        new Claim("website", "https://bob.com")
-                    }
-                }
-            };
-        }
-    }
+    //                Claims = new[]
+    //                {
+    //                    new Claim("name", "Bob"),
+    //                    new Claim("website", "https://bob.com")
+    //                }
+    //            }
+    //        };
+    //    }
+    //}
 }

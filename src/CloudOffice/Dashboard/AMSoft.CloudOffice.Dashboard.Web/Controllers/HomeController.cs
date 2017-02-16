@@ -1,5 +1,6 @@
 ﻿using AMSoft.CloudOffice.Data;
 using AMSoft.CloudOffice.Domain.CoreModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AMSoft.CloudOffice.Web.Controllers
@@ -21,6 +22,7 @@ namespace AMSoft.CloudOffice.Web.Controllers
             return View();
         }
 
+        [Authorize]
         public IActionResult About()
         {
             ViewData["Message"] = "Your application description page.";

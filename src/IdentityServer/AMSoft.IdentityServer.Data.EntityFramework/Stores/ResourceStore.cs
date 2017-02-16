@@ -19,12 +19,10 @@ namespace AMSoft.IdentityServer.Data.EntityFramework.Stores
         public ResourceStore(IConfigurationDbContext context, ILogger<ResourceStore> logger)
         {
             if (context == null) throw new ArgumentNullException(nameof(context));
+            if (logger == null) throw new ArgumentNullException(nameof(logger));
 
             _context = context;
             _logger = logger;
-
-            //((ConfigurationDbContext)_context).Database.EnsureCreated();
-            // ((ConfigurationDbContext)_context).Database.Migrate();
         }
 
         public Task<ApiResource> FindApiResourceAsync(string name)

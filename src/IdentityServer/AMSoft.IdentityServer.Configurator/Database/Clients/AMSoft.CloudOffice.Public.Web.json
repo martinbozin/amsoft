@@ -12,8 +12,8 @@
   "ClientId": "AMSoft.CloudOffice.Public.Web",
   "ClientName": "AMSoft.CloudOffice.Public.Web",
   "ClientUri": "",
-  "EnableLocalLogin": false,
-  "Enabled": false,
+  "EnableLocalLogin": true,
+  "Enabled": true,
   "IdentityTokenLifetime": 300,
   "IncludeJwtId": false,
   "LogoUri": "",
@@ -50,7 +50,7 @@
     "http://localhost:7001/signin-oidc"
   ],
   "PostLogoutRedirectUris": [
-    "http://localhost:7001"
+    "http://localhost:7001/"
   ],
   "IdentityProviderRestrictions": [
   ],

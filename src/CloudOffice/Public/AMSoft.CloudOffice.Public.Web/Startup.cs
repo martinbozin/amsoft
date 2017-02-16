@@ -47,7 +47,8 @@ namespace AMSoft.CloudOffice.Public.Web
 
             app.UseCookieAuthentication(new CookieAuthenticationOptions
             {
-                AuthenticationScheme = "Cookies"
+                AuthenticationScheme = "Cookies",
+                CookieName = "Public"
             });
 
             JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Clear();
@@ -57,10 +58,10 @@ namespace AMSoft.CloudOffice.Public.Web
                 AuthenticationScheme = "oidc",
                 SignInScheme = "Cookies",
 
-                Authority = "http://localhost:6010",
+                Authority = "http://localhost:6010/",
                 RequireHttpsMetadata = false,
                
-                ClientId = "hybrid",
+                ClientId = "AMSoft.CloudOffice.Public.Web",
                 ClientSecret = "secret",
 
                 ResponseType = "code id_token",
@@ -72,12 +73,13 @@ namespace AMSoft.CloudOffice.Public.Web
 
             app.UseIdentityServerAuthentication(new IdentityServerAuthenticationOptions
             {
-                Authority = "http://localhost:6010",
+                Authority = "http://localhost:6010/",
                 RequireHttpsMetadata = false,
                 ApiName = "cloudoffice_api"
             });
 
             app.UseStaticFiles();
+
             app.UseMvc(routes =>
             {
                 routes.MapRoute(

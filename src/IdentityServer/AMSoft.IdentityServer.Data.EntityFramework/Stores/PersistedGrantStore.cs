@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using AMSoft.IdentityServer.Data.EntityFramework.Interfaces;
@@ -17,10 +18,10 @@ namespace AMSoft.IdentityServer.Data.EntityFramework.Stores
 
         public PersistedGrantStore(IPersistedGrantDbContext context, ILogger<PersistedGrantStore> logger)
         {
+            if (context == null) throw new ArgumentNullException(nameof(context));
+            if (logger == null) throw new ArgumentNullException(nameof(logger));
             _context = context;
             _logger = logger;
-
-            //        ((PersistedGrantDbContext)_context).Database.Migrate();
         }
 
         public Task StoreAsync(PersistedGrant token)

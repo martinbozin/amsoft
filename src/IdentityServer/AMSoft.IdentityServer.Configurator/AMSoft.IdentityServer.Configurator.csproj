@@ -23,10 +23,7 @@
     <Content Include="Database\Clients\AMSoft.CloudOffice.CentralAdministration.Web.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Database\Clients\tenant2.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Database\Clients\tenant1.json">
+    <Content Include="Database\Clients\AMSoft.CloudOffice.Web.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Database\Clients\AMSoft.CloudOffice.Public.Web.json">

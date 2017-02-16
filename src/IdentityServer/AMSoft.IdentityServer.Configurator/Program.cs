@@ -122,6 +122,14 @@ namespace AMSoft.IdentityServer.Configurator
                         else
                             apiResource.Scopes = new List<ApiScope>();
 
+                        apiResource.Scopes.Add(new ApiScope()
+                        {
+                            ApiResource = apiResource,
+                            Name = apiResource.Name,
+                            Required = false,
+                            DisplayName = apiResource.DisplayName
+                        });
+
                         if (dynObject.Scopes != null)
                         {
                             foreach (var apiScope in dynObject.Scopes)

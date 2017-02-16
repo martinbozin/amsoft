@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.IdentityModel.Tokens.Jwt;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -46,6 +43,40 @@ namespace AMSoft.CloudOffice.CentralAdministration.Web
             {
                 app.UseExceptionHandler("/Home/Error");
             }
+
+
+            app.UseCookieAuthentication(new CookieAuthenticationOptions
+            {
+                AuthenticationScheme = "Cookies",
+                CookieName = "CentralAdministration"
+            });
+
+            JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Clear();
+
+            app.UseOpenIdConnectAuthentication(new OpenIdConnectOptions
+            {
+                AuthenticationScheme = "oidc",
+                SignInScheme = "Cookies",
+
+                Authority = "http://localhost:6010/",
+                RequireHttpsMetadata = false,
+
+                ClientId = "AMSoft.CloudOffice.CentralAdministration.Web",
+                ClientSecret = "secret",
+
+                ResponseType = "code id_token",
+                Scope = { "cloudoffice_api", "offline_access" },
+
+                GetClaimsFromUserInfoEndpoint = true,
+                SaveTokens = true
+            });
+
+            app.UseIdentityServerAuthentication(new IdentityServerAuthenticationOptions
+            {
+                Authority = "http://localhost:6010/",
+                RequireHttpsMetadata = false,
+                ApiName = "cloudoffice_api"
+            });
 
             app.UseStaticFiles();
 

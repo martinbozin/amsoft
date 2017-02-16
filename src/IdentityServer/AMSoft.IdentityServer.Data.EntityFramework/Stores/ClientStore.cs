@@ -18,6 +18,7 @@ namespace AMSoft.IdentityServer.Data.EntityFramework.Stores
         public ClientStore(IConfigurationDbContext context, ILogger<ClientStore> logger)
         {
             if (context == null) throw new ArgumentNullException(nameof(context));
+            if (logger == null) throw new ArgumentNullException(nameof(logger));
 
             _context = context;
             _logger = logger;
@@ -35,6 +36,7 @@ namespace AMSoft.IdentityServer.Data.EntityFramework.Stores
                 .Include(x => x.IdentityProviderRestrictions)
                 .Include(x => x.AllowedCorsOrigins)
                 .FirstOrDefault(x => x.ClientId == clientId);
+
             var model = client?.ToModel();
 
             _logger.LogDebug("{clientId} found in database: {clientIdFound}", clientId, model != null);
