@@ -8,11 +8,19 @@
     <PackageTargetFallback>$(PackageTargetFallback);portable-net45+win8+wp8+wpa81;</PackageTargetFallback>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Remove="Extensions\**" />
+    <Content Remove="Extensions\**" />
+    <EmbeddedResource Remove="Extensions\**" />
+    <None Remove="Extensions\**" />
+  </ItemGroup>
+  <ItemGroup>
     <PackageReference Include="ExtCore.Data" Version="1.1.0" />
     <PackageReference Include="ExtCore.Data.EntityFramework.SqlServer" Version="1.1.0" />
     <PackageReference Include="ExtCore.Mvc" Version="1.1.0" />
     <PackageReference Include="ExtCore.WebApplication" Version="1.1.0" />
     <PackageReference Include="IdentityServer4.AccessTokenValidation" Version="1.0.4" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.Cookies" Version="1.1.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.OpenIdConnect" Version="1.1.0" />
     <PackageReference Include="Microsoft.AspNetCore.Diagnostics" Version="1.1.0" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="1.1.1" />
     <PackageReference Include="Microsoft.AspNetCore.Routing" Version="1.1.0" />
@@ -31,13 +39,5 @@
     <ProjectReference Include="..\..\..\BCL\AMSoft.Base\AMSoft.Base.csproj" />
     <ProjectReference Include="..\..\AMSoft.CloudOffice.Data\AMSoft.CloudOffice.Data.csproj" />
     <ProjectReference Include="..\..\AMSoft.CloudOffice.Domain\AMSoft.CloudOffice.Domain.csproj" />
-  </ItemGroup>
-  <ItemGroup>
-    <Reference Include="System.Configuration">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.2\System.Configuration.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Extensions\" />
   </ItemGroup>
 </Project>

@@ -12,7 +12,7 @@
   "ClientId": "AMSoft.CloudOffice.Web",
   "ClientName": "AMSoft.CloudOffice.Web",
   "ClientUri": "",
-  "EnableLocalLogin": false,
+  "EnableLocalLogin": true,
   "Enabled": true,
   "IdentityTokenLifetime": 300,
   "IncludeJwtId": false,

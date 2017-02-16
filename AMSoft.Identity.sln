@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AMSoft.IdentityServer.Web",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AMSoft.IdentityServer.Web.Tests", "src\IdentityServer\AMSoft.IdentityServer.Web.Tests\AMSoft.IdentityServer.Web.Tests.csproj", "{3530139C-94AD-47B1-8252-756E2575766A}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AMSoft.Base", "src\BCL\AMSoft.Base\AMSoft.Base.csproj", "{91A2C5E6-CE72-456C-9A9F-D8C1A0A8CF49}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +71,18 @@ Global
 		{3530139C-94AD-47B1-8252-756E2575766A}.Release|x64.Build.0 = Release|x64
 		{3530139C-94AD-47B1-8252-756E2575766A}.Release|x86.ActiveCfg = Release|x86
 		{3530139C-94AD-47B1-8252-756E2575766A}.Release|x86.Build.0 = Release|x86
+		{91A2C5E6-CE72-456C-9A9F-D8C1A0A8CF49}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91A2C5E6-CE72-456C-9A9F-D8C1A0A8CF49}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91A2C5E6-CE72-456C-9A9F-D8C1A0A8CF49}.Debug|x64.ActiveCfg = Debug|x64
+		{91A2C5E6-CE72-456C-9A9F-D8C1A0A8CF49}.Debug|x64.Build.0 = Debug|x64
+		{91A2C5E6-CE72-456C-9A9F-D8C1A0A8CF49}.Debug|x86.ActiveCfg = Debug|x86
+		{91A2C5E6-CE72-456C-9A9F-D8C1A0A8CF49}.Debug|x86.Build.0 = Debug|x86
+		{91A2C5E6-CE72-456C-9A9F-D8C1A0A8CF49}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91A2C5E6-CE72-456C-9A9F-D8C1A0A8CF49}.Release|Any CPU.Build.0 = Release|Any CPU
+		{91A2C5E6-CE72-456C-9A9F-D8C1A0A8CF49}.Release|x64.ActiveCfg = Release|x64
+		{91A2C5E6-CE72-456C-9A9F-D8C1A0A8CF49}.Release|x64.Build.0 = Release|x64
+		{91A2C5E6-CE72-456C-9A9F-D8C1A0A8CF49}.Release|x86.ActiveCfg = Release|x86
+		{91A2C5E6-CE72-456C-9A9F-D8C1A0A8CF49}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

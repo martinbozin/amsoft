@@ -55,10 +55,7 @@
     <PackageReference Include="Newtonsoft.Json" Version="9.0.1" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\BCL\AMSoft.Base\AMSoft.Base.csproj">
-      <ReferenceOutputAssembly>true</ReferenceOutputAssembly>
-      <Private>true</Private>
-    </ProjectReference>
+    <ProjectReference Include="..\..\BCL\AMSoft.Base\AMSoft.Base.csproj" />
     <ProjectReference Include="..\AMSoft.IdentityServer.Data.EntityFramework\AMSoft.IdentityServer.Data.EntityFramework.csproj">
       <ReferenceOutputAssembly>true</ReferenceOutputAssembly>
       <Private>true</Private>

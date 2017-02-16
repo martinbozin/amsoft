@@ -7,18 +7,18 @@ namespace AMSoft.CloudOffice.Web.Controllers
 {
     public class HomeController : Controller
     {
-        private AppTenant tenant;
+        private readonly AppTenant _tenant;
         public HomeController(AppTenant tenant)
         {
-            this.tenant = tenant;
+            this._tenant = tenant;
         }
         public IActionResult Index()
         {
-            using (var contextDb = new SqlServerApplicationDbContext(tenant))
+            using (var contextDb = new SqlServerApplicationDbContext(_tenant))
             {
                 var exist = contextDb.ToString();
             }
-            ViewData["Tenant"] = tenant.Name;
+            ViewData["Tenant"] = _tenant.Name;
             return View();
         }
 

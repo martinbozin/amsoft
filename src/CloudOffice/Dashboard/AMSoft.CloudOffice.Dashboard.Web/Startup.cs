@@ -1,10 +1,12 @@
 ﻿using System;
 using System.IdentityModel.Tokens.Jwt;
+using System.Threading.Tasks;
 using AMSoft.Base.Multitenancy;
 using AMSoft.CloudOffice.Data;
 using AMSoft.CloudOffice.Domain.CoreModels;
 using AMSoft.CloudOffice.Web.Multitenantcy;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authentication.OpenIdConnect;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore.Infrastructure;
@@ -30,17 +32,21 @@ namespace AMSoft.CloudOffice.Web
 
         public override void ConfigureServices(IServiceCollection services)
         {
+            base.ConfigureServices(services);
+
             services.AddEntityFramework().AddDbContext<SqlServerApplicationDbContext>();
+
             // Add framework services.
             services.AddMvc();
+            
             // Add Multitenancy service
             services.AddMultitenancy<AppTenant, CachingAppTenantResolver>();
-
-            base.ConfigureServices(services);
         }
 
         public override void Configure(IApplicationBuilder app)
         {
+            base.Configure(app);
+
             if (this.serviceProvider.GetService<IHostingEnvironment>().IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -51,63 +57,60 @@ namespace AMSoft.CloudOffice.Web
                 app.UseExceptionHandler("/Home/Error");
             }
 
+            JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Clear();
+
             app.UseStaticFiles();
             app.UseMultitenancy<AppTenant>();
 
-            app.UsePerTenant<AppTenant>((ctx, builder) =>
+            //app.UsePerTenant<AppTenant>((ctx, builder) =>
+            //{
+
+            //});
+
+            JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Clear();
+
+            app.UseCookieAuthentication(new CookieAuthenticationOptions
             {
-                builder.UseCookieAuthentication(new CookieAuthenticationOptions
-                {
-                    AutomaticAuthenticate = true,
-                    AutomaticChallenge = true,
-                    AuthenticationScheme = CookieAuthenticationDefaults.AuthenticationScheme,
-                    CookieName = $"{ctx.Tenant.Name}.Identity"
-                });
-
-                JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Clear();
-
-                app.UseOpenIdConnectAuthentication(new OpenIdConnectOptions
-                {
-                    AutomaticAuthenticate = true,
-                    AutomaticChallenge = true,
-
-                    AuthenticationScheme = "oidc",
-                    SignInScheme = CookieAuthenticationDefaults.AuthenticationScheme,
-
-                    DisplayName = $"{ctx.Tenant.Name} Identity Server",
-
-                    Authority = "http://localhost:6010/",
-                    RequireHttpsMetadata = false,
-
-                    ClientId = "AMSoft.CloudOffice.Web",
-                    ClientSecret = "secret",
-
-                    ResponseType = "code id_token",
-                    Scope = { "cloudoffice_api", "offline_access" },
-
-                    GetClaimsFromUserInfoEndpoint = true,
-                    SaveTokens = true,
-                    TokenValidationParameters = new TokenValidationParameters
-                    {
-                        ValidateIssuer = false
-                    }
-                });
-
-                app.UseIdentityServerAuthentication(new IdentityServerAuthenticationOptions
-                {
-                    Authority = "http://localhost:6010",
-                    RequireHttpsMetadata = false,
-                    ApiName = "cloudoffice_api"
-                });
-
-                builder.UseMvc(routes =>
-                {
-                    routes.MapRoute("default", "{controller=Account}/{action=Login}/{id?}");
-                });
-
+                AutomaticAuthenticate = true,
+                AuthenticationScheme = "cookies",
             });
 
-            base.Configure(app);
+            app.UseOpenIdConnectAuthentication(new OpenIdConnectOptions
+            {
+                AuthenticationScheme = "oidc",
+                SignInScheme = "cookies",
+
+                AutomaticAuthenticate = true,
+
+                Authority = "http://localhost:6010/",
+                RequireHttpsMetadata = false,
+
+                ClientId = "AMSoft.CloudOffice.Web",
+                ClientSecret = "secret",
+
+                ResponseType = "code id_token",
+                Scope = { "cloudoffice_api", "offline_access" },
+
+                GetClaimsFromUserInfoEndpoint = true,
+                SaveTokens = true,
+                TokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidateIssuer = false
+                }
+            });
+
+            app.UseIdentityServerAuthentication(new IdentityServerAuthenticationOptions
+            {
+                Authority = "http://localhost:6010/",
+                RequireHttpsMetadata = false,
+                ApiName = "cloudoffice_api"
+            });
+
+            app.UseMvc(routes =>
+            {
+                routes.MapRoute("default", "{controller=Home}/{action=Index}/{id?}");
+            });
+
         }
     }
 }
