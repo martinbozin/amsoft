@@ -26,6 +26,7 @@ namespace AMSoft.CloudOffice.Web
  
         public override void ConfigureServices(IServiceCollection services)
         {
+            base.ConfigureServices(services);
             services.AddEntityFramework().AddDbContext<SqlServerApplicationDbContext>();
             // Add framework services.
             services.AddMvc();
@@ -35,7 +36,7 @@ namespace AMSoft.CloudOffice.Web
 
         public override void Configure(IApplicationBuilder app)
         {
-
+            base.Configure(app);
             if (this.serviceProvider.GetService<IHostingEnvironment>().IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
