@@ -5,6 +5,7 @@ using AMSoft.Base.Multitenancy;
 using AMSoft.CloudOffice.Data;
 using AMSoft.CloudOffice.Domain.CoreModels;
 using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
@@ -38,7 +39,7 @@ namespace AMSoft.CloudOffice.Web.Multitenantcy
             AppTenant tenant = null;
             using (var contextDb = new CloudOfficeDbContext())
             {
-                var listTenants = contextDb.AppTenants.ToList();
+                var listTenants = contextDb.AppTenants.Include(i=>i.Modules).ToList();
                 if (listTenants !=null)
                 {
                     tenants = listTenants;

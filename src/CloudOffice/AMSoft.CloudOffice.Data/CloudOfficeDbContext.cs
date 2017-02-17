@@ -21,10 +21,15 @@ namespace AMSoft.CloudOffice.Data
             modelBuilder.Entity<AppTenant>().Property("Theme");
             modelBuilder.Entity<AppTenant>().Property("ConnectionString");
             modelBuilder.Entity<AppTenant>().Ignore(e => e.Hostnames);
+
+            modelBuilder.Entity<Module>().ToTable("Modules", "dbo");
+            modelBuilder.Entity<Module>().HasKey("ModuleId");
+            modelBuilder.Entity<Module>().Property("Name");
+            modelBuilder.Entity<Module>().HasOne(p => p.AppTenant).WithMany(b => b.Modules);
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        { 
+        {
             optionsBuilder.UseSqlServer(@"Server=amsoft.database.windows.net;Database=AMSoft.CloudOffice;User Id=amsoftadmin;Password=P@ssw0rd123!;");
         }
     }
