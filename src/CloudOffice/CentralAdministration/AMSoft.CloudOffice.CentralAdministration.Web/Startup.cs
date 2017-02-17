@@ -58,7 +58,7 @@ namespace AMSoft.CloudOffice.CentralAdministration.Web
                 AuthenticationScheme = "oidc",
                 SignInScheme = "Cookies",
 
-                Authority = "http://localhost:6010/",
+                Authority = "http://amsoftidentityserver.azurewebsites.net//",
                 RequireHttpsMetadata = false,
 
                 ClientId = "AMSoft.CloudOffice.CentralAdministration.Web",
@@ -73,7 +73,7 @@ namespace AMSoft.CloudOffice.CentralAdministration.Web
 
             app.UseIdentityServerAuthentication(new IdentityServerAuthenticationOptions
             {
-                Authority = "http://localhost:6010/",
+                Authority = "http://amsoftidentityserver.azurewebsites.net//",
                 RequireHttpsMetadata = false,
                 ApiName = "cloudoffice_api"
             });

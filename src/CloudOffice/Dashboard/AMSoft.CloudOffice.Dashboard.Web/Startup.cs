@@ -64,8 +64,13 @@ namespace AMSoft.CloudOffice.Web
 
             //app.UsePerTenant<AppTenant>((ctx, builder) =>
             //{
-
+            //    builder.UseMvc(routes =>
+            //    {
+            //        routes.MapRoute("default", "{controller=Home}/{action=Index}/{id?}");
+            //    });
             //});
+
+          
 
             JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Clear();
 
@@ -82,7 +87,7 @@ namespace AMSoft.CloudOffice.Web
 
                 AutomaticAuthenticate = true,
 
-                Authority = "http://localhost:6010/",
+                Authority = "http://amsoftidentityserver.azurewebsites.net//",
                 RequireHttpsMetadata = false,
 
                 ClientId = "AMSoft.CloudOffice.Web",
@@ -101,7 +106,7 @@ namespace AMSoft.CloudOffice.Web
 
             app.UseIdentityServerAuthentication(new IdentityServerAuthenticationOptions
             {
-                Authority = "http://localhost:6010/",
+                Authority = "http://amsoftidentityserver.azurewebsites.net/",
                 RequireHttpsMetadata = false,
                 ApiName = "cloudoffice_api"
             });
