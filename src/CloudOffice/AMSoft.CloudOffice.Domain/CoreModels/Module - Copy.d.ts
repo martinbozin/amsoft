@@ -11,10 +11,5 @@ declare module server {
 			connectionString: string;
 			modules: any[];
 		};
-		category: {
-			categoryId: number;
-			name: string;
-			modules: any[];
-		};
 	}
 }

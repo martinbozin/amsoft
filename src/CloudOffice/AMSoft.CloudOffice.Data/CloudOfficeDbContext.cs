@@ -10,7 +10,8 @@ namespace AMSoft.CloudOffice.Data
         //{ }
 
         public DbSet<AppTenant> AppTenants { get; set; }
-
+        public DbSet<Module> Modules { get; set; }
+        public DbSet<Category> Categories { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -26,6 +27,12 @@ namespace AMSoft.CloudOffice.Data
             modelBuilder.Entity<Module>().HasKey("ModuleId");
             modelBuilder.Entity<Module>().Property("Name");
             modelBuilder.Entity<Module>().HasOne(p => p.AppTenant).WithMany(b => b.Modules);
+            modelBuilder.Entity<Module>().HasOne(p => p.Category).WithMany(b => b.Modules);
+
+            modelBuilder.Entity<Category>().ToTable("Categories", "dbo");
+            modelBuilder.Entity<Category>().HasKey("CategoryId");
+            modelBuilder.Entity<Category>().Property("Name");
+
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
