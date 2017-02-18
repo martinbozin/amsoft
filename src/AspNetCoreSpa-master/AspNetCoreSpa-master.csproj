@@ -182,6 +182,11 @@
       <Version>1.0.0-msbuild1-final</Version>
     </DotNetCliToolReference>
   </ItemGroup>
+  <ItemGroup>
+    <None Update="Startup.d.ts">
+      <DependentUpon>Startup.cs</DependentUpon>
+    </None>
+  </ItemGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
     <DefineConstants>$(DefineConstants);RELEASE</DefineConstants>
   </PropertyGroup>
