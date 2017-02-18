@@ -7,19 +7,16 @@ using AMSoft.CloudOffice.Domain.CoreModels;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
 
 namespace AMSoft.CloudOffice.Web.Multitenantcy
 {
     public class CachingAppTenantResolver : MemoryCacheTenantResolver<AppTenant>
     {
-        private readonly IEnumerable<AppTenant> tenants;
-        public CachingAppTenantResolver(IMemoryCache cache, ILoggerFactory loggerFactory, IOptions<MultitenancyOptions> options)
+        private List<AppTenant> _tenants;
+
+        public CachingAppTenantResolver(IMemoryCache cache, ILoggerFactory loggerFactory)
         : base(cache, loggerFactory)
-
-
         {
-            this.tenants = options.Value.Tenants;
         }
 
         protected override string GetContextIdentifier(HttpContext context)
@@ -31,32 +28,22 @@ namespace AMSoft.CloudOffice.Web.Multitenantcy
         {
             return context.Tenant.Hostnames;
         }
+
         protected override Task<TenantContext<AppTenant>> ResolveAsync(HttpContext context)
         {
-            TenantContext<AppTenant> tenantContext = null;
-            IEnumerable<AppTenant> tenants = new List<AppTenant>();
             AppTenant tenant = null;
-            using (var contextDb = new CloudOfficeDbContext())
-            {
-                var listTenants = contextDb.AppTenants.ToList();
-                if (listTenants !=null)
-                {
-                    tenants = listTenants;
-                }
-            }
+            TenantContext<AppTenant> tenantContext = null;
+
+            var tenants = GetTenants();
 
             var hostName = context.Request.Host.Value.ToLower();
             foreach (var ten in tenants)
             {
                 var hosts = ten.Hostname.Split(';');
-                foreach (var item in hosts)
+                if (hosts.Any(item => item == hostName))
                 {
-                    if (item == hostName)
-                    {
-                        tenant = ten;
-                        tenant.Hostnames = hosts;
-                        break;
-                    }
+                    tenant = ten;
+                    tenant.Hostnames = hosts;
                 }
             }
 
@@ -66,6 +53,25 @@ namespace AMSoft.CloudOffice.Web.Multitenantcy
             }
 
             return Task.FromResult(tenantContext);
+        }
+
+        private IEnumerable<AppTenant> GetTenants()
+        {
+            if (_tenants != null)
+                return _tenants;
+
+            _tenants = new List<AppTenant>();
+
+            using (var contextDb = new CloudOfficeDbContext())
+            {
+                var listTenants = contextDb.AppTenants.ToList();
+                if (listTenants != null)
+                {
+                    _tenants = listTenants;
+                }
+            }
+
+            return _tenants;
         }
     }
 }

@@ -70,8 +70,6 @@ namespace AMSoft.CloudOffice.Web
             //    });
             //});
 
-          
-
             JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Clear();
 
             app.UseCookieAuthentication(new CookieAuthenticationOptions
