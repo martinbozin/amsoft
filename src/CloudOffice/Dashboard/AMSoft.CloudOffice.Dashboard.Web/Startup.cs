@@ -3,6 +3,7 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Threading.Tasks;
 using AMSoft.Base.Multitenancy;
 using AMSoft.CloudOffice.Data;
+using AMSoft.CloudOffice.Data.Interfaces;
 using AMSoft.CloudOffice.Domain.CoreModels;
 using AMSoft.CloudOffice.Web.Multitenantcy;
 using AMSoft.CloudOffice.Web.Services;
@@ -37,6 +38,7 @@ namespace AMSoft.CloudOffice.Web
             base.ConfigureServices(services);
 
             services.AddEntityFramework().AddDbContext<SqlServerApplicationDbContext>();
+            services.AddScoped<ICloudOfficeDbContext, CloudOfficeDbContext>();
 
             // Add framework services.
             services.AddMvc();

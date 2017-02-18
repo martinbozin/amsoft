@@ -35,4 +35,9 @@
       <HintPath>..\..\..\..\..\Users\Personal Programmer\.nuget\packages\microsoft.aspnetcore.identity.entityframeworkcore\1.1.0\lib\netstandard1.3\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll</HintPath>
     </Reference>
   </ItemGroup>
+  <ItemGroup>
+    <None Update="Interfaces\ICloudOfficeDbContext.d.ts">
+      <DependentUpon>ICloudOfficeDbContext.cs</DependentUpon>
+    </None>
+  </ItemGroup>
 </Project>
