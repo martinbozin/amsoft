@@ -9,4 +9,18 @@
     <Folder Include="CentralAdministration\" />
     <Folder Include="TenantModels\" />
   </ItemGroup>
+  <ItemGroup>
+    <None Update="CoreModels\AppTenant.d.ts">
+      <DependentUpon>AppTenant.cs</DependentUpon>
+    </None>
+    <None Update="CoreModels\Category.d.ts">
+      <DependentUpon>Category.cs</DependentUpon>
+    </None>
+    <None Update="CoreModels\Module - Copy.d.ts">
+      <DependentUpon>Module.cs</DependentUpon>
+    </None>
+    <None Update="CoreModels\Module.d.ts">
+      <DependentUpon>Module.cs</DependentUpon>
+    </None>
+  </ItemGroup>
 </Project>

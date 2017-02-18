@@ -50,7 +50,7 @@ namespace AMSoft.CloudOffice.Web
             if (this.serviceProvider.GetService<IHostingEnvironment>().IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-                app.UseBrowserLink();
+              //  app.UseBrowserLink();
             }
             else
             {

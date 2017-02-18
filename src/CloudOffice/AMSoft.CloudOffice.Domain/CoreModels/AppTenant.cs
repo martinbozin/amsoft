@@ -1,4 +1,5 @@
-﻿using System.Collections.ObjectModel;
+﻿using System.Collections.Generic;
+using System.Collections.ObjectModel;
 
 namespace AMSoft.CloudOffice.Domain.CoreModels
 {
@@ -10,5 +11,6 @@ namespace AMSoft.CloudOffice.Domain.CoreModels
         public string[] Hostnames { get; set; }
         public string Theme { get; set; }
         public string ConnectionString { get; set; }
+        public virtual List<Module> Modules { get; set; }
     }
 }
