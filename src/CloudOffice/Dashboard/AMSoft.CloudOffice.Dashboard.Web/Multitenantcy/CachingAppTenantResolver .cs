@@ -5,16 +5,14 @@ using AMSoft.Base.Multitenancy;
 using AMSoft.CloudOffice.Data;
 using AMSoft.CloudOffice.Domain.CoreModels;
 using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.Logging;
-using Microsoft.EntityFrameworkCore;
 
 namespace AMSoft.CloudOffice.Web.Multitenantcy
 {
     public class CachingAppTenantResolver : MemoryCacheTenantResolver<AppTenant>
     {
-        private List<AppTenant> _tenants;
-
         public CachingAppTenantResolver(IMemoryCache cache, ILoggerFactory loggerFactory)
         : base(cache, loggerFactory)
         {
@@ -29,50 +27,48 @@ namespace AMSoft.CloudOffice.Web.Multitenantcy
         {
             return context.Tenant.Hostnames;
         }
-
         protected override Task<TenantContext<AppTenant>> ResolveAsync(HttpContext context)
         {
-            AppTenant tenant = null;
-            TenantContext<AppTenant> tenantContext = null;
+            //Get All Tenants
+            List<AppTenant> tenants;
+            if (!cache.TryGetValue("AppTenants", out tenants))
+            {
+                tenants = GetTenants().ToList();
+                cache.CreateEntry("AppTenants").Value = tenants;
+            }
 
-            var tenants = GetTenants();
-
+            //Get current tenant
+            AppTenant currentTenant = null;
             var hostName = context.Request.Host.Value.ToLower();
             foreach (var ten in tenants)
             {
                 var hosts = ten.Hostname.Split(';');
                 if (hosts.Any(item => item == hostName))
                 {
-                    tenant = ten;
-                    tenant.Hostnames = hosts;
+                    currentTenant = ten;
+                    currentTenant.Hostnames = hosts;
                 }
             }
 
-            if (tenant != null)
-            {
-                tenantContext = new TenantContext<AppTenant>(tenant);
-            }
+            if (currentTenant == null)
+                return Task.FromResult((TenantContext<AppTenant>) null);
 
+            var tenantContext = new TenantContext<AppTenant>(currentTenant);
             return Task.FromResult(tenantContext);
         }
 
         private IEnumerable<AppTenant> GetTenants()
         {
-            if (_tenants != null)
-                return _tenants;
-
-            _tenants = new List<AppTenant>();
-
-            using (var contextDb = new CloudOfficeDbContext())
+            var tenants = new List<AppTenant>();
+             using (var contextDb = new CloudOfficeDbContext())
             {
                 var listTenants = contextDb.AppTenants.Include(i => i.Modules).ToList();
                 if (listTenants != null)
                 {
-                    _tenants = listTenants;
+                    tenants = listTenants;
                 }
             }
-
-            return _tenants;
+            return tenants;
         }
     }
 }

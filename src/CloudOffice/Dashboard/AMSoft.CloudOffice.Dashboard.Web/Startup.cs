@@ -37,19 +37,18 @@ namespace AMSoft.CloudOffice.Web
         {
             base.ConfigureServices(services);
 
+            //Add EF services
             services.AddEntityFramework().AddDbContext<SqlServerApplicationDbContext>();
             services.AddScoped<ICloudOfficeDbContext, CloudOfficeDbContext>();
 
+            // Injection
+            services.AddScoped<CurrentUserService>();
+
             // Add framework services.
             services.AddMvc();
-            
+          
             // Add Multitenancy service
             services.AddMultitenancy<AppTenant, CachingAppTenantResolver>();
-
-            // Injection
-            services.AddTransient<IHttpContextAccessor, HttpContextAccessor>();
-
-            services.AddTransient<CurrentUserService>();
         }
 
         public override void Configure(IApplicationBuilder app)
@@ -59,7 +58,7 @@ namespace AMSoft.CloudOffice.Web
             if (this.serviceProvider.GetService<IHostingEnvironment>().IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-              //  app.UseBrowserLink();
+                //  app.UseBrowserLink();
             }
             else
             {
