@@ -1,15 +1,19 @@
 ﻿using System;
 using System.IdentityModel.Tokens.Jwt;
+using System.Threading.Tasks;
 using AMSoft.Base.Multitenancy;
 using AMSoft.CloudOffice.Data;
 using AMSoft.CloudOffice.Data.Interfaces;
 using AMSoft.CloudOffice.Domain.CoreModels;
 using AMSoft.CloudOffice.Web.Multitenantcy;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authentication.OpenIdConnect;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.IdentityModel.Protocols.OpenIdConnect;
 using Microsoft.IdentityModel.Tokens;
 
 namespace AMSoft.CloudOffice.Web
@@ -48,7 +52,7 @@ namespace AMSoft.CloudOffice.Web
             if (this.serviceProvider.GetService<IHostingEnvironment>().IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-                //app.UseBrowserLink();
+              //  app.UseBrowserLink();
             }
             else
             {
@@ -67,8 +71,6 @@ namespace AMSoft.CloudOffice.Web
             //        routes.MapRoute("default", "{controller=Home}/{action=Index}/{id?}");
             //    });
             //});
-
-          
 
             JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Clear();
 

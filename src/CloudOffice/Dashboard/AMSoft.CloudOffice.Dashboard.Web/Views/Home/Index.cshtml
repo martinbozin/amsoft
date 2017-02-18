@@ -1,111 +1,238 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
-<div>
-    Tenant name : @ViewData["Tenant"]
-</div>
-<div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="6000">
-    <ol class="carousel-indicators">
-        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-        <li data-target="#myCarousel" data-slide-to="1"></li>
-        <li data-target="#myCarousel" data-slide-to="2"></li>
-        <li data-target="#myCarousel" data-slide-to="3"></li>
-    </ol>
-    <div class="carousel-inner" role="listbox">
-        <div class="item active">
-            <img src="~/images/banner1.svg" alt="ASP.NET" class="img-responsive" />
-            <div class="carousel-caption" role="option">
-                <p>
-                    Learn how to build ASP.NET apps that can run anywhere.
-                    <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkID=525028&clcid=0x409">
-                        Learn More
-                    </a>
-                </p>
-            </div>
-        </div>
-        <div class="item">
-            <img src="~/images/banner2.svg" alt="Visual Studio" class="img-responsive" />
-            <div class="carousel-caption" role="option">
-                <p>
-                    There are powerful new features in Visual Studio for building modern web apps.
-                    <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkID=525030&clcid=0x409">
-                        Learn More
-                    </a>
-                </p>
-            </div>
-        </div>
-        <div class="item">
-            <img src="~/images/banner3.svg" alt="Package Management" class="img-responsive" />
-            <div class="carousel-caption" role="option">
-                <p>
-                    Bring in libraries from NuGet, Bower, and npm, and automate tasks using Grunt or Gulp.
-                    <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkID=525029&clcid=0x409">
-                        Learn More
-                    </a>
-                </p>
-            </div>
-        </div>
-        <div class="item">
-            <img src="~/images/banner4.svg" alt="Microsoft Azure" class="img-responsive" />
-            <div class="carousel-caption" role="option">
-                <p>
-                    Learn how Microsoft's Azure cloud platform allows you to build, deploy, and scale web apps.
-                    <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkID=525027&clcid=0x409">
-                        Learn More
-                    </a>
-                </p>
-            </div>
-        </div>
-    </div>
-    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-    </a>
-    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-    </a>
-</div>
 
-<div class="row">
-    <div class="col-md-3">
-        <h2>Application uses</h2>
-        <ul>
-            <li>Sample pages using ASP.NET Core MVC</li>
-            <li><a href="https://go.microsoft.com/fwlink/?LinkId=518004">Bower</a> for managing client-side libraries</li>
-            <li>Theming using <a href="https://go.microsoft.com/fwlink/?LinkID=398939">Bootstrap</a></li>
-        </ul>
+@inject AMSoft.CloudOffice.Domain.CoreModels.AppTenant CurrentTenant
+
+<div data-role="charm" id="charmSearch">
+        <h1 class="text-light">Search</h1>
+        <hr class="thin" />
+        <br />
+        <div class="input-control text full-size">
+            <label>
+                <span class="dropdown-toggle drop-marker-light">Anywhere</span>
+                <ul class="d-menu" data-role="dropdown">
+                    <li><a onclick="setSearchPlace(this)">Anywhere</a></li>
+                    <li><a onclick="setSearchPlace(this)">Options</a></li>
+                    <li><a onclick="setSearchPlace(this)">Files</a></li>
+                    <li><a onclick="setSearchPlace(this)">Internet</a></li>
+                </ul>
+            </label>
+            <input type="text">
+            <button class="button"><span class="mif-search"></span></button>
+        </div>
     </div>
-    <div class="col-md-3">
-        <h2>How to</h2>
-        <ul>
-            <li><a href="https://go.microsoft.com/fwlink/?LinkID=398600">Add a Controller and View</a></li>
-            <li><a href="https://go.microsoft.com/fwlink/?LinkID=699562">Add an appsetting in config and access it in app.</a></li>
-            <li><a href="https://go.microsoft.com/fwlink/?LinkId=699315">Manage User Secrets using Secret Manager.</a></li>
-            <li><a href="https://go.microsoft.com/fwlink/?LinkId=699316">Use logging to log a message.</a></li>
-            <li><a href="https://go.microsoft.com/fwlink/?LinkId=699317">Add packages using NuGet.</a></li>
-            <li><a href="https://go.microsoft.com/fwlink/?LinkId=699318">Add client packages using Bower.</a></li>
-            <li><a href="https://go.microsoft.com/fwlink/?LinkId=699319">Target development, staging or production environment.</a></li>
-        </ul>
+    <div data-role="charm" id="charmSettings" data-position="top">
+        <h1 class="text-light">Settings</h1>
+        <hr class="thin" />
+        <br />
+        <div class="schemeButtons">
+            <div class="button square-button tile-area-scheme-dark" data-scheme="dark"></div>
+            <div class="button square-button tile-area-scheme-darkBrown" data-scheme="darkBrown"></div>
+            <div class="button square-button tile-area-scheme-darkCrimson" data-scheme="darkCrimson"></div>
+            <div class="button square-button tile-area-scheme-darkViolet" data-scheme="darkViolet"></div>
+            <div class="button square-button tile-area-scheme-darkMagenta" data-scheme="darkMagenta"></div>
+            <div class="button square-button tile-area-scheme-darkCyan" data-scheme="darkCyan"></div>
+            <div class="button square-button tile-area-scheme-darkCobalt" data-scheme="darkCobalt"></div>
+            <div class="button square-button tile-area-scheme-darkTeal" data-scheme="darkTeal"></div>
+            <div class="button square-button tile-area-scheme-darkEmerald" data-scheme="darkEmerald"></div>
+            <div class="button square-button tile-area-scheme-darkGreen" data-scheme="darkGreen"></div>
+            <div class="button square-button tile-area-scheme-darkOrange" data-scheme="darkOrange"></div>
+            <div class="button square-button tile-area-scheme-darkRed" data-scheme="darkRed"></div>
+            <div class="button square-button tile-area-scheme-darkPink" data-scheme="darkPink"></div>
+            <div class="button square-button tile-area-scheme-darkIndigo" data-scheme="darkIndigo"></div>
+            <div class="button square-button tile-area-scheme-darkBlue" data-scheme="darkBlue"></div>
+            <div class="button square-button tile-area-scheme-lightBlue" data-scheme="lightBlue"></div>
+            <div class="button square-button tile-area-scheme-lightTeal" data-scheme="lightTeal"></div>
+            <div class="button square-button tile-area-scheme-lightOlive" data-scheme="lightOlive"></div>
+            <div class="button square-button tile-area-scheme-lightOrange" data-scheme="lightOrange"></div>
+            <div class="button square-button tile-area-scheme-lightPink" data-scheme="lightPink"></div>
+            <div class="button square-button tile-area-scheme-grayed" data-scheme="grayed"></div>
+        </div>
     </div>
-    <div class="col-md-3">
-        <h2>Overview</h2>
-        <ul>
-            <li><a href="https://go.microsoft.com/fwlink/?LinkId=518008">Conceptual overview of what is ASP.NET Core</a></li>
-            <li><a href="https://go.microsoft.com/fwlink/?LinkId=699320">Fundamentals of ASP.NET Core such as Startup and middleware.</a></li>
-            <li><a href="https://go.microsoft.com/fwlink/?LinkId=398602">Working with Data</a></li>
-            <li><a href="https://go.microsoft.com/fwlink/?LinkId=398603">Security</a></li>
-            <li><a href="https://go.microsoft.com/fwlink/?LinkID=699321">Client side development</a></li>
-            <li><a href="https://go.microsoft.com/fwlink/?LinkID=699322">Develop on different platforms</a></li>
-            <li><a href="https://go.microsoft.com/fwlink/?LinkID=699323">Read more on the documentation site</a></li>
-        </ul>
+    <div class="tile-area tile-area-scheme-dark fg-white" style="height: 100%; max-height: 100% !important;">
+        <h1 class="tile-area-title">Start - @CurrentTenant.Name</h1>
+        <div class="tile-area-controls">
+            <button class="image-button icon-right bg-transparent fg-white bg-hover-dark no-border" style="background: #777"><span class="sub-header no-margin text-light">@User.Identity.Name</span> <span class="icon mif-user"></span></button>
+            <button class="square-button bg-transparent fg-white bg-hover-dark no-border" onclick="showCharms('#charmSearch')"><span class="mif-search"></span></button>
+            <button class="square-button bg-transparent fg-white bg-hover-dark no-border" onclick="showCharms('#charmSettings')"><span class="mif-cog"></span></button>
+            <a href="~/tiles.html" class="square-button bg-transparent fg-white bg-hover-dark no-border"><span class="mif-switch"></span></a>
+        </div>
+        <div class="tile-group double">
+            <span class="tile-group-title">General</span>
+            <div class="tile-container">
+                <a href="http://calendar.google.com" class="tile bg-indigo fg-white" data-role="tile">
+                    <div class="tile-content iconic">
+                        <span class="icon mif-calendar"></span>
+                    </div>
+                    <span class="tile-label">Calendar</span>
+                </a>
+                <div class="tile bg-darkBlue fg-white" data-role="tile" onclick="document.location.href='http://gmail.com'">
+                    <div class="tile-content iconic">
+                        <span class="icon mif-envelop"></span>
+                    </div>
+                    <span class="tile-label">Inbox</span>
+                </div>
+                <div class="tile-large bg-steel fg-white" data-role="tile" data-on-click="document.location.href='http://forecast.io'">
+                    <div class="tile-content" id="weather_bg" style="background: top left no-repeat; background-size: cover">
+                        <div class="padding10">
+                            <h1 id="weather_icon" style="font-size: 6em;position: absolute; top: 10px; right: 10px;"></h1>
+                            <h1 id="city_temp"></h1>
+                            <h2 id="city_name" class="text-light"></h2>
+                            <h4 id="city_weather"></h4>
+                            <p id="city_weather_daily"></p>
+                            <p class="no-margin text-shadow">Pressure: <span class="text-bold" id="pressure"></span> mm</p>
+                            <p class="no-margin text-shadow">Ozone: <span class="text-bold" id="ozone"></span></p>
+                            <p class="no-margin text-shadow">Wind bearing: <span class="text-bold" id="wind_bearing"></span></p>
+                            <p class="no-margin text-shadow">Wind speed: <span class="text-bold" id="wind_speed">0</span> m/s</p>
+                        </div>
+                    </div>
+                    <span class="tile-label">Weather</span>
+                </div>
+            </div>
+        </div>
+        <div class="tile-group double">
+            <span class="tile-group-title">Images</span>
+            <div class="tile-container">
+                <div class="tile-wide" data-role="tile" data-effect="slideLeft">
+                    <div class="tile-content">
+                        <a href="http://google.com/search?q=bear" class="live-slide"><img src="~/images/1.jpg" data-role="fitImage" data-format="fill"></a>
+                        <a href="http://google.com/search?q=cat" class="live-slide"><img src="~/images/2.jpg" data-role="fitImage" data-format="fill"></a>
+                        <a href="http://google.com/search?q=dog" class="live-slide"><img src="~/images/3.jpg" data-role="fitImage" data-format="fill"></a>
+                        <a href="http://google.com/search?q=eagle" class="live-slide"><img src="~/images/4.jpg" data-role="fitImage" data-format="fill"></a>
+                        <a href="http://google.com/search?q=fox" class="live-slide"><img src="~/images/5.jpg" data-role="fitImage" data-format="fill"></a>
+                    </div>
+                    <div class="tile-label">Gallery</div>
+                </div>
+                <div class="tile" data-role="tile" data-role="tile" data-effect="slideUpDown">
+                    <div class="tile-content">
+                        <div class="live-slide"><img src="~/images/me.jpg" data-role="fitImage" data-format="fill"></div>
+                        <div class="live-slide"><img src="~/images/spface.jpg" data-role="fitImage" data-format="fill"></div>
+                    </div>
+                    <div class="tile-label">Photos</div>
+                </div>
+                <div class="tile-small bg-amber fg-white" data-role="tile">
+                    <div class="tile-content iconic">
+                        <span class="icon mif-video-camera"></span>
+                    </div>
+                </div>
+                <div class="tile-small bg-green fg-white" data-role="tile">
+                    <div class="tile-content iconic">
+                        <span class="icon mif-gamepad"></span>
+                    </div>
+                </div>
+                <div class="tile-small bg-pink fg-white" data-role="tile">
+                    <div class="tile-content iconic">
+                        <span class="icon mif-headphones"></span>
+                    </div>
+                </div>
+                <div class="tile-small bg-yellow fg-white" data-role="tile">
+                    <div class="tile-content iconic">
+                        <span class="icon mif-lock"></span>
+                    </div>
+                </div>
+                <div class="tile-wide bg-orange fg-white" data-role="tile">
+                    <div class="tile-content image-set">
+                        <img src="~/images/jeki_chan.jpg">
+                        <img src="~/images/shvarcenegger.jpg">
+                        <img src="~/images/vin_d.jpg">
+                        <img src="~/images/jolie.jpg">
+                        <img src="~/images/jek_vorobey.jpg">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tile-group one">
+            <span class="tile-group-title">Office</span>
+            <div class="tile-small bg-blue" data-role="tile">
+                <div class="tile-content iconic">
+                    <img src="~/images/outlook.png" class="icon">
+                </div>
+            </div>
+            <div class="tile-small bg-darkBlue" data-role="tile">
+                <div class="tile-content iconic">
+                    <img src="~/images/word.png" class="icon">
+                </div>
+            </div>
+            <div class="tile-small bg-green" data-role="tile">
+                <div class="tile-content iconic">
+                    <img src="~/images/excel.png" class="icon">
+                </div>
+            </div>
+            <div class="tile-small bg-red" data-role="tile">
+                <div class="tile-content iconic">
+                    <img src="~/images/access.png" class="icon">
+                </div>
+            </div>
+            <div class="tile-small bg-orange" data-role="tile">
+                <div class="tile-content iconic">
+                    <img src="~/images/powerpoint.png" class="icon">
+                </div>
+            </div>
+        </div>
+        <div class="tile-group double">
+            <span class="tile-group-title">Games</span>
+            <div class="tile-container">
+                <div class="tile" data-role="tile">
+                    <div class="tile-content">
+                        <img src="~/images/grid2.jpg" data-role="fitImage" data-format="square">
+                    </div>
+                </div>
+                <div class="tile-small" data-role="tile">
+                    <div class="tile-content">
+                        <img src="~/images/Battlefield_4_Icon.png" data-role="fitImage" data-format="square">
+                    </div>
+                </div>
+                <div class="tile-small" data-role="tile">
+                    <div class="tile-content">
+                        <img src="~/images/Crysis-2-icon.png" data-role="fitImage" data-format="square" data-frame-color="bg-steel">
+                    </div>
+                </div>
+                <div class="tile-small" data-role="tile">
+                    <div class="tile-content">
+                        <img src="~/images/WorldofTanks.png" data-role="fitImage" data-format="square" data-frame-color="bg-dark">
+                    </div>
+                </div>
+                <div class="tile-small" data-role="tile">
+                    <div class="tile-content">
+                        <img src="~/images/halo.jpg" data-role="fitImage" data-format="square">
+                    </div>
+                </div>
+                <div class="tile-wide bg-green fg-white" data-role="tile">
+                    <div class="tile-content iconic">
+                        <img src="~/images/x-box.png" class="icon">
+                    </div>
+                    <div class="tile-label">X-Box Live</div>
+                </div>
+            </div>
+        </div>
+        <div class="tile-group double">
+            <span class="tile-group-title">Other</span>
+            <div class="tile-container">
+                <div class="tile bg-teal fg-white" data-role="tile">
+                    <div class="tile-content iconic">
+                        <span class="icon mif-pencil"></span>
+                    </div>
+                    <span class="tile-label">Editor</span>
+                </div>
+                <div class="tile bg-darkGreen fg-white" data-role="tile">
+                    <div class="tile-content iconic">
+                        <span class="icon mif-shopping-basket"></span>
+                    </div>
+                    <span class="tile-label">Store</span>
+                </div>
+                <div class="tile bg-cyan fg-white" data-role="tile">
+                    <div class="tile-content iconic">
+                        <span class="icon mif-skype"></span>
+                    </div>
+                    <div class="tile-label">Skype</div>
+                </div>
+                <div class="tile bg-darkBlue fg-white" data-role="tile">
+                    <div class="tile-content iconic">
+                        <span class="icon mif-cloud"></span>
+                    </div>
+                    <span class="tile-label">OneDrive</span>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="col-md-3">
-        <h2>Run & Deploy</h2>
-        <ul>
-            <li><a href="https://go.microsoft.com/fwlink/?LinkID=517851">Run your app</a></li>
-            <li><a href="https://go.microsoft.com/fwlink/?LinkID=517853">Run tools such as EF migrations and more</a></li>
-            <li><a href="https://go.microsoft.com/fwlink/?LinkID=398609">Publish to Microsoft Azure Web Apps</a></li>
-        </ul>
-    </div>
-</div>

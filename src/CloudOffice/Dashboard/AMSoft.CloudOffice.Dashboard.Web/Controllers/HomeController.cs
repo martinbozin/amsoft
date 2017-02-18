@@ -12,13 +12,10 @@ namespace AMSoft.CloudOffice.Web.Controllers
         {
             this._tenant = tenant;
         }
+
+        [Authorize]
         public IActionResult Index()
         {
-            using (var contextDb = new SqlServerApplicationDbContext(_tenant))
-            {
-                var exist = contextDb.ToString();
-            }
-            ViewData["Tenant"] = _tenant.Name;
             return View();
         }
 
