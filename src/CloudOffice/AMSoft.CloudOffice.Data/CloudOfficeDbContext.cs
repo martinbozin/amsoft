@@ -1,17 +1,15 @@
-﻿using AMSoft.CloudOffice.Domain.CoreModels;
+﻿using System.Threading.Tasks;
+using AMSoft.CloudOffice.Data.Interfaces;
+using AMSoft.CloudOffice.Domain.CoreModels;
 using Microsoft.EntityFrameworkCore;
 
 namespace AMSoft.CloudOffice.Data
 {
-    public class CloudOfficeDbContext : DbContext
+    public class CloudOfficeDbContext : DbContext, ICloudOfficeDbContext
     {
-        //public CloudOfficeDbContext(DbContextOptions<CloudOfficeDbContext> options)
-        //    : base(options)
-        //{ }
-
         public DbSet<AppTenant> AppTenants { get; set; }
         public DbSet<Module> Modules { get; set; }
-        public DbSet<Category> Categories { get; set; }
+        public DbSet<ModuleCategory> ModuleCategories { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -27,17 +25,22 @@ namespace AMSoft.CloudOffice.Data
             modelBuilder.Entity<Module>().HasKey("ModuleId");
             modelBuilder.Entity<Module>().Property("Name");
             modelBuilder.Entity<Module>().HasOne(p => p.AppTenant).WithMany(b => b.Modules);
-            modelBuilder.Entity<Module>().HasOne(p => p.Category).WithMany(b => b.Modules);
+            modelBuilder.Entity<Module>().HasOne(p => p.ModuleCategory).WithMany(b => b.Modules);
 
-            modelBuilder.Entity<Category>().ToTable("Categories", "dbo");
-            modelBuilder.Entity<Category>().HasKey("CategoryId");
-            modelBuilder.Entity<Category>().Property("Name");
+            modelBuilder.Entity<ModuleCategory>().ToTable("ModuleCategories", "dbo");
+            modelBuilder.Entity<ModuleCategory>().HasKey("ModuleCategoryId");
+            modelBuilder.Entity<ModuleCategory>().Property("Name");
 
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer(@"Server=amsoft.database.windows.net;Database=AMSoft.CloudOffice;User Id=amsoftadmin;Password=P@ssw0rd123!;");
+        }
+
+        public Task<int> SaveChangesAsync()
+        {
+            return base.SaveChangesAsync();
         }
     }
 }

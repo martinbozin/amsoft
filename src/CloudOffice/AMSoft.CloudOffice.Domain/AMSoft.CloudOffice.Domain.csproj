@@ -14,13 +14,16 @@
       <DependentUpon>AppTenant.cs</DependentUpon>
     </None>
     <None Update="CoreModels\Category.d.ts">
-      <DependentUpon>Category.cs</DependentUpon>
+      <DependentUpon>ModuleCategory.cs</DependentUpon>
     </None>
     <None Update="CoreModels\Module - Copy.d.ts">
       <DependentUpon>Module.cs</DependentUpon>
     </None>
     <None Update="CoreModels\Module.d.ts">
       <DependentUpon>Module.cs</DependentUpon>
+    </None>
+    <None Update="CoreModels\ModuleCategory.d.ts">
+      <DependentUpon>ModuleCategory.cs</DependentUpon>
     </None>
   </ItemGroup>
 </Project>

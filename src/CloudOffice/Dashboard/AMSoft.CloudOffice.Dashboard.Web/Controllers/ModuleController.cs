@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using AMSoft.CloudOffice.Data;
+using AMSoft.CloudOffice.Data.Interfaces;
 using AMSoft.CloudOffice.Web.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -15,9 +15,13 @@ namespace AMSoft.CloudOffice.Web.Controllers
     [Route("api/[controller]/[Action]")]
     public class ModuleController : Controller
     {
+        private readonly ICloudOfficeDbContext _context;
         private readonly ILogger _logger;
-        public ModuleController(ILogger<ModuleController> logger)
+        public ModuleController(ICloudOfficeDbContext context, ILogger<ModuleController> logger)
         {
+            if (context == null) throw new ArgumentNullException(nameof(context));
+
+            _context = context;
             _logger = logger;
         }
 
@@ -32,24 +36,21 @@ namespace AMSoft.CloudOffice.Web.Controllers
         {
             try
             {
-                using (var contextDb = new CloudOfficeDbContext())
+                var modules = _context.Modules.Include(x => x.ModuleCategory).ToList();
+                if (modules != null)
                 {
-                    var modules = contextDb.Modules.Include(x => x.Category).ToList();
-                    if (modules != null)
+                    var listModules = new List<ModuleViewModel>();
+                    foreach (var item in modules)
                     {
-                        var listModules = new List<ModuleViewModel>();
-                        foreach (var item in modules)
+                        var model = new ModuleViewModel
                         {
-                            var model = new ModuleViewModel
-                            {
-                                ModuleId = item.ModuleId,
-                                Name = item.Name
-                            };
-                            if (item.Category != null) model.CategoryName = item.Category.Name;
-                            listModules.Add(model);
-                        }
-                        return new ObjectResult(listModules);
+                            ModuleId = item.ModuleId,
+                            Name = item.Name
+                        };
+                        if (item.ModuleCategory != null) model.CategoryName = item.ModuleCategory.Name;
+                        listModules.Add(model);
                     }
+                    return new ObjectResult(listModules);
                 }
                 return BadRequest();
             }
@@ -73,21 +74,18 @@ namespace AMSoft.CloudOffice.Web.Controllers
         {
             try
             {
-                using (var contextDb = new CloudOfficeDbContext())
+                var module = _context.Modules.Include(x => x.ModuleCategory).FirstOrDefault(x => x.ModuleId == Id);
+                if (module == null)
                 {
-                    var module = contextDb.Modules.Include(x => x.Category).FirstOrDefault(x => x.ModuleId == Id);
-                    if (module == null)
-                    {
-                        return NotFound();
-                    }
-                    var model = new ModuleViewModel
-                    {
-                        ModuleId = module.ModuleId,
-                        Name = module.Name
-                    };
-                    if (module.Category != null) model.CategoryName = module.Category.Name;
-                    return new ObjectResult(model);
+                    return NotFound();
                 }
+                var model = new ModuleViewModel
+                {
+                    ModuleId = module.ModuleId,
+                    Name = module.Name
+                };
+                if (module.ModuleCategory != null) model.CategoryName = module.ModuleCategory.Name;
+                return new ObjectResult(model);
             }
             catch (Exception e)
             {
@@ -109,26 +107,23 @@ namespace AMSoft.CloudOffice.Web.Controllers
         {
             try
             {
-                using (var contextDb = new CloudOfficeDbContext())
+                var modules = _context.Modules.Include(x => x.ModuleCategory).Where(c => c.ModuleCategory != null && c.ModuleCategory.Name == category).ToList();
+                if (modules == null)
                 {
-                    var modules = contextDb.Modules.Include(x => x.Category).Where(c => c.Category != null && c.Category.Name == category).ToList();
-                    if (modules == null)
-                    {
-                        return NotFound();
-                    }
-                    var listModules = new List<ModuleViewModel>();
-                    foreach (var item in modules)
-                    {
-                        var model = new ModuleViewModel
-                        {
-                            ModuleId = item.ModuleId,
-                            Name = item.Name,
-                            CategoryName = item.Category.Name
-                        };
-                        listModules.Add(model);
-                    }
-                    return new ObjectResult(listModules);
+                    return NotFound();
                 }
+                var listModules = new List<ModuleViewModel>();
+                foreach (var item in modules)
+                {
+                    var model = new ModuleViewModel
+                    {
+                        ModuleId = item.ModuleId,
+                        Name = item.Name,
+                        CategoryName = item.ModuleCategory.Name
+                    };
+                    listModules.Add(model);
+                }
+                return new ObjectResult(listModules);
             }
             catch (Exception e)
             {

@@ -7,6 +7,6 @@ namespace AMSoft.CloudOffice.Domain.CoreModels
         public int ModuleId { get; set; }
         public string Name { get; set; }
         public virtual AppTenant AppTenant { get; set;}
-        public virtual Category Category { get; set; }
+        public virtual ModuleCategory ModuleCategory { get; set; }
     }
 }

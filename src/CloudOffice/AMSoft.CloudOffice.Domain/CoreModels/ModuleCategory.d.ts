@@ -1,6 +1,6 @@
 declare module server {
-	interface category {
-		categoryId: number;
+	interface moduleCategory {
+		moduleCategoryId: number;
 		name: string;
 		modules: any[];
 	}
