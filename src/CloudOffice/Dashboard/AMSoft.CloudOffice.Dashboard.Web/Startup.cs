@@ -5,10 +5,12 @@ using AMSoft.Base.Multitenancy;
 using AMSoft.CloudOffice.Data;
 using AMSoft.CloudOffice.Domain.CoreModels;
 using AMSoft.CloudOffice.Web.Multitenantcy;
+using AMSoft.CloudOffice.Web.Services;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication.OpenIdConnect;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -41,6 +43,11 @@ namespace AMSoft.CloudOffice.Web
             
             // Add Multitenancy service
             services.AddMultitenancy<AppTenant, CachingAppTenantResolver>();
+
+            // Injection
+            services.AddTransient<IHttpContextAccessor, HttpContextAccessor>();
+
+            services.AddTransient<CurrentUserService>();
         }
 
         public override void Configure(IApplicationBuilder app)

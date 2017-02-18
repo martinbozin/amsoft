@@ -151,6 +151,7 @@
     <Content Include="wwwroot\images\powerpoint.png" />
     <Content Include="wwwroot\images\rain.jpg" />
     <Content Include="wwwroot\images\round.png" />
+    <Content Include="wwwroot\images\Settings_tile.png" />
     <Content Include="wwwroot\images\shvarcenegger.jpg" />
     <Content Include="wwwroot\images\sleet.jpg" />
     <Content Include="wwwroot\images\snow.jpg" />
