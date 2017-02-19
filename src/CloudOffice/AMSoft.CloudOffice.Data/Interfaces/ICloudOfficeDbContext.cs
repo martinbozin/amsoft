@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
-using AMSoft.CloudOffice.Domain.CoreModels;
+using AMSoft.CloudOffice.Domain.Core;
 using Microsoft.EntityFrameworkCore;
 
 namespace AMSoft.CloudOffice.Data.Interfaces

@@ -7,7 +7,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="CentralAdministration\" />
-    <Folder Include="TenantModels\" />
   </ItemGroup>
   <ItemGroup>
     <None Update="CoreModels\AppTenant.d.ts">

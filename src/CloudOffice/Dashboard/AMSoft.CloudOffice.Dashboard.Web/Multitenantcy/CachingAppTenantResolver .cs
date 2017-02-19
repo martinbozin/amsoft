@@ -3,7 +3,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using AMSoft.Base.Multitenancy;
 using AMSoft.CloudOffice.Data;
-using AMSoft.CloudOffice.Domain.CoreModels;
+using AMSoft.CloudOffice.Domain.Core;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Caching.Memory;

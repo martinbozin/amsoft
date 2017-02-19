@@ -8,8 +8,6 @@ namespace AMSoft.CloudOffice.Domain.Base
     {
         public virtual TId Id { get; set; }
 
-        public string Name { get; set; }
-
         private DateTime? _createdDate;
 
         public DateTime CreatedDate

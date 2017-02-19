@@ -1,1 +1,0 @@
-﻿Update-Database -Context "AMSoft.CloudOffice.Data.CloudOfficeDbContext" -Project "AMSoft.CloudOffice.Data"  -StartupProject "AMSoft.CloudOffice.Data"

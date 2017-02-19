@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace AMSoft.CloudOffice.Domain.CoreModels
+namespace AMSoft.CloudOffice.Domain.Core
 {
     public class AppTenant
     {

@@ -3,7 +3,6 @@ using Microsoft.AspNetCore.Http;
 
 namespace AMSoft.CloudOffice.Web.Services
 {
- 
     public class CurrentUserService
     {
         private readonly IHttpContextAccessor _contextAccessor;

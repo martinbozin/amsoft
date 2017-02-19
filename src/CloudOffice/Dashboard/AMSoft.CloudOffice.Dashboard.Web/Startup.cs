@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 using AMSoft.Base.Multitenancy;
 using AMSoft.CloudOffice.Data;
 using AMSoft.CloudOffice.Data.Interfaces;
-using AMSoft.CloudOffice.Domain.CoreModels;
+using AMSoft.CloudOffice.Domain.Core;
 using AMSoft.CloudOffice.Web.Multitenantcy;
 using AMSoft.CloudOffice.Web.Services;
 using Microsoft.AspNetCore.Authentication.Cookies;
@@ -38,7 +38,7 @@ namespace AMSoft.CloudOffice.Web
             base.ConfigureServices(services);
 
             //Add EF services
-            services.AddEntityFramework().AddDbContext<SqlServerApplicationDbContext>();
+            services.AddEntityFramework().AddDbContext<AppTenantDbContext>();
             services.AddScoped<ICloudOfficeDbContext, CloudOfficeDbContext>();
 
             // Injection

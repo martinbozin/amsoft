@@ -1,0 +1,27 @@
+﻿https://www.benday.com/2017/02/14/walkthrough-entity-framework-core-1-1-with-migrations/
+
+Open Powershell  to C:\Projects\amsoft\src\CloudOffice\AMSoft.CloudOffice.Data
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+For CloudOfficeDbContext
+
+Add Initial Migration
+ dotnet ef migrations add Migration001 -c "CloudOfficeDbContext" -o "Migrations\CloudOfficeDbContextMigrations"
+
+Remove all migrations
+dotnet ef migrations remove -c "CloudOfficeDbContext"
+
+//To Update the databse 
+dotnet ef database update -c "CloudOfficeDbContext"
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+For AppTenantDbContext
+
+Add Migration
+dotnet ef migrations add Migration001 -c "AppTenantDbContext" -o "Migrations\AppTenantDbContextMigrations"
+
+Remove all migrations
+dotnet ef migrations remove -c "AMSoft.CloudOffice.Data.AppTenantDbContext"
+
+//To Update the databse 
+dotnet ef database update -c "AppTenantDbContext"
