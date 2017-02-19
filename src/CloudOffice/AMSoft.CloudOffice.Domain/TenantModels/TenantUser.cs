@@ -18,6 +18,24 @@ namespace AMSoft.CloudOffice.Domain.TenantModels
 
         public string FullName { get; set; }
 
-        public virtual IEnumerable<TenantModuleRole> Roles { get; set; }
+        public bool IsActive { get; set; }
+
+        /// <summary>
+        /// User can be assigned to multiple roles on different modules
+        /// </summary>
+        public virtual IEnumerable<TenantUser2TenantModuleRole> TenantUser2TenantModuleRoles { get; set; }
+    }
+
+    /// <summary>
+    /// EF doesnot support ManyToMany relations
+    /// </summary>
+    public class TenantUser2TenantModuleRole
+    {
+        public TenantUser TenantUser { get; set; }
+
+        public TenantModuleRole TenantModuleRole { get; set; }
+
+        public Guid TenantUserId { get; set; }
+        public Guid TenantModuleRoleId { get; set; }
     }
 }

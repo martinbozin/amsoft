@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using AMSoft.CloudOffice.Domain.Base;
 using AMSoft.CloudOffice.Domain.Core;
 
@@ -45,6 +46,7 @@ namespace AMSoft.CloudOffice.Domain.TenantModels
         /// </summary>
         public bool IsActive { get; set; }
 
+        
         public TenantModule(int appModuleId, string name)
         {
             AppModuleId = appModuleId;
@@ -53,5 +55,15 @@ namespace AMSoft.CloudOffice.Domain.TenantModels
             LicenseType = LicenseType.Demo;
             IsActive = true;
         }
+
+        /// <summary>
+        /// List of Allowed Module Permissions for this Module
+        /// </summary>
+        public virtual IEnumerable<TenantModulePermission> AllowedModulePermissions { get; set; }
+
+        /// <summary>
+        /// List of Roles created for this Module
+        /// </summary>
+        public virtual IEnumerable<TenantModuleRole> TenantModuleRoles { get; set; }
     }
 }

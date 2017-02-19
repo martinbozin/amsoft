@@ -9,9 +9,10 @@ using AMSoft.CloudOffice.Domain.Core;
 namespace AMSoft.CloudOffice.Data.Migrations.AppTenantDbContextMigrations
 {
     [DbContext(typeof(AppTenantDbContext))]
-    partial class AppTenantDbContextModelSnapshot : ModelSnapshot
+    [Migration("20170219195147_Migration003")]
+    partial class Migration003
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.1.0-rtm-22752")

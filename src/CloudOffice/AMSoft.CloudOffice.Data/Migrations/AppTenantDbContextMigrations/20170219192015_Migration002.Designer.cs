@@ -9,9 +9,10 @@ using AMSoft.CloudOffice.Domain.Core;
 namespace AMSoft.CloudOffice.Data.Migrations.AppTenantDbContextMigrations
 {
     [DbContext(typeof(AppTenantDbContext))]
-    partial class AppTenantDbContextModelSnapshot : ModelSnapshot
+    [Migration("20170219192015_Migration002")]
+    partial class Migration002
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.1.0-rtm-22752")
@@ -75,9 +76,13 @@ namespace AMSoft.CloudOffice.Data.Migrations.AppTenantDbContextMigrations
 
                     b.Property<Guid?>("TenantModuleId");
 
+                    b.Property<Guid?>("TenantModuleRoleId");
+
                     b.HasKey("Id");
 
                     b.HasIndex("TenantModuleId");
+
+                    b.HasIndex("TenantModuleRoleId");
 
                     b.ToTable("TenantModulePermissions","dbo");
                 });
@@ -106,28 +111,24 @@ namespace AMSoft.CloudOffice.Data.Migrations.AppTenantDbContextMigrations
                     b.Property<string>("Name")
                         .HasColumnName("Name");
 
-                    b.Property<Guid?>("TenantModuleId");
-
                     b.Property<byte[]>("Version");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("TenantModuleId");
-
                     b.ToTable("TenantModuleRoles","dbo");
                 });
 
-            modelBuilder.Entity("AMSoft.CloudOffice.Domain.TenantModels.TenantModuleRole2TenantModulePermission", b =>
+            modelBuilder.Entity("AMSoft.CloudOffice.Domain.TenantModels.TenantModuleUserRole", b =>
                 {
+                    b.Property<Guid>("TenantUserId");
+
                     b.Property<Guid>("TenantModuleRoleId");
 
-                    b.Property<Guid>("TenantModulePermissionId");
+                    b.HasKey("TenantUserId", "TenantModuleRoleId");
 
-                    b.HasKey("TenantModuleRoleId", "TenantModulePermissionId");
+                    b.HasIndex("TenantModuleRoleId");
 
-                    b.HasIndex("TenantModulePermissionId");
-
-                    b.ToTable("TenantModuleRole2TenantModulePermission","dbo");
+                    b.ToTable("TenantUser2TenantModuleRole","dbo");
                 });
 
             modelBuilder.Entity("AMSoft.CloudOffice.Domain.TenantModels.TenantUser", b =>
@@ -170,55 +171,26 @@ namespace AMSoft.CloudOffice.Data.Migrations.AppTenantDbContextMigrations
                     b.ToTable("TenantUsers","dbo");
                 });
 
-            modelBuilder.Entity("AMSoft.CloudOffice.Domain.TenantModels.TenantUser2TenantModuleRole", b =>
-                {
-                    b.Property<Guid>("TenantUserId");
-
-                    b.Property<Guid>("TenantModuleRoleId");
-
-                    b.HasKey("TenantUserId", "TenantModuleRoleId");
-
-                    b.HasIndex("TenantModuleRoleId");
-
-                    b.ToTable("TenantUser2TenantModuleRole","dbo");
-                });
-
             modelBuilder.Entity("AMSoft.CloudOffice.Domain.TenantModels.TenantModulePermission", b =>
                 {
                     b.HasOne("AMSoft.CloudOffice.Domain.TenantModels.TenantModule", "TenantModule")
-                        .WithMany("AllowedModulePermissions")
-                        .HasForeignKey("TenantModuleId");
-                });
-
-            modelBuilder.Entity("AMSoft.CloudOffice.Domain.TenantModels.TenantModuleRole", b =>
-                {
-                    b.HasOne("AMSoft.CloudOffice.Domain.TenantModels.TenantModule", "TenantModule")
-                        .WithMany("TenantModuleRoles")
-                        .HasForeignKey("TenantModuleId");
-                });
-
-            modelBuilder.Entity("AMSoft.CloudOffice.Domain.TenantModels.TenantModuleRole2TenantModulePermission", b =>
-                {
-                    b.HasOne("AMSoft.CloudOffice.Domain.TenantModels.TenantModulePermission", "TenantModulePermission")
-                        .WithMany("TenantModuleRole2TenantModulePermission")
-                        .HasForeignKey("TenantModulePermissionId")
-                        .OnDelete(DeleteBehavior.Cascade);
-
-                    b.HasOne("AMSoft.CloudOffice.Domain.TenantModels.TenantModuleRole", "TenantModuleRole")
                         .WithMany("TenantModulePermissions")
-                        .HasForeignKey("TenantModuleRoleId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("TenantModuleId");
+
+                    b.HasOne("AMSoft.CloudOffice.Domain.TenantModels.TenantModuleRole")
+                        .WithMany("Permissions")
+                        .HasForeignKey("TenantModuleRoleId");
                 });
 
-            modelBuilder.Entity("AMSoft.CloudOffice.Domain.TenantModels.TenantUser2TenantModuleRole", b =>
+            modelBuilder.Entity("AMSoft.CloudOffice.Domain.TenantModels.TenantModuleUserRole", b =>
                 {
                     b.HasOne("AMSoft.CloudOffice.Domain.TenantModels.TenantModuleRole", "TenantModuleRole")
-                        .WithMany("TenantUser2TenantModuleRoles")
+                        .WithMany("TenantModuleUserRoles")
                         .HasForeignKey("TenantModuleRoleId")
                         .OnDelete(DeleteBehavior.Cascade);
 
                     b.HasOne("AMSoft.CloudOffice.Domain.TenantModels.TenantUser", "TenantUser")
-                        .WithMany("TenantUser2TenantModuleRoles")
+                        .WithMany("TenantModuleUserRoles")
                         .HasForeignKey("TenantUserId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });

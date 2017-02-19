@@ -12,7 +12,7 @@ Remove all migrations
 dotnet ef migrations remove -c "CloudOfficeDbContext"
 
 //To Update the databse 
-dotnet ef database update -c "CloudOfficeDbContext"
+Run the AMSoft.CloudOffice.Data program
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 For AppTenantDbContext
@@ -24,4 +24,4 @@ Remove all migrations
 dotnet ef migrations remove -c "AMSoft.CloudOffice.Data.AppTenantDbContext"
 
 //To Update the databse 
-dotnet ef database update -c "AppTenantDbContext"
+Run the AMSoft.CloudOffice.Data program
