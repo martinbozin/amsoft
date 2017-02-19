@@ -214,7 +214,7 @@
     <PackageReference Include="ExtCore.Data.EntityFramework.SqlServer" Version="1.1.0" />
     <PackageReference Include="ExtCore.Mvc" Version="1.1.0" />
     <PackageReference Include="ExtCore.WebApplication" Version="1.1.0" />
-    <PackageReference Include="IdentityServer4.AccessTokenValidation" Version="1.0.4" />
+    <PackageReference Include="IdentityServer4.AccessTokenValidation" Version="1.0.5" />
     <PackageReference Include="Microsoft.AspNetCore" Version="1.1.0" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.Cookies" Version="1.1.0" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.OpenIdConnect" Version="1.1.0" />

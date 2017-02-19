@@ -8,13 +8,14 @@ namespace AMSoft.CloudOffice.Web
         public static void Main(string[] args)
         {
             var host = new WebHostBuilder()
+                .CaptureStartupErrors(true)
                 .UseKestrel()
                 .UseContentRoot(Directory.GetCurrentDirectory())
                 .UseUrls("http://localhost:6001", "http://localhost:6002", "http://localhost:6003", "http://localhost:6004")
                 .UseIISIntegration()
                 .UseStartup<Startup>()
                 .Build();
-
+ 
             host.Run();
         }
     }
