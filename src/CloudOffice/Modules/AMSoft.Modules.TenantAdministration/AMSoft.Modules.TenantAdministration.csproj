@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <Authors>AM SOFT</Authors>
+    <TargetFramework>netstandard1.6</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Views\TenantAdministration\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="ExtCore.Mvc.Infrastructure" Version="1.1.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="1.1.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Scripts\" />
+    <Folder Include="Styles\" />
+  </ItemGroup>
+</Project>
