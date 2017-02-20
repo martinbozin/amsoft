@@ -1,21 +1,16 @@
 ﻿using System;
 using System.IdentityModel.Tokens.Jwt;
-using System.Threading.Tasks;
 using AMSoft.Base.Multitenancy;
 using AMSoft.CloudOffice.Data;
 using AMSoft.CloudOffice.Data.Interfaces;
 using AMSoft.CloudOffice.Domain.Core;
-using AMSoft.CloudOffice.Web.Multitenantcy;
+using AMSoft.CloudOffice.Web.Multitenancy;
 using AMSoft.CloudOffice.Web.Services;
-using Microsoft.AspNetCore.Authentication.Cookies;
-using Microsoft.AspNetCore.Authentication.OpenIdConnect;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.IdentityModel.Protocols.OpenIdConnect;
 using Microsoft.IdentityModel.Tokens;
 
 namespace AMSoft.CloudOffice.Web
