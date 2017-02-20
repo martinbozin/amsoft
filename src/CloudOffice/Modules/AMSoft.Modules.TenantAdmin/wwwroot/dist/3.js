@@ -1,6 +1,6 @@
 webpackJsonp([3],{
 
-/***/ 103:
+/***/ 104:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -20,7 +20,7 @@ exports.RegisterModel = RegisterModel;
 
 /***/ },
 
-/***/ 104:
+/***/ 105:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -38,14 +38,14 @@ exports.routing = router_1.RouterModule.forChild(routes);
 
 /***/ },
 
-/***/ 116:
+/***/ 118:
 /***/ function(module, exports) {
 
 module.exports = "<div>\n    <appc-page-heading text=\"Registration confirmed\">\n    </appc-page-heading>\n\n    <p *ngIf=\"!emailConfirmed\">\n        We have sent you a confirmation email, please visit your inbox and confirm by clicking the confirmation link.\n    </p>\n\n    <p *ngIf=\"emailConfirmed\">\n        Thank you for confirming your email, please <a routerLink=\"../../login\">Login</a> now.\n    </p>\n</div>#";
 
 /***/ },
 
-/***/ 117:
+/***/ 119:
 /***/ function(module, exports) {
 
 module.exports = "<div class=\"col-md-6 offset-md-3\">\n    <div class=\"card\">\n        <div class=\"card-header\">\n            Register\n        </div>\n        \n        <div class=\"card-block\">\n            <appc-error-summary [errors]=\"errors\"></appc-error-summary>\n            <appc-dynamic-form (formsubmit)=\"register($event)\" [controls]=\"controls\" [btnText]=\"'Register'\"></appc-dynamic-form>\n\n        </div>\n    </div>\n</div>";
@@ -67,11 +67,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = __webpack_require__(0);
-var shared_module_1 = __webpack_require__(19);
+var shared_module_1 = __webpack_require__(20);
 var register_component_1 = __webpack_require__(91);
 var register_confirmation_component_1 = __webpack_require__(90);
 var register_service_1 = __webpack_require__(92);
-var register_routes_1 = __webpack_require__(104);
+var register_routes_1 = __webpack_require__(105);
 var RegisterModule = (function () {
     function RegisterModule() {
     }
@@ -100,7 +100,7 @@ var __extends = (this && this.__extends) || function (d, b) {
     function __() { this.constructor = d; }
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
-var control_base_1 = __webpack_require__(20);
+var control_base_1 = __webpack_require__(21);
 var ControlTextbox = (function (_super) {
     __extends(ControlTextbox, _super);
     function ControlTextbox(options) {
@@ -154,7 +154,7 @@ var RegisterConfirmationComponent = (function () {
 RegisterConfirmationComponent = __decorate([
     core_1.Component({
         selector: 'appc-register-confirmation',
-        template: __webpack_require__(116)
+        template: __webpack_require__(118)
     }),
     __metadata("design:paramtypes", [router_1.Router, router_1.ActivatedRoute])
 ], RegisterConfirmationComponent);
@@ -179,7 +179,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = __webpack_require__(0);
 var router_1 = __webpack_require__(2);
-var register_model_1 = __webpack_require__(103);
+var register_model_1 = __webpack_require__(104);
 var register_service_1 = __webpack_require__(92);
 var control_textbox_1 = __webpack_require__(79);
 var RegisterComponent = (function () {
@@ -259,7 +259,7 @@ var RegisterComponent = (function () {
 RegisterComponent = __decorate([
     core_1.Component({
         selector: 'appc-register',
-        template: __webpack_require__(117)
+        template: __webpack_require__(119)
     }),
     __metadata("design:paramtypes", [register_service_1.RegisterService, router_1.Router, router_1.ActivatedRoute])
 ], RegisterComponent);

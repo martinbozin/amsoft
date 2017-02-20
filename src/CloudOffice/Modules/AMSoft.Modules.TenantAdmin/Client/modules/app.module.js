@@ -14,6 +14,7 @@ var app_service_1 = require("./app.service");
 var app_component_1 = require("./app.component");
 var shared_module_1 = require("./shared/shared.module");
 var home_module_1 = require("./home/home.module");
+var ng_bootstrap_1 = require("@ng-bootstrap/ng-bootstrap");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -29,6 +30,7 @@ AppModule = __decorate([
             http_1.HttpModule,
             // Only module that app module loads
             shared_module_1.SharedModule.forRoot(),
+            ng_bootstrap_1.NgbModule.forRoot(),
             home_module_1.HomeModule
         ],
         providers: [

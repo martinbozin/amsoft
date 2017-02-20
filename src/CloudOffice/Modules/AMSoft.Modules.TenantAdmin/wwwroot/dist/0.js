@@ -1,44 +1,30 @@
 webpackJsonp([0],{
 
-/***/ 107:
+/***/ 109:
 /***/ function(module, exports) {
 
 module.exports = "<h3> Click this button to resize using animation</h3>\n\n<button (click)=\"toggleAnimation()\" [@buttonState]=\"buttonState\"> {{buttonState}} </button>";
 
 /***/ },
 
-/***/ 108:
+/***/ 110:
 /***/ function(module, exports) {
 
 module.exports = "<div class=\"card\">\n</div>\n\n<div class=\"row\">\n  <div class=\"col-sm-4\" *ngFor=\"let example of examples\">\n    <div class=\"card card-block\">\n      <h3 class=\"card-title\">{{example.title}}</h3>\n      <p class=\"card-text\">{{example.description}}</p>\n      <a class=\"btn btn-primary\" routerLink=\"{{example.route}}\">View »</a>\n    </div>\n  </div>\n</div>";
 
 /***/ },
 
-/***/ 109:
+/***/ 111:
 /***/ function(module, exports) {
 
 module.exports = "<h3>Angular 2 examples kitchen sink</h3>\n\n<router-outlet></router-outlet>";
 
 /***/ },
 
-/***/ 110:
+/***/ 112:
 /***/ function(module, exports) {
 
 module.exports = "A typeahead example that gets values from a static <code>string[]</code>\n<ul>\n  <li><code>debounceTime</code> operator</li>\n  <li>kicks in only if 2+ characters typed</li>\n  <li>limits to 10 results</li>\n</ul>\n\n<input type=\"text\" class=\"form-control\" [(ngModel)]=\"model\" [ngbTypeahead]=\"search\" />\n<hr>\n<pre>Model: {{ model | json }}</pre>\n\n\nA typeahead example that gets values from the <code>WikipediaService</code>\n<ul>\n  <li>remote data retrieval</li>\n  <li><code>debounceTime</code> operator</li>\n  <li><code>do</code> operator</li>\n  <li><code>distinctUntilChanged</code> operator</li>\n  <li><code>switchMap</code> operator</li>\n</ul>\n\n<input type=\"text\" class=\"form-control\" [(ngModel)]=\"wikiModel\" [ngbTypeahead]=\"searchWiki\" placeholder=\"Wikipedia search\" /><span *ngIf=\"_searching\"> searching...</span>\n<hr>\n\n<pre>Model: {{ wikiModel | json }}</pre>";
-
-/***/ },
-
-/***/ 118:
-/***/ function(module, exports) {
-
-module.exports = ""
-
-/***/ },
-
-/***/ 119:
-/***/ function(module, exports) {
-
-module.exports = ""
 
 /***/ },
 
@@ -56,7 +42,21 @@ module.exports = ""
 
 /***/ },
 
-/***/ 124:
+/***/ 122:
+/***/ function(module, exports) {
+
+module.exports = ""
+
+/***/ },
+
+/***/ 123:
+/***/ function(module, exports) {
+
+module.exports = ""
+
+/***/ },
+
+/***/ 126:
 /***/ function(module, exports, __webpack_require__) {
 
 module.exports = (__webpack_require__(1))(410);
@@ -78,12 +78,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = __webpack_require__(0);
-var shared_module_1 = __webpack_require__(19);
+var shared_module_1 = __webpack_require__(20);
 var examples_component_1 = __webpack_require__(84);
 var examples_home_component_1 = __webpack_require__(83);
 var animation_component_1 = __webpack_require__(82);
 var typeahead_component_1 = __webpack_require__(85);
-var examples_routes_1 = __webpack_require__(94);
+var examples_routes_1 = __webpack_require__(95);
 var wikipedia_service_1 = __webpack_require__(86);
 var ExamplesModule = (function () {
     function ExamplesModule() {
@@ -137,8 +137,8 @@ var AnimationComponent = (function () {
 AnimationComponent = __decorate([
     core_1.Component({
         selector: 'appc-animation',
-        template: __webpack_require__(107),
-        styles: [__webpack_require__(118)],
+        template: __webpack_require__(109),
+        styles: [__webpack_require__(120)],
         animations: [
             core_1.trigger('buttonState', [
                 core_1.state('inactive', core_1.style({
@@ -190,8 +190,8 @@ var ExamplesHomeComponent = (function () {
 ExamplesHomeComponent = __decorate([
     core_1.Component({
         selector: 'appc-examples-home',
-        template: __webpack_require__(108),
-        styles: [__webpack_require__(119)]
+        template: __webpack_require__(110),
+        styles: [__webpack_require__(121)]
     }),
     __metadata("design:paramtypes", [])
 ], ExamplesHomeComponent);
@@ -225,8 +225,8 @@ var ExamplesComponent = (function () {
 ExamplesComponent = __decorate([
     core_1.Component({
         selector: 'appc-examples',
-        template: __webpack_require__(109),
-        styles: [__webpack_require__(120)]
+        template: __webpack_require__(111),
+        styles: [__webpack_require__(122)]
     }),
     __metadata("design:paramtypes", [])
 ], ExamplesComponent);
@@ -250,7 +250,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = __webpack_require__(0);
-var Rx_1 = __webpack_require__(124);
+var Rx_1 = __webpack_require__(126);
 var wikipedia_service_1 = __webpack_require__(86);
 var states = ['Alabama', 'Alaska', 'American Samoa', 'Arizona', 'Arkansas', 'California', 'Colorado',
     'Connecticut', 'Delaware', 'District Of Columbia', 'Federated States Of Micronesia', 'Florida', 'Georgia',
@@ -287,8 +287,8 @@ var TypeaheadComponent = (function () {
 TypeaheadComponent = __decorate([
     core_1.Component({
         selector: 'appc-typeahead',
-        template: __webpack_require__(110),
-        styles: [__webpack_require__(121)]
+        template: __webpack_require__(112),
+        styles: [__webpack_require__(123)]
     }),
     __metadata("design:paramtypes", [wikipedia_service_1.WikipediaService])
 ], TypeaheadComponent);
@@ -339,7 +339,7 @@ exports.WikipediaService = WikipediaService;
 
 /***/ },
 
-/***/ 94:
+/***/ 95:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";

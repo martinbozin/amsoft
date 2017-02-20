@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 
 import { AdminService } from './admin.service';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
 
 @Component({
     selector: 'appc--admin',

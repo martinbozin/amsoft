@@ -10,6 +10,8 @@ var shared_module_1 = require("../shared/shared.module");
 var admin_component_1 = require("./admin.component");
 var admin_service_1 = require("./admin.service");
 var admin_routes_1 = require("./admin.routes");
+var ng_bootstrap_1 = require("@ng-bootstrap/ng-bootstrap");
+var tabset_selectbyid_1 = require("./tabset-selectbyid");
 var AdminModule = (function () {
     function AdminModule() {
     }
@@ -17,8 +19,8 @@ var AdminModule = (function () {
 }());
 AdminModule = __decorate([
     core_1.NgModule({
-        imports: [admin_routes_1.routing, shared_module_1.SharedModule],
-        declarations: [admin_component_1.AdminComponent],
+        imports: [admin_routes_1.routing, shared_module_1.SharedModule, ng_bootstrap_1.NgbModule],
+        declarations: [admin_component_1.AdminComponent, tabset_selectbyid_1.NgbdTabsetSelectbyid],
         providers: [admin_service_1.AdminService]
     })
 ], AdminModule);
