@@ -8,7 +8,8 @@ import { routing }        from './app.routes';
 import { AppService } from './app.service';
 import { AppComponent } from './app.component';
 import { SharedModule }  from './shared/shared.module';
-import { HomeModule }  from './home/home.module';
+import { HomeModule } from './home/home.module';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
     declarations: [AppComponent],
@@ -19,6 +20,7 @@ import { HomeModule }  from './home/home.module';
         HttpModule,
         // Only module that app module loads
         SharedModule.forRoot(),
+        NgbModule.forRoot(),
         HomeModule
     ],
     providers: [
