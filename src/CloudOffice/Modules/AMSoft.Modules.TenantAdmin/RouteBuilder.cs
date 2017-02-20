@@ -4,7 +4,7 @@ using ExtCore.Mvc.Infrastructure;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Routing;
 
-namespace AMSoft.Modules.TenantAdmin
+namespace AMSoft.Modules.TenantAdministration
 {
   public class RouteBuilder : ExtensionBase
   {

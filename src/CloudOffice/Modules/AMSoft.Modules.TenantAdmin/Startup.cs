@@ -5,7 +5,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 
-namespace AMSoft.Modules.TenantAdmin
+namespace AMSoft.Modules.TenantAdministration
 {
     public class Startup
     {

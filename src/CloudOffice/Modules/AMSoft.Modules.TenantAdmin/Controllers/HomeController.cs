@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-namespace AMSoft.Modules.TenantAdmin.Controllers
+namespace AMSoft.Modules.TenantAdministration.Controllers
 {
     public class HomeController : Controller
     {
