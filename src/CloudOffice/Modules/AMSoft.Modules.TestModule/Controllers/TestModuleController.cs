@@ -2,7 +2,7 @@
 using ExtCore.Infrastructure;
 using Microsoft.AspNetCore.Mvc;
 
-namespace WebApplication.Modules.TestModule.Controllers
+namespace AMSoft.Modules.TestModule.Controllers
 {
   public class TestModuleController : Controller
   {

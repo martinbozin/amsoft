@@ -6,18 +6,26 @@ using AMSoft.CloudOffice.Data.Interfaces;
 using AMSoft.CloudOffice.Domain.Core;
 using AMSoft.CloudOffice.Web.Multitenancy;
 using AMSoft.CloudOffice.Web.Services;
+using ExtCore.WebApplication;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
 
 namespace AMSoft.CloudOffice.Web
 {
-    public class Startup : ExtCore.WebApplication.Startup
+    public class Startup
     {
-        public Startup(IHostingEnvironment env, IServiceProvider serviceProvider) : base(serviceProvider)
+        private readonly ExtCoreStartup _extCoreStartup;
+        protected IServiceProvider ServiceProvider;
+        protected IConfigurationRoot ConfigurationRoot;
+        protected IHostingEnvironment HostingEnvironment;
+        protected ILogger<Startup> Logger;
+
+        public Startup(IHostingEnvironment env, IServiceProvider serviceProvider, ILoggerFactory loggerFactory)
         {
             var builder = new ConfigurationBuilder()
                 .SetBasePath(env.ContentRootPath)
@@ -25,13 +33,18 @@ namespace AMSoft.CloudOffice.Web
                 .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true)
                 .AddEnvironmentVariables();
 
-            this.configurationRoot = builder.Build();
+            ConfigurationRoot = builder.Build();
+            HostingEnvironment = env;
+            ServiceProvider = serviceProvider;
+            Logger = loggerFactory.CreateLogger<Startup>();
+
+            //EXT CORE Extensions
+            var assemblyProvider = new AssemblyProvider(serviceProvider);
+            _extCoreStartup = new ExtCoreStartup(ConfigurationRoot, env, serviceProvider, assemblyProvider);
         }
 
-        public override void ConfigureServices(IServiceCollection services)
+        public virtual void ConfigureServices(IServiceCollection services)
         {
-            base.ConfigureServices(services);
-
             //Add EF services
             services.AddEntityFramework().AddDbContext<AppTenantDbContext>();
             services.AddScoped<ICloudOfficeDbContext, CloudOfficeDbContext>();
@@ -41,16 +54,17 @@ namespace AMSoft.CloudOffice.Web
 
             // Add framework services.
             services.AddMvc();
-          
+
             // Add Multitenancy service
             services.AddMultitenancy<AppTenant, CachingAppTenantResolver>();
+
+            //Add Extensions services
+            _extCoreStartup.ConfigureServices(services);
         }
 
-        public override void Configure(IApplicationBuilder app)
+        public virtual void Configure(IApplicationBuilder app)
         {
-            base.Configure(app);
-
-            if (this.serviceProvider.GetService<IHostingEnvironment>().IsDevelopment())
+            if (HostingEnvironment.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
                 //  app.UseBrowserLink();
@@ -64,6 +78,7 @@ namespace AMSoft.CloudOffice.Web
 
             app.UseStaticFiles();
             app.UseMultitenancy<AppTenant>();
+
 
             //app.UsePerTenant<AppTenant>((ctx, builder) =>
             //{
@@ -117,6 +132,8 @@ namespace AMSoft.CloudOffice.Web
                 routes.MapRoute("default", "{controller=Home}/{action=Index}/{id?}");
             });
 
+            //Configire extensions
+            _extCoreStartup.Configure(app);
         }
     }
 }

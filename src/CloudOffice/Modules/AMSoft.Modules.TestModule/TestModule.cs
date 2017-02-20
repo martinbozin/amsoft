@@ -6,20 +6,21 @@ using Microsoft.AspNetCore.Routing;
 
 namespace AMSoft.Modules.TestModule
 {
-  public class TestModule : ExtensionBase
-  {
-    public override IEnumerable<KeyValuePair<int, Action<IRouteBuilder>>> UseMvcActionsByPriorities
+    public class TestModule : ExtensionBase
     {
-      get
-      {
-        return new Dictionary<int, Action<IRouteBuilder>>()
+        public override IEnumerable<KeyValuePair<int, Action<IRouteBuilder>>> UseMvcActionsByPriorities
         {
-          [1000] = routeBuilder =>
-          {
-            routeBuilder.MapRoute(name: "TestModule", template: "", defaults: new { controller = "TestModule", action = "Index" });
-          }
-        };
-      }
+            get
+            {
+                return new Dictionary<int, Action<IRouteBuilder>>()
+                {
+                    [1000] = routeBuilder =>
+                    {
+                        routeBuilder.MapRoute(name: "TestModule", template: "",
+                            defaults: new { controller = "TestModule", action = "Index" });
+                    }
+                };
+            }
+        }
     }
-  }
 }
