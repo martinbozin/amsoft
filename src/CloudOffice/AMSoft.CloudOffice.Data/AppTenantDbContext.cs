@@ -52,6 +52,9 @@ namespace AMSoft.CloudOffice.Data
             modelBuilder.Entity<TenantUser>().Property(x => x.FullName).HasColumnName("FullName");
             modelBuilder.Entity<TenantUser>().Property(x => x.IsActive).HasColumnName("IsActive");
 
+            modelBuilder.Entity<TenantUser>().Property(x => x.Phone).HasColumnName("Phone");
+            modelBuilder.Entity<TenantUser>().Property(x => x.Mobile).HasColumnName("Mobile");
+
             modelBuilder.Entity<TenantUser>().Property(x => x.CreatedDate).HasColumnName("CreatedDate");
             modelBuilder.Entity<TenantUser>().Property(x => x.CreatedBy).HasColumnName("CreatedBy");
             modelBuilder.Entity<TenantUser>().Property(x => x.ModifiedDate).HasColumnName("ModifiedDate");

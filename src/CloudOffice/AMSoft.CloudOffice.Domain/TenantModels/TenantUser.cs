@@ -24,6 +24,10 @@ namespace AMSoft.CloudOffice.Domain.TenantModels
         /// User can be assigned to multiple roles on different modules
         /// </summary>
         public virtual IEnumerable<TenantUser2TenantModuleRole> TenantUser2TenantModuleRoles { get; set; }
+
+        public string Phone { get; set; }
+
+        public string Mobile { get; set; }
     }
 
     /// <summary>
