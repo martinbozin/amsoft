@@ -1,20 +1,47 @@
-﻿using System.Threading.Tasks;
-using Microsoft.AspNetCore.Authentication.Cookies;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http.Authentication;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 
 namespace AMSoft.CloudOffice.Web.Controllers
 {
-    [Route("account")]
     public class AccountController : Controller
     {
-        [Route("logout")]
-        [HttpGet, HttpPost]
+        ILogger<AccountController> _logger;
+
+        public AccountController(ILogger<AccountController> logger)
+        {
+            this._logger = logger;
+        }
+
+        public IActionResult LogIn(string returnUrl)
+        {
+            //todo:
+            var props = new AuthenticationProperties
+            {
+                RedirectUri = "/"
+            };
+
+            if (Url.IsLocalUrl(returnUrl))
+            {
+                props.RedirectUri = returnUrl;
+            }
+
+            return new ChallengeResult("oidc", props);
+        }
+
+        //public IActionResult Google()
+        //{
+        //    var props = new AuthenticationProperties
+        //    {
+        //        RedirectUri = "/home/about"
+        //    };
+        //    return new ChallengeResult("Google", props);
+        //}
+
         public async Task<IActionResult> LogOut()
         {
-            // Instruct the cookies middleware to delete the local cookie created when the user agent
-            // is redirected from the identity provider after a successful authorization flow.
-            await HttpContext.Authentication.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
-
+            await HttpContext.Authentication.SignOutAsync("Cookies");
             return RedirectToAction("index", "home");
         }
     }
