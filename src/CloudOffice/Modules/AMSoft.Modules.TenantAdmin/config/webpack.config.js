@@ -17,10 +17,10 @@ module.exports = merge({
        *
        * See: http://webpack.github.io/docs/configuration.html#resolve-extensions
        */
-        extensions: ['.ts', '.js', '.json', '.scss', '.html'],
+        extensions: ['.ts', '.js', '.json', '.scss', '.html', '.css', '.png'],
 
         // An array of directory names to be resolved to the current directory
-        modules: [helpers.root('Client'), 'node_modules'],
+        modules: [helpers.root('app'), 'app', 'assets', 'app\assets\css',  'img', 'scss', 'node_modules'],
     },
     module: {
         rules: [
@@ -34,7 +34,7 @@ module.exports = merge({
         ]
     },
     entry: {
-        'main': './Client/main.ts'
+        'main': './app/main.ts'
     },
     output: {
         path: path.join(__dirname, '../wwwroot', 'dist'),

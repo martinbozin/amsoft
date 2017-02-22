@@ -6,7 +6,7 @@ var isDevBuild = process.argv.indexOf('--env.prod') < 0;
 
 module.exports = {
     resolve: {
-        extensions: ['.js', '.scss']
+        extensions: ['.js', '.scss','css']
     },
     module: {
         rules: [
