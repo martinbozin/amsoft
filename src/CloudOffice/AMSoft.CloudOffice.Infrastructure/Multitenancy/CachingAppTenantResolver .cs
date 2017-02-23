@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.Logging;
 
-namespace AMSoft.CloudOffice.Web.Multitenancy
+namespace AMSoft.CloudOffice.Infrastructure.Multitenancy
 {
     public class CachingAppTenantResolver : MemoryCacheTenantResolver<AppTenant>
     {

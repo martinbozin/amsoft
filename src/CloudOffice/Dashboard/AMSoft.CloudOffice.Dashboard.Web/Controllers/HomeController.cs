@@ -1,10 +1,18 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using AMSoft.CloudOffice.Domain.Core;
+using AMSoft.CloudOffice.Infrastructure.Mvc;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AMSoft.CloudOffice.Web.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : TenantControllerBase
     {
+        public HomeController(AppTenant appTenant)
+            : base(appTenant)
+        {
+
+        }
+
         [Authorize]
         public IActionResult Index()
         {
@@ -19,6 +27,7 @@ namespace AMSoft.CloudOffice.Web.Controllers
             return View();
         }
 
+        [Authorize]
         public IActionResult Contact()
         {
             ViewData["Message"] = "Your contact page.";

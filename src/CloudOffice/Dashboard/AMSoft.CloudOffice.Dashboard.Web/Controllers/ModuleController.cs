@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using AMSoft.CloudOffice.Data.Interfaces;
+using AMSoft.CloudOffice.Infrastructure.Mvc;
 using AMSoft.CloudOffice.Web.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
@@ -13,7 +15,7 @@ namespace AMSoft.CloudOffice.Web.Controllers
     /// Webapi controller for modules
     /// </summary>
     [Route("api/[controller]/[Action]")]
-    public class ModuleController : Controller
+    public class ModuleController : AppControllerBase
     {
         private readonly ICloudOfficeDbContext _context;
         private readonly ILogger _logger;
@@ -32,6 +34,7 @@ namespace AMSoft.CloudOffice.Web.Controllers
         /// <returns></returns>
         [HttpGet]
         [ActionName("GetAll")]
+        [Authorize]
         public IActionResult GetAll()
         {
             try
@@ -66,15 +69,16 @@ namespace AMSoft.CloudOffice.Web.Controllers
         /// <summary>
         /// Return module by Id
         /// </summary>
-        /// <param name="Id"></param>
+        /// <param name="id"></param>
         /// <returns></returns>
         [HttpGet("{Id}")]
         [ActionName("GetById")]
-        public IActionResult GetById(int Id)
+        [Authorize]
+        public IActionResult GetById(int id)
         {
             try
             {
-                var module = _context.Modules.Include(x => x.ModuleCategory).FirstOrDefault(x => x.ModuleId == Id);
+                var module = _context.Modules.Include(x => x.ModuleCategory).FirstOrDefault(x => x.ModuleId == id);
                 if (module == null)
                 {
                     return NotFound();
@@ -103,6 +107,7 @@ namespace AMSoft.CloudOffice.Web.Controllers
         /// <returns></returns>
         [HttpGet("{category}")]
         [ActionName("GetByCategory")]
+        [Authorize]
         public IActionResult GetByCategory(string category)
         {
             try

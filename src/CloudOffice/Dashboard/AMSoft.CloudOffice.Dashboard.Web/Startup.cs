@@ -4,7 +4,7 @@ using AMSoft.Base.Multitenancy;
 using AMSoft.CloudOffice.Data;
 using AMSoft.CloudOffice.Data.Interfaces;
 using AMSoft.CloudOffice.Domain.Core;
-using AMSoft.CloudOffice.Web.Multitenancy;
+using AMSoft.CloudOffice.Infrastructure.Multitenancy;
 using AMSoft.CloudOffice.Web.Services;
 using ExtCore.WebApplication;
 using Microsoft.AspNetCore.Builder;
