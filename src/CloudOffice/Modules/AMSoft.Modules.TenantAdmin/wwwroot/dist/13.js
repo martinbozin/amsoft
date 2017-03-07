@@ -27,9 +27,9 @@ var BodyOutputType;
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_Observable__ = __webpack_require__(232);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_Observable__ = __webpack_require__(231);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_Observable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs_Observable__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_share__ = __webpack_require__(233);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_share__ = __webpack_require__(232);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_share___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_share__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_Subject__ = __webpack_require__(193);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_Subject___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_Subject__);
@@ -120,36 +120,36 @@ var Guid = (function () {
 
 /***/ },
 
-/***/ 232:
+/***/ 231:
 /***/ function(module, exports, __webpack_require__) {
 
 module.exports = (__webpack_require__(1))(1);
 
 /***/ },
 
-/***/ 233:
+/***/ 232:
 /***/ function(module, exports, __webpack_require__) {
 
 module.exports = (__webpack_require__(1))(373);
 
 /***/ },
 
-/***/ 244:
+/***/ 243:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__src_toast_component__ = __webpack_require__(245);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__src_toast_component__ = __webpack_require__(244);
 /* harmony reexport (binding) */ __webpack_require__.d(exports, "ToastComponent", function() { return __WEBPACK_IMPORTED_MODULE_0__src_toast_component__["a"]; });
 Object.defineProperty(exports, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__src_toaster_container_component__ = __webpack_require__(247);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__src_toaster_container_component__ = __webpack_require__(246);
 /* harmony reexport (binding) */ __webpack_require__.d(exports, "ToasterContainerComponent", function() { return __WEBPACK_IMPORTED_MODULE_1__src_toaster_container_component__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__src_toaster_service__ = __webpack_require__(204);
 /* harmony reexport (binding) */ __webpack_require__.d(exports, "ToasterService", function() { return __WEBPACK_IMPORTED_MODULE_2__src_toaster_service__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__src_toaster_config__ = __webpack_require__(246);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__src_toaster_config__ = __webpack_require__(245);
 /* harmony reexport (binding) */ __webpack_require__.d(exports, "ToasterConfig", function() { return __WEBPACK_IMPORTED_MODULE_3__src_toaster_config__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__src_bodyOutputType__ = __webpack_require__(203);
 /* harmony reexport (binding) */ __webpack_require__.d(exports, "BodyOutputType", function() { return __WEBPACK_IMPORTED_MODULE_4__src_bodyOutputType__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__src_toaster_module__ = __webpack_require__(423);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__src_toaster_module__ = __webpack_require__(419);
 /* harmony reexport (binding) */ __webpack_require__.d(exports, "ToasterModule", function() { return __WEBPACK_IMPORTED_MODULE_5__src_toaster_module__["a"]; });
 
 
@@ -161,7 +161,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 
 /***/ },
 
-/***/ 245:
+/***/ 244:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -223,7 +223,7 @@ var ToastComponent = (function () {
 
 /***/ },
 
-/***/ 246:
+/***/ 245:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -270,12 +270,12 @@ var ToasterConfig = (function () {
 
 /***/ },
 
-/***/ 247:
+/***/ 246:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__toaster_config__ = __webpack_require__(246);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__toaster_config__ = __webpack_require__(245);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__toaster_service__ = __webpack_require__(204);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return ToasterContainerComponent; });
 
@@ -467,7 +467,7 @@ var ToasterContainerComponent = (function () {
 
 /***/ },
 
-/***/ 273:
+/***/ 268:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -482,7 +482,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = __webpack_require__(0);
-var angular2_toaster_1 = __webpack_require__(244);
+var angular2_toaster_1 = __webpack_require__(243);
 var NotificationsComponent = (function () {
     function NotificationsComponent(toasterService) {
         this.toasterconfig = new angular2_toaster_1.ToasterConfig({
@@ -510,7 +510,7 @@ var NotificationsComponent = (function () {
 }());
 NotificationsComponent = __decorate([
     core_1.Component({
-        template: __webpack_require__(579)
+        template: __webpack_require__(567)
     }),
     __metadata("design:paramtypes", [angular2_toaster_1.ToasterService])
 ], NotificationsComponent);
@@ -519,14 +519,14 @@ exports.NotificationsComponent = NotificationsComponent;
 
 /***/ },
 
-/***/ 423:
+/***/ 419:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__toast_component__ = __webpack_require__(245);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__toaster_container_component__ = __webpack_require__(247);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__toast_component__ = __webpack_require__(244);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__toaster_container_component__ = __webpack_require__(246);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__toaster_service__ = __webpack_require__(204);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return ToasterModule; });
 
@@ -559,7 +559,7 @@ var ToasterModule = (function () {
 
 /***/ },
 
-/***/ 444:
+/***/ 440:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -572,7 +572,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 var core_1 = __webpack_require__(0);
 var router_1 = __webpack_require__(12);
-var notifications_component_1 = __webpack_require__(273);
+var notifications_component_1 = __webpack_require__(268);
 var routes = [
     {
         path: '',
@@ -598,7 +598,7 @@ exports.NotificationsRoutingModule = NotificationsRoutingModule;
 
 /***/ },
 
-/***/ 445:
+/***/ 441:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -612,10 +612,10 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var core_1 = __webpack_require__(0);
 var common_1 = __webpack_require__(13);
 // Notifications
-var angular2_toaster_1 = __webpack_require__(244);
-var notifications_component_1 = __webpack_require__(273);
+var angular2_toaster_1 = __webpack_require__(243);
+var notifications_component_1 = __webpack_require__(268);
 //Routing
-var notifications_routing_module_1 = __webpack_require__(444);
+var notifications_routing_module_1 = __webpack_require__(440);
 var NotificationsModule = (function () {
     function NotificationsModule() {
     }
@@ -638,7 +638,7 @@ exports.NotificationsModule = NotificationsModule;
 
 /***/ },
 
-/***/ 579:
+/***/ 567:
 /***/ function(module, exports) {
 
 module.exports = "<div class=\"animated fadeIn\">\n    <div class=\"card\">\n        <div class=\"card-header\">Notifications</div>\n        <div class=\"card-block\">\n            <button class=\"btn btn-success\" (click)=\"showSuccess()\">Try Success</button>\n            <button class=\"btn btn-danger\" (click)=\"showError()\">Try Error</button>\n            <button class=\"btn btn-warning\" (click)=\"showWarning()\">Try Warning</button>\n            <button class=\"btn btn-info\" (click)=\"showInfo()\">Try Info</button>\n            <button class=\"btn btn-primary\" (click)=\"showPrimary()\">Try Primary</button>\n        </div>\n    </div>\n</div>\n<toaster-container [toasterconfig]=\"toasterconfig\"></toaster-container>\n";

@@ -7,14 +7,10 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
-var buttons_component_1 = require("./buttons.component");
-var cards_component_1 = require("./cards.component");
-var forms_component_1 = require("./forms.component");
-var modals_component_1 = require("./modals.component");
-var social_buttons_component_1 = require("./social-buttons.component");
-var switches_component_1 = require("./switches.component");
-var tables_component_1 = require("./tables.component");
-var tabs_component_1 = require("./tabs.component");
+var users_1 = require("./users/users");
+var settings_1 = require("./settings/settings");
+var modules_1 = require("./modules/modules");
+var tenants_1 = require("./tenants/tenants");
 var routes = [
     {
         path: '',
@@ -23,61 +19,33 @@ var routes = [
         },
         children: [
             {
-                path: 'buttons',
-                component: buttons_component_1.ButtonsComponent,
+                path: 'tenant',
+                component: tenants_1.TenantsComponent,
                 data: {
-                    title: 'Buttons'
+                    title: 'Tenant'
                 }
             },
             {
-                path: 'cards',
-                component: cards_component_1.CardsComponent,
+                path: 'modules',
+                component: modules_1.ModulesComponent,
                 data: {
-                    title: 'Cards'
+                    title: 'Modules'
                 }
             },
             {
-                path: 'forms',
-                component: forms_component_1.FormsComponent,
+                path: 'users',
+                component: users_1.UsersComponent,
                 data: {
-                    title: 'Forms'
+                    title: 'Users'
                 }
             },
             {
-                path: 'modals',
-                component: modals_component_1.ModalsComponent,
+                path: 'settings',
+                component: settings_1.SettingsComponent,
                 data: {
-                    title: 'Modals'
+                    title: 'Settings'
                 }
             },
-            {
-                path: 'social-buttons',
-                component: social_buttons_component_1.SocialButtonsComponent,
-                data: {
-                    title: 'Social buttons'
-                }
-            },
-            {
-                path: 'switches',
-                component: switches_component_1.SwitchesComponent,
-                data: {
-                    title: 'Switches'
-                }
-            },
-            {
-                path: 'tables',
-                component: tables_component_1.TablesComponent,
-                data: {
-                    title: 'Tables'
-                }
-            },
-            {
-                path: 'tabs',
-                component: tabs_component_1.TabsComponent,
-                data: {
-                    title: 'Tabs'
-                }
-            }
         ]
     }
 ];

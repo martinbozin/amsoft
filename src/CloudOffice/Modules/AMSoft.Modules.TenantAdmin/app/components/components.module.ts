@@ -1,22 +1,15 @@
 import { NgModule }                 from '@angular/core';
-
-import { ButtonsComponent }         from './buttons.component';
-import { CardsComponent }           from './cards.component';
-import { FormsComponent }           from './forms.component';
-import { SocialButtonsComponent }   from './social-buttons.component';
-import { SwitchesComponent }        from './switches.component';
-import { TablesComponent }          from './tables.component';
-
+import { ModulesComponent } from './modules/modules';
+import { SettingsComponent } from './settings/settings';
+import { UsersComponent } from './users/users';
+import { TenantsComponent } from './tenants/tenants';
 // Modal Component
 import { ModalModule }              from 'ng2-bootstrap/modal';
-import { ModalsComponent }          from './modals.component';
-
 // Tabs Component
 import { TabsModule }               from 'ng2-bootstrap/tabs';
-import { TabsComponent }            from './tabs.component';
-
 // Components Routing
 import { ComponentsRoutingModule }  from './components-routing.module';
+ 
 
 @NgModule({
   imports: [
@@ -25,14 +18,10 @@ import { ComponentsRoutingModule }  from './components-routing.module';
     TabsModule
   ],
   declarations: [
-    ButtonsComponent,
-    CardsComponent,
-    FormsComponent,
-    ModalsComponent,
-    SocialButtonsComponent,
-    SwitchesComponent,
-    TablesComponent,
-    TabsComponent
+      ModulesComponent,
+      SettingsComponent,
+      UsersComponent,
+      TenantsComponent
   ]
 })
 export class ComponentsModule { }

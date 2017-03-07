@@ -1,6 +1,6 @@
 webpackJsonp([6],{
 
-/***/ 453:
+/***/ 449:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -22,11 +22,11 @@ var routes = [
         children: [
             {
                 path: 'email',
-                loadChildren: function () { return new Promise(function (resolve) { __webpack_require__.e/* nsure */(15).then((function (require) { resolve(__webpack_require__(450)['EmailModule']); }).bind(null, __webpack_require__)).catch(__webpack_require__.oe); }); }
+                loadChildren: function () { return new Promise(function (resolve) { __webpack_require__.e/* nsure */(15).then((function (require) { resolve(__webpack_require__(446)['EmailModule']); }).bind(null, __webpack_require__)).catch(__webpack_require__.oe); }); }
             },
             {
                 path: 'invoicing',
-                loadChildren: function () { return new Promise(function (resolve) { __webpack_require__.e/* nsure */(16).then((function (require) { resolve(__webpack_require__(452)['InvoiceModule']); }).bind(null, __webpack_require__)).catch(__webpack_require__.oe); }); }
+                loadChildren: function () { return new Promise(function (resolve) { __webpack_require__.e/* nsure */(16).then((function (require) { resolve(__webpack_require__(448)['InvoiceModule']); }).bind(null, __webpack_require__)).catch(__webpack_require__.oe); }); }
             }
         ]
     }
@@ -60,7 +60,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 var core_1 = __webpack_require__(0);
 //Routing
-var uikits_routing_module_1 = __webpack_require__(453);
+var uikits_routing_module_1 = __webpack_require__(449);
 var UIKitsModule = (function () {
     function UIKitsModule() {
     }

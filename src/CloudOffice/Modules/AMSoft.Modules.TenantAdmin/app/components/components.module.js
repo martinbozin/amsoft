@@ -6,18 +6,14 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 var core_1 = require("@angular/core");
-var buttons_component_1 = require("./buttons.component");
-var cards_component_1 = require("./cards.component");
-var forms_component_1 = require("./forms.component");
-var social_buttons_component_1 = require("./social-buttons.component");
-var switches_component_1 = require("./switches.component");
-var tables_component_1 = require("./tables.component");
+var modules_1 = require("./modules/modules");
+var settings_1 = require("./settings/settings");
+var users_1 = require("./users/users");
+var tenants_1 = require("./tenants/tenants");
 // Modal Component
 var modal_1 = require("ng2-bootstrap/modal");
-var modals_component_1 = require("./modals.component");
 // Tabs Component
 var tabs_1 = require("ng2-bootstrap/tabs");
-var tabs_component_1 = require("./tabs.component");
 // Components Routing
 var components_routing_module_1 = require("./components-routing.module");
 var ComponentsModule = (function () {
@@ -33,14 +29,10 @@ ComponentsModule = __decorate([
             tabs_1.TabsModule
         ],
         declarations: [
-            buttons_component_1.ButtonsComponent,
-            cards_component_1.CardsComponent,
-            forms_component_1.FormsComponent,
-            modals_component_1.ModalsComponent,
-            social_buttons_component_1.SocialButtonsComponent,
-            switches_component_1.SwitchesComponent,
-            tables_component_1.TablesComponent,
-            tabs_component_1.TabsComponent
+            modules_1.ModulesComponent,
+            settings_1.SettingsComponent,
+            users_1.UsersComponent,
+            tenants_1.TenantsComponent
         ]
     })
 ], ComponentsModule);

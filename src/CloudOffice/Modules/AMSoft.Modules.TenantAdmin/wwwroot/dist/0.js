@@ -13,8 +13,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var core_1 = __webpack_require__(0);
 var ng2_charts_1 = __webpack_require__(28);
 var dropdown_1 = __webpack_require__(32);
-var dashboard_component_1 = __webpack_require__(257);
-var dashboard_routing_module_1 = __webpack_require__(427);
+var dashboard_component_1 = __webpack_require__(252);
+var dashboard_routing_module_1 = __webpack_require__(423);
 var DashboardModule = (function () {
     function DashboardModule() {
     }
@@ -14998,12 +14998,7 @@ webpackContext.id = 223;
 /* 249 */,
 /* 250 */,
 /* 251 */,
-/* 252 */,
-/* 253 */,
-/* 254 */,
-/* 255 */,
-/* 256 */,
-/* 257 */
+/* 252 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -15017,7 +15012,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-__webpack_require__(350);
+__webpack_require__(346);
 var core_1 = __webpack_require__(0);
 var router_1 = __webpack_require__(12);
 var DashboardComponent = (function () {
@@ -15454,7 +15449,7 @@ var DashboardComponent = (function () {
 }());
 DashboardComponent = __decorate([
     core_1.Component({
-        template: __webpack_require__(563)
+        template: __webpack_require__(551)
     }),
     __metadata("design:paramtypes", [router_1.Router])
 ], DashboardComponent);
@@ -15462,6 +15457,11 @@ exports.DashboardComponent = DashboardComponent;
 
 
 /***/ },
+/* 253 */,
+/* 254 */,
+/* 255 */,
+/* 256 */,
+/* 257 */,
 /* 258 */,
 /* 259 */,
 /* 260 */,
@@ -15519,53 +15519,53 @@ exports.DashboardComponent = DashboardComponent;
 /* 312 */,
 /* 313 */,
 /* 314 */,
-/* 315 */,
-/* 316 */,
-/* 317 */,
-/* 318 */,
-/* 319 */,
-/* 320 */
+/* 315 */
 /***/ function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "4f7fdfc6675d0469eacc4d6c735219ac.jpg";
 
 /***/ },
-/* 321 */
+/* 316 */
 /***/ function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "f726853f2708027914996f85a415d6a2.png";
 
 /***/ },
-/* 322 */
+/* 317 */
 /***/ function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "a95844d407f72ee255ef90be12f04dec.png";
 
 /***/ },
-/* 323 */
+/* 318 */
 /***/ function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "a41b5a63364d20610195229b3bfba4a0.png";
 
 /***/ },
-/* 324 */
+/* 319 */
 /***/ function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "80e1406a8cf6aa67f365c13434528aa1.png";
 
 /***/ },
-/* 325 */
+/* 320 */
 /***/ function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "d5417453a79455bfdf96f36c56421493.png";
 
 /***/ },
-/* 326 */
+/* 321 */
 /***/ function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "807ec04af390d9b802f2a60747437202.png";
 
 /***/ },
+/* 322 */,
+/* 323 */,
+/* 324 */,
+/* 325 */,
+/* 326 */,
 /* 327 */,
 /* 328 */,
 /* 329 */,
@@ -15585,66 +15585,62 @@ module.exports = __webpack_require__.p + "807ec04af390d9b802f2a60747437202.png";
 /* 343 */,
 /* 344 */,
 /* 345 */,
-/* 346 */,
-/* 347 */,
-/* 348 */,
-/* 349 */,
-/* 350 */
+/* 346 */
 /***/ function(module, exports, __webpack_require__) {
 
 /**
  * @namespace Chart
  */
-var Chart = __webpack_require__(370)();
+var Chart = __webpack_require__(366)();
 
-__webpack_require__(369)(Chart);
 __webpack_require__(365)(Chart);
-__webpack_require__(368)(Chart);
+__webpack_require__(361)(Chart);
 __webpack_require__(364)(Chart);
-__webpack_require__(366)(Chart);
+__webpack_require__(360)(Chart);
+__webpack_require__(362)(Chart);
+__webpack_require__(363)(Chart);
 __webpack_require__(367)(Chart);
 __webpack_require__(371)(Chart);
-__webpack_require__(375)(Chart);
-__webpack_require__(373)(Chart);
-__webpack_require__(374)(Chart);
-__webpack_require__(376)(Chart);
+__webpack_require__(369)(Chart);
+__webpack_require__(370)(Chart);
 __webpack_require__(372)(Chart);
+__webpack_require__(368)(Chart);
+__webpack_require__(373)(Chart);
+
+__webpack_require__(374)(Chart);
+__webpack_require__(375)(Chart);
+__webpack_require__(376)(Chart);
 __webpack_require__(377)(Chart);
 
+__webpack_require__(380)(Chart);
 __webpack_require__(378)(Chart);
 __webpack_require__(379)(Chart);
-__webpack_require__(380)(Chart);
 __webpack_require__(381)(Chart);
-
-__webpack_require__(384)(Chart);
 __webpack_require__(382)(Chart);
 __webpack_require__(383)(Chart);
-__webpack_require__(385)(Chart);
-__webpack_require__(386)(Chart);
-__webpack_require__(387)(Chart);
 
 // Controllers must be loaded after elements
 // See Chart.core.datasetController.dataElementType
-__webpack_require__(358)(Chart);
-__webpack_require__(359)(Chart);
-__webpack_require__(360)(Chart);
-__webpack_require__(361)(Chart);
-__webpack_require__(362)(Chart);
-__webpack_require__(363)(Chart);
-
-__webpack_require__(351)(Chart);
-__webpack_require__(352)(Chart);
-__webpack_require__(353)(Chart);
 __webpack_require__(354)(Chart);
 __webpack_require__(355)(Chart);
 __webpack_require__(356)(Chart);
 __webpack_require__(357)(Chart);
+__webpack_require__(358)(Chart);
+__webpack_require__(359)(Chart);
+
+__webpack_require__(347)(Chart);
+__webpack_require__(348)(Chart);
+__webpack_require__(349)(Chart);
+__webpack_require__(350)(Chart);
+__webpack_require__(351)(Chart);
+__webpack_require__(352)(Chart);
+__webpack_require__(353)(Chart);
 
 window.Chart = module.exports = Chart;
 
 
 /***/ },
-/* 351 */
+/* 347 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -15662,7 +15658,7 @@ module.exports = function(Chart) {
 
 
 /***/ },
-/* 352 */
+/* 348 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -15679,7 +15675,7 @@ module.exports = function(Chart) {
 
 
 /***/ },
-/* 353 */
+/* 349 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -15697,7 +15693,7 @@ module.exports = function(Chart) {
 
 
 /***/ },
-/* 354 */
+/* 350 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -15715,7 +15711,7 @@ module.exports = function(Chart) {
 
 
 /***/ },
-/* 355 */
+/* 351 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -15733,7 +15729,7 @@ module.exports = function(Chart) {
 
 
 /***/ },
-/* 356 */
+/* 352 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -15752,7 +15748,7 @@ module.exports = function(Chart) {
 
 
 /***/ },
-/* 357 */
+/* 353 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -15806,7 +15802,7 @@ module.exports = function(Chart) {
 
 
 /***/ },
-/* 358 */
+/* 354 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -16386,7 +16382,7 @@ module.exports = function(Chart) {
 
 
 /***/ },
-/* 359 */
+/* 355 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -16515,7 +16511,7 @@ module.exports = function(Chart) {
 
 
 /***/ },
-/* 360 */
+/* 356 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -16813,7 +16809,7 @@ module.exports = function(Chart) {
 
 
 /***/ },
-/* 361 */
+/* 357 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17170,7 +17166,7 @@ module.exports = function(Chart) {
 
 
 /***/ },
-/* 362 */
+/* 358 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17392,7 +17388,7 @@ module.exports = function(Chart) {
 
 
 /***/ },
-/* 363 */
+/* 359 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17587,7 +17583,7 @@ module.exports = function(Chart) {
 
 
 /***/ },
-/* 364 */
+/* 360 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17725,7 +17721,7 @@ module.exports = function(Chart) {
 
 
 /***/ },
-/* 365 */
+/* 361 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17836,7 +17832,7 @@ module.exports = function(Chart) {
 
 
 /***/ },
-/* 366 */
+/* 362 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -18533,7 +18529,7 @@ module.exports = function(Chart) {
 
 
 /***/ },
-/* 367 */
+/* 363 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -18704,7 +18700,7 @@ module.exports = function(Chart) {
 
 
 /***/ },
-/* 368 */
+/* 364 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -18807,7 +18803,7 @@ module.exports = function(Chart) {
 
 
 /***/ },
-/* 369 */
+/* 365 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -18815,7 +18811,7 @@ module.exports = function(Chart) {
 /* global document: false */
 
 
-var color = __webpack_require__(456);
+var color = __webpack_require__(452);
 
 module.exports = function(Chart) {
 	// Global Chart helpers object for utility methods and classes
@@ -19858,7 +19854,7 @@ module.exports = function(Chart) {
 
 
 /***/ },
-/* 370 */
+/* 366 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -19975,7 +19971,7 @@ module.exports = function() {
 
 
 /***/ },
-/* 371 */
+/* 367 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -20303,7 +20299,7 @@ module.exports = function(Chart) {
 
 
 /***/ },
-/* 372 */
+/* 368 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -20794,7 +20790,7 @@ module.exports = function(Chart) {
 
 
 /***/ },
-/* 373 */
+/* 369 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -20930,7 +20926,7 @@ module.exports = function(Chart) {
 
 
 /***/ },
-/* 374 */
+/* 370 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -21695,7 +21691,7 @@ module.exports = function(Chart) {
 
 
 /***/ },
-/* 375 */
+/* 371 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -21742,7 +21738,7 @@ module.exports = function(Chart) {
 
 
 /***/ },
-/* 376 */
+/* 372 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -21953,7 +21949,7 @@ module.exports = function(Chart) {
 
 
 /***/ },
-/* 377 */
+/* 373 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -22674,7 +22670,7 @@ module.exports = function(Chart) {
 
 
 /***/ },
-/* 378 */
+/* 374 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -22772,7 +22768,7 @@ module.exports = function(Chart) {
 
 
 /***/ },
-/* 379 */
+/* 375 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -22954,7 +22950,7 @@ module.exports = function(Chart) {
 
 
 /***/ },
-/* 380 */
+/* 376 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -23018,7 +23014,7 @@ module.exports = function(Chart) {
 
 
 /***/ },
-/* 381 */
+/* 377 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -23120,7 +23116,7 @@ module.exports = function(Chart) {
 
 
 /***/ },
-/* 382 */
+/* 378 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -23256,7 +23252,7 @@ module.exports = function(Chart) {
 
 
 /***/ },
-/* 383 */
+/* 379 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -23455,7 +23451,7 @@ module.exports = function(Chart) {
 
 
 /***/ },
-/* 384 */
+/* 380 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -23587,7 +23583,7 @@ module.exports = function(Chart) {
 
 
 /***/ },
-/* 385 */
+/* 381 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -23860,7 +23856,7 @@ module.exports = function(Chart) {
 
 
 /***/ },
-/* 386 */
+/* 382 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -24281,7 +24277,7 @@ module.exports = function(Chart) {
 
 
 /***/ },
-/* 387 */
+/* 383 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -24748,6 +24744,10 @@ module.exports = function(Chart) {
 
 
 /***/ },
+/* 384 */,
+/* 385 */,
+/* 386 */,
+/* 387 */,
 /* 388 */,
 /* 389 */,
 /* 390 */,
@@ -24783,11 +24783,7 @@ module.exports = function(Chart) {
 /* 420 */,
 /* 421 */,
 /* 422 */,
-/* 423 */,
-/* 424 */,
-/* 425 */,
-/* 426 */,
-/* 427 */
+/* 423 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -24800,7 +24796,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 var core_1 = __webpack_require__(0);
 var router_1 = __webpack_require__(12);
-var dashboard_component_1 = __webpack_require__(257);
+var dashboard_component_1 = __webpack_require__(252);
 var routes = [
     {
         path: '',
@@ -24825,6 +24821,10 @@ exports.DashboardRoutingModule = DashboardRoutingModule;
 
 
 /***/ },
+/* 424 */,
+/* 425 */,
+/* 426 */,
+/* 427 */,
 /* 428 */,
 /* 429 */,
 /* 430 */,
@@ -24848,15 +24848,11 @@ exports.DashboardRoutingModule = DashboardRoutingModule;
 /* 448 */,
 /* 449 */,
 /* 450 */,
-/* 451 */,
-/* 452 */,
-/* 453 */,
-/* 454 */,
-/* 455 */
+/* 451 */
 /***/ function(module, exports, __webpack_require__) {
 
 /* MIT license */
-var colorNames = __webpack_require__(459);
+var colorNames = __webpack_require__(455);
 
 module.exports = {
    getRgba: getRgba,
@@ -25079,12 +25075,12 @@ for (var name in colorNames) {
 
 
 /***/ },
-/* 456 */
+/* 452 */
 /***/ function(module, exports, __webpack_require__) {
 
 /* MIT license */
-var convert = __webpack_require__(458);
-var string = __webpack_require__(455);
+var convert = __webpack_require__(454);
+var string = __webpack_require__(451);
 
 var Color = function (obj) {
 	if (obj instanceof Color) {
@@ -25570,7 +25566,7 @@ module.exports = Color;
 
 
 /***/ },
-/* 457 */
+/* 453 */
 /***/ function(module, exports) {
 
 /* MIT license */
@@ -26274,10 +26270,10 @@ for (var key in cssKeywords) {
 
 
 /***/ },
-/* 458 */
+/* 454 */
 /***/ function(module, exports, __webpack_require__) {
 
-var conversions = __webpack_require__(457);
+var conversions = __webpack_require__(453);
 
 var convert = function() {
    return new Converter();
@@ -26371,7 +26367,7 @@ Converter.prototype.getValues = function(space) {
 module.exports = convert;
 
 /***/ },
-/* 459 */
+/* 455 */
 /***/ function(module, exports) {
 
 module.exports = {
@@ -26526,6 +26522,10 @@ module.exports = {
 };
 
 /***/ },
+/* 456 */,
+/* 457 */,
+/* 458 */,
+/* 459 */,
 /* 460 */,
 /* 461 */,
 /* 462 */,
@@ -26617,22 +26617,10 @@ module.exports = {
 /* 548 */,
 /* 549 */,
 /* 550 */,
-/* 551 */,
-/* 552 */,
-/* 553 */,
-/* 554 */,
-/* 555 */,
-/* 556 */,
-/* 557 */,
-/* 558 */,
-/* 559 */,
-/* 560 */,
-/* 561 */,
-/* 562 */,
-/* 563 */
+/* 551 */
 /***/ function(module, exports, __webpack_require__) {
 
-module.exports = "<div class=\"animated fadeIn\">\n    <div class=\"row\">\n        <div class=\"col-sm-6 col-lg-3\">\n            <div class=\"card card-inverse card-primary\">\n                <div class=\"card-block pb-0\">\n                    <div class=\"btn-group float-right\" dropdown>\n                        <button type=\"button\" class=\"btn btn-transparent dropdown-toggle p-0\" dropdownToggle>\n                            <i class=\"icon-settings\"></i>\n                        </button>\n                        <div class=\"dropdown-menu dropdown-menu-right\" dropdownMenu>\n                            <a class=\"dropdown-item\" href=\"#\">Action</a>\n                            <a class=\"dropdown-item\" href=\"#\">Another action</a>\n                            <a class=\"dropdown-item\" href=\"#\">Something else here</a>\n                        </div>\n                    </div>\n                    <h4 class=\"mb-0\">9.823</h4>\n                    <p>Members online</p>\n                </div>\n                <div class=\"chart-wrapper px-1\" style=\"height:70px;\">\n                    <canvas baseChart class=\"chart\" [datasets]=\"lineChart1Data\" [labels]=\"lineChart1Labels\" [options]=\"lineChart1Options\" [colors]=\"lineChart1Colours\" [legend]=\"lineChart1Legend\" [chartType]=\"lineChart1Type\" (chartHover)=\"chartHovered($event)\" (chartClick)=\"chartClicked($event)\"></canvas>\n                </div>\n            </div>\n        </div>\n        <!--/.col-->\n        <div class=\"col-sm-6 col-lg-3\">\n            <div class=\"card card-inverse card-info\">\n                <div class=\"card-block pb-0\">\n                    <button type=\"button\" class=\"btn btn-transparent p-0 float-right\">\n                        <i class=\"icon-location-pin\"></i>\n                    </button>\n                    <h4 class=\"mb-0\">9.823</h4>\n                    <p>Members online</p>\n                </div>\n                <div class=\"chart-wrapper px-1\" style=\"height:70px;\">\n                    <canvas baseChart class=\"chart\" [datasets]=\"lineChart2Data\" [labels]=\"lineChart2Labels\" [options]=\"lineChart2Options\" [colors]=\"lineChart2Colours\" [legend]=\"lineChart2Legend\" [chartType]=\"lineChart2Type\" (chartHover)=\"chartHovered($event)\" (chartClick)=\"chartClicked($event)\"></canvas>\n                </div>\n            </div>\n        </div>\n        <!--/.col-->\n        <div class=\"col-sm-6 col-lg-3\">\n            <div class=\"card card-inverse card-warning\">\n                <div class=\"card-block pb-0\">\n                    <div class=\"btn-group float-right\">\n                        <button type=\"button\" class=\"btn btn-transparent dropdown-toggle p-0\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\n                            <i class=\"icon-settings\"></i>\n                        </button>\n                        <div class=\"dropdown-menu dropdown-menu-right\">\n                            <a class=\"dropdown-item\" href=\"#\">Action</a>\n                            <a class=\"dropdown-item\" href=\"#\">Another action</a>\n                            <a class=\"dropdown-item\" href=\"#\">Something else here</a>\n                        </div>\n                    </div>\n                    <h4 class=\"mb-0\">9.823</h4>\n                    <p>Members online</p>\n                </div>\n                <div class=\"chart-wrapper\" style=\"height:70px;\">\n                    <canvas baseChart class=\"chart\" [datasets]=\"lineChart3Data\" [labels]=\"lineChart3Labels\" [options]=\"lineChart3Options\" [colors]=\"lineChart3Colours\" [legend]=\"lineChart3Legend\" [chartType]=\"lineChart3Type\" (chartHover)=\"chartHovered($event)\" (chartClick)=\"chartClicked($event)\"></canvas>\n                </div>\n            </div>\n        </div>\n        <!--/.col-->\n        <div class=\"col-sm-6 col-lg-3\">\n            <div class=\"card card-inverse card-danger\">\n                <div class=\"card-block pb-0\">\n                    <div class=\"btn-group float-right\" dropdown>\n                        <button type=\"button\" class=\"btn btn-transparent dropdown-toggle p-0\" dropdownToggle>\n                            <i class=\"icon-settings\"></i>\n                        </button>\n                        <div class=\"dropdown-menu dropdown-menu-right\" dropdownMenu>\n                            <a class=\"dropdown-item\" href=\"#\">Action</a>\n                            <a class=\"dropdown-item\" href=\"#\">Another action</a>\n                            <a class=\"dropdown-item\" href=\"#\">Something else here</a>\n                        </div>\n                    </div>\n                    <h4 class=\"mb-0\">9.823</h4>\n                    <p>Members online</p>\n                </div>\n                <div class=\"chart-wrapper px-1\" style=\"height:70px;\">\n                    <canvas baseChart class=\"chart\" [datasets]=\"barChart1Data\" [labels]=\"barChart1Labels\" [options]=\"barChart1Options\" [colors]=\"barChart1Colours\" [legend]=\"barChart1Legend\" [chartType]=\"barChart1Type\" (chartHover)=\"chartHovered($event)\" (chartClick)=\"chartClicked($event)\"></canvas>\n                </div>\n            </div>\n        </div>\n        <!--/.col-->\n    </div>\n    <!--/.row-->\n    <div class=\"card\">\n        <div class=\"card-block\">\n            <div class=\"row\">\n                <div class=\"col-sm-5\">\n                    <h4 class=\"card-title mb-0\">Traffic</h4>\n                    <div class=\"small text-muted\">November 2015</div>\n                </div>\n                <!--/.col-->\n                <div class=\"col-sm-7 hidden-sm-down\">\n                    <button type=\"button\" class=\"btn btn-primary float-right\"><i class=\"icon-cloud-download\"></i>\n                    </button>\n                    <div class=\"btn-toolbar float-right\" role=\"toolbar\" aria-label=\"Toolbar with button groups\">\n                        <div class=\"btn-group mr-1\" data-toggle=\"buttons\" aria-label=\"First group\">\n                            <label class=\"btn btn-outline-secondary\">\n                                <input type=\"radio\" name=\"options\" id=\"option1\">Day\n                            </label>\n                            <label class=\"btn btn-outline-secondary active\">\n                                <input type=\"radio\" name=\"options\" id=\"option2\" checked>Month\n                            </label>\n                            <label class=\"btn btn-outline-secondary\">\n                                <input type=\"radio\" name=\"options\" id=\"option3\">Year\n                            </label>\n                        </div>\n                    </div>\n                </div>\n                <!--/.col-->\n            </div>\n            <!--/.row-->\n            <div class=\"chart-wrapper\" style=\"height:300px;margin-top:40px;\">\n                <canvas baseChart class=\"chart\" [datasets]=\"mainChartData\" [labels]=\"mainChartLabels\" [options]=\"mainChartOptions\" [colors]=\"mainChartColours\" [legend]=\"mainChartLegend\" [chartType]=\"mainChartType\" (chartHover)=\"chartHovered($event)\" (chartClick)=\"chartClicked($event)\"></canvas>\n            </div>\n        </div>\n        <div class=\"card-footer\">\n            <ul>\n                <li>\n                    <div class=\"text-muted\">Visits</div>\n                    <strong>29.703 Users (40%)</strong>\n                    <div class=\"progress progress-xs mt-h\">\n                        <div class=\"progress-bar bg-success\" role=\"progressbar\" style=\"width: 40%\" aria-valuenow=\"40\" aria-valuemin=\"0\" aria-valuemax=\"100\"></div>\n                    </div>\n                </li>\n                <li class=\"hidden-sm-down\">\n                    <div class=\"text-muted\">Unique</div>\n                    <strong>24.093 Users (20%)</strong>\n                    <div class=\"progress progress-xs mt-h\">\n                        <div class=\"progress-bar bg-info\" role=\"progressbar\" style=\"width: 20%\" aria-valuenow=\"20\" aria-valuemin=\"0\" aria-valuemax=\"100\"></div>\n                    </div>\n                </li>\n                <li>\n                    <div class=\"text-muted\">Pageviews</div>\n                    <strong>78.706 Views (60%)</strong>\n                    <div class=\"progress progress-xs mt-h\">\n                        <div class=\"progress-bar bg-warning\" role=\"progressbar\" style=\"width: 60%\" aria-valuenow=\"60\" aria-valuemin=\"0\" aria-valuemax=\"100\"></div>\n                    </div>\n                </li>\n                <li class=\"hidden-sm-down\">\n                    <div class=\"text-muted\">New Users</div>\n                    <strong>22.123 Users (80%)</strong>\n                    <div class=\"progress progress-xs mt-h\">\n                        <div class=\"progress-bar bg-danger\" role=\"progressbar\" style=\"width: 80%\" aria-valuenow=\"80\" aria-valuemin=\"0\" aria-valuemax=\"100\"></div>\n                    </div>\n                </li>\n                <li class=\"hidden-sm-down\">\n                    <div class=\"text-muted\">Bounce Rate</div>\n                    <strong>40.15%</strong>\n                    <div class=\"progress progress-xs mt-h\">\n                        <div class=\"progress-bar\" role=\"progressbar\" style=\"width: 40%\" aria-valuenow=\"40\" aria-valuemin=\"0\" aria-valuemax=\"100\"></div>\n                    </div>\n                </li>\n            </ul>\n        </div>\n    </div>\n    <!--/.card-->\n    <div class=\"row\">\n        <div class=\"col-sm-6 col-lg-3\">\n            <div class=\"social-box facebook\">\n                <i class=\"fa fa-facebook\"></i>\n                <div class=\"chart-wrapper\">\n                    <canvas baseChart class=\"chart\" [datasets]=\"socialChartData1\" [labels]=\"socialChartLabels\" [options]=\"socialChartOptions\" [colors]=\"socialChartColours\" [legend]=\"socialChartLegend\" [chartType]=\"socialChartType\" (chartHover)=\"chartHovered($event)\" (chartClick)=\"chartClicked($event)\"></canvas>\n                </div>\n                <ul>\n                    <li>\n                        <strong>89k</strong>\n                        <span>friends</span>\n                    </li>\n                    <li>\n                        <strong>459</strong>\n                        <span>feeds</span>\n                    </li>\n                </ul>\n            </div>\n            <!--/.social-box-->\n        </div>\n        <!--/.col-->\n        <div class=\"col-sm-6 col-lg-3\">\n            <div class=\"social-box twitter\">\n                <i class=\"fa fa-twitter\"></i>\n                <div class=\"chart-wrapper\">\n                    <canvas baseChart class=\"chart\" [datasets]=\"socialChartData2\" [labels]=\"socialChartLabels\" [options]=\"socialChartOptions\" [colors]=\"socialChartColours\" [legend]=\"socialChartLegend\" [chartType]=\"socialChartType\" (chartHover)=\"chartHovered($event)\" (chartClick)=\"chartClicked($event)\"></canvas>\n                </div>\n                <ul>\n                    <li>\n                        <strong>973k</strong>\n                        <span>followers</span>\n                    </li>\n                    <li>\n                        <strong>1.792</strong>\n                        <span>tweets</span>\n                    </li>\n                </ul>\n            </div>\n            <!--/.social-box-->\n        </div>\n        <!--/.col-->\n        <div class=\"col-sm-6 col-lg-3\">\n            <div class=\"social-box linkedin\">\n                <i class=\"fa fa-linkedin\"></i>\n                <div class=\"chart-wrapper\">\n                    <canvas baseChart class=\"chart\" [datasets]=\"socialChartData3\" [labels]=\"socialChartLabels\" [options]=\"socialChartOptions\" [colors]=\"socialChartColours\" [legend]=\"socialChartLegend\" [chartType]=\"socialChartType\" (chartHover)=\"chartHovered($event)\" (chartClick)=\"chartClicked($event)\"></canvas>\n                </div>\n                <ul>\n                    <li>\n                        <strong>500+</strong>\n                        <span>contacts</span>\n                    </li>\n                    <li>\n                        <strong>292</strong>\n                        <span>feeds</span>\n                    </li>\n                </ul>\n            </div>\n            <!--/.social-box-->\n        </div>\n        <!--/.col-->\n        <div class=\"col-sm-6 col-lg-3\">\n            <div class=\"social-box google-plus\">\n                <i class=\"fa fa-google-plus\"></i>\n                <div class=\"chart-wrapper\">\n                    <canvas baseChart class=\"chart\" [datasets]=\"socialChartData4\" [labels]=\"socialChartLabels\" [options]=\"socialChartOptions\" [colors]=\"socialChartColours\" [legend]=\"socialChartLegend\" [chartType]=\"socialChartType\" (chartHover)=\"chartHovered($event)\" (chartClick)=\"chartClicked($event)\"></canvas>\n                </div>\n                <ul>\n                    <li>\n                        <strong>894</strong>\n                        <span>followers</span>\n                    </li>\n                    <li>\n                        <strong>92</strong>\n                        <span>circles</span>\n                    </li>\n                </ul>\n            </div>\n            <!--/.social-box-->\n        </div>\n        <!--/.col-->\n    </div>\n    <!--/.row-->\n    <div class=\"row\">\n        <div class=\"col-md-12\">\n            <div class=\"card\">\n                <div class=\"card-header\">\n                    Traffic &amp; Sales\n                </div>\n                <div class=\"card-block\">\n                    <div class=\"row\">\n                        <div class=\"col-sm-12 col-lg-4\">\n                            <div class=\"row\">\n                                <div class=\"col-sm-6\">\n                                    <div class=\"callout callout-info\">\n                                        <small class=\"text-muted\">New Clients</small>\n                                        <br>\n                                        <strong class=\"h4\">9,123</strong>\n                                        <div class=\"chart-wrapper\" style=\"width:100px;height:30px;\">\n                                            <canvas baseChart class=\"chart\" [datasets]=\"sparklineChartData1\" [labels]=\"sparklineChartLabels\" [options]=\"sparklineChartOptions\" [colors]=\"sparklineChartInfo\" [legend]=\"sparklineChartLegend\" [chartType]=\"sparklineChartType\" (chartHover)=\"chartHovered($event)\"\n                                            (chartClick)=\"chartClicked($event)\"></canvas>\n                                        </div>\n                                    </div>\n                                </div>\n                                <!--/.col-->\n                                <div class=\"col-sm-6\">\n                                    <div class=\"callout callout-danger\">\n                                        <small class=\"text-muted\">Recuring Clients</small>\n                                        <br>\n                                        <strong class=\"h4\">22,643</strong>\n                                        <div class=\"chart-wrapper\" style=\"width:100px;height:30px;\">\n                                            <canvas baseChart class=\"chart\" [datasets]=\"sparklineChartData2\" [labels]=\"sparklineChartLabels\" [options]=\"sparklineChartOptions\" [colors]=\"sparklineChartDanger\" [legend]=\"sparklineChartLegend\" [chartType]=\"sparklineChartType\" (chartHover)=\"chartHovered($event)\"\n                                            (chartClick)=\"chartClicked($event)\"></canvas>\n                                        </div>\n                                    </div>\n                                </div>\n                                <!--/.col-->\n                            </div>\n                            <!--/.row-->\n                            <hr class=\"mt-0\">\n                            <ul class=\"horizontal-bars\">\n                                <li>\n                                    <div class=\"title\">\n                                        Monday\n                                    </div>\n                                    <div class=\"bars\">\n                                        <div class=\"progress progress-xs\">\n                                            <div class=\"progress-bar bg-info\" role=\"progressbar\" style=\"width: 34%\" aria-valuenow=\"34\" aria-valuemin=\"0\" aria-valuemax=\"100\"></div>\n                                        </div>\n                                        <div class=\"progress progress-xs\">\n                                            <div class=\"progress-bar bg-danger\" role=\"progressbar\" style=\"width: 78%\" aria-valuenow=\"78\" aria-valuemin=\"0\" aria-valuemax=\"100\"></div>\n                                        </div>\n                                    </div>\n                                </li>\n                                <li>\n                                    <div class=\"title\">\n                                        Tuesday\n                                    </div>\n                                    <div class=\"bars\">\n                                        <div class=\"progress progress-xs\">\n                                            <div class=\"progress-bar bg-info\" role=\"progressbar\" style=\"width: 56%\" aria-valuenow=\"56\" aria-valuemin=\"0\" aria-valuemax=\"100\"></div>\n                                        </div>\n                                        <div class=\"progress progress-xs\">\n                                            <div class=\"progress-bar bg-danger\" role=\"progressbar\" style=\"width: 94%\" aria-valuenow=\"94\" aria-valuemin=\"0\" aria-valuemax=\"100\"></div>\n                                        </div>\n                                    </div>\n                                </li>\n                                <li>\n                                    <div class=\"title\">\n                                        Wednesday\n                                    </div>\n                                    <div class=\"bars\">\n                                        <div class=\"progress progress-xs\">\n                                            <div class=\"progress-bar bg-info\" role=\"progressbar\" style=\"width: 12%\" aria-valuenow=\"12\" aria-valuemin=\"0\" aria-valuemax=\"100\"></div>\n                                        </div>\n                                        <div class=\"progress progress-xs\">\n                                            <div class=\"progress-bar bg-danger\" role=\"progressbar\" style=\"width: 67%\" aria-valuenow=\"67\" aria-valuemin=\"0\" aria-valuemax=\"100\"></div>\n                                        </div>\n                                    </div>\n                                </li>\n                                <li>\n                                    <div class=\"title\">\n                                        Thursday\n                                    </div>\n                                    <div class=\"bars\">\n                                        <div class=\"progress progress-xs\">\n                                            <div class=\"progress-bar bg-info\" role=\"progressbar\" style=\"width: 43%\" aria-valuenow=\"43\" aria-valuemin=\"0\" aria-valuemax=\"100\"></div>\n                                        </div>\n                                        <div class=\"progress progress-xs\">\n                                            <div class=\"progress-bar bg-danger\" role=\"progressbar\" style=\"width: 91%\" aria-valuenow=\"91\" aria-valuemin=\"0\" aria-valuemax=\"100\"></div>\n                                        </div>\n                                    </div>\n                                </li>\n                                <li>\n                                    <div class=\"title\">\n                                        Friday\n                                    </div>\n                                    <div class=\"bars\">\n                                        <div class=\"progress progress-xs\">\n                                            <div class=\"progress-bar bg-info\" role=\"progressbar\" style=\"width: 22%\" aria-valuenow=\"22\" aria-valuemin=\"0\" aria-valuemax=\"100\"></div>\n                                        </div>\n                                        <div class=\"progress progress-xs\">\n                                            <div class=\"progress-bar bg-danger\" role=\"progressbar\" style=\"width: 73%\" aria-valuenow=\"73\" aria-valuemin=\"0\" aria-valuemax=\"100\"></div>\n                                        </div>\n                                    </div>\n                                </li>\n                                <li>\n                                    <div class=\"title\">\n                                        Saturday\n                                    </div>\n                                    <div class=\"bars\">\n                                        <div class=\"progress progress-xs\">\n                                            <div class=\"progress-bar bg-info\" role=\"progressbar\" style=\"width: 53%\" aria-valuenow=\"53\" aria-valuemin=\"0\" aria-valuemax=\"100\"></div>\n                                        </div>\n                                        <div class=\"progress progress-xs\">\n                                            <div class=\"progress-bar bg-danger\" role=\"progressbar\" style=\"width: 82%\" aria-valuenow=\"82\" aria-valuemin=\"0\" aria-valuemax=\"100\"></div>\n                                        </div>\n                                    </div>\n                                </li>\n                                <li>\n                                    <div class=\"title\">\n                                        Sunday\n                                    </div>\n                                    <div class=\"bars\">\n                                        <div class=\"progress progress-xs\">\n                                            <div class=\"progress-bar bg-info\" role=\"progressbar\" style=\"width: 9%\" aria-valuenow=\"9\" aria-valuemin=\"0\" aria-valuemax=\"100\"></div>\n                                        </div>\n                                        <div class=\"progress progress-xs\">\n                                            <div class=\"progress-bar bg-danger\" role=\"progressbar\" style=\"width: 69%\" aria-valuenow=\"69\" aria-valuemin=\"0\" aria-valuemax=\"100\"></div>\n                                        </div>\n                                    </div>\n                                </li>\n                                <li class=\"legend\">\n                                    <span class=\"badge badge-pill badge-info\"></span>\n                                    <small>New clients</small>&nbsp;\n                                    <span class=\"badge badge-pill badge-danger\"></span>\n                                    <small>Recurring clients</small>\n                                </li>\n                            </ul>\n                        </div>\n                        <!--/.col-->\n                        <div class=\"col-sm-6 col-lg-4\">\n                            <div class=\"row\">\n                                <div class=\"col-sm-6\">\n                                    <div class=\"callout callout-warning\">\n                                        <small class=\"text-muted\">Pageviews</small>\n                                        <br>\n                                        <strong class=\"h4\">78,623</strong>\n                                        <div class=\"chart-wrapper\" style=\"width:100px;height:30px;\">\n                                            <canvas baseChart class=\"chart\" [datasets]=\"sparklineChartData1\" [labels]=\"sparklineChartLabels\" [options]=\"sparklineChartOptions\" [colors]=\"sparklineChartWarning\" [legend]=\"sparklineChartLegend\" [chartType]=\"sparklineChartType\" (chartHover)=\"chartHovered($event)\"\n                                            (chartClick)=\"chartClicked($event)\"></canvas>\n                                        </div>\n                                    </div>\n                                </div>\n                                <!--/.col-->\n                                <div class=\"col-sm-6\">\n                                    <div class=\"callout callout-success\">\n                                        <small class=\"text-muted\">Organic</small>\n                                        <br>\n                                        <strong class=\"h4\">49,123</strong>\n                                        <div class=\"chart-wrapper\" style=\"width:100px;height:30px;\">\n                                            <canvas baseChart class=\"chart\" [datasets]=\"sparklineChartData2\" [labels]=\"sparklineChartLabels\" [options]=\"sparklineChartOptions\" [colors]=\"sparklineChartSuccess\" [legend]=\"sparklineChartLegend\" [chartType]=\"sparklineChartType\" (chartHover)=\"chartHovered($event)\"\n                                            (chartClick)=\"chartClicked($event)\"></canvas>\n                                        </div>\n                                    </div>\n                                </div>\n                                <!--/.col-->\n                            </div>\n                            <!--/.row-->\n                            <hr class=\"mt-0\">\n                            <ul class=\"horizontal-bars type-2\">\n                                <li>\n                                    <i class=\"icon-user\"></i>\n                                    <span class=\"title\">Male</span>\n                                    <span class=\"value\">43%</span>\n                                    <div class=\"bars\">\n                                        <div class=\"progress progress-xs\">\n                                            <div class=\"progress-bar bg-warning\" role=\"progressbar\" style=\"width: 43%\" aria-valuenow=\"43\" aria-valuemin=\"0\" aria-valuemax=\"100\"></div>\n                                        </div>\n                                    </div>\n                                </li>\n                                <li>\n                                    <i class=\"icon-user-female\"></i>\n                                    <span class=\"title\">Female</span>\n                                    <span class=\"value\">37%</span>\n                                    <div class=\"bars\">\n                                        <div class=\"progress progress-xs\">\n                                            <div class=\"progress-bar bg-warning\" role=\"progressbar\" style=\"width: 37%\" aria-valuenow=\"37\" aria-valuemin=\"0\" aria-valuemax=\"100\"></div>\n                                        </div>\n                                    </div>\n                                </li>\n                                <li class=\"divider\"></li>\n                                <li>\n                                    <i class=\"icon-globe\"></i>\n                                    <span class=\"title\">Organic Search</span>\n                                    <span class=\"value\">191,235\n                                        <span class=\"text-muted small\">(56%)</span>\n                                    </span>\n                                    <div class=\"bars\">\n                                        <div class=\"progress progress-xs\">\n                                            <div class=\"progress-bar bg-success\" role=\"progressbar\" style=\"width: 56%\" aria-valuenow=\"56\" aria-valuemin=\"0\" aria-valuemax=\"100\"></div>\n                                        </div>\n                                    </div>\n                                </li>\n                                <li>\n                                    <i class=\"icon-social-facebook\"></i>\n                                    <span class=\"title\">Facebook</span>\n                                    <span class=\"value\">51,223\n                                        <span class=\"text-muted small\">(15%)</span>\n                                    </span>\n                                    <div class=\"bars\">\n                                        <div class=\"progress progress-xs\">\n                                            <div class=\"progress-bar bg-success\" role=\"progressbar\" style=\"width: 15%\" aria-valuenow=\"15\" aria-valuemin=\"0\" aria-valuemax=\"100\"></div>\n                                        </div>\n                                    </div>\n                                </li>\n                                <li>\n                                    <i class=\"icon-social-twitter\"></i>\n                                    <span class=\"title\">Twitter</span>\n                                    <span class=\"value\">37,564\n                                        <span class=\"text-muted small\">(11%)</span>\n                                    </span>\n                                    <div class=\"bars\">\n                                        <div class=\"progress progress-xs\">\n                                            <div class=\"progress-bar bg-success\" role=\"progressbar\" style=\"width: 11%\" aria-valuenow=\"11\" aria-valuemin=\"0\" aria-valuemax=\"100\"></div>\n                                        </div>\n                                    </div>\n                                </li>\n                                <li>\n                                    <i class=\"icon-social-linkedin\"></i>\n                                    <span class=\"title\">LinkedIn</span>\n                                    <span class=\"value\">27,319\n                                        <span class=\"text-muted small\">(8%)</span>\n                                    </span>\n                                    <div class=\"bars\">\n                                        <div class=\"progress progress-xs\">\n                                            <div class=\"progress-bar bg-success\" role=\"progressbar\" style=\"width: 8%\" aria-valuenow=\"8\" aria-valuemin=\"0\" aria-valuemax=\"100\"></div>\n                                        </div>\n                                    </div>\n                                </li>\n                                <li class=\"divider text-center\">\n                                    <button type=\"button\" class=\"btn btn-sm btn-link text-muted\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"\" data-original-title=\"show more\"><i class=\"icon-options\"></i>\n                                    </button>\n                                </li>\n                            </ul>\n                        </div>\n                        <!--/.col-->\n                        <div class=\"col-sm-6 col-lg-4\">\n                            <div class=\"row\">\n                                <div class=\"col-sm-6\">\n                                    <div class=\"callout\">\n                                        <small class=\"text-muted\">CTR</small>\n                                        <br>\n                                        <strong class=\"h4\">23%</strong>\n                                        <div class=\"chart-wrapper\" style=\"width:100px;height:30px;\">\n                                            <canvas baseChart class=\"chart\" [datasets]=\"sparklineChartData1\" [labels]=\"sparklineChartLabels\" [options]=\"sparklineChartOptions\" [colors]=\"sparklineChartDefault\" [legend]=\"sparklineChartLegend\" [chartType]=\"sparklineChartType\" (chartHover)=\"chartHovered($event)\"\n                                            (chartClick)=\"chartClicked($event)\"></canvas>\n                                        </div>\n                                    </div>\n                                </div>\n                                <!--/.col-->\n                                <div class=\"col-sm-6\">\n                                    <div class=\"callout callout-primary\">\n                                        <small class=\"text-muted\">Bounce Rate</small>\n                                        <br>\n                                        <strong class=\"h4\">5%</strong>\n                                        <div class=\"chart-wrapper\" style=\"width:100px;height:30px;\">\n                                            <canvas baseChart class=\"chart\" [datasets]=\"sparklineChartData2\" [labels]=\"sparklineChartLabels\" [options]=\"sparklineChartOptions\" [colors]=\"sparklineChartPrimary\" [legend]=\"sparklineChartLegend\" [chartType]=\"sparklineChartType\" (chartHover)=\"chartHovered($event)\"\n                                            (chartClick)=\"chartClicked($event)\"></canvas>\n                                        </div>\n                                    </div>\n                                </div>\n                                <!--/.col-->\n                            </div>\n                            <!--/.row-->\n                            <hr class=\"mt-0\">\n                            <ul class=\"icons-list\">\n                                <li>\n                                    <i class=\"icon-screen-desktop bg-primary\"></i>\n                                    <div class=\"desc\">\n                                        <div class=\"title\">iMac 4k</div>\n                                        <small>Lorem ipsum dolor sit amet</small>\n                                    </div>\n                                    <div class=\"value\">\n                                        <div class=\"small text-muted\">Sold this week</div>\n                                        <strong>1.924</strong>\n                                    </div>\n                                    <div class=\"actions\">\n                                        <button type=\"button\" class=\"btn btn-link text-muted\"><i class=\"icon-settings\"></i>\n                                        </button>\n                                    </div>\n                                </li>\n                                <li>\n                                    <i class=\"icon-screen-smartphone bg-info\"></i>\n                                    <div class=\"desc\">\n                                        <div class=\"title\">Samsung Galaxy Edge</div>\n                                        <small>Lorem ipsum dolor sit amet</small>\n                                    </div>\n                                    <div class=\"value\">\n                                        <div class=\"small text-muted\">Sold this week</div>\n                                        <strong>1.224</strong>\n                                    </div>\n                                    <div class=\"actions\">\n                                        <button type=\"button\" class=\"btn btn-link text-muted\"><i class=\"icon-settings\"></i>\n                                        </button>\n                                    </div>\n                                </li>\n                                <li>\n                                    <i class=\"icon-screen-smartphone bg-warning\"></i>\n                                    <div class=\"desc\">\n                                        <div class=\"title\">iPhone 6S</div>\n                                        <small>Lorem ipsum dolor sit amet</small>\n                                    </div>\n                                    <div class=\"value\">\n                                        <div class=\"small text-muted\">Sold this week</div>\n                                        <strong>1.163</strong>\n                                    </div>\n                                    <div class=\"actions\">\n                                        <button type=\"button\" class=\"btn btn-link text-muted\"><i class=\"icon-settings\"></i>\n                                        </button>\n                                    </div>\n                                </li>\n                                <li>\n                                    <i class=\"icon-user bg-danger\"></i>\n                                    <div class=\"desc\">\n                                        <div class=\"title\">Premium accounts</div>\n                                        <small>Lorem ipsum dolor sit amet</small>\n                                    </div>\n                                    <div class=\"value\">\n                                        <div class=\"small text-muted\">Sold this week</div>\n                                        <strong>928</strong>\n                                    </div>\n                                    <div class=\"actions\">\n                                        <button type=\"button\" class=\"btn btn-link text-muted\"><i class=\"icon-settings\"></i>\n                                        </button>\n                                    </div>\n                                </li>\n                                <li>\n                                    <i class=\"icon-social-spotify bg-success\"></i>\n                                    <div class=\"desc\">\n                                        <div class=\"title\">Spotify Subscriptions</div>\n                                        <small>Lorem ipsum dolor sit amet</small>\n                                    </div>\n                                    <div class=\"value\">\n                                        <div class=\"small text-muted\">Sold this week</div>\n                                        <strong>893</strong>\n                                    </div>\n                                    <div class=\"actions\">\n                                        <button type=\"button\" class=\"btn btn-link text-muted\"><i class=\"icon-settings\"></i>\n                                        </button>\n                                    </div>\n                                </li>\n                                <li>\n                                    <i class=\"icon-cloud-download bg-danger\"></i>\n                                    <div class=\"desc\">\n                                        <div class=\"title\">Ebook</div>\n                                        <small>Lorem ipsum dolor sit amet</small>\n                                    </div>\n                                    <div class=\"value\">\n                                        <div class=\"small text-muted\">Downloads</div>\n                                        <strong>121.924</strong>\n                                    </div>\n                                    <div class=\"actions\">\n                                        <button type=\"button\" class=\"btn btn-link text-muted\"><i class=\"icon-settings\"></i>\n                                        </button>\n                                    </div>\n                                </li>\n                                <li>\n                                    <i class=\"icon-camera bg-warning\"></i>\n                                    <div class=\"desc\">\n                                        <div class=\"title\">Photos</div>\n                                        <small>Lorem ipsum dolor sit amet</small>\n                                    </div>\n                                    <div class=\"value\">\n                                        <div class=\"small text-muted\">Uploaded</div>\n                                        <strong>12.125</strong>\n                                    </div>\n                                    <div class=\"actions\">\n                                        <button type=\"button\" class=\"btn btn-link text-muted\"><i class=\"icon-settings\"></i>\n                                        </button>\n                                    </div>\n                                </li>\n                                <li class=\"divider text-center\">\n                                    <button type=\"button\" class=\"btn btn-sm btn-link text-muted\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"show more\"><i class=\"icon-options\"></i>\n                                    </button>\n                                </li>\n                            </ul>\n                        </div>\n                        <!--/.col-->\n                    </div>\n                    <!--/.row-->\n                    <br>\n                    <table class=\"table table-hover table-outline mb-0 hidden-sm-down\">\n                        <thead class=\"thead-default\">\n                            <tr>\n                                <th class=\"text-center\"><i class=\"icon-people\"></i>\n                                </th>\n                                <th>User</th>\n                                <th class=\"text-center\">Country</th>\n                                <th>Usage</th>\n                                <th class=\"text-center\">Payment Method</th>\n                                <th>Activity</th>\n                            </tr>\n                        </thead>\n                        <tbody>\n                            <tr>\n                                <td class=\"text-center\">\n                                    <div class=\"avatar\">\n                                        <img src=\"" + __webpack_require__(320) + "\" class=\"img-avatar\" alt=\"admin@bootstrapmaster.com\" src=\"" + __webpack_require__(320) + "\">\n                                        <span class=\"avatar-status badge-success\"></span>\n                                    </div>\n                                </td>\n                                <td>\n                                    <div>Yiorgos Avraamu</div>\n                                    <div class=\"small text-muted\">\n                                        <span>New</span>| Registered: Jan 1, 2015\n                                    </div>\n                                </td>\n                                <td class=\"text-center\">\n                                    <img src=\"" + __webpack_require__(326) + "\" alt=\"USA\" style=\"height:24px;\" src=\"" + __webpack_require__(326) + "\">\n                                </td>\n                                <td>\n                                    <div class=\"clearfix\">\n                                        <div class=\"float-left\">\n                                            <strong>50%</strong>\n                                        </div>\n                                        <div class=\"float-right\">\n                                            <small class=\"text-muted\">Jun 11, 2015 - Jul 10, 2015</small>\n                                        </div>\n                                    </div>\n                                    <div class=\"progress progress-xs\">\n                                        <div class=\"progress-bar bg-success\" role=\"progressbar\" style=\"width: 50%\" aria-valuenow=\"50\" aria-valuemin=\"0\" aria-valuemax=\"100\"></div>\n                                    </div>\n                                </td>\n                                <td class=\"text-center\">\n                                    <i class=\"fa fa-cc-mastercard\" style=\"font-size:24px\"></i>\n                                </td>\n                                <td>\n                                    <div class=\"small text-muted\">Last login</div>\n                                    <strong>10 sec ago</strong>\n                                </td>\n                            </tr>\n                            <tr>\n                                <td class=\"text-center\">\n                                    <div class=\"avatar\">\n                                        <img src=\"" + __webpack_require__(15) + "\" class=\"img-avatar\" alt=\"admin@bootstrapmaster.com\" src=\"" + __webpack_require__(15) + "\">\n                                        <span class=\"avatar-status badge-danger\"></span>\n                                    </div>\n                                </td>\n                                <td>\n                                    <div>Avram Tarasios</div>\n                                    <div class=\"small text-muted\">\n\n                                        <span>Recurring</span>| Registered: Jan 1, 2015\n                                    </div>\n                                </td>\n                                <td class=\"text-center\">\n                                    <img src=\"" + __webpack_require__(321) + "\" alt=\"Brazil\" style=\"height:24px;\" src=\"" + __webpack_require__(321) + "\">\n                                </td>\n                                <td>\n                                    <div class=\"clearfix\">\n                                        <div class=\"float-left\">\n                                            <strong>10%</strong>\n                                        </div>\n                                        <div class=\"float-right\">\n                                            <small class=\"text-muted\">Jun 11, 2015 - Jul 10, 2015</small>\n                                        </div>\n                                    </div>\n                                    <div class=\"progress progress-xs\">\n                                        <div class=\"progress-bar bg-info\" role=\"progressbar\" style=\"width: 10%\" aria-valuenow=\"10\" aria-valuemin=\"0\" aria-valuemax=\"100\"></div>\n                                    </div>\n                                </td>\n                                <td class=\"text-center\">\n                                    <i class=\"fa fa-cc-visa\" style=\"font-size:24px\"></i>\n                                </td>\n                                <td>\n                                    <div class=\"small text-muted\">Last login</div>\n                                    <strong>5 minutes ago</strong>\n                                </td>\n                            </tr>\n                            <tr>\n                                <td class=\"text-center\">\n                                    <div class=\"avatar\">\n                                        <img src=\"" + __webpack_require__(16) + "\" class=\"img-avatar\" alt=\"admin@bootstrapmaster.com\" src=\"" + __webpack_require__(16) + "\">\n                                        <span class=\"avatar-status badge-warning\"></span>\n                                    </div>\n                                </td>\n                                <td>\n                                    <div>Quintin Ed</div>\n                                    <div class=\"small text-muted\">\n                                        <span>New</span>| Registered: Jan 1, 2015\n                                    </div>\n                                </td>\n                                <td class=\"text-center\">\n                                    <img src=\"" + __webpack_require__(323) + "\" alt=\"India\" style=\"height:24px;\" src=\"" + __webpack_require__(323) + "\">\n                                </td>\n                                <td>\n                                    <div class=\"clearfix\">\n                                        <div class=\"float-left\">\n                                            <strong>74%</strong>\n                                        </div>\n                                        <div class=\"float-right\">\n                                            <small class=\"text-muted\">Jun 11, 2015 - Jul 10, 2015</small>\n                                        </div>\n                                    </div>\n                                    <div class=\"progress progress-xs\">\n                                        <div class=\"progress-bar bg-warning\" role=\"progressbar\" style=\"width: 74%\" aria-valuenow=\"74\" aria-valuemin=\"0\" aria-valuemax=\"100\"></div>\n                                    </div>\n                                </td>\n                                <td class=\"text-center\">\n                                    <i class=\"fa fa-cc-stripe\" style=\"font-size:24px\"></i>\n                                </td>\n                                <td>\n                                    <div class=\"small text-muted\">Last login</div>\n                                    <strong>1 hour ago</strong>\n                                </td>\n                            </tr>\n                            <tr>\n                                <td class=\"text-center\">\n                                    <div class=\"avatar\">\n                                        <img src=\"" + __webpack_require__(3) + "\" class=\"img-avatar\" alt=\"admin@bootstrapmaster.com\" src=\"" + __webpack_require__(3) + "\">\n                                        <span class=\"avatar-status badge-default\"></span>\n                                    </div>\n                                </td>\n                                <td>\n                                    <div>Enéas Kwadwo</div>\n                                    <div class=\"small text-muted\">\n                                        <span>New</span>| Registered: Jan 1, 2015\n                                    </div>\n                                </td>\n                                <td class=\"text-center\">\n                                    <img src=\"" + __webpack_require__(322) + "\" alt=\"France\" style=\"height:24px;\" src=\"" + __webpack_require__(322) + "\">\n                                </td>\n                                <td>\n                                    <div class=\"clearfix\">\n                                        <div class=\"float-left\">\n                                            <strong>98%</strong>\n                                        </div>\n                                        <div class=\"float-right\">\n                                            <small class=\"text-muted\">Jun 11, 2015 - Jul 10, 2015</small>\n                                        </div>\n                                    </div>\n                                    <div class=\"progress progress-xs\">\n                                        <div class=\"progress-bar bg-danger\" role=\"progressbar\" style=\"width: 98%\" aria-valuenow=\"98\" aria-valuemin=\"0\" aria-valuemax=\"100\"></div>\n                                    </div>\n                                </td>\n                                <td class=\"text-center\">\n                                    <i class=\"fa fa-paypal\" style=\"font-size:24px\"></i>\n                                </td>\n                                <td>\n                                    <div class=\"small text-muted\">Last login</div>\n                                    <strong>Last month</strong>\n                                </td>\n                            </tr>\n                            <tr>\n                                <td class=\"text-center\">\n                                    <div class=\"avatar\">\n                                        <img src=\"" + __webpack_require__(6) + "\" class=\"img-avatar\" alt=\"admin@bootstrapmaster.com\" src=\"" + __webpack_require__(6) + "\">\n                                        <span class=\"avatar-status badge-success\"></span>\n                                    </div>\n                                </td>\n                                <td>\n                                    <div>Agapetus Tadeáš</div>\n                                    <div class=\"small text-muted\">\n                                        <span>New</span>| Registered: Jan 1, 2015\n                                    </div>\n                                </td>\n                                <td class=\"text-center\">\n                                    <img src=\"" + __webpack_require__(325) + "\" alt=\"Spain\" style=\"height:24px;\" src=\"" + __webpack_require__(325) + "\">\n                                </td>\n                                <td>\n                                    <div class=\"clearfix\">\n                                        <div class=\"float-left\">\n                                            <strong>22%</strong>\n                                        </div>\n                                        <div class=\"float-right\">\n                                            <small class=\"text-muted\">Jun 11, 2015 - Jul 10, 2015</small>\n                                        </div>\n                                    </div>\n                                    <div class=\"progress progress-xs\">\n                                        <div class=\"progress-bar bg-info\" role=\"progressbar\" style=\"width: 22%\" aria-valuenow=\"22\" aria-valuemin=\"0\" aria-valuemax=\"100\"></div>\n                                    </div>\n                                </td>\n                                <td class=\"text-center\">\n                                    <i class=\"fa fa-google-wallet\" style=\"font-size:24px\"></i>\n                                </td>\n                                <td>\n                                    <div class=\"small text-muted\">Last login</div>\n                                    <strong>Last week</strong>\n                                </td>\n                            </tr>\n                            <tr>\n                                <td class=\"text-center\">\n                                    <div class=\"avatar\">\n                                        <img src=\"" + __webpack_require__(4) + "\" class=\"img-avatar\" alt=\"admin@bootstrapmaster.com\" src=\"" + __webpack_require__(4) + "\">\n                                        <span class=\"avatar-status badge-danger\"></span>\n                                    </div>\n                                </td>\n                                <td>\n                                    <div>Friderik Dávid</div>\n                                    <div class=\"small text-muted\">\n                                        <span>New</span>| Registered: Jan 1, 2015\n                                    </div>\n                                </td>\n                                <td class=\"text-center\">\n                                    <img src=\"" + __webpack_require__(324) + "\" alt=\"Poland\" style=\"height:24px;\" src=\"" + __webpack_require__(324) + "\">\n                                </td>\n                                <td>\n                                    <div class=\"clearfix\">\n                                        <div class=\"float-left\">\n                                            <strong>43%</strong>\n                                        </div>\n                                        <div class=\"float-right\">\n                                            <small class=\"text-muted\">Jun 11, 2015 - Jul 10, 2015</small>\n                                        </div>\n                                    </div>\n                                    <div class=\"progress progress-xs\">\n                                        <div class=\"progress-bar bg-success\" role=\"progressbar\" style=\"width: 43%\" aria-valuenow=\"43\" aria-valuemin=\"0\" aria-valuemax=\"100\"></div>\n                                    </div>\n                                </td>\n                                <td class=\"text-center\">\n                                    <i class=\"fa fa-cc-amex\" style=\"font-size:24px\"></i>\n                                </td>\n                                <td>\n                                    <div class=\"small text-muted\">Last login</div>\n                                    <strong>Yesterday</strong>\n                                </td>\n                            </tr>\n                        </tbody>\n                    </table>\n                </div>\n            </div>\n        </div>\n        <!--/.col-->\n    </div>\n    <!--/.row-->\n</div>\n";
+module.exports = "<div class=\"animated fadeIn\">\n    <div class=\"row\">\n        <div class=\"col-sm-6 col-lg-3\">\n            <div class=\"card card-inverse card-primary\">\n                <div class=\"card-block pb-0\">\n                    <div class=\"btn-group float-right\" dropdown>\n                        <button type=\"button\" class=\"btn btn-transparent dropdown-toggle p-0\" dropdownToggle>\n                            <i class=\"icon-settings\"></i>\n                        </button>\n                        <div class=\"dropdown-menu dropdown-menu-right\" dropdownMenu>\n                            <a class=\"dropdown-item\" href=\"#\">Action</a>\n                            <a class=\"dropdown-item\" href=\"#\">Another action</a>\n                            <a class=\"dropdown-item\" href=\"#\">Something else here</a>\n                        </div>\n                    </div>\n                    <h4 class=\"mb-0\">9.823</h4>\n                    <p>Members online</p>\n                </div>\n                <div class=\"chart-wrapper px-1\" style=\"height:70px;\">\n                    <canvas baseChart class=\"chart\" [datasets]=\"lineChart1Data\" [labels]=\"lineChart1Labels\" [options]=\"lineChart1Options\" [colors]=\"lineChart1Colours\" [legend]=\"lineChart1Legend\" [chartType]=\"lineChart1Type\" (chartHover)=\"chartHovered($event)\" (chartClick)=\"chartClicked($event)\"></canvas>\n                </div>\n            </div>\n        </div>\n        <!--/.col-->\n        <div class=\"col-sm-6 col-lg-3\">\n            <div class=\"card card-inverse card-info\">\n                <div class=\"card-block pb-0\">\n                    <button type=\"button\" class=\"btn btn-transparent p-0 float-right\">\n                        <i class=\"icon-location-pin\"></i>\n                    </button>\n                    <h4 class=\"mb-0\">9.823</h4>\n                    <p>Members online</p>\n                </div>\n                <div class=\"chart-wrapper px-1\" style=\"height:70px;\">\n                    <canvas baseChart class=\"chart\" [datasets]=\"lineChart2Data\" [labels]=\"lineChart2Labels\" [options]=\"lineChart2Options\" [colors]=\"lineChart2Colours\" [legend]=\"lineChart2Legend\" [chartType]=\"lineChart2Type\" (chartHover)=\"chartHovered($event)\" (chartClick)=\"chartClicked($event)\"></canvas>\n                </div>\n            </div>\n        </div>\n        <!--/.col-->\n        <div class=\"col-sm-6 col-lg-3\">\n            <div class=\"card card-inverse card-warning\">\n                <div class=\"card-block pb-0\">\n                    <div class=\"btn-group float-right\">\n                        <button type=\"button\" class=\"btn btn-transparent dropdown-toggle p-0\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\n                            <i class=\"icon-settings\"></i>\n                        </button>\n                        <div class=\"dropdown-menu dropdown-menu-right\">\n                            <a class=\"dropdown-item\" href=\"#\">Action</a>\n                            <a class=\"dropdown-item\" href=\"#\">Another action</a>\n                            <a class=\"dropdown-item\" href=\"#\">Something else here</a>\n                        </div>\n                    </div>\n                    <h4 class=\"mb-0\">9.823</h4>\n                    <p>Members online</p>\n                </div>\n                <div class=\"chart-wrapper\" style=\"height:70px;\">\n                    <canvas baseChart class=\"chart\" [datasets]=\"lineChart3Data\" [labels]=\"lineChart3Labels\" [options]=\"lineChart3Options\" [colors]=\"lineChart3Colours\" [legend]=\"lineChart3Legend\" [chartType]=\"lineChart3Type\" (chartHover)=\"chartHovered($event)\" (chartClick)=\"chartClicked($event)\"></canvas>\n                </div>\n            </div>\n        </div>\n        <!--/.col-->\n        <div class=\"col-sm-6 col-lg-3\">\n            <div class=\"card card-inverse card-danger\">\n                <div class=\"card-block pb-0\">\n                    <div class=\"btn-group float-right\" dropdown>\n                        <button type=\"button\" class=\"btn btn-transparent dropdown-toggle p-0\" dropdownToggle>\n                            <i class=\"icon-settings\"></i>\n                        </button>\n                        <div class=\"dropdown-menu dropdown-menu-right\" dropdownMenu>\n                            <a class=\"dropdown-item\" href=\"#\">Action</a>\n                            <a class=\"dropdown-item\" href=\"#\">Another action</a>\n                            <a class=\"dropdown-item\" href=\"#\">Something else here</a>\n                        </div>\n                    </div>\n                    <h4 class=\"mb-0\">9.823</h4>\n                    <p>Members online</p>\n                </div>\n                <div class=\"chart-wrapper px-1\" style=\"height:70px;\">\n                    <canvas baseChart class=\"chart\" [datasets]=\"barChart1Data\" [labels]=\"barChart1Labels\" [options]=\"barChart1Options\" [colors]=\"barChart1Colours\" [legend]=\"barChart1Legend\" [chartType]=\"barChart1Type\" (chartHover)=\"chartHovered($event)\" (chartClick)=\"chartClicked($event)\"></canvas>\n                </div>\n            </div>\n        </div>\n        <!--/.col-->\n    </div>\n    <!--/.row-->\n    <div class=\"card\">\n        <div class=\"card-block\">\n            <div class=\"row\">\n                <div class=\"col-sm-5\">\n                    <h4 class=\"card-title mb-0\">Traffic</h4>\n                    <div class=\"small text-muted\">November 2015</div>\n                </div>\n                <!--/.col-->\n                <div class=\"col-sm-7 hidden-sm-down\">\n                    <button type=\"button\" class=\"btn btn-primary float-right\"><i class=\"icon-cloud-download\"></i>\n                    </button>\n                    <div class=\"btn-toolbar float-right\" role=\"toolbar\" aria-label=\"Toolbar with button groups\">\n                        <div class=\"btn-group mr-1\" data-toggle=\"buttons\" aria-label=\"First group\">\n                            <label class=\"btn btn-outline-secondary\">\n                                <input type=\"radio\" name=\"options\" id=\"option1\">Day\n                            </label>\n                            <label class=\"btn btn-outline-secondary active\">\n                                <input type=\"radio\" name=\"options\" id=\"option2\" checked>Month\n                            </label>\n                            <label class=\"btn btn-outline-secondary\">\n                                <input type=\"radio\" name=\"options\" id=\"option3\">Year\n                            </label>\n                        </div>\n                    </div>\n                </div>\n                <!--/.col-->\n            </div>\n            <!--/.row-->\n            <div class=\"chart-wrapper\" style=\"height:300px;margin-top:40px;\">\n                <canvas baseChart class=\"chart\" [datasets]=\"mainChartData\" [labels]=\"mainChartLabels\" [options]=\"mainChartOptions\" [colors]=\"mainChartColours\" [legend]=\"mainChartLegend\" [chartType]=\"mainChartType\" (chartHover)=\"chartHovered($event)\" (chartClick)=\"chartClicked($event)\"></canvas>\n            </div>\n        </div>\n        <div class=\"card-footer\">\n            <ul>\n                <li>\n                    <div class=\"text-muted\">Visits</div>\n                    <strong>29.703 Users (40%)</strong>\n                    <div class=\"progress progress-xs mt-h\">\n                        <div class=\"progress-bar bg-success\" role=\"progressbar\" style=\"width: 40%\" aria-valuenow=\"40\" aria-valuemin=\"0\" aria-valuemax=\"100\"></div>\n                    </div>\n                </li>\n                <li class=\"hidden-sm-down\">\n                    <div class=\"text-muted\">Unique</div>\n                    <strong>24.093 Users (20%)</strong>\n                    <div class=\"progress progress-xs mt-h\">\n                        <div class=\"progress-bar bg-info\" role=\"progressbar\" style=\"width: 20%\" aria-valuenow=\"20\" aria-valuemin=\"0\" aria-valuemax=\"100\"></div>\n                    </div>\n                </li>\n                <li>\n                    <div class=\"text-muted\">Pageviews</div>\n                    <strong>78.706 Views (60%)</strong>\n                    <div class=\"progress progress-xs mt-h\">\n                        <div class=\"progress-bar bg-warning\" role=\"progressbar\" style=\"width: 60%\" aria-valuenow=\"60\" aria-valuemin=\"0\" aria-valuemax=\"100\"></div>\n                    </div>\n                </li>\n                <li class=\"hidden-sm-down\">\n                    <div class=\"text-muted\">New Users</div>\n                    <strong>22.123 Users (80%)</strong>\n                    <div class=\"progress progress-xs mt-h\">\n                        <div class=\"progress-bar bg-danger\" role=\"progressbar\" style=\"width: 80%\" aria-valuenow=\"80\" aria-valuemin=\"0\" aria-valuemax=\"100\"></div>\n                    </div>\n                </li>\n                <li class=\"hidden-sm-down\">\n                    <div class=\"text-muted\">Bounce Rate</div>\n                    <strong>40.15%</strong>\n                    <div class=\"progress progress-xs mt-h\">\n                        <div class=\"progress-bar\" role=\"progressbar\" style=\"width: 40%\" aria-valuenow=\"40\" aria-valuemin=\"0\" aria-valuemax=\"100\"></div>\n                    </div>\n                </li>\n            </ul>\n        </div>\n    </div>\n    <!--/.card-->\n    <div class=\"row\">\n        <div class=\"col-sm-6 col-lg-3\">\n            <div class=\"social-box facebook\">\n                <i class=\"fa fa-facebook\"></i>\n                <div class=\"chart-wrapper\">\n                    <canvas baseChart class=\"chart\" [datasets]=\"socialChartData1\" [labels]=\"socialChartLabels\" [options]=\"socialChartOptions\" [colors]=\"socialChartColours\" [legend]=\"socialChartLegend\" [chartType]=\"socialChartType\" (chartHover)=\"chartHovered($event)\" (chartClick)=\"chartClicked($event)\"></canvas>\n                </div>\n                <ul>\n                    <li>\n                        <strong>89k</strong>\n                        <span>friends</span>\n                    </li>\n                    <li>\n                        <strong>459</strong>\n                        <span>feeds</span>\n                    </li>\n                </ul>\n            </div>\n            <!--/.social-box-->\n        </div>\n        <!--/.col-->\n        <div class=\"col-sm-6 col-lg-3\">\n            <div class=\"social-box twitter\">\n                <i class=\"fa fa-twitter\"></i>\n                <div class=\"chart-wrapper\">\n                    <canvas baseChart class=\"chart\" [datasets]=\"socialChartData2\" [labels]=\"socialChartLabels\" [options]=\"socialChartOptions\" [colors]=\"socialChartColours\" [legend]=\"socialChartLegend\" [chartType]=\"socialChartType\" (chartHover)=\"chartHovered($event)\" (chartClick)=\"chartClicked($event)\"></canvas>\n                </div>\n                <ul>\n                    <li>\n                        <strong>973k</strong>\n                        <span>followers</span>\n                    </li>\n                    <li>\n                        <strong>1.792</strong>\n                        <span>tweets</span>\n                    </li>\n                </ul>\n            </div>\n            <!--/.social-box-->\n        </div>\n        <!--/.col-->\n        <div class=\"col-sm-6 col-lg-3\">\n            <div class=\"social-box linkedin\">\n                <i class=\"fa fa-linkedin\"></i>\n                <div class=\"chart-wrapper\">\n                    <canvas baseChart class=\"chart\" [datasets]=\"socialChartData3\" [labels]=\"socialChartLabels\" [options]=\"socialChartOptions\" [colors]=\"socialChartColours\" [legend]=\"socialChartLegend\" [chartType]=\"socialChartType\" (chartHover)=\"chartHovered($event)\" (chartClick)=\"chartClicked($event)\"></canvas>\n                </div>\n                <ul>\n                    <li>\n                        <strong>500+</strong>\n                        <span>contacts</span>\n                    </li>\n                    <li>\n                        <strong>292</strong>\n                        <span>feeds</span>\n                    </li>\n                </ul>\n            </div>\n            <!--/.social-box-->\n        </div>\n        <!--/.col-->\n        <div class=\"col-sm-6 col-lg-3\">\n            <div class=\"social-box google-plus\">\n                <i class=\"fa fa-google-plus\"></i>\n                <div class=\"chart-wrapper\">\n                    <canvas baseChart class=\"chart\" [datasets]=\"socialChartData4\" [labels]=\"socialChartLabels\" [options]=\"socialChartOptions\" [colors]=\"socialChartColours\" [legend]=\"socialChartLegend\" [chartType]=\"socialChartType\" (chartHover)=\"chartHovered($event)\" (chartClick)=\"chartClicked($event)\"></canvas>\n                </div>\n                <ul>\n                    <li>\n                        <strong>894</strong>\n                        <span>followers</span>\n                    </li>\n                    <li>\n                        <strong>92</strong>\n                        <span>circles</span>\n                    </li>\n                </ul>\n            </div>\n            <!--/.social-box-->\n        </div>\n        <!--/.col-->\n    </div>\n    <!--/.row-->\n    <div class=\"row\">\n        <div class=\"col-md-12\">\n            <div class=\"card\">\n                <div class=\"card-header\">\n                    Traffic &amp; Sales\n                </div>\n                <div class=\"card-block\">\n                    <div class=\"row\">\n                        <div class=\"col-sm-12 col-lg-4\">\n                            <div class=\"row\">\n                                <div class=\"col-sm-6\">\n                                    <div class=\"callout callout-info\">\n                                        <small class=\"text-muted\">New Clients</small>\n                                        <br>\n                                        <strong class=\"h4\">9,123</strong>\n                                        <div class=\"chart-wrapper\" style=\"width:100px;height:30px;\">\n                                            <canvas baseChart class=\"chart\" [datasets]=\"sparklineChartData1\" [labels]=\"sparklineChartLabels\" [options]=\"sparklineChartOptions\" [colors]=\"sparklineChartInfo\" [legend]=\"sparklineChartLegend\" [chartType]=\"sparklineChartType\" (chartHover)=\"chartHovered($event)\"\n                                            (chartClick)=\"chartClicked($event)\"></canvas>\n                                        </div>\n                                    </div>\n                                </div>\n                                <!--/.col-->\n                                <div class=\"col-sm-6\">\n                                    <div class=\"callout callout-danger\">\n                                        <small class=\"text-muted\">Recuring Clients</small>\n                                        <br>\n                                        <strong class=\"h4\">22,643</strong>\n                                        <div class=\"chart-wrapper\" style=\"width:100px;height:30px;\">\n                                            <canvas baseChart class=\"chart\" [datasets]=\"sparklineChartData2\" [labels]=\"sparklineChartLabels\" [options]=\"sparklineChartOptions\" [colors]=\"sparklineChartDanger\" [legend]=\"sparklineChartLegend\" [chartType]=\"sparklineChartType\" (chartHover)=\"chartHovered($event)\"\n                                            (chartClick)=\"chartClicked($event)\"></canvas>\n                                        </div>\n                                    </div>\n                                </div>\n                                <!--/.col-->\n                            </div>\n                            <!--/.row-->\n                            <hr class=\"mt-0\">\n                            <ul class=\"horizontal-bars\">\n                                <li>\n                                    <div class=\"title\">\n                                        Monday\n                                    </div>\n                                    <div class=\"bars\">\n                                        <div class=\"progress progress-xs\">\n                                            <div class=\"progress-bar bg-info\" role=\"progressbar\" style=\"width: 34%\" aria-valuenow=\"34\" aria-valuemin=\"0\" aria-valuemax=\"100\"></div>\n                                        </div>\n                                        <div class=\"progress progress-xs\">\n                                            <div class=\"progress-bar bg-danger\" role=\"progressbar\" style=\"width: 78%\" aria-valuenow=\"78\" aria-valuemin=\"0\" aria-valuemax=\"100\"></div>\n                                        </div>\n                                    </div>\n                                </li>\n                                <li>\n                                    <div class=\"title\">\n                                        Tuesday\n                                    </div>\n                                    <div class=\"bars\">\n                                        <div class=\"progress progress-xs\">\n                                            <div class=\"progress-bar bg-info\" role=\"progressbar\" style=\"width: 56%\" aria-valuenow=\"56\" aria-valuemin=\"0\" aria-valuemax=\"100\"></div>\n                                        </div>\n                                        <div class=\"progress progress-xs\">\n                                            <div class=\"progress-bar bg-danger\" role=\"progressbar\" style=\"width: 94%\" aria-valuenow=\"94\" aria-valuemin=\"0\" aria-valuemax=\"100\"></div>\n                                        </div>\n                                    </div>\n                                </li>\n                                <li>\n                                    <div class=\"title\">\n                                        Wednesday\n                                    </div>\n                                    <div class=\"bars\">\n                                        <div class=\"progress progress-xs\">\n                                            <div class=\"progress-bar bg-info\" role=\"progressbar\" style=\"width: 12%\" aria-valuenow=\"12\" aria-valuemin=\"0\" aria-valuemax=\"100\"></div>\n                                        </div>\n                                        <div class=\"progress progress-xs\">\n                                            <div class=\"progress-bar bg-danger\" role=\"progressbar\" style=\"width: 67%\" aria-valuenow=\"67\" aria-valuemin=\"0\" aria-valuemax=\"100\"></div>\n                                        </div>\n                                    </div>\n                                </li>\n                                <li>\n                                    <div class=\"title\">\n                                        Thursday\n                                    </div>\n                                    <div class=\"bars\">\n                                        <div class=\"progress progress-xs\">\n                                            <div class=\"progress-bar bg-info\" role=\"progressbar\" style=\"width: 43%\" aria-valuenow=\"43\" aria-valuemin=\"0\" aria-valuemax=\"100\"></div>\n                                        </div>\n                                        <div class=\"progress progress-xs\">\n                                            <div class=\"progress-bar bg-danger\" role=\"progressbar\" style=\"width: 91%\" aria-valuenow=\"91\" aria-valuemin=\"0\" aria-valuemax=\"100\"></div>\n                                        </div>\n                                    </div>\n                                </li>\n                                <li>\n                                    <div class=\"title\">\n                                        Friday\n                                    </div>\n                                    <div class=\"bars\">\n                                        <div class=\"progress progress-xs\">\n                                            <div class=\"progress-bar bg-info\" role=\"progressbar\" style=\"width: 22%\" aria-valuenow=\"22\" aria-valuemin=\"0\" aria-valuemax=\"100\"></div>\n                                        </div>\n                                        <div class=\"progress progress-xs\">\n                                            <div class=\"progress-bar bg-danger\" role=\"progressbar\" style=\"width: 73%\" aria-valuenow=\"73\" aria-valuemin=\"0\" aria-valuemax=\"100\"></div>\n                                        </div>\n                                    </div>\n                                </li>\n                                <li>\n                                    <div class=\"title\">\n                                        Saturday\n                                    </div>\n                                    <div class=\"bars\">\n                                        <div class=\"progress progress-xs\">\n                                            <div class=\"progress-bar bg-info\" role=\"progressbar\" style=\"width: 53%\" aria-valuenow=\"53\" aria-valuemin=\"0\" aria-valuemax=\"100\"></div>\n                                        </div>\n                                        <div class=\"progress progress-xs\">\n                                            <div class=\"progress-bar bg-danger\" role=\"progressbar\" style=\"width: 82%\" aria-valuenow=\"82\" aria-valuemin=\"0\" aria-valuemax=\"100\"></div>\n                                        </div>\n                                    </div>\n                                </li>\n                                <li>\n                                    <div class=\"title\">\n                                        Sunday\n                                    </div>\n                                    <div class=\"bars\">\n                                        <div class=\"progress progress-xs\">\n                                            <div class=\"progress-bar bg-info\" role=\"progressbar\" style=\"width: 9%\" aria-valuenow=\"9\" aria-valuemin=\"0\" aria-valuemax=\"100\"></div>\n                                        </div>\n                                        <div class=\"progress progress-xs\">\n                                            <div class=\"progress-bar bg-danger\" role=\"progressbar\" style=\"width: 69%\" aria-valuenow=\"69\" aria-valuemin=\"0\" aria-valuemax=\"100\"></div>\n                                        </div>\n                                    </div>\n                                </li>\n                                <li class=\"legend\">\n                                    <span class=\"badge badge-pill badge-info\"></span>\n                                    <small>New clients</small>&nbsp;\n                                    <span class=\"badge badge-pill badge-danger\"></span>\n                                    <small>Recurring clients</small>\n                                </li>\n                            </ul>\n                        </div>\n                        <!--/.col-->\n                        <div class=\"col-sm-6 col-lg-4\">\n                            <div class=\"row\">\n                                <div class=\"col-sm-6\">\n                                    <div class=\"callout callout-warning\">\n                                        <small class=\"text-muted\">Pageviews</small>\n                                        <br>\n                                        <strong class=\"h4\">78,623</strong>\n                                        <div class=\"chart-wrapper\" style=\"width:100px;height:30px;\">\n                                            <canvas baseChart class=\"chart\" [datasets]=\"sparklineChartData1\" [labels]=\"sparklineChartLabels\" [options]=\"sparklineChartOptions\" [colors]=\"sparklineChartWarning\" [legend]=\"sparklineChartLegend\" [chartType]=\"sparklineChartType\" (chartHover)=\"chartHovered($event)\"\n                                            (chartClick)=\"chartClicked($event)\"></canvas>\n                                        </div>\n                                    </div>\n                                </div>\n                                <!--/.col-->\n                                <div class=\"col-sm-6\">\n                                    <div class=\"callout callout-success\">\n                                        <small class=\"text-muted\">Organic</small>\n                                        <br>\n                                        <strong class=\"h4\">49,123</strong>\n                                        <div class=\"chart-wrapper\" style=\"width:100px;height:30px;\">\n                                            <canvas baseChart class=\"chart\" [datasets]=\"sparklineChartData2\" [labels]=\"sparklineChartLabels\" [options]=\"sparklineChartOptions\" [colors]=\"sparklineChartSuccess\" [legend]=\"sparklineChartLegend\" [chartType]=\"sparklineChartType\" (chartHover)=\"chartHovered($event)\"\n                                            (chartClick)=\"chartClicked($event)\"></canvas>\n                                        </div>\n                                    </div>\n                                </div>\n                                <!--/.col-->\n                            </div>\n                            <!--/.row-->\n                            <hr class=\"mt-0\">\n                            <ul class=\"horizontal-bars type-2\">\n                                <li>\n                                    <i class=\"icon-user\"></i>\n                                    <span class=\"title\">Male</span>\n                                    <span class=\"value\">43%</span>\n                                    <div class=\"bars\">\n                                        <div class=\"progress progress-xs\">\n                                            <div class=\"progress-bar bg-warning\" role=\"progressbar\" style=\"width: 43%\" aria-valuenow=\"43\" aria-valuemin=\"0\" aria-valuemax=\"100\"></div>\n                                        </div>\n                                    </div>\n                                </li>\n                                <li>\n                                    <i class=\"icon-user-female\"></i>\n                                    <span class=\"title\">Female</span>\n                                    <span class=\"value\">37%</span>\n                                    <div class=\"bars\">\n                                        <div class=\"progress progress-xs\">\n                                            <div class=\"progress-bar bg-warning\" role=\"progressbar\" style=\"width: 37%\" aria-valuenow=\"37\" aria-valuemin=\"0\" aria-valuemax=\"100\"></div>\n                                        </div>\n                                    </div>\n                                </li>\n                                <li class=\"divider\"></li>\n                                <li>\n                                    <i class=\"icon-globe\"></i>\n                                    <span class=\"title\">Organic Search</span>\n                                    <span class=\"value\">191,235\n                                        <span class=\"text-muted small\">(56%)</span>\n                                    </span>\n                                    <div class=\"bars\">\n                                        <div class=\"progress progress-xs\">\n                                            <div class=\"progress-bar bg-success\" role=\"progressbar\" style=\"width: 56%\" aria-valuenow=\"56\" aria-valuemin=\"0\" aria-valuemax=\"100\"></div>\n                                        </div>\n                                    </div>\n                                </li>\n                                <li>\n                                    <i class=\"icon-social-facebook\"></i>\n                                    <span class=\"title\">Facebook</span>\n                                    <span class=\"value\">51,223\n                                        <span class=\"text-muted small\">(15%)</span>\n                                    </span>\n                                    <div class=\"bars\">\n                                        <div class=\"progress progress-xs\">\n                                            <div class=\"progress-bar bg-success\" role=\"progressbar\" style=\"width: 15%\" aria-valuenow=\"15\" aria-valuemin=\"0\" aria-valuemax=\"100\"></div>\n                                        </div>\n                                    </div>\n                                </li>\n                                <li>\n                                    <i class=\"icon-social-twitter\"></i>\n                                    <span class=\"title\">Twitter</span>\n                                    <span class=\"value\">37,564\n                                        <span class=\"text-muted small\">(11%)</span>\n                                    </span>\n                                    <div class=\"bars\">\n                                        <div class=\"progress progress-xs\">\n                                            <div class=\"progress-bar bg-success\" role=\"progressbar\" style=\"width: 11%\" aria-valuenow=\"11\" aria-valuemin=\"0\" aria-valuemax=\"100\"></div>\n                                        </div>\n                                    </div>\n                                </li>\n                                <li>\n                                    <i class=\"icon-social-linkedin\"></i>\n                                    <span class=\"title\">LinkedIn</span>\n                                    <span class=\"value\">27,319\n                                        <span class=\"text-muted small\">(8%)</span>\n                                    </span>\n                                    <div class=\"bars\">\n                                        <div class=\"progress progress-xs\">\n                                            <div class=\"progress-bar bg-success\" role=\"progressbar\" style=\"width: 8%\" aria-valuenow=\"8\" aria-valuemin=\"0\" aria-valuemax=\"100\"></div>\n                                        </div>\n                                    </div>\n                                </li>\n                                <li class=\"divider text-center\">\n                                    <button type=\"button\" class=\"btn btn-sm btn-link text-muted\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"\" data-original-title=\"show more\"><i class=\"icon-options\"></i>\n                                    </button>\n                                </li>\n                            </ul>\n                        </div>\n                        <!--/.col-->\n                        <div class=\"col-sm-6 col-lg-4\">\n                            <div class=\"row\">\n                                <div class=\"col-sm-6\">\n                                    <div class=\"callout\">\n                                        <small class=\"text-muted\">CTR</small>\n                                        <br>\n                                        <strong class=\"h4\">23%</strong>\n                                        <div class=\"chart-wrapper\" style=\"width:100px;height:30px;\">\n                                            <canvas baseChart class=\"chart\" [datasets]=\"sparklineChartData1\" [labels]=\"sparklineChartLabels\" [options]=\"sparklineChartOptions\" [colors]=\"sparklineChartDefault\" [legend]=\"sparklineChartLegend\" [chartType]=\"sparklineChartType\" (chartHover)=\"chartHovered($event)\"\n                                            (chartClick)=\"chartClicked($event)\"></canvas>\n                                        </div>\n                                    </div>\n                                </div>\n                                <!--/.col-->\n                                <div class=\"col-sm-6\">\n                                    <div class=\"callout callout-primary\">\n                                        <small class=\"text-muted\">Bounce Rate</small>\n                                        <br>\n                                        <strong class=\"h4\">5%</strong>\n                                        <div class=\"chart-wrapper\" style=\"width:100px;height:30px;\">\n                                            <canvas baseChart class=\"chart\" [datasets]=\"sparklineChartData2\" [labels]=\"sparklineChartLabels\" [options]=\"sparklineChartOptions\" [colors]=\"sparklineChartPrimary\" [legend]=\"sparklineChartLegend\" [chartType]=\"sparklineChartType\" (chartHover)=\"chartHovered($event)\"\n                                            (chartClick)=\"chartClicked($event)\"></canvas>\n                                        </div>\n                                    </div>\n                                </div>\n                                <!--/.col-->\n                            </div>\n                            <!--/.row-->\n                            <hr class=\"mt-0\">\n                            <ul class=\"icons-list\">\n                                <li>\n                                    <i class=\"icon-screen-desktop bg-primary\"></i>\n                                    <div class=\"desc\">\n                                        <div class=\"title\">iMac 4k</div>\n                                        <small>Lorem ipsum dolor sit amet</small>\n                                    </div>\n                                    <div class=\"value\">\n                                        <div class=\"small text-muted\">Sold this week</div>\n                                        <strong>1.924</strong>\n                                    </div>\n                                    <div class=\"actions\">\n                                        <button type=\"button\" class=\"btn btn-link text-muted\"><i class=\"icon-settings\"></i>\n                                        </button>\n                                    </div>\n                                </li>\n                                <li>\n                                    <i class=\"icon-screen-smartphone bg-info\"></i>\n                                    <div class=\"desc\">\n                                        <div class=\"title\">Samsung Galaxy Edge</div>\n                                        <small>Lorem ipsum dolor sit amet</small>\n                                    </div>\n                                    <div class=\"value\">\n                                        <div class=\"small text-muted\">Sold this week</div>\n                                        <strong>1.224</strong>\n                                    </div>\n                                    <div class=\"actions\">\n                                        <button type=\"button\" class=\"btn btn-link text-muted\"><i class=\"icon-settings\"></i>\n                                        </button>\n                                    </div>\n                                </li>\n                                <li>\n                                    <i class=\"icon-screen-smartphone bg-warning\"></i>\n                                    <div class=\"desc\">\n                                        <div class=\"title\">iPhone 6S</div>\n                                        <small>Lorem ipsum dolor sit amet</small>\n                                    </div>\n                                    <div class=\"value\">\n                                        <div class=\"small text-muted\">Sold this week</div>\n                                        <strong>1.163</strong>\n                                    </div>\n                                    <div class=\"actions\">\n                                        <button type=\"button\" class=\"btn btn-link text-muted\"><i class=\"icon-settings\"></i>\n                                        </button>\n                                    </div>\n                                </li>\n                                <li>\n                                    <i class=\"icon-user bg-danger\"></i>\n                                    <div class=\"desc\">\n                                        <div class=\"title\">Premium accounts</div>\n                                        <small>Lorem ipsum dolor sit amet</small>\n                                    </div>\n                                    <div class=\"value\">\n                                        <div class=\"small text-muted\">Sold this week</div>\n                                        <strong>928</strong>\n                                    </div>\n                                    <div class=\"actions\">\n                                        <button type=\"button\" class=\"btn btn-link text-muted\"><i class=\"icon-settings\"></i>\n                                        </button>\n                                    </div>\n                                </li>\n                                <li>\n                                    <i class=\"icon-social-spotify bg-success\"></i>\n                                    <div class=\"desc\">\n                                        <div class=\"title\">Spotify Subscriptions</div>\n                                        <small>Lorem ipsum dolor sit amet</small>\n                                    </div>\n                                    <div class=\"value\">\n                                        <div class=\"small text-muted\">Sold this week</div>\n                                        <strong>893</strong>\n                                    </div>\n                                    <div class=\"actions\">\n                                        <button type=\"button\" class=\"btn btn-link text-muted\"><i class=\"icon-settings\"></i>\n                                        </button>\n                                    </div>\n                                </li>\n                                <li>\n                                    <i class=\"icon-cloud-download bg-danger\"></i>\n                                    <div class=\"desc\">\n                                        <div class=\"title\">Ebook</div>\n                                        <small>Lorem ipsum dolor sit amet</small>\n                                    </div>\n                                    <div class=\"value\">\n                                        <div class=\"small text-muted\">Downloads</div>\n                                        <strong>121.924</strong>\n                                    </div>\n                                    <div class=\"actions\">\n                                        <button type=\"button\" class=\"btn btn-link text-muted\"><i class=\"icon-settings\"></i>\n                                        </button>\n                                    </div>\n                                </li>\n                                <li>\n                                    <i class=\"icon-camera bg-warning\"></i>\n                                    <div class=\"desc\">\n                                        <div class=\"title\">Photos</div>\n                                        <small>Lorem ipsum dolor sit amet</small>\n                                    </div>\n                                    <div class=\"value\">\n                                        <div class=\"small text-muted\">Uploaded</div>\n                                        <strong>12.125</strong>\n                                    </div>\n                                    <div class=\"actions\">\n                                        <button type=\"button\" class=\"btn btn-link text-muted\"><i class=\"icon-settings\"></i>\n                                        </button>\n                                    </div>\n                                </li>\n                                <li class=\"divider text-center\">\n                                    <button type=\"button\" class=\"btn btn-sm btn-link text-muted\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"show more\"><i class=\"icon-options\"></i>\n                                    </button>\n                                </li>\n                            </ul>\n                        </div>\n                        <!--/.col-->\n                    </div>\n                    <!--/.row-->\n                    <br>\n                    <table class=\"table table-hover table-outline mb-0 hidden-sm-down\">\n                        <thead class=\"thead-default\">\n                            <tr>\n                                <th class=\"text-center\"><i class=\"icon-people\"></i>\n                                </th>\n                                <th>User</th>\n                                <th class=\"text-center\">Country</th>\n                                <th>Usage</th>\n                                <th class=\"text-center\">Payment Method</th>\n                                <th>Activity</th>\n                            </tr>\n                        </thead>\n                        <tbody>\n                            <tr>\n                                <td class=\"text-center\">\n                                    <div class=\"avatar\">\n                                        <img src=\"" + __webpack_require__(315) + "\" class=\"img-avatar\" alt=\"admin@bootstrapmaster.com\" src=\"" + __webpack_require__(315) + "\">\n                                        <span class=\"avatar-status badge-success\"></span>\n                                    </div>\n                                </td>\n                                <td>\n                                    <div>Yiorgos Avraamu</div>\n                                    <div class=\"small text-muted\">\n                                        <span>New</span>| Registered: Jan 1, 2015\n                                    </div>\n                                </td>\n                                <td class=\"text-center\">\n                                    <img src=\"" + __webpack_require__(321) + "\" alt=\"USA\" style=\"height:24px;\" src=\"" + __webpack_require__(321) + "\">\n                                </td>\n                                <td>\n                                    <div class=\"clearfix\">\n                                        <div class=\"float-left\">\n                                            <strong>50%</strong>\n                                        </div>\n                                        <div class=\"float-right\">\n                                            <small class=\"text-muted\">Jun 11, 2015 - Jul 10, 2015</small>\n                                        </div>\n                                    </div>\n                                    <div class=\"progress progress-xs\">\n                                        <div class=\"progress-bar bg-success\" role=\"progressbar\" style=\"width: 50%\" aria-valuenow=\"50\" aria-valuemin=\"0\" aria-valuemax=\"100\"></div>\n                                    </div>\n                                </td>\n                                <td class=\"text-center\">\n                                    <i class=\"fa fa-cc-mastercard\" style=\"font-size:24px\"></i>\n                                </td>\n                                <td>\n                                    <div class=\"small text-muted\">Last login</div>\n                                    <strong>10 sec ago</strong>\n                                </td>\n                            </tr>\n                            <tr>\n                                <td class=\"text-center\">\n                                    <div class=\"avatar\">\n                                        <img src=\"" + __webpack_require__(15) + "\" class=\"img-avatar\" alt=\"admin@bootstrapmaster.com\" src=\"" + __webpack_require__(15) + "\">\n                                        <span class=\"avatar-status badge-danger\"></span>\n                                    </div>\n                                </td>\n                                <td>\n                                    <div>Avram Tarasios</div>\n                                    <div class=\"small text-muted\">\n\n                                        <span>Recurring</span>| Registered: Jan 1, 2015\n                                    </div>\n                                </td>\n                                <td class=\"text-center\">\n                                    <img src=\"" + __webpack_require__(316) + "\" alt=\"Brazil\" style=\"height:24px;\" src=\"" + __webpack_require__(316) + "\">\n                                </td>\n                                <td>\n                                    <div class=\"clearfix\">\n                                        <div class=\"float-left\">\n                                            <strong>10%</strong>\n                                        </div>\n                                        <div class=\"float-right\">\n                                            <small class=\"text-muted\">Jun 11, 2015 - Jul 10, 2015</small>\n                                        </div>\n                                    </div>\n                                    <div class=\"progress progress-xs\">\n                                        <div class=\"progress-bar bg-info\" role=\"progressbar\" style=\"width: 10%\" aria-valuenow=\"10\" aria-valuemin=\"0\" aria-valuemax=\"100\"></div>\n                                    </div>\n                                </td>\n                                <td class=\"text-center\">\n                                    <i class=\"fa fa-cc-visa\" style=\"font-size:24px\"></i>\n                                </td>\n                                <td>\n                                    <div class=\"small text-muted\">Last login</div>\n                                    <strong>5 minutes ago</strong>\n                                </td>\n                            </tr>\n                            <tr>\n                                <td class=\"text-center\">\n                                    <div class=\"avatar\">\n                                        <img src=\"" + __webpack_require__(16) + "\" class=\"img-avatar\" alt=\"admin@bootstrapmaster.com\" src=\"" + __webpack_require__(16) + "\">\n                                        <span class=\"avatar-status badge-warning\"></span>\n                                    </div>\n                                </td>\n                                <td>\n                                    <div>Quintin Ed</div>\n                                    <div class=\"small text-muted\">\n                                        <span>New</span>| Registered: Jan 1, 2015\n                                    </div>\n                                </td>\n                                <td class=\"text-center\">\n                                    <img src=\"" + __webpack_require__(318) + "\" alt=\"India\" style=\"height:24px;\" src=\"" + __webpack_require__(318) + "\">\n                                </td>\n                                <td>\n                                    <div class=\"clearfix\">\n                                        <div class=\"float-left\">\n                                            <strong>74%</strong>\n                                        </div>\n                                        <div class=\"float-right\">\n                                            <small class=\"text-muted\">Jun 11, 2015 - Jul 10, 2015</small>\n                                        </div>\n                                    </div>\n                                    <div class=\"progress progress-xs\">\n                                        <div class=\"progress-bar bg-warning\" role=\"progressbar\" style=\"width: 74%\" aria-valuenow=\"74\" aria-valuemin=\"0\" aria-valuemax=\"100\"></div>\n                                    </div>\n                                </td>\n                                <td class=\"text-center\">\n                                    <i class=\"fa fa-cc-stripe\" style=\"font-size:24px\"></i>\n                                </td>\n                                <td>\n                                    <div class=\"small text-muted\">Last login</div>\n                                    <strong>1 hour ago</strong>\n                                </td>\n                            </tr>\n                            <tr>\n                                <td class=\"text-center\">\n                                    <div class=\"avatar\">\n                                        <img src=\"" + __webpack_require__(3) + "\" class=\"img-avatar\" alt=\"admin@bootstrapmaster.com\" src=\"" + __webpack_require__(3) + "\">\n                                        <span class=\"avatar-status badge-default\"></span>\n                                    </div>\n                                </td>\n                                <td>\n                                    <div>Enéas Kwadwo</div>\n                                    <div class=\"small text-muted\">\n                                        <span>New</span>| Registered: Jan 1, 2015\n                                    </div>\n                                </td>\n                                <td class=\"text-center\">\n                                    <img src=\"" + __webpack_require__(317) + "\" alt=\"France\" style=\"height:24px;\" src=\"" + __webpack_require__(317) + "\">\n                                </td>\n                                <td>\n                                    <div class=\"clearfix\">\n                                        <div class=\"float-left\">\n                                            <strong>98%</strong>\n                                        </div>\n                                        <div class=\"float-right\">\n                                            <small class=\"text-muted\">Jun 11, 2015 - Jul 10, 2015</small>\n                                        </div>\n                                    </div>\n                                    <div class=\"progress progress-xs\">\n                                        <div class=\"progress-bar bg-danger\" role=\"progressbar\" style=\"width: 98%\" aria-valuenow=\"98\" aria-valuemin=\"0\" aria-valuemax=\"100\"></div>\n                                    </div>\n                                </td>\n                                <td class=\"text-center\">\n                                    <i class=\"fa fa-paypal\" style=\"font-size:24px\"></i>\n                                </td>\n                                <td>\n                                    <div class=\"small text-muted\">Last login</div>\n                                    <strong>Last month</strong>\n                                </td>\n                            </tr>\n                            <tr>\n                                <td class=\"text-center\">\n                                    <div class=\"avatar\">\n                                        <img src=\"" + __webpack_require__(6) + "\" class=\"img-avatar\" alt=\"admin@bootstrapmaster.com\" src=\"" + __webpack_require__(6) + "\">\n                                        <span class=\"avatar-status badge-success\"></span>\n                                    </div>\n                                </td>\n                                <td>\n                                    <div>Agapetus Tadeáš</div>\n                                    <div class=\"small text-muted\">\n                                        <span>New</span>| Registered: Jan 1, 2015\n                                    </div>\n                                </td>\n                                <td class=\"text-center\">\n                                    <img src=\"" + __webpack_require__(320) + "\" alt=\"Spain\" style=\"height:24px;\" src=\"" + __webpack_require__(320) + "\">\n                                </td>\n                                <td>\n                                    <div class=\"clearfix\">\n                                        <div class=\"float-left\">\n                                            <strong>22%</strong>\n                                        </div>\n                                        <div class=\"float-right\">\n                                            <small class=\"text-muted\">Jun 11, 2015 - Jul 10, 2015</small>\n                                        </div>\n                                    </div>\n                                    <div class=\"progress progress-xs\">\n                                        <div class=\"progress-bar bg-info\" role=\"progressbar\" style=\"width: 22%\" aria-valuenow=\"22\" aria-valuemin=\"0\" aria-valuemax=\"100\"></div>\n                                    </div>\n                                </td>\n                                <td class=\"text-center\">\n                                    <i class=\"fa fa-google-wallet\" style=\"font-size:24px\"></i>\n                                </td>\n                                <td>\n                                    <div class=\"small text-muted\">Last login</div>\n                                    <strong>Last week</strong>\n                                </td>\n                            </tr>\n                            <tr>\n                                <td class=\"text-center\">\n                                    <div class=\"avatar\">\n                                        <img src=\"" + __webpack_require__(4) + "\" class=\"img-avatar\" alt=\"admin@bootstrapmaster.com\" src=\"" + __webpack_require__(4) + "\">\n                                        <span class=\"avatar-status badge-danger\"></span>\n                                    </div>\n                                </td>\n                                <td>\n                                    <div>Friderik Dávid</div>\n                                    <div class=\"small text-muted\">\n                                        <span>New</span>| Registered: Jan 1, 2015\n                                    </div>\n                                </td>\n                                <td class=\"text-center\">\n                                    <img src=\"" + __webpack_require__(319) + "\" alt=\"Poland\" style=\"height:24px;\" src=\"" + __webpack_require__(319) + "\">\n                                </td>\n                                <td>\n                                    <div class=\"clearfix\">\n                                        <div class=\"float-left\">\n                                            <strong>43%</strong>\n                                        </div>\n                                        <div class=\"float-right\">\n                                            <small class=\"text-muted\">Jun 11, 2015 - Jul 10, 2015</small>\n                                        </div>\n                                    </div>\n                                    <div class=\"progress progress-xs\">\n                                        <div class=\"progress-bar bg-success\" role=\"progressbar\" style=\"width: 43%\" aria-valuenow=\"43\" aria-valuemin=\"0\" aria-valuemax=\"100\"></div>\n                                    </div>\n                                </td>\n                                <td class=\"text-center\">\n                                    <i class=\"fa fa-cc-amex\" style=\"font-size:24px\"></i>\n                                </td>\n                                <td>\n                                    <div class=\"small text-muted\">Last login</div>\n                                    <strong>Yesterday</strong>\n                                </td>\n                            </tr>\n                        </tbody>\n                    </table>\n                </div>\n            </div>\n        </div>\n        <!--/.col-->\n    </div>\n    <!--/.row-->\n</div>\n";
 
 /***/ }
 ]));

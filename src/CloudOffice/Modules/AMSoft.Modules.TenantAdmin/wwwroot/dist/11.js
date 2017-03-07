@@ -1,22 +1,22 @@
 webpackJsonp([11],{
 
-/***/ 228:
+/***/ 227:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var dragulaExpt = __webpack_require__(553);
+var dragulaExpt = __webpack_require__(549);
 exports.dragula = dragulaExpt.default || dragulaExpt;
 
 
 /***/ },
 
-/***/ 229:
+/***/ 228:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var dragula_class_1 = __webpack_require__(228);
+var dragula_class_1 = __webpack_require__(227);
 var core_1 = __webpack_require__(0);
 var DragulaService = (function () {
     function DragulaService() {
@@ -141,7 +141,7 @@ exports.DragulaService = DragulaService;
 
 /***/ },
 
-/***/ 271:
+/***/ 266:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -156,7 +156,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = __webpack_require__(0);
-var ng2_dragula_1 = __webpack_require__(340);
+var ng2_dragula_1 = __webpack_require__(336);
 var DraggableCardsComponent = (function () {
     function DraggableCardsComponent(dragulaService) {
         var _this = this;
@@ -212,7 +212,7 @@ var DraggableCardsComponent = (function () {
 }());
 DraggableCardsComponent = __decorate([
     core_1.Component({
-        template: __webpack_require__(577)
+        template: __webpack_require__(565)
     }),
     __metadata("design:paramtypes", [ng2_dragula_1.DragulaService])
 ], DraggableCardsComponent);
@@ -221,14 +221,14 @@ exports.DraggableCardsComponent = DraggableCardsComponent;
 
 /***/ },
 
-/***/ 339:
+/***/ 335:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 
 var core_1 = __webpack_require__(0);
-var dragula_provider_1 = __webpack_require__(229);
-var dragula_class_1 = __webpack_require__(228);
+var dragula_provider_1 = __webpack_require__(228);
+var dragula_class_1 = __webpack_require__(227);
 var DragulaDirective = (function () {
     function DragulaDirective(el, dragulaService) {
         this.el = el;
@@ -295,7 +295,7 @@ exports.DragulaDirective = DragulaDirective;
 
 /***/ },
 
-/***/ 340:
+/***/ 336:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -303,12 +303,12 @@ exports.DragulaDirective = DragulaDirective;
 function __export(m) {
     for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
 }
-__export(__webpack_require__(600));
+__export(__webpack_require__(588));
 
 
 /***/ },
 
-/***/ 424:
+/***/ 420:
 /***/ function(module, exports) {
 
 module.exports = function atoa (a, n) { return Array.prototype.slice.call(a, n); }
@@ -316,7 +316,7 @@ module.exports = function atoa (a, n) { return Array.prototype.slice.call(a, n);
 
 /***/ },
 
-/***/ 440:
+/***/ 436:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -329,7 +329,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 var core_1 = __webpack_require__(0);
 var router_1 = __webpack_require__(12);
-var draggable_cards_component_1 = __webpack_require__(271);
+var draggable_cards_component_1 = __webpack_require__(266);
 var routes = [
     {
         path: '',
@@ -355,7 +355,7 @@ exports.DraggableCardsRoutingModule = DraggableCardsRoutingModule;
 
 /***/ },
 
-/***/ 441:
+/***/ 437:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -368,11 +368,11 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 var core_1 = __webpack_require__(0);
 var common_1 = __webpack_require__(13);
-var ng2_dragula_1 = __webpack_require__(340);
+var ng2_dragula_1 = __webpack_require__(336);
 // Spinners
-var draggable_cards_component_1 = __webpack_require__(271);
+var draggable_cards_component_1 = __webpack_require__(266);
 //Routing
-var draggable_cards_routing_module_1 = __webpack_require__(440);
+var draggable_cards_routing_module_1 = __webpack_require__(436);
 //
 var DraggableCardsModule = (function () {
     function DraggableCardsModule() {
@@ -396,13 +396,13 @@ exports.DraggableCardsModule = DraggableCardsModule;
 
 /***/ },
 
-/***/ 460:
+/***/ 456:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var ticky = __webpack_require__(604);
+var ticky = __webpack_require__(592);
 
 module.exports = function debounce (fn, args, ctx) {
   if (!fn) { return; }
@@ -414,14 +414,14 @@ module.exports = function debounce (fn, args, ctx) {
 
 /***/ },
 
-/***/ 461:
+/***/ 457:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var atoa = __webpack_require__(424);
-var debounce = __webpack_require__(460);
+var atoa = __webpack_require__(420);
+var debounce = __webpack_require__(456);
 
 module.exports = function emitter (thing, options) {
   var opts = options || {};
@@ -476,7 +476,7 @@ module.exports = function emitter (thing, options) {
 
 /***/ },
 
-/***/ 462:
+/***/ 458:
 /***/ function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global) {
@@ -532,14 +532,14 @@ function CustomEvent (type, params) {
 
 /***/ },
 
-/***/ 463:
+/***/ 459:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(global) {
 
-var customEvent = __webpack_require__(462);
-var eventmap = __webpack_require__(464);
+var customEvent = __webpack_require__(458);
+var eventmap = __webpack_require__(460);
 var doc = global.document;
 var addEvent = addEventEasy;
 var removeEvent = removeEventEasy;
@@ -642,7 +642,7 @@ function find (el, type, fn) {
 
 /***/ },
 
-/***/ 464:
+/***/ 460:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -664,7 +664,7 @@ module.exports = eventmap;
 
 /***/ },
 
-/***/ 552:
+/***/ 548:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -705,15 +705,15 @@ module.exports = {
 
 /***/ },
 
-/***/ 553:
+/***/ 549:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(global) {
 
-var emitter = __webpack_require__(461);
-var crossvent = __webpack_require__(463);
-var classes = __webpack_require__(552);
+var emitter = __webpack_require__(457);
+var crossvent = __webpack_require__(459);
+var classes = __webpack_require__(548);
 var doc = document;
 var documentElement = doc.documentElement;
 
@@ -1322,21 +1322,21 @@ module.exports = dragula;
 
 /***/ },
 
-/***/ 577:
+/***/ 565:
 /***/ function(module, exports) {
 
 module.exports = "<div class=\"animated fadeIn\">\n    <div class=\"row\">\n        <div class=\"col-md-4\">\n            <div class=\"row dragdrop\" [dragula]='\"second-bag\"'>\n                <div class=\"col-md-12\">\n                    <div class=\"card card-accent-secondary\">\n                        <div class=\"card-header drag\">\n                            Drag &amp; Drop Card\n                        </div>\n                        <div class=\"card-block\">\n                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex\n                            ea commodo consequat.\n                        </div>\n                    </div>\n                </div>\n                <div class=\"col-md-12\">\n                    <div class=\"card card-accent-primary\">\n                        <div class=\"card-header drag\">\n                            Drag &amp; Drop Card\n                        </div>\n                        <div class=\"card-block\">\n                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex\n                            ea commodo consequat.\n                        </div>\n                    </div>\n                </div>\n            </div>\n        </div>\n        <div class=\"col-md-4\">\n            <div class=\"row dragdrop\" [dragula]='\"second-bag\"'>\n                <div class=\"col-md-12\">\n                    <div class=\"card card-accent-success\">\n                        <div class=\"card-header drag\">\n                            Drag &amp; Drop Card\n                        </div>\n                        <div class=\"card-block\">\n                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex\n                            ea commodo consequat.\n                        </div>\n                    </div>\n                </div>\n                <div class=\"col-md-12\">\n                    <div class=\"card card-accent-warning\">\n                        <div class=\"card-header drag\">\n                            Drag &amp; Drop Card\n                        </div>\n                        <div class=\"card-block\">\n                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex\n                            ea commodo consequat.\n                        </div>\n                    </div>\n                </div>\n            </div>\n        </div>\n        <div class=\"col-md-4\">\n            <div class=\"row dragdrop\" [dragula]='\"second-bag\"'>\n                <div class=\"col-md-12\">\n                    <div class=\"card card-accent-info\">\n                        <div class=\"card-header drag\">\n                            Drag &amp; Drop Card\n                        </div>\n                        <div class=\"card-block\">\n                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex\n                            ea commodo consequat.\n                        </div>\n                    </div>\n                </div>\n                <div class=\"col-md-12\">\n                    <div class=\"card card-accent-danger\">\n                        <div class=\"card-header drag\">\n                            Drag &amp; Drop Card\n                        </div>\n                        <div class=\"card-block\">\n                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex\n                            ea commodo consequat.\n                        </div>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>\n</div>\n";
 
 /***/ },
 
-/***/ 599:
+/***/ 587:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 
 var core_1 = __webpack_require__(0);
-var dragula_directive_1 = __webpack_require__(339);
-var dragula_provider_1 = __webpack_require__(229);
+var dragula_directive_1 = __webpack_require__(335);
+var dragula_provider_1 = __webpack_require__(228);
 var DragulaModule = (function () {
     function DragulaModule() {
     }
@@ -1356,7 +1356,7 @@ exports.DragulaModule = DragulaModule;
 
 /***/ },
 
-/***/ 600:
+/***/ 588:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1364,15 +1364,15 @@ exports.DragulaModule = DragulaModule;
 function __export(m) {
     for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
 }
+__export(__webpack_require__(227));
+__export(__webpack_require__(335));
 __export(__webpack_require__(228));
-__export(__webpack_require__(339));
-__export(__webpack_require__(229));
-__export(__webpack_require__(599));
+__export(__webpack_require__(587));
 
 
 /***/ },
 
-/***/ 604:
+/***/ 592:
 /***/ function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(setImmediate) {var si = typeof setImmediate === 'function', tick;
@@ -1383,11 +1383,11 @@ if (si) {
 }
 
 module.exports = tick;
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(605).setImmediate))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(593).setImmediate))
 
 /***/ },
 
-/***/ 605:
+/***/ 593:
 /***/ function(module, exports, __webpack_require__) {
 
 module.exports = (__webpack_require__(1))(401);

@@ -1,6 +1,6 @@
 webpackJsonp([5],{
 
-/***/ 248:
+/***/ 247:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -100,7 +100,7 @@ var ChartJSComponent = (function () {
 }());
 ChartJSComponent = __decorate([
     core_1.Component({
-        template: __webpack_require__(554)
+        template: __webpack_require__(550)
     }),
     __metadata("design:paramtypes", [])
 ], ChartJSComponent);
@@ -109,7 +109,7 @@ exports.ChartJSComponent = ChartJSComponent;
 
 /***/ },
 
-/***/ 425:
+/***/ 421:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -122,7 +122,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 var core_1 = __webpack_require__(0);
 var router_1 = __webpack_require__(12);
-var chartjs_component_1 = __webpack_require__(248);
+var chartjs_component_1 = __webpack_require__(247);
 var routes = [
     {
         path: '',
@@ -148,7 +148,7 @@ exports.ChartJSRoutingModule = ChartJSRoutingModule;
 
 /***/ },
 
-/***/ 554:
+/***/ 550:
 /***/ function(module, exports) {
 
 module.exports = "<div class=\"animated fadeIn\">\n    <div class=\"card-columns cols-2\">\n        <div class=\"card\">\n            <div class=\"card-header\">\n                Line Chart\n                <div class=\"card-actions\">\n                    <a href=\"http://www.chartjs.org\">\n                        <small class=\"text-muted\">docs</small>\n                    </a>\n                </div>\n            </div>\n            <div class=\"card-block\">\n                <div class=\"chart-wrapper\">\n                    <canvas baseChart class=\"chart\" [datasets]=\"lineChartData\" [labels]=\"lineChartLabels\" [options]=\"lineChartOptions\" [colors]=\"lineChartColours\" [legend]=\"lineChartLegend\" [chartType]=\"lineChartType\" (chartHover)=\"chartHovered($event)\" (chartClick)=\"chartClicked($event)\"></canvas>\n                </div>\n            </div>\n        </div>\n        <div class=\"card\">\n            <div class=\"card-header\">\n                Bar Chart\n                <div class=\"card-actions\">\n                    <a href=\"http://www.chartjs.org\">\n                        <small class=\"text-muted\">docs</small>\n                    </a>\n                </div>\n            </div>\n            <div class=\"card-block\">\n                <div class=\"chart-wrapper\">\n                    <canvas baseChart class=\"chart\" [datasets]=\"barChartData\" [labels]=\"barChartLabels\" [options]=\"barChartOptions\" [legend]=\"barChartLegend\" [chartType]=\"barChartType\" (chartHover)=\"chartHovered($event)\" (chartClick)=\"chartClicked($event)\"></canvas>\n                </div>\n            </div>\n        </div>\n        <div class=\"card\">\n            <div class=\"card-header\">\n                Doughnut Chart\n                <div class=\"card-actions\">\n                    <a href=\"http://www.chartjs.org\">\n                        <small class=\"text-muted\">docs</small>\n                    </a>\n                </div>\n            </div>\n            <div class=\"card-block\">\n                <div class=\"chart-wrapper\">\n                    <canvas baseChart class=\"chart\" [data]=\"doughnutChartData\" [labels]=\"doughnutChartLabels\" [chartType]=\"doughnutChartType\" (chartHover)=\"chartHovered($event)\" (chartClick)=\"chartClicked($event)\"></canvas>\n                </div>\n            </div>\n        </div>\n        <div class=\"card\">\n            <div class=\"card-header\">\n                Radar Chart\n                <div class=\"card-actions\">\n                    <a href=\"http://www.chartjs.org\">\n                        <small class=\"text-muted\">docs</small>\n                    </a>\n                </div>\n            </div>\n            <div class=\"card-block\">\n                <div class=\"chart-wrapper\">\n                    <canvas baseChart class=\"chart\" [datasets]=\"radarChartData\" [labels]=\"radarChartLabels\" [chartType]=\"radarChartType\" (chartHover)=\"chartHovered($event)\" (chartClick)=\"chartClicked($event)\"></canvas>\n                </div>\n            </div>\n        </div>\n        <div class=\"card\">\n            <div class=\"card-header\">\n                Pie Chart\n                <div class=\"card-actions\">\n                    <a href=\"http://www.chartjs.org\">\n                        <small class=\"text-muted\">docs</small>\n                    </a>\n                </div>\n            </div>\n            <div class=\"card-block\">\n                <div class=\"chart-wrapper\">\n                    <canvas baseChart class=\"chart\" [data]=\"pieChartData\" [labels]=\"pieChartLabels\" [chartType]=\"pieChartType\" (chartHover)=\"chartHovered($event)\" (chartClick)=\"chartClicked($event)\"></canvas>\n                </div>\n            </div>\n        </div>\n        <div class=\"card\">\n            <div class=\"card-header\">\n                Polar Area Chart\n                <div class=\"card-actions\">\n                    <a href=\"http://www.chartjs.org\">\n                        <small class=\"text-muted\">docs</small>\n                    </a>\n                </div>\n            </div>\n            <div class=\"card-block\">\n                <div class=\"chart-wrapper\">\n                    <canvas baseChart class=\"chart\" [data]=\"polarAreaChartData\" [labels]=\"polarAreaChartLabels\" [legend]=\"polarAreaLegend\" [chartType]=\"polarAreaChartType\" (chartHover)=\"chartHovered($event)\" (chartClick)=\"chartClicked($event)\"></canvas>\n                </div>\n            </div>\n        </div>\n    </div>\n</div>\n";
@@ -168,8 +168,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 var core_1 = __webpack_require__(0);
 var ng2_charts_1 = __webpack_require__(28);
-var chartjs_component_1 = __webpack_require__(248);
-var chartjs_routing_module_1 = __webpack_require__(425);
+var chartjs_component_1 = __webpack_require__(247);
+var chartjs_routing_module_1 = __webpack_require__(421);
 var ChartJSModule = (function () {
     function ChartJSModule() {
     }
