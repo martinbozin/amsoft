@@ -1,20 +1,27 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Globalization;
 using System.IdentityModel.Tokens.Jwt;
 using AMSoft.Base.Multitenancy;
 using AMSoft.CloudOffice.Data;
 using AMSoft.CloudOffice.Data.Interfaces;
 using AMSoft.CloudOffice.Domain.Core;
+using AMSoft.CloudOffice.Infrastructure.Localization;
+using AMSoft.CloudOffice.Infrastructure.Localization.DbStringLocalizer;
 using AMSoft.CloudOffice.Infrastructure.Multitenancy;
 using AMSoft.CloudOffice.Web.Services;
 using ExtCore.WebApplication;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Localization;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Configuration.UserSecrets;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 
 [assembly: UserSecretsId("aspnet-AMSoft.CloudOffice.Web-ce345b64-19cf-4972-b34f-d16f2e7976ed")]
@@ -26,6 +33,7 @@ namespace AMSoft.CloudOffice.Web
         protected IServiceProvider ServiceProvider;
         protected IConfigurationRoot ConfigurationRoot;
         protected IHostingEnvironment HostingEnvironment;
+        public ILoggerFactory LoggerFactory;
         protected ILogger<Startup> Logger;
 
         public Startup(IHostingEnvironment env, IServiceProvider serviceProvider, ILoggerFactory loggerFactory)
@@ -40,6 +48,7 @@ namespace AMSoft.CloudOffice.Web
             ConfigurationRoot = builder.Build();
             HostingEnvironment = env;
             ServiceProvider = serviceProvider;
+            LoggerFactory = loggerFactory;
             Logger = loggerFactory.CreateLogger<Startup>();
 
             //EXT CORE Extensions
@@ -56,11 +65,51 @@ namespace AMSoft.CloudOffice.Web
             // Injection
             services.AddScoped<CurrentUserService>();
 
-            // Add framework services.
-            services.AddMvc();
-
             // Add Multitenancy service
             services.AddMultitenancy<AppTenant, CachingAppTenantResolver>();
+
+            //Add localization services
+            services.AddLocalizationSqlSchema("localization");
+            services.AddSqlLocalization(options => options.UseSettings(true, false, false));
+            services.AddDbContext<LocalizationModelContext>((provider, builder) =>
+            {
+                var sqlConnectionString = ConfigurationRoot["Data:CloudOfficeDbContext"];
+                builder.UseSqlServer(sqlConnectionString, delegate (SqlServerDbContextOptionsBuilder optionsBuilder)
+                {
+                    optionsBuilder.MigrationsAssembly("AMSoft.CloudOffice.Infrastructure");
+                });
+            });
+            services.AddScoped<LanguageActionFilter>();
+            services.Configure<RequestLocalizationOptions>(options =>
+            {
+                var supportedCultures = new List<CultureInfo>
+                        {
+                            new CultureInfo("en-US"),
+                            new CultureInfo("de-CH"),
+                            new CultureInfo("fr-CH"),
+                            new CultureInfo("it-CH")
+                        };
+
+                options.DefaultRequestCulture = new RequestCulture(culture: "en-US", uiCulture: "en-US");
+                options.SupportedCultures = supportedCultures;
+                options.SupportedUICultures = supportedCultures;
+
+                //options.RequestCultureProviders.Insert(0, new CustomRequestCultureProvider(async context =>
+                //{
+                //    // My custom request culture logic
+                //    return new ProviderCultureResult("en");
+                //}));
+            });
+
+            // Add framework services.
+            services.AddMvc()
+                .AddViewLocalization()
+                .AddDataAnnotationsLocalization();
+
+            services.AddRouting(options =>
+            {
+                options.LowercaseUrls = true;
+            });
 
             //Add Extensions services
             _extCoreStartup.ConfigureServices(services);
@@ -78,6 +127,10 @@ namespace AMSoft.CloudOffice.Web
                 app.UseExceptionHandler("/Home/Error");
             }
 
+            //Add localization support
+            var localizationOptions = app.ApplicationServices.GetService<IOptions<RequestLocalizationOptions>>();
+            app.UseRequestLocalization(localizationOptions.Value);
+
             app.UseStaticFiles();
             app.UseMultitenancy<AppTenant>();
 
@@ -92,7 +145,7 @@ namespace AMSoft.CloudOffice.Web
                     AuthenticationScheme = $"{ctx.Tenant.AppTenantId}.AspNet.Cookies",
                     CookieName = $"{ctx.Tenant.AppTenantId}.AspNet.Cookies"
                 });
-                
+
                 JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Clear();
                 builder.UseOpenIdConnectAuthentication(new OpenIdConnectOptions
                 {

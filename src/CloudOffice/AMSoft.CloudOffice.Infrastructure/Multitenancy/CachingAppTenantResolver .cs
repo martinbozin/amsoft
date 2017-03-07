@@ -27,6 +27,7 @@ namespace AMSoft.CloudOffice.Infrastructure.Multitenancy
         {
             return context.Tenant.Hostnames;
         }
+
         protected override Task<TenantContext<AppTenant>> ResolveAsync(HttpContext context)
         {
             //Get All Tenants
@@ -51,7 +52,7 @@ namespace AMSoft.CloudOffice.Infrastructure.Multitenancy
             }
 
             if (currentTenant == null)
-                return Task.FromResult((TenantContext<AppTenant>) null);
+                return Task.FromResult((TenantContext<AppTenant>)null);
 
             var tenantContext = new TenantContext<AppTenant>(currentTenant);
             return Task.FromResult(tenantContext);
@@ -60,7 +61,7 @@ namespace AMSoft.CloudOffice.Infrastructure.Multitenancy
         private IEnumerable<AppTenant> GetTenants()
         {
             var tenants = new List<AppTenant>();
-             using (var contextDb = new CloudOfficeDbContext())
+            using (var contextDb = new CloudOfficeDbContext())
             {
                 var listTenants = contextDb.AppTenants.Include(i => i.Modules).ToList();
                 if (listTenants != null)
