@@ -16,7 +16,7 @@ var TenantsComponent = (function () {
 }());
 TenantsComponent = __decorate([
     core_1.Component({
-        templateUrl: 'tenants/tenants.html'
+        templateUrl: 'tenants.html'
     }),
     __metadata("design:paramtypes", [])
 ], TenantsComponent);

@@ -16,7 +16,7 @@ var UsersComponent = (function () {
 }());
 UsersComponent = __decorate([
     core_1.Component({
-        templateUrl: 'users/users.html'
+        templateUrl: 'users.html'
     }),
     __metadata("design:paramtypes", [])
 ], UsersComponent);

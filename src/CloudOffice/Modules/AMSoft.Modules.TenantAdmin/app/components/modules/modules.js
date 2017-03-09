@@ -16,7 +16,7 @@ var ModulesComponent = (function () {
 }());
 ModulesComponent = __decorate([
     core_1.Component({
-        templateUrl: 'modules/modules.html'
+        templateUrl: 'modules.html'
     }),
     __metadata("design:paramtypes", [])
 ], ModulesComponent);

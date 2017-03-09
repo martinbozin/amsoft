@@ -16,7 +16,7 @@ var SettingsComponent = (function () {
 }());
 SettingsComponent = __decorate([
     core_1.Component({
-        templateUrl: 'settings/settings.html'
+        templateUrl: 'settings.html'
     }),
     __metadata("design:paramtypes", [])
 ], SettingsComponent);
