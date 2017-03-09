@@ -18,13 +18,11 @@ using Microsoft.AspNetCore.Localization;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Configuration.UserSecrets;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 
-[assembly: UserSecretsId("aspnet-AMSoft.CloudOffice.Web-ce345b64-19cf-4972-b34f-d16f2e7976ed")]
 namespace AMSoft.CloudOffice.Web
 {
     public class Startup
@@ -43,7 +41,7 @@ namespace AMSoft.CloudOffice.Web
                 .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
                 .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true)
                 .AddEnvironmentVariables()
-                .AddUserSecrets();
+                .AddUserSecrets("aspnet-AMSoft.CloudOffice.Web-ce345b64-19cf-4972-b34f-d16f2e7976ed");
 
             ConfigurationRoot = builder.Build();
             HostingEnvironment = env;

@@ -9,6 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="AMSoft.Base" Version="1.0.0" />
     <PackageReference Include="Microsoft.AspNetCore" Version="1.1.1" />
     <PackageReference Include="Microsoft.AspNetCore.Diagnostics" Version="1.1.1" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="1.1.2" />
@@ -20,7 +21,6 @@
   </ItemGroup>
   
   <ItemGroup>
-    <ProjectReference Include="..\..\BCL\AMSoft.Base\AMSoft.Base.csproj" />
     <ProjectReference Include="..\AMSoft.CloudOffice.Data\AMSoft.CloudOffice.Data.csproj" />
     <ProjectReference Include="..\AMSoft.CloudOffice.Domain\AMSoft.CloudOffice.Domain.csproj" />
   </ItemGroup>

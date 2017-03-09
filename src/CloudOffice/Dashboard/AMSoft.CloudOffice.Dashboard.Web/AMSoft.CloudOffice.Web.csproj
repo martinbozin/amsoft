@@ -210,6 +210,7 @@
     <Content Include="wwwroot\js\select2.min.js" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="AMSoft.Base" Version="1.0.0" />
     <PackageReference Include="ExtCore.Data" Version="1.1.0" />
     <PackageReference Include="ExtCore.Data.EntityFramework.SqlServer" Version="1.1.0" />
     <PackageReference Include="ExtCore.Mvc" Version="1.1.0" />
@@ -237,7 +238,6 @@
     <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="1.1.1" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\BCL\AMSoft.Base\AMSoft.Base.csproj" />
     <ProjectReference Include="..\..\AMSoft.CloudOffice.Data\AMSoft.CloudOffice.Data.csproj" />
     <ProjectReference Include="..\..\AMSoft.CloudOffice.Domain\AMSoft.CloudOffice.Domain.csproj" />
     <ProjectReference Include="..\..\AMSoft.CloudOffice.Infrastructure\AMSoft.CloudOffice.Infrastructure.csproj" />
