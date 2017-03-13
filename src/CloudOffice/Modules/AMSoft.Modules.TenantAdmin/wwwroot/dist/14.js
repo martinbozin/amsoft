@@ -1,6 +1,6 @@
 webpackJsonp([14],{
 
-/***/ 244:
+/***/ 242:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -43,7 +43,7 @@ exports.LaddaConfig = LaddaConfig;
 
 /***/ },
 
-/***/ 270:
+/***/ 267:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -67,7 +67,7 @@ var LoadingButtonsComponent = (function () {
 }());
 LoadingButtonsComponent = __decorate([
     core_1.Component({
-        template: __webpack_require__(575)
+        template: __webpack_require__(570)
     })
 ], LoadingButtonsComponent);
 exports.LoadingButtonsComponent = LoadingButtonsComponent;
@@ -75,7 +75,7 @@ exports.LoadingButtonsComponent = LoadingButtonsComponent;
 
 /***/ },
 
-/***/ 419:
+/***/ 416:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -93,8 +93,8 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
     return function (target, key) { decorator(target, key, paramIndex); }
 };
 var core_1 = __webpack_require__(0);
-var ladda_config_1 = __webpack_require__(244);
-var Ladda = __webpack_require__(583);
+var ladda_config_1 = __webpack_require__(242);
+var Ladda = __webpack_require__(578);
 var LaddaDirective = (function () {
     function LaddaDirective(el, config) {
         this.el = el.nativeElement;
@@ -179,7 +179,7 @@ exports.LaddaDirective = LaddaDirective;
 
 /***/ },
 
-/***/ 420:
+/***/ 417:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -191,8 +191,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 var core_1 = __webpack_require__(0);
-var ladda_directive_1 = __webpack_require__(419);
-var ladda_config_1 = __webpack_require__(244);
+var ladda_directive_1 = __webpack_require__(416);
+var ladda_config_1 = __webpack_require__(242);
 var LaddaModule = LaddaModule_1 = (function () {
     function LaddaModule() {
     }
@@ -218,7 +218,7 @@ var LaddaModule_1;
 
 /***/ },
 
-/***/ 442:
+/***/ 438:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -231,7 +231,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 var core_1 = __webpack_require__(0);
 var router_1 = __webpack_require__(12);
-var loading_buttons_component_1 = __webpack_require__(270);
+var loading_buttons_component_1 = __webpack_require__(267);
 var routes = [
     {
         path: '',
@@ -257,7 +257,7 @@ exports.LoadingButtonsRoutingModule = LoadingButtonsRoutingModule;
 
 /***/ },
 
-/***/ 443:
+/***/ 439:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -271,10 +271,10 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var core_1 = __webpack_require__(0);
 var common_1 = __webpack_require__(13);
 // Loading Buttons
-var angular2_ladda_1 = __webpack_require__(420);
-var loading_buttons_component_1 = __webpack_require__(270);
+var angular2_ladda_1 = __webpack_require__(417);
+var loading_buttons_component_1 = __webpack_require__(267);
 // Routing
-var loading_buttons_routing_module_1 = __webpack_require__(442);
+var loading_buttons_routing_module_1 = __webpack_require__(438);
 var LoadingButtonsModule = (function () {
     function LoadingButtonsModule() {
     }
@@ -297,14 +297,14 @@ exports.LoadingButtonsModule = LoadingButtonsModule;
 
 /***/ },
 
-/***/ 575:
+/***/ 570:
 /***/ function(module, exports) {
 
-module.exports = "<div class=\"animated fadeIn\">\n    <div class=\"card\">\n        <div class=\"card-header\">\n            <i class=\"icon-cursor\"></i> Loading buttons - Ladda\n            <div class=\"card-actions\">\n                <a href=\"https://github.com/hakimel/Ladda\">\n                    <small class=\"text-muted\">docs</small>\n                </a>\n            </div>\n        </div>\n        <div class=\"card-block\">\n            <p>\n                A UI concept which merges loading indicators into the action that invoked them. Primarily intended for use with forms where it gives users immediate feedback upon submit rather than leaving them wondering while the browser does its thing. For a real-world\n                example, check out any of the forms on <a href=\"http://slides.com\">slides.com</a>.\n            </p>\n\n            <div class=\"text-center\">\n                <button class=\"btn btn-primary\" (click)='toggleLoading()'>Toggle Ladda in button below</button>\n            </div>\n\n            <hr class=\"my-2\">\n\n            <div class=\"row text-center\">\n\n                <div class=\"col-md-3 py-2\">\n                    <h6>expand-left</h6>\n                    <button class=\"btn btn-success btn-ladda\" data-style=\"expand-left\" [ladda]='isLoading'>Submit</button>\n                </div>\n\n                <div class=\"col-md-3 py-2\">\n                    <h6>expand-right</h6>\n                    <button class=\"btn btn-success btn-ladda\" data-style=\"expand-right\" [ladda]='isLoading'>Submit</button>\n                </div>\n\n                <div class=\"col-md-3 py-2\">\n                    <h6>expand-up</h6>\n                    <button class=\"btn btn-success btn-ladda\" data-style=\"expand-up\" [ladda]='isLoading'>Submit</button>\n                </div>\n\n                <div class=\"col-md-3 py-2\">\n                    <h6>expand-down</h6>\n                    <button class=\"btn btn-success btn-ladda\" data-style=\"expand-down\" [ladda]='isLoading'>Submit</button>\n                </div>\n\n\n                <div class=\"col-md-3 py-2\">\n                    <h6>contract</h6>\n                    <button class=\"btn btn-danger btn-ladda\" data-style=\"contract\" [ladda]='isLoading'>Submit</button>\n                </div>\n\n                <div class=\"col-md-3 py-2\">\n                    <h6>contract-overlay</h6>\n                    <button class=\"btn btn-danger btn-ladda\" data-style=\"contract-overlay\" style=\"z-index: 10;\" [ladda]='isLoading'>Submit</button>\n                </div>\n\n                <div class=\"col-md-3 py-2\">\n                    <h6>zoom-in</h6>\n                    <button class=\"btn btn-danger btn-ladda\" data-style=\"zoom-in\" [ladda]='isLoading'>Submit</button>\n                </div>\n\n                <div class=\"col-md-3 py-2\">\n                    <h6>zoom-out</h6>\n                    <button class=\"btn btn-danger btn-ladda\" data-style=\"zoom-out\" [ladda]='isLoading'>Submit</button>\n                </div>\n\n\n                <div class=\"col-md-3 py-2\">\n                    <h6>slide-left</h6>\n                    <button class=\"btn btn-info btn-ladda\" data-style=\"slide-left\" [ladda]='isLoading'>Submit</button>\n                </div>\n\n                <div class=\"col-md-3 py-2\">\n                    <h6>slide-right</h6>\n                    <button class=\"btn btn-info btn-ladda\" data-style=\"slide-right\" [ladda]='isLoading'>Submit</button>\n                </div>\n\n                <div class=\"col-md-3 py-2\">\n                    <h6>slide-up</h6>\n                    <button class=\"btn btn-info btn-ladda\" data-style=\"slide-up\" [ladda]='isLoading'>Submit</button>\n                </div>\n\n                <div class=\"col-md-3 py-2\">\n                    <h6>slide-down</h6>\n                    <button class=\"btn btn-info btn-ladda\" data-style=\"slide-down\" [ladda]='isLoading'>Submit</button>\n                </div>\n            </div>\n\n            <hr class=\"my-2\">\n\n            <h4 class=\"text-center\">Sizes</h4>\n            <div class=\"row text-center\">\n                <div class=\"col-md-4 py-2\">\n                    <h6>Small</h6>\n                    <button class=\"btn btn-sm btn-primary btn-ladda\" data-style=\"expand-right\" [ladda]='isLoading'>Submit</button>\n                </div>\n\n                <div class=\"col-md-4 py-2\">\n                    <h6>Normall</h6>\n                    <button class=\"btn btn-primary btn-ladda\" data-style=\"expand-right\" [ladda]='isLoading'>Submit</button>\n                </div>\n\n                <div class=\"col-md-4 py-2\">\n                    <h6>Large</h6>\n                    <button class=\"btn btn-lg btn-primary btn-ladda\" data-style=\"expand-right\" [ladda]='isLoading'>Submit</button>\n                </div>\n            </div>\n        </div>\n    </div>\n</div>\n";
+module.exports = "<div class=\"animated fadeIn\">\r\n    <div class=\"card\">\r\n        <div class=\"card-header\">\r\n            <i class=\"icon-cursor\"></i> Loading buttons - Ladda\r\n            <div class=\"card-actions\">\r\n                <a href=\"https://github.com/hakimel/Ladda\">\r\n                    <small class=\"text-muted\">docs</small>\r\n                </a>\r\n            </div>\r\n        </div>\r\n        <div class=\"card-block\">\r\n            <p>\r\n                A UI concept which merges loading indicators into the action that invoked them. Primarily intended for use with forms where it gives users immediate feedback upon submit rather than leaving them wondering while the browser does its thing. For a real-world\r\n                example, check out any of the forms on <a href=\"http://slides.com\">slides.com</a>.\r\n            </p>\r\n\r\n            <div class=\"text-center\">\r\n                <button class=\"btn btn-primary\" (click)='toggleLoading()'>Toggle Ladda in button below</button>\r\n            </div>\r\n\r\n            <hr class=\"my-2\">\r\n\r\n            <div class=\"row text-center\">\r\n\r\n                <div class=\"col-md-3 py-2\">\r\n                    <h6>expand-left</h6>\r\n                    <button class=\"btn btn-success btn-ladda\" data-style=\"expand-left\" [ladda]='isLoading'>Submit</button>\r\n                </div>\r\n\r\n                <div class=\"col-md-3 py-2\">\r\n                    <h6>expand-right</h6>\r\n                    <button class=\"btn btn-success btn-ladda\" data-style=\"expand-right\" [ladda]='isLoading'>Submit</button>\r\n                </div>\r\n\r\n                <div class=\"col-md-3 py-2\">\r\n                    <h6>expand-up</h6>\r\n                    <button class=\"btn btn-success btn-ladda\" data-style=\"expand-up\" [ladda]='isLoading'>Submit</button>\r\n                </div>\r\n\r\n                <div class=\"col-md-3 py-2\">\r\n                    <h6>expand-down</h6>\r\n                    <button class=\"btn btn-success btn-ladda\" data-style=\"expand-down\" [ladda]='isLoading'>Submit</button>\r\n                </div>\r\n\r\n\r\n                <div class=\"col-md-3 py-2\">\r\n                    <h6>contract</h6>\r\n                    <button class=\"btn btn-danger btn-ladda\" data-style=\"contract\" [ladda]='isLoading'>Submit</button>\r\n                </div>\r\n\r\n                <div class=\"col-md-3 py-2\">\r\n                    <h6>contract-overlay</h6>\r\n                    <button class=\"btn btn-danger btn-ladda\" data-style=\"contract-overlay\" style=\"z-index: 10;\" [ladda]='isLoading'>Submit</button>\r\n                </div>\r\n\r\n                <div class=\"col-md-3 py-2\">\r\n                    <h6>zoom-in</h6>\r\n                    <button class=\"btn btn-danger btn-ladda\" data-style=\"zoom-in\" [ladda]='isLoading'>Submit</button>\r\n                </div>\r\n\r\n                <div class=\"col-md-3 py-2\">\r\n                    <h6>zoom-out</h6>\r\n                    <button class=\"btn btn-danger btn-ladda\" data-style=\"zoom-out\" [ladda]='isLoading'>Submit</button>\r\n                </div>\r\n\r\n\r\n                <div class=\"col-md-3 py-2\">\r\n                    <h6>slide-left</h6>\r\n                    <button class=\"btn btn-info btn-ladda\" data-style=\"slide-left\" [ladda]='isLoading'>Submit</button>\r\n                </div>\r\n\r\n                <div class=\"col-md-3 py-2\">\r\n                    <h6>slide-right</h6>\r\n                    <button class=\"btn btn-info btn-ladda\" data-style=\"slide-right\" [ladda]='isLoading'>Submit</button>\r\n                </div>\r\n\r\n                <div class=\"col-md-3 py-2\">\r\n                    <h6>slide-up</h6>\r\n                    <button class=\"btn btn-info btn-ladda\" data-style=\"slide-up\" [ladda]='isLoading'>Submit</button>\r\n                </div>\r\n\r\n                <div class=\"col-md-3 py-2\">\r\n                    <h6>slide-down</h6>\r\n                    <button class=\"btn btn-info btn-ladda\" data-style=\"slide-down\" [ladda]='isLoading'>Submit</button>\r\n                </div>\r\n            </div>\r\n\r\n            <hr class=\"my-2\">\r\n\r\n            <h4 class=\"text-center\">Sizes</h4>\r\n            <div class=\"row text-center\">\r\n                <div class=\"col-md-4 py-2\">\r\n                    <h6>Small</h6>\r\n                    <button class=\"btn btn-sm btn-primary btn-ladda\" data-style=\"expand-right\" [ladda]='isLoading'>Submit</button>\r\n                </div>\r\n\r\n                <div class=\"col-md-4 py-2\">\r\n                    <h6>Normall</h6>\r\n                    <button class=\"btn btn-primary btn-ladda\" data-style=\"expand-right\" [ladda]='isLoading'>Submit</button>\r\n                </div>\r\n\r\n                <div class=\"col-md-4 py-2\">\r\n                    <h6>Large</h6>\r\n                    <button class=\"btn btn-lg btn-primary btn-ladda\" data-style=\"expand-right\" [ladda]='isLoading'>Submit</button>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n";
 
 /***/ },
 
-/***/ 583:
+/***/ 578:
 /***/ function(module, exports, __webpack_require__) {
 
 /*!
@@ -314,11 +314,11 @@ module.exports = "<div class=\"animated fadeIn\">\n    <div class=\"card\">\n   
  *
  * Copyright (C) 2016 Hakim El Hattab, http://hakim.se
  */
-!function(a,b){ true?module.exports=b(__webpack_require__(584)):"function"==typeof define&&define.amd?define(["spin"],b):a.Ladda=b(a.Spinner)}(this,function(a){"use strict";function b(a){if("undefined"==typeof a)return void console.warn("Ladda button target must be defined.");if(/ladda-button/i.test(a.className)||(a.className+=" ladda-button"),a.hasAttribute("data-style")||a.setAttribute("data-style","expand-right"),!a.querySelector(".ladda-label")){var b=document.createElement("span");b.className="ladda-label",i(a,b)}var c,d=a.querySelector(".ladda-spinner");d||(d=document.createElement("span"),d.className="ladda-spinner"),a.appendChild(d);var e,f={start:function(){return c||(c=g(a)),a.setAttribute("disabled",""),a.setAttribute("data-loading",""),clearTimeout(e),c.spin(d),this.setProgress(0),this},startAfter:function(a){return clearTimeout(e),e=setTimeout(function(){f.start()},a),this},stop:function(){return a.removeAttribute("disabled"),a.removeAttribute("data-loading"),clearTimeout(e),c&&(e=setTimeout(function(){c.stop()},1e3)),this},toggle:function(){return this.isLoading()?this.stop():this.start(),this},setProgress:function(b){b=Math.max(Math.min(b,1),0);var c=a.querySelector(".ladda-progress");0===b&&c&&c.parentNode?c.parentNode.removeChild(c):(c||(c=document.createElement("div"),c.className="ladda-progress",a.appendChild(c)),c.style.width=(b||0)*a.offsetWidth+"px")},enable:function(){return this.stop(),this},disable:function(){return this.stop(),a.setAttribute("disabled",""),this},isLoading:function(){return a.hasAttribute("data-loading")},remove:function(){clearTimeout(e),a.removeAttribute("disabled",""),a.removeAttribute("data-loading",""),c&&(c.stop(),c=null);for(var b=0,d=j.length;d>b;b++)if(f===j[b]){j.splice(b,1);break}}};return j.push(f),f}function c(a,b){for(;a.parentNode&&a.tagName!==b;)a=a.parentNode;return b===a.tagName?a:void 0}function d(a){for(var b=["input","textarea","select"],c=[],d=0;d<b.length;d++)for(var e=a.getElementsByTagName(b[d]),f=0;f<e.length;f++)e[f].hasAttribute("required")&&c.push(e[f]);return c}function e(a,e){e=e||{};var f=[];"string"==typeof a?f=h(document.querySelectorAll(a)):"object"==typeof a&&"string"==typeof a.nodeName&&(f=[a]);for(var g=0,i=f.length;i>g;g++)!function(){var a=f[g];if("function"==typeof a.addEventListener){var h=b(a),i=-1;a.addEventListener("click",function(b){var f=!0,g=c(a,"FORM");if("undefined"!=typeof g)if("function"==typeof g.checkValidity)f=g.checkValidity();else for(var j=d(g),k=0;k<j.length;k++)""===j[k].value.replace(/^\s+|\s+$/g,"")&&(f=!1),"checkbox"!==j[k].type&&"radio"!==j[k].type||j[k].checked||(f=!1),"email"===j[k].type&&(f=/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/.test(j[k].value));f&&(h.startAfter(1),"number"==typeof e.timeout&&(clearTimeout(i),i=setTimeout(h.stop,e.timeout)),"function"==typeof e.callback&&e.callback.apply(null,[h]))},!1)}}()}function f(){for(var a=0,b=j.length;b>a;a++)j[a].stop()}function g(b){var c,d,e=b.offsetHeight;0===e&&(e=parseFloat(window.getComputedStyle(b).height)),e>32&&(e*=.8),b.hasAttribute("data-spinner-size")&&(e=parseInt(b.getAttribute("data-spinner-size"),10)),b.hasAttribute("data-spinner-color")&&(c=b.getAttribute("data-spinner-color")),b.hasAttribute("data-spinner-lines")&&(d=parseInt(b.getAttribute("data-spinner-lines"),10));var f=.2*e,g=.6*f,h=7>f?2:3;return new a({color:c||"#fff",lines:d||12,radius:f,length:g,width:h,zIndex:"auto",top:"auto",left:"auto",className:""})}function h(a){for(var b=[],c=0;c<a.length;c++)b.push(a[c]);return b}function i(a,b){var c=document.createRange();c.selectNodeContents(a),c.surroundContents(b),a.appendChild(b)}var j=[];return{bind:e,create:b,stopAll:f}});
+!function(a,b){ true?module.exports=b(__webpack_require__(579)):"function"==typeof define&&define.amd?define(["spin"],b):a.Ladda=b(a.Spinner)}(this,function(a){"use strict";function b(a){if("undefined"==typeof a)return void console.warn("Ladda button target must be defined.");if(/ladda-button/i.test(a.className)||(a.className+=" ladda-button"),a.hasAttribute("data-style")||a.setAttribute("data-style","expand-right"),!a.querySelector(".ladda-label")){var b=document.createElement("span");b.className="ladda-label",i(a,b)}var c,d=a.querySelector(".ladda-spinner");d||(d=document.createElement("span"),d.className="ladda-spinner"),a.appendChild(d);var e,f={start:function(){return c||(c=g(a)),a.setAttribute("disabled",""),a.setAttribute("data-loading",""),clearTimeout(e),c.spin(d),this.setProgress(0),this},startAfter:function(a){return clearTimeout(e),e=setTimeout(function(){f.start()},a),this},stop:function(){return a.removeAttribute("disabled"),a.removeAttribute("data-loading"),clearTimeout(e),c&&(e=setTimeout(function(){c.stop()},1e3)),this},toggle:function(){return this.isLoading()?this.stop():this.start(),this},setProgress:function(b){b=Math.max(Math.min(b,1),0);var c=a.querySelector(".ladda-progress");0===b&&c&&c.parentNode?c.parentNode.removeChild(c):(c||(c=document.createElement("div"),c.className="ladda-progress",a.appendChild(c)),c.style.width=(b||0)*a.offsetWidth+"px")},enable:function(){return this.stop(),this},disable:function(){return this.stop(),a.setAttribute("disabled",""),this},isLoading:function(){return a.hasAttribute("data-loading")},remove:function(){clearTimeout(e),a.removeAttribute("disabled",""),a.removeAttribute("data-loading",""),c&&(c.stop(),c=null);for(var b=0,d=j.length;d>b;b++)if(f===j[b]){j.splice(b,1);break}}};return j.push(f),f}function c(a,b){for(;a.parentNode&&a.tagName!==b;)a=a.parentNode;return b===a.tagName?a:void 0}function d(a){for(var b=["input","textarea","select"],c=[],d=0;d<b.length;d++)for(var e=a.getElementsByTagName(b[d]),f=0;f<e.length;f++)e[f].hasAttribute("required")&&c.push(e[f]);return c}function e(a,e){e=e||{};var f=[];"string"==typeof a?f=h(document.querySelectorAll(a)):"object"==typeof a&&"string"==typeof a.nodeName&&(f=[a]);for(var g=0,i=f.length;i>g;g++)!function(){var a=f[g];if("function"==typeof a.addEventListener){var h=b(a),i=-1;a.addEventListener("click",function(b){var f=!0,g=c(a,"FORM");if("undefined"!=typeof g)if("function"==typeof g.checkValidity)f=g.checkValidity();else for(var j=d(g),k=0;k<j.length;k++)""===j[k].value.replace(/^\s+|\s+$/g,"")&&(f=!1),"checkbox"!==j[k].type&&"radio"!==j[k].type||j[k].checked||(f=!1),"email"===j[k].type&&(f=/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/.test(j[k].value));f&&(h.startAfter(1),"number"==typeof e.timeout&&(clearTimeout(i),i=setTimeout(h.stop,e.timeout)),"function"==typeof e.callback&&e.callback.apply(null,[h]))},!1)}}()}function f(){for(var a=0,b=j.length;b>a;a++)j[a].stop()}function g(b){var c,d,e=b.offsetHeight;0===e&&(e=parseFloat(window.getComputedStyle(b).height)),e>32&&(e*=.8),b.hasAttribute("data-spinner-size")&&(e=parseInt(b.getAttribute("data-spinner-size"),10)),b.hasAttribute("data-spinner-color")&&(c=b.getAttribute("data-spinner-color")),b.hasAttribute("data-spinner-lines")&&(d=parseInt(b.getAttribute("data-spinner-lines"),10));var f=.2*e,g=.6*f,h=7>f?2:3;return new a({color:c||"#fff",lines:d||12,radius:f,length:g,width:h,zIndex:"auto",top:"auto",left:"auto",className:""})}function h(a){for(var b=[],c=0;c<a.length;c++)b.push(a[c]);return b}function i(a,b){var c=document.createRange();c.selectNodeContents(a),c.surroundContents(b),a.appendChild(b)}var j=[];return{bind:e,create:b,stopAll:f}});
 
 /***/ },
 
-/***/ 584:
+/***/ 579:
 /***/ function(module, exports, __webpack_require__) {
 
 /**
