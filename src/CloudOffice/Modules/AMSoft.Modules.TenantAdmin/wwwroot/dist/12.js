@@ -17294,7 +17294,7 @@ var DataTableComponent = (function () {
 }());
 DataTableComponent = __decorate([
     core_1.Component({
-        template: __webpack_require__(564)
+        template: __webpack_require__(568)
     }),
     __metadata("design:paramtypes", [http_1.Http])
 ], DataTableComponent);
@@ -17497,14 +17497,14 @@ exports.DatatableInitModule = DatatableInitModule;
 
 /***/ },
 
-/***/ 564:
+/***/ 568:
 /***/ function(module, exports) {
 
-module.exports = "<div class=\"animated fadeIn\">\n    <div class=\"card\">\n        <div class=\"card-header\">DataTable</div>\n        <div class=\"card-block\">\n            <div class=\"row mb-1\">\n                <div class=\"col-md-4 offset-md-8\">\n                    <div class=\"input-group\">\n                        <span class=\"input-group-addon\"><i class=\"fa fa-search\"></i>\n                        </span>\n                        <input type=\"text\" class=\"form-control\" [(ngModel)]=\"filterQuery\" placeholder=\"Search by name\" />\n                    </div>\n                </div>\n            </div>\n            <table class=\"table table-striped\" [mfData]=\"data | dataFilter : filterQuery\" #mf=\"mfDataTable\" [mfRowsOnPage]=\"10\">\n                <thead>\n                    <tr>\n                        <th style=\"width: 20%\">\n                            <mfDefaultSorter by=\"name\">Name</mfDefaultSorter>\n                        </th>\n                        <th style=\"width: 50%\">\n                            <mfDefaultSorter by=\"email\">Email</mfDefaultSorter>\n                        </th>\n                        <th style=\"width: 10%\">\n                            <mfDefaultSorter by=\"age\">Age</mfDefaultSorter>\n                        </th>\n                        <th style=\"width: 20%\">\n                            <mfDefaultSorter by=\"city\">City</mfDefaultSorter>\n                        </th>\n                    </tr>\n                </thead>\n                <tbody>\n                    <tr *ngFor=\"let item of mf.data\">\n                        <td>{{item.name}}</td>\n                        <td>{{item.email}}</td>\n                        <td class=\"text-right\">{{item.age}}</td>\n                        <td>{{item.city | uppercase}}</td>\n                    </tr>\n                </tbody>\n                <tfoot>\n                    <tr>\n                        <td colspan=\"4\">\n                            <mfBootstrapPaginator [rowsOnPageSet]=\"[5,10,15]\"></mfBootstrapPaginator>\n                        </td>\n                    </tr>\n                </tfoot>\n            </table>\n        </div>\n    </div>\n</div>\n";
+module.exports = "<div class=\"animated fadeIn\">\r\n    <div class=\"card\">\r\n        <div class=\"card-header\">DataTable</div>\r\n        <div class=\"card-block\">\r\n            <div class=\"row mb-1\">\r\n                <div class=\"col-md-4 offset-md-8\">\r\n                    <div class=\"input-group\">\r\n                        <span class=\"input-group-addon\"><i class=\"fa fa-search\"></i>\r\n                        </span>\r\n                        <input type=\"text\" class=\"form-control\" [(ngModel)]=\"filterQuery\" placeholder=\"Search by name\" />\r\n                    </div>\r\n                </div>\r\n            </div>\r\n            <table class=\"table table-striped\" [mfData]=\"data | dataFilter : filterQuery\" #mf=\"mfDataTable\" [mfRowsOnPage]=\"10\">\r\n                <thead>\r\n                    <tr>\r\n                        <th style=\"width: 20%\">\r\n                            <mfDefaultSorter by=\"name\">Name</mfDefaultSorter>\r\n                        </th>\r\n                        <th style=\"width: 50%\">\r\n                            <mfDefaultSorter by=\"email\">Email</mfDefaultSorter>\r\n                        </th>\r\n                        <th style=\"width: 10%\">\r\n                            <mfDefaultSorter by=\"age\">Age</mfDefaultSorter>\r\n                        </th>\r\n                        <th style=\"width: 20%\">\r\n                            <mfDefaultSorter by=\"city\">City</mfDefaultSorter>\r\n                        </th>\r\n                    </tr>\r\n                </thead>\r\n                <tbody>\r\n                    <tr *ngFor=\"let item of mf.data\">\r\n                        <td>{{item.name}}</td>\r\n                        <td>{{item.email}}</td>\r\n                        <td class=\"text-right\">{{item.age}}</td>\r\n                        <td>{{item.city | uppercase}}</td>\r\n                    </tr>\r\n                </tbody>\r\n                <tfoot>\r\n                    <tr>\r\n                        <td colspan=\"4\">\r\n                            <mfBootstrapPaginator [rowsOnPageSet]=\"[5,10,15]\"></mfBootstrapPaginator>\r\n                        </td>\r\n                    </tr>\r\n                </tfoot>\r\n            </table>\r\n        </div>\r\n    </div>\r\n</div>\r\n";
 
 /***/ },
 
-/***/ 594:
+/***/ 598:
 /***/ function(module, exports, __webpack_require__) {
 
 module.exports = (__webpack_require__(1))(410);
@@ -17534,7 +17534,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = __webpack_require__(0);
 var _ = __webpack_require__(222);
-var Rx_1 = __webpack_require__(594);
+var Rx_1 = __webpack_require__(598);
 var DataTable = (function () {
     function DataTable(differs) {
         this.differs = differs;

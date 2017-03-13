@@ -118,7 +118,6 @@ namespace AMSoft.CloudOffice.Web
             if (HostingEnvironment.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-                //  app.UseBrowserLink();
             }
             else
             {

@@ -212,7 +212,7 @@ var DraggableCardsComponent = (function () {
 }());
 DraggableCardsComponent = __decorate([
     core_1.Component({
-        template: __webpack_require__(565)
+        template: __webpack_require__(569)
     }),
     __metadata("design:paramtypes", [ng2_dragula_1.DragulaService])
 ], DraggableCardsComponent);
@@ -303,7 +303,7 @@ exports.DragulaDirective = DragulaDirective;
 function __export(m) {
     for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
 }
-__export(__webpack_require__(588));
+__export(__webpack_require__(592));
 
 
 /***/ },
@@ -402,7 +402,7 @@ exports.DraggableCardsModule = DraggableCardsModule;
 "use strict";
 
 
-var ticky = __webpack_require__(592);
+var ticky = __webpack_require__(596);
 
 module.exports = function debounce (fn, args, ctx) {
   if (!fn) { return; }
@@ -1322,14 +1322,14 @@ module.exports = dragula;
 
 /***/ },
 
-/***/ 565:
+/***/ 569:
 /***/ function(module, exports) {
 
-module.exports = "<div class=\"animated fadeIn\">\n    <div class=\"row\">\n        <div class=\"col-md-4\">\n            <div class=\"row dragdrop\" [dragula]='\"second-bag\"'>\n                <div class=\"col-md-12\">\n                    <div class=\"card card-accent-secondary\">\n                        <div class=\"card-header drag\">\n                            Drag &amp; Drop Card\n                        </div>\n                        <div class=\"card-block\">\n                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex\n                            ea commodo consequat.\n                        </div>\n                    </div>\n                </div>\n                <div class=\"col-md-12\">\n                    <div class=\"card card-accent-primary\">\n                        <div class=\"card-header drag\">\n                            Drag &amp; Drop Card\n                        </div>\n                        <div class=\"card-block\">\n                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex\n                            ea commodo consequat.\n                        </div>\n                    </div>\n                </div>\n            </div>\n        </div>\n        <div class=\"col-md-4\">\n            <div class=\"row dragdrop\" [dragula]='\"second-bag\"'>\n                <div class=\"col-md-12\">\n                    <div class=\"card card-accent-success\">\n                        <div class=\"card-header drag\">\n                            Drag &amp; Drop Card\n                        </div>\n                        <div class=\"card-block\">\n                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex\n                            ea commodo consequat.\n                        </div>\n                    </div>\n                </div>\n                <div class=\"col-md-12\">\n                    <div class=\"card card-accent-warning\">\n                        <div class=\"card-header drag\">\n                            Drag &amp; Drop Card\n                        </div>\n                        <div class=\"card-block\">\n                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex\n                            ea commodo consequat.\n                        </div>\n                    </div>\n                </div>\n            </div>\n        </div>\n        <div class=\"col-md-4\">\n            <div class=\"row dragdrop\" [dragula]='\"second-bag\"'>\n                <div class=\"col-md-12\">\n                    <div class=\"card card-accent-info\">\n                        <div class=\"card-header drag\">\n                            Drag &amp; Drop Card\n                        </div>\n                        <div class=\"card-block\">\n                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex\n                            ea commodo consequat.\n                        </div>\n                    </div>\n                </div>\n                <div class=\"col-md-12\">\n                    <div class=\"card card-accent-danger\">\n                        <div class=\"card-header drag\">\n                            Drag &amp; Drop Card\n                        </div>\n                        <div class=\"card-block\">\n                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex\n                            ea commodo consequat.\n                        </div>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>\n</div>\n";
+module.exports = "<div class=\"animated fadeIn\">\r\n    <div class=\"row\">\r\n        <div class=\"col-md-4\">\r\n            <div class=\"row dragdrop\" [dragula]='\"second-bag\"'>\r\n                <div class=\"col-md-12\">\r\n                    <div class=\"card card-accent-secondary\">\r\n                        <div class=\"card-header drag\">\r\n                            Drag &amp; Drop Card\r\n                        </div>\r\n                        <div class=\"card-block\">\r\n                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex\r\n                            ea commodo consequat.\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n                <div class=\"col-md-12\">\r\n                    <div class=\"card card-accent-primary\">\r\n                        <div class=\"card-header drag\">\r\n                            Drag &amp; Drop Card\r\n                        </div>\r\n                        <div class=\"card-block\">\r\n                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex\r\n                            ea commodo consequat.\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n        </div>\r\n        <div class=\"col-md-4\">\r\n            <div class=\"row dragdrop\" [dragula]='\"second-bag\"'>\r\n                <div class=\"col-md-12\">\r\n                    <div class=\"card card-accent-success\">\r\n                        <div class=\"card-header drag\">\r\n                            Drag &amp; Drop Card\r\n                        </div>\r\n                        <div class=\"card-block\">\r\n                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex\r\n                            ea commodo consequat.\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n                <div class=\"col-md-12\">\r\n                    <div class=\"card card-accent-warning\">\r\n                        <div class=\"card-header drag\">\r\n                            Drag &amp; Drop Card\r\n                        </div>\r\n                        <div class=\"card-block\">\r\n                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex\r\n                            ea commodo consequat.\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n        </div>\r\n        <div class=\"col-md-4\">\r\n            <div class=\"row dragdrop\" [dragula]='\"second-bag\"'>\r\n                <div class=\"col-md-12\">\r\n                    <div class=\"card card-accent-info\">\r\n                        <div class=\"card-header drag\">\r\n                            Drag &amp; Drop Card\r\n                        </div>\r\n                        <div class=\"card-block\">\r\n                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex\r\n                            ea commodo consequat.\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n                <div class=\"col-md-12\">\r\n                    <div class=\"card card-accent-danger\">\r\n                        <div class=\"card-header drag\">\r\n                            Drag &amp; Drop Card\r\n                        </div>\r\n                        <div class=\"card-block\">\r\n                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex\r\n                            ea commodo consequat.\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n";
 
 /***/ },
 
-/***/ 587:
+/***/ 591:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1356,7 +1356,7 @@ exports.DragulaModule = DragulaModule;
 
 /***/ },
 
-/***/ 588:
+/***/ 592:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1367,12 +1367,12 @@ function __export(m) {
 __export(__webpack_require__(227));
 __export(__webpack_require__(335));
 __export(__webpack_require__(228));
-__export(__webpack_require__(587));
+__export(__webpack_require__(591));
 
 
 /***/ },
 
-/***/ 592:
+/***/ 596:
 /***/ function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(setImmediate) {var si = typeof setImmediate === 'function', tick;
@@ -1383,11 +1383,11 @@ if (si) {
 }
 
 module.exports = tick;
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(593).setImmediate))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(597).setImmediate))
 
 /***/ },
 
-/***/ 593:
+/***/ 597:
 /***/ function(module, exports, __webpack_require__) {
 
 module.exports = (__webpack_require__(1))(401);

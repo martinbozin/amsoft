@@ -92,7 +92,7 @@ var ModulesComponent = (function () {
 }());
 ModulesComponent = __decorate([
     core_1.Component({
-        template: __webpack_require__(600)
+        template: __webpack_require__(551)
     }),
     __metadata("design:paramtypes", [])
 ], ModulesComponent);
@@ -123,7 +123,7 @@ var SettingsComponent = (function () {
 }());
 SettingsComponent = __decorate([
     core_1.Component({
-        template: __webpack_require__(601)
+        template: __webpack_require__(552)
     }),
     __metadata("design:paramtypes", [])
 ], SettingsComponent);
@@ -154,7 +154,7 @@ var TenantsComponent = (function () {
 }());
 TenantsComponent = __decorate([
     core_1.Component({
-        template: __webpack_require__(602)
+        template: __webpack_require__(553)
     }),
     __metadata("design:paramtypes", [])
 ], TenantsComponent);
@@ -185,7 +185,7 @@ var UsersComponent = (function () {
 }());
 UsersComponent = __decorate([
     core_1.Component({
-        template: __webpack_require__(599)
+        template: __webpack_require__(554)
     }),
     __metadata("design:paramtypes", [])
 ], UsersComponent);
@@ -200,7 +200,7 @@ exports.UsersComponent = UsersComponent;
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__content_ref_class__ = __webpack_require__(324);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__utils_triggers__ = __webpack_require__(585);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__utils_triggers__ = __webpack_require__(589);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return ComponentLoader; });
 
 
@@ -472,7 +472,7 @@ var Selector = {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__utils_facade_browser__ = __webpack_require__(27);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__utils_ng2_bootstrap_config__ = __webpack_require__(26);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__utils_utils_class__ = __webpack_require__(586);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__utils_utils_class__ = __webpack_require__(590);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__modal_backdrop_component__ = __webpack_require__(225);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__modal_options_class__ = __webpack_require__(330);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__component_loader_component_loader_factory__ = __webpack_require__(323);
@@ -802,7 +802,7 @@ var ModalDirective = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ng_positioning__ = __webpack_require__(333);
 /* unused harmony reexport positionElements */
 /* unused harmony reexport Positioning */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__positioning_service__ = __webpack_require__(581);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__positioning_service__ = __webpack_require__(585);
 /* harmony reexport (binding) */ __webpack_require__.d(exports, "a", function() { return __WEBPACK_IMPORTED_MODULE_1__positioning_service__["a"]; });
 
 
@@ -1028,7 +1028,35 @@ exports.ComponentsRoutingModule = ComponentsRoutingModule;
 
 /***/ },
 
-/***/ 576:
+/***/ 551:
+/***/ function(module, exports) {
+
+module.exports = "<div class=\"animated fadeIn\">\r\n    <div class=\"row\">\r\n        <div class=\"col-lg-6\">\r\n            <div class=\"card\">\r\n                <div class=\"card-header\">\r\n                    <i class=\"fa fa-align-justify\"></i> Modules\r\n                </div>\r\n                <div class=\"card-block\">\r\n                    <table class=\"table\">\r\n                        <thead>\r\n                            <tr>\r\n                                <th>Username</th>\r\n                                <th>Date registered</th>\r\n                                <th>Role</th>\r\n                                <th>Status</th>\r\n                            </tr>\r\n                        </thead>\r\n                        <tbody>\r\n                            <tr>\r\n                                <td>Samppa Nori</td>\r\n                                <td>2012/01/01</td>\r\n                                <td>Member</td>\r\n                                <td>\r\n                                    <span class=\"badge badge-success\">Active</span>\r\n                                </td>\r\n                            </tr>\r\n                            <tr>\r\n                                <td>Estavan Lykos</td>\r\n                                <td>2012/02/01</td>\r\n                                <td>Staff</td>\r\n                                <td>\r\n                                    <span class=\"badge badge-danger\">Banned</span>\r\n                                </td>\r\n                            </tr>\r\n                            <tr>\r\n                                <td>Chetan Mohamed</td>\r\n                                <td>2012/02/01</td>\r\n                                <td>Admin</td>\r\n                                <td>\r\n                                    <span class=\"badge badge-default\">Inactive</span>\r\n                                </td>\r\n                            </tr>\r\n                            <tr>\r\n                                <td>Derick Maximinus</td>\r\n                                <td>2012/03/01</td>\r\n                                <td>Member</td>\r\n                                <td>\r\n                                    <span class=\"badge badge-warning\">Pending</span>\r\n                                </td>\r\n                            </tr>\r\n                            <tr>\r\n                                <td>Friderik Dávid</td>\r\n                                <td>2012/01/21</td>\r\n                                <td>Staff</td>\r\n                                <td>\r\n                                    <span class=\"badge badge-success\">Active</span>\r\n                                </td>\r\n                            </tr>\r\n                        </tbody>\r\n                    </table>\r\n                    <ul class=\"pagination\">\r\n                        <li class=\"page-item\"><a class=\"page-link\" href=\"#\">Prev</a>\r\n                        </li>\r\n                        <li class=\"page-item active\">\r\n                            <a class=\"page-link\" href=\"#\">1</a>\r\n                        </li>\r\n                        <li class=\"page-item\"><a class=\"page-link\" href=\"#\">2</a>\r\n                        </li>\r\n                        <li class=\"page-item\"><a class=\"page-link\" href=\"#\">3</a>\r\n                        </li>\r\n                        <li class=\"page-item\"><a class=\"page-link\" href=\"#\">4</a>\r\n                        </li>\r\n                        <li class=\"page-item\"><a class=\"page-link\" href=\"#\">Next</a>\r\n                        </li>\r\n                    </ul>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n";
+
+/***/ },
+
+/***/ 552:
+/***/ function(module, exports) {
+
+module.exports = "<div class=\"animated fadeIn\">\r\n    <div class=\"row\">\r\n        <div class=\"col-lg-6\">\r\n            <div class=\"card\">\r\n                <div class=\"card-header\">\r\n                    <i class=\"fa fa-align-justify\"></i> Setting\r\n                </div>\r\n                <div class=\"card-block\">\r\n                    <table class=\"table\">\r\n                        <thead>\r\n                            <tr>\r\n                                <th>Username</th>\r\n                                <th>Date registered</th>\r\n                                <th>Role</th>\r\n                                <th>Status</th>\r\n                            </tr>\r\n                        </thead>\r\n                        <tbody>\r\n                            <tr>\r\n                                <td>Samppa Nori</td>\r\n                                <td>2012/01/01</td>\r\n                                <td>Member</td>\r\n                                <td>\r\n                                    <span class=\"badge badge-success\">Active</span>\r\n                                </td>\r\n                            </tr>\r\n                            <tr>\r\n                                <td>Estavan Lykos</td>\r\n                                <td>2012/02/01</td>\r\n                                <td>Staff</td>\r\n                                <td>\r\n                                    <span class=\"badge badge-danger\">Banned</span>\r\n                                </td>\r\n                            </tr>\r\n                            <tr>\r\n                                <td>Chetan Mohamed</td>\r\n                                <td>2012/02/01</td>\r\n                                <td>Admin</td>\r\n                                <td>\r\n                                    <span class=\"badge badge-default\">Inactive</span>\r\n                                </td>\r\n                            </tr>\r\n                            <tr>\r\n                                <td>Derick Maximinus</td>\r\n                                <td>2012/03/01</td>\r\n                                <td>Member</td>\r\n                                <td>\r\n                                    <span class=\"badge badge-warning\">Pending</span>\r\n                                </td>\r\n                            </tr>\r\n                            <tr>\r\n                                <td>Friderik Dávid</td>\r\n                                <td>2012/01/21</td>\r\n                                <td>Staff</td>\r\n                                <td>\r\n                                    <span class=\"badge badge-success\">Active</span>\r\n                                </td>\r\n                            </tr>\r\n                        </tbody>\r\n                    </table>\r\n                    <ul class=\"pagination\">\r\n                        <li class=\"page-item\"><a class=\"page-link\" href=\"#\">Prev</a>\r\n                        </li>\r\n                        <li class=\"page-item active\">\r\n                            <a class=\"page-link\" href=\"#\">1</a>\r\n                        </li>\r\n                        <li class=\"page-item\"><a class=\"page-link\" href=\"#\">2</a>\r\n                        </li>\r\n                        <li class=\"page-item\"><a class=\"page-link\" href=\"#\">3</a>\r\n                        </li>\r\n                        <li class=\"page-item\"><a class=\"page-link\" href=\"#\">4</a>\r\n                        </li>\r\n                        <li class=\"page-item\"><a class=\"page-link\" href=\"#\">Next</a>\r\n                        </li>\r\n                    </ul>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n";
+
+/***/ },
+
+/***/ 553:
+/***/ function(module, exports) {
+
+module.exports = "<div class=\"animated fadeIn\">\r\n    <div class=\"row\"> \r\n        <div class=\"col-md-6\">\r\n            <div class=\"card\">\r\n                <div class=\"card-header\">\r\n                    <strong>Tenant Information</strong>\r\n                </div>\r\n                <div class=\"card-block\">\r\n                    <form action=\"\" method=\"post\" class=\"form-horizontal \">\r\n                        <div class=\"form-group row\">\r\n                            <label class=\"col-md-3 form-control-label\" for=\"hf-email\">Name</label>\r\n                            <div class=\"col-md-9\">\r\n                                <input type=\"text\" id=\"name\" name=\"name\" class=\"form-control\">\r\n                            </div>\r\n                        </div>\r\n                        <div class=\"form-group row\">\r\n                            <label class=\"col-md-3 form-control-label\" for=\"hf-password\">Address</label>\r\n                            <div class=\"col-md-9\">\r\n                                <input type=\"text\" id=\"address\" name=\"address\" class=\"form-control\">\r\n                            </div>\r\n                        </div>\r\n                        <div class=\"form-group row\">\r\n                            <label class=\"col-md-3 form-control-label\" for=\"hf-password\">Contact phone</label>\r\n                            <div class=\"col-md-9\">\r\n                                <input type=\"text\" id=\"phone\" name=\"phone\" class=\"form-control\">\r\n                            </div>\r\n                        </div>\r\n                        <div class=\"form-group row\">\r\n                            <label class=\"col-md-3 form-control-label\" for=\"hf-password\">Urls</label>\r\n                            <div class=\"col-md-9\">\r\n                                <input type=\"text\" id=\"urls\" name=\"urls\" class=\"form-control\">\r\n                            </div>\r\n                        </div>\r\n                    </form>\r\n                </div>\r\n                <div class=\"card-footer\">\r\n                    <button type=\"submit\" class=\"btn btn-sm btn-primary\"><i class=\"fa fa-dot-circle-o\"></i> Update</button>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n";
+
+/***/ },
+
+/***/ 554:
+/***/ function(module, exports) {
+
+module.exports = "<div class=\"animated fadeIn\">\r\n    <div class=\"row\">\r\n        <div class=\"col-lg-6\">\r\n            <div class=\"card\">\r\n                <div class=\"card-header\">\r\n                    <i class=\"fa fa-align-justify\"></i> Users\r\n                </div>\r\n                <div class=\"card-block\">\r\n                    <table class=\"table\">\r\n                        <thead>\r\n                            <tr>\r\n                                <th>Username</th>\r\n                                <th>Date registered</th>\r\n                                <th>Role</th>\r\n                                <th>Status</th>\r\n                            </tr>\r\n                        </thead>\r\n                        <tbody>\r\n                            <tr>\r\n                                <td>Samppa Nori</td>\r\n                                <td>2012/01/01</td>\r\n                                <td>Member</td>\r\n                                <td>\r\n                                    <span class=\"badge badge-success\">Active</span>\r\n                                </td>\r\n                            </tr>\r\n                            <tr>\r\n                                <td>Estavan Lykos</td>\r\n                                <td>2012/02/01</td>\r\n                                <td>Staff</td>\r\n                                <td>\r\n                                    <span class=\"badge badge-danger\">Banned</span>\r\n                                </td>\r\n                            </tr>\r\n                            <tr>\r\n                                <td>Chetan Mohamed</td>\r\n                                <td>2012/02/01</td>\r\n                                <td>Admin</td>\r\n                                <td>\r\n                                    <span class=\"badge badge-default\">Inactive</span>\r\n                                </td>\r\n                            </tr>\r\n                            <tr>\r\n                                <td>Derick Maximinus</td>\r\n                                <td>2012/03/01</td>\r\n                                <td>Member</td>\r\n                                <td>\r\n                                    <span class=\"badge badge-warning\">Pending</span>\r\n                                </td>\r\n                            </tr>\r\n                            <tr>\r\n                                <td>Friderik Dávid</td>\r\n                                <td>2012/01/21</td>\r\n                                <td>Staff</td>\r\n                                <td>\r\n                                    <span class=\"badge badge-success\">Active</span>\r\n                                </td>\r\n                            </tr>\r\n                        </tbody>\r\n                    </table>\r\n                    <ul class=\"pagination\">\r\n                        <li class=\"page-item\"><a class=\"page-link\" href=\"#\">Prev</a>\r\n                        </li>\r\n                        <li class=\"page-item active\">\r\n                            <a class=\"page-link\" href=\"#\">1</a>\r\n                        </li>\r\n                        <li class=\"page-item\"><a class=\"page-link\" href=\"#\">2</a>\r\n                        </li>\r\n                        <li class=\"page-item\"><a class=\"page-link\" href=\"#\">3</a>\r\n                        </li>\r\n                        <li class=\"page-item\"><a class=\"page-link\" href=\"#\">4</a>\r\n                        </li>\r\n                        <li class=\"page-item\"><a class=\"page-link\" href=\"#\">Next</a>\r\n                        </li>\r\n                    </ul>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n";
+
+/***/ },
+
+/***/ 580:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1045,7 +1073,7 @@ exports.ComponentsRoutingModule = ComponentsRoutingModule;
 
 /***/ },
 
-/***/ 579:
+/***/ 583:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1055,7 +1083,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 /* harmony reexport (binding) */ __webpack_require__.d(exports, "ModalBackdropOptions", function() { return __WEBPACK_IMPORTED_MODULE_0__modal_backdrop_component__["b"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__modal_component__ = __webpack_require__(331);
 /* harmony reexport (binding) */ __webpack_require__.d(exports, "ModalDirective", function() { return __WEBPACK_IMPORTED_MODULE_1__modal_component__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__modal_module__ = __webpack_require__(580);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__modal_module__ = __webpack_require__(584);
 /* harmony reexport (binding) */ __webpack_require__.d(exports, "ModalModule", function() { return __WEBPACK_IMPORTED_MODULE_2__modal_module__["a"]; });
 
 
@@ -1064,7 +1092,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 
 /***/ },
 
-/***/ 580:
+/***/ 584:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1072,7 +1100,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__modal_backdrop_component__ = __webpack_require__(225);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__modal_component__ = __webpack_require__(331);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__positioning__ = __webpack_require__(332);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__component_loader__ = __webpack_require__(576);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__component_loader__ = __webpack_require__(580);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return ModalModule; });
 
 
@@ -1100,7 +1128,7 @@ var ModalModule = (function () {
 
 /***/ },
 
-/***/ 581:
+/***/ 585:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1137,7 +1165,7 @@ var PositioningService = (function () {
 
 /***/ },
 
-/***/ 584:
+/***/ 588:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1158,11 +1186,11 @@ var Trigger = (function () {
 
 /***/ },
 
-/***/ 585:
+/***/ 589:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__trigger_class__ = __webpack_require__(584);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__trigger_class__ = __webpack_require__(588);
 /* unused harmony export parseTriggers */
 /* harmony export (immutable) */ exports["a"] = listenToTriggers;
 
@@ -1211,7 +1239,7 @@ function listenToTriggers(renderer, target, triggers, showFn, hideFn, toggleFn) 
 
 /***/ },
 
-/***/ 586:
+/***/ 590:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1241,34 +1269,6 @@ var Utils = (function () {
 
 /***/ },
 
-/***/ 599:
-/***/ function(module, exports) {
-
-module.exports = "<div class=\"animated fadeIn\">\n    <div class=\"row\">\n        <div class=\"col-lg-6\">\n            <div class=\"card\">\n                <div class=\"card-header\">\n                    <i class=\"fa fa-align-justify\"></i> Users\n                </div>\n                <div class=\"card-block\">\n                    <table class=\"table\">\n                        <thead>\n                            <tr>\n                                <th>Username</th>\n                                <th>Date registered</th>\n                                <th>Role</th>\n                                <th>Status</th>\n                            </tr>\n                        </thead>\n                        <tbody>\n                            <tr>\n                                <td>Samppa Nori</td>\n                                <td>2012/01/01</td>\n                                <td>Member</td>\n                                <td>\n                                    <span class=\"badge badge-success\">Active</span>\n                                </td>\n                            </tr>\n                            <tr>\n                                <td>Estavan Lykos</td>\n                                <td>2012/02/01</td>\n                                <td>Staff</td>\n                                <td>\n                                    <span class=\"badge badge-danger\">Banned</span>\n                                </td>\n                            </tr>\n                            <tr>\n                                <td>Chetan Mohamed</td>\n                                <td>2012/02/01</td>\n                                <td>Admin</td>\n                                <td>\n                                    <span class=\"badge badge-default\">Inactive</span>\n                                </td>\n                            </tr>\n                            <tr>\n                                <td>Derick Maximinus</td>\n                                <td>2012/03/01</td>\n                                <td>Member</td>\n                                <td>\n                                    <span class=\"badge badge-warning\">Pending</span>\n                                </td>\n                            </tr>\n                            <tr>\n                                <td>Friderik Dávid</td>\n                                <td>2012/01/21</td>\n                                <td>Staff</td>\n                                <td>\n                                    <span class=\"badge badge-success\">Active</span>\n                                </td>\n                            </tr>\n                        </tbody>\n                    </table>\n                    <ul class=\"pagination\">\n                        <li class=\"page-item\"><a class=\"page-link\" href=\"#\">Prev</a>\n                        </li>\n                        <li class=\"page-item active\">\n                            <a class=\"page-link\" href=\"#\">1</a>\n                        </li>\n                        <li class=\"page-item\"><a class=\"page-link\" href=\"#\">2</a>\n                        </li>\n                        <li class=\"page-item\"><a class=\"page-link\" href=\"#\">3</a>\n                        </li>\n                        <li class=\"page-item\"><a class=\"page-link\" href=\"#\">4</a>\n                        </li>\n                        <li class=\"page-item\"><a class=\"page-link\" href=\"#\">Next</a>\n                        </li>\n                    </ul>\n                </div>\n            </div>\n        </div>\n    </div>\n</div>\n";
-
-/***/ },
-
-/***/ 600:
-/***/ function(module, exports) {
-
-module.exports = "<div class=\"animated fadeIn\">\n    <div class=\"row\">\n        <div class=\"col-lg-6\">\n            <div class=\"card\">\n                <div class=\"card-header\">\n                    <i class=\"fa fa-align-justify\"></i> Modules\n                </div>\n                <div class=\"card-block\">\n                    <table class=\"table\">\n                        <thead>\n                            <tr>\n                                <th>Username</th>\n                                <th>Date registered</th>\n                                <th>Role</th>\n                                <th>Status</th>\n                            </tr>\n                        </thead>\n                        <tbody>\n                            <tr>\n                                <td>Samppa Nori</td>\n                                <td>2012/01/01</td>\n                                <td>Member</td>\n                                <td>\n                                    <span class=\"badge badge-success\">Active</span>\n                                </td>\n                            </tr>\n                            <tr>\n                                <td>Estavan Lykos</td>\n                                <td>2012/02/01</td>\n                                <td>Staff</td>\n                                <td>\n                                    <span class=\"badge badge-danger\">Banned</span>\n                                </td>\n                            </tr>\n                            <tr>\n                                <td>Chetan Mohamed</td>\n                                <td>2012/02/01</td>\n                                <td>Admin</td>\n                                <td>\n                                    <span class=\"badge badge-default\">Inactive</span>\n                                </td>\n                            </tr>\n                            <tr>\n                                <td>Derick Maximinus</td>\n                                <td>2012/03/01</td>\n                                <td>Member</td>\n                                <td>\n                                    <span class=\"badge badge-warning\">Pending</span>\n                                </td>\n                            </tr>\n                            <tr>\n                                <td>Friderik Dávid</td>\n                                <td>2012/01/21</td>\n                                <td>Staff</td>\n                                <td>\n                                    <span class=\"badge badge-success\">Active</span>\n                                </td>\n                            </tr>\n                        </tbody>\n                    </table>\n                    <ul class=\"pagination\">\n                        <li class=\"page-item\"><a class=\"page-link\" href=\"#\">Prev</a>\n                        </li>\n                        <li class=\"page-item active\">\n                            <a class=\"page-link\" href=\"#\">1</a>\n                        </li>\n                        <li class=\"page-item\"><a class=\"page-link\" href=\"#\">2</a>\n                        </li>\n                        <li class=\"page-item\"><a class=\"page-link\" href=\"#\">3</a>\n                        </li>\n                        <li class=\"page-item\"><a class=\"page-link\" href=\"#\">4</a>\n                        </li>\n                        <li class=\"page-item\"><a class=\"page-link\" href=\"#\">Next</a>\n                        </li>\n                    </ul>\n                </div>\n            </div>\n        </div>\n    </div>\n</div>\n";
-
-/***/ },
-
-/***/ 601:
-/***/ function(module, exports) {
-
-module.exports = "<div class=\"animated fadeIn\">\n    <div class=\"row\">\n        <div class=\"col-lg-6\">\n            <div class=\"card\">\n                <div class=\"card-header\">\n                    <i class=\"fa fa-align-justify\"></i> Setting\n                </div>\n                <div class=\"card-block\">\n                    <table class=\"table\">\n                        <thead>\n                            <tr>\n                                <th>Username</th>\n                                <th>Date registered</th>\n                                <th>Role</th>\n                                <th>Status</th>\n                            </tr>\n                        </thead>\n                        <tbody>\n                            <tr>\n                                <td>Samppa Nori</td>\n                                <td>2012/01/01</td>\n                                <td>Member</td>\n                                <td>\n                                    <span class=\"badge badge-success\">Active</span>\n                                </td>\n                            </tr>\n                            <tr>\n                                <td>Estavan Lykos</td>\n                                <td>2012/02/01</td>\n                                <td>Staff</td>\n                                <td>\n                                    <span class=\"badge badge-danger\">Banned</span>\n                                </td>\n                            </tr>\n                            <tr>\n                                <td>Chetan Mohamed</td>\n                                <td>2012/02/01</td>\n                                <td>Admin</td>\n                                <td>\n                                    <span class=\"badge badge-default\">Inactive</span>\n                                </td>\n                            </tr>\n                            <tr>\n                                <td>Derick Maximinus</td>\n                                <td>2012/03/01</td>\n                                <td>Member</td>\n                                <td>\n                                    <span class=\"badge badge-warning\">Pending</span>\n                                </td>\n                            </tr>\n                            <tr>\n                                <td>Friderik Dávid</td>\n                                <td>2012/01/21</td>\n                                <td>Staff</td>\n                                <td>\n                                    <span class=\"badge badge-success\">Active</span>\n                                </td>\n                            </tr>\n                        </tbody>\n                    </table>\n                    <ul class=\"pagination\">\n                        <li class=\"page-item\"><a class=\"page-link\" href=\"#\">Prev</a>\n                        </li>\n                        <li class=\"page-item active\">\n                            <a class=\"page-link\" href=\"#\">1</a>\n                        </li>\n                        <li class=\"page-item\"><a class=\"page-link\" href=\"#\">2</a>\n                        </li>\n                        <li class=\"page-item\"><a class=\"page-link\" href=\"#\">3</a>\n                        </li>\n                        <li class=\"page-item\"><a class=\"page-link\" href=\"#\">4</a>\n                        </li>\n                        <li class=\"page-item\"><a class=\"page-link\" href=\"#\">Next</a>\n                        </li>\n                    </ul>\n                </div>\n            </div>\n        </div>\n    </div>\n</div>\n";
-
-/***/ },
-
-/***/ 602:
-/***/ function(module, exports) {
-
-module.exports = "<div class=\"animated fadeIn\">\r\n    <div class=\"row\"> \r\n        <div class=\"col-md-6\">\r\n            <div class=\"card\">\r\n                <div class=\"card-header\">\r\n                    <strong>Tenant Information</strong>\r\n                </div>\r\n                <div class=\"card-block\">\r\n                    <form action=\"\" method=\"post\" class=\"form-horizontal \">\r\n                        <div class=\"form-group row\">\r\n                            <label class=\"col-md-3 form-control-label\" for=\"hf-email\">Name</label>\r\n                            <div class=\"col-md-9\">\r\n                                <input type=\"text\" id=\"name\" name=\"name\" class=\"form-control\">\r\n                            </div>\r\n                        </div>\r\n                        <div class=\"form-group row\">\r\n                            <label class=\"col-md-3 form-control-label\" for=\"hf-password\">Address</label>\r\n                            <div class=\"col-md-9\">\r\n                                <input type=\"text\" id=\"address\" name=\"address\" class=\"form-control\">\r\n                            </div>\r\n                        </div>\r\n                        <div class=\"form-group row\">\r\n                            <label class=\"col-md-3 form-control-label\" for=\"hf-password\">Contact phone</label>\r\n                            <div class=\"col-md-9\">\r\n                                <input type=\"text\" id=\"phone\" name=\"phone\" class=\"form-control\">\r\n                            </div>\r\n                        </div>\r\n                        <div class=\"form-group row\">\r\n                            <label class=\"col-md-3 form-control-label\" for=\"hf-password\">Urls</label>\r\n                            <div class=\"col-md-9\">\r\n                                <input type=\"text\" id=\"urls\" name=\"urls\" class=\"form-control\">\r\n                            </div>\r\n                        </div>\r\n                    </form>\r\n                </div>\r\n                <div class=\"card-footer\">\r\n                    <button type=\"submit\" class=\"btn btn-sm btn-primary\"><i class=\"fa fa-dot-circle-o\"></i> Update</button>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n";
-
-/***/ },
-
 /***/ 63:
 /***/ function(module, exports, __webpack_require__) {
 
@@ -1286,7 +1286,7 @@ var settings_1 = __webpack_require__(249);
 var users_1 = __webpack_require__(251);
 var tenants_1 = __webpack_require__(250);
 // Modal Component
-var modal_1 = __webpack_require__(579);
+var modal_1 = __webpack_require__(583);
 // Tabs Component
 var tabs_1 = __webpack_require__(33);
 // Components Routing

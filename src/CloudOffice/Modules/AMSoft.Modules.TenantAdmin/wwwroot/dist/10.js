@@ -15507,7 +15507,7 @@ var AdvancedFormsComponent = (function () {
 }());
 AdvancedFormsComponent = __decorate([
     core_1.Component({
-        template: __webpack_require__(552)
+        template: __webpack_require__(556)
     }),
     __metadata("design:paramtypes", [])
 ], AdvancedFormsComponent);
@@ -17192,11 +17192,11 @@ var forms_1 = __webpack_require__(73);
 // Angular 2 Input Mask
 var angular2_text_mask_1 = __webpack_require__(418);
 // Timepicker
-var timepicker_1 = __webpack_require__(582);
+var timepicker_1 = __webpack_require__(586);
 // Datepicker
-var datepicker_1 = __webpack_require__(578);
+var datepicker_1 = __webpack_require__(582);
 // Ng2-select
-var ng2_select_1 = __webpack_require__(589);
+var ng2_select_1 = __webpack_require__(593);
 //Routing
 var advanced_forms_routing_module_1 = __webpack_require__(424);
 var advanced_forms_component_1 = __webpack_require__(253);
@@ -17351,16 +17351,16 @@ exports.AdvancedFormsModule = AdvancedFormsModule;
 /* 549 */,
 /* 550 */,
 /* 551 */,
-/* 552 */
-/***/ function(module, exports) {
-
-module.exports = "<div class=\"animated fadeIn\">\n    <div class=\"row\">\n        <div class=\"col-md-6\">\n            <div class=\"card\">\n                <div class=\"card-header\">\n                    <i class=\"icon-note\"></i> \n                    <strong>Angular 2 Input Mask</strong>- Text Mask\n                    <div class=\"card-actions\">\n                        <a href=\"https://github.com/digitalBush/jquery.maskedinput\">\n                            <small class=\"text-muted\">docs</small>\n                        </a>\n                    </div>\n                </div>\n                <div class=\"card-block\">\n                    <fieldset class=\"form-group\">\n                        <label>Date input</label>\n                        <div class=\"input-group\">\n                            <span class=\"input-group-addon\"><i class=\"fa fa-calendar\"></i>\n                            </span>\n                            <input type=\"text\" class=\"form-control\" [textMask]=\"{mask: dateMask}\" [(ngModel)]=\"dateModel\">\n                        </div>\n                        <small class=\"text-muted\">ex. 99/99/9999</small>\n                    </fieldset>\n                    <fieldset class=\"form-group\">\n                        <label>Phone input</label>\n                        <div class=\"input-group\">\n                            <span class=\"input-group-addon\"><i class=\"fa fa-phone\"></i>\n                            </span>\n                            <input type=\"text\" class=\"form-control\" [textMask]=\"{mask: phoneMask}\" [(ngModel)]=\"phoneModel\">\n                        </div>\n                        <small class=\"text-muted\">ex. (999) 999-9999</small>\n                    </fieldset>\n                    <fieldset class=\"form-group\">\n                        <label>Taxpayer Identification Numbers</label>\n                        <div class=\"input-group\">\n                            <span class=\"input-group-addon\"><i class=\"fa fa-usd\"></i>\n                            </span>\n                            <input type=\"text\" class=\"form-control\" [textMask]=\"{mask: taxMask}\" [(ngModel)]=\"taxModel\">\n                        </div>\n                        <small class=\"text-muted\">ex. 99-9999999</small>\n                    </fieldset>\n                    <fieldset class=\"form-group\">\n                        <label>Social Security Number</label>\n                        <div class=\"input-group\">\n                            <span class=\"input-group-addon\"><i class=\"fa fa-male\"></i>\n                            </span>\n                            <input type=\"text\" class=\"form-control\" [textMask]=\"{mask: ssnMask}\" [(ngModel)]=\"ssnModel\">\n                        </div>\n                        <small class=\"text-muted\">ex. 999-99-9999</small>\n                    </fieldset>\n                    <fieldset class=\"form-group\">\n                        <label>Eye Script</label>\n                        <div class=\"input-group\">\n                            <span class=\"input-group-addon\"><i class=\"fa fa-asterisk\"></i>\n                            </span>\n                            <input type=\"text\" class=\"form-control\" [textMask]=\"{mask: eyeScriptMask}\" [(ngModel)]=\"eyeScriptModel\">\n                        </div>\n                        <small class=\"text-muted\">ex. ~9.99 ~9.99 999</small>\n                    </fieldset>\n                    <fieldset class=\"form-group\">\n                        <label>Credit Card Number</label>\n                        <div class=\"input-group\">\n                            <span class=\"input-group-addon\"><i class=\"fa fa-credit-card\"></i>\n                            </span>\n                            <input type=\"text\" class=\"form-control\" [textMask]=\"{mask: ccnMask}\" [(ngModel)]=\"ccnModel\">\n                        </div>\n                        <small class=\"text-muted\">ex. 9999 9999 9999 9999</small>\n                    </fieldset>\n                </div>\n            </div>\n            <div class=\"card\">\n                <div class=\"card-header\">\n                    <strong>Ng2-select</strong>\n                </div>\n                <div class=\"card-block\">\n                    <ng-select [multiple]=\"true\" [items]=\"items\" (data)=\"refreshValue($event)\" (selected)=\"selected($event)\" (removed)=\"removed($event)\" placeholder=\"No city selected\">\n                    </ng-select>\n                    <br/>\n                    <pre class=\"alert alert-info\">{{itemsToString(value)}}</pre>\n                </div>\n            </div>\n        </div>\n        <!-- /.col -->\n        <div class=\"col-md-6\">\n            <div class=\"card\">\n                <div class=\"card-header\">\n                    <strong>Timepicker</strong>\n                    <small>A lightweight &amp; configurable timepicker directive</small>\n                </div>\n                <div class=\"card-block\">\n                    <timepicker [(ngModel)]=\"mytime\" (change)=\"changed()\" [hourStep]=\"hstep\" [minuteStep]=\"mstep\" [showMeridian]=\"ismeridian\" [readonlyInput]=\"!isEnabled\"></timepicker>\n\n                    <pre class=\"alert alert-info\">Time is: {{mytime}}</pre>\n\n                    <div class=\"row\">\n                        <div class=\"col-6\">\n                            Hours step is:\n                            <select class=\"form-control\" [(ngModel)]=\"hstep\">\n                                <option *ngFor=\"let opt of options.hstep\" [value]=\"opt\">{{opt}}</option>\n                            </select>\n                        </div>\n                        <div class=\"col-6\">\n                            Minutes step is:\n                            <select class=\"form-control\" [(ngModel)]=\"mstep\">\n                                <option *ngFor=\"let opt of options.mstep\" [value]=\"opt\">{{opt}}</option>\n                            </select>\n                        </div>\n                    </div>\n\n                    <hr>\n\n                    <button type=\"button\" class=\"btn btn-info\" (click)=\"toggleMode()\">12H / 24H</button>\n                    <button type=\"button\" class=\"btn btn-info\" (click)=\"isEnabled=!isEnabled\">Enable / Disable input</button>\n                    <button type=\"button\" class=\"btn btn-primary\" (click)=\"update()\">Set to 14:00</button>\n                    <button type=\"button\" class=\"btn btn-danger\" (click)=\"clear()\">Clear</button>\n                </div>\n            </div>\n\n            <div class=\"card\">\n                <div class=\"card-header\">\n                    <strong>Datepicker</strong>\n                    <small>A lightweight &amp; configurable datepicker component</small>\n                </div>\n                <div class=\"card-block\">\n                    <pre class=\"card card-block card-header\">Selected date is:\n                        <em *ngIf=\"dt\">{{ getDate() | date:'fullDate'}}</em>\n                    </pre>\n                    <div style=\"display:inline-block; min-height:290px;\">\n                        <datepicker [(ngModel)]=\"dt\" [minDate]=\"minDate\" [showWeeks]=\"true\"></datepicker>\n                    </div>\n\n                    <hr />\n                    <button type=\"button\" class=\"btn btn-info\" (click)=\"today()\">Today</button>\n                    <button type=\"button\" class=\"btn btn-danger\" (click)=\"clearDate()\">Clear</button>\n                    <button type=\"button\" class=\"btn btn-outline-secondary\" (click)=\"toggleMin()\" tooltip=\"After today restriction\">Min date</button>\n                </div>\n            </div>\n        </div>\n        <!-- /.col -->\n    </div>\n    <!-- /.row -->\n</div>\n";
-
-/***/ },
+/* 552 */,
 /* 553 */,
 /* 554 */,
 /* 555 */,
-/* 556 */,
+/* 556 */
+/***/ function(module, exports) {
+
+module.exports = "<div class=\"animated fadeIn\">\r\n    <div class=\"row\">\r\n        <div class=\"col-md-6\">\r\n            <div class=\"card\">\r\n                <div class=\"card-header\">\r\n                    <i class=\"icon-note\"></i> \r\n                    <strong>Angular 2 Input Mask</strong>- Text Mask\r\n                    <div class=\"card-actions\">\r\n                        <a href=\"https://github.com/digitalBush/jquery.maskedinput\">\r\n                            <small class=\"text-muted\">docs</small>\r\n                        </a>\r\n                    </div>\r\n                </div>\r\n                <div class=\"card-block\">\r\n                    <fieldset class=\"form-group\">\r\n                        <label>Date input</label>\r\n                        <div class=\"input-group\">\r\n                            <span class=\"input-group-addon\"><i class=\"fa fa-calendar\"></i>\r\n                            </span>\r\n                            <input type=\"text\" class=\"form-control\" [textMask]=\"{mask: dateMask}\" [(ngModel)]=\"dateModel\">\r\n                        </div>\r\n                        <small class=\"text-muted\">ex. 99/99/9999</small>\r\n                    </fieldset>\r\n                    <fieldset class=\"form-group\">\r\n                        <label>Phone input</label>\r\n                        <div class=\"input-group\">\r\n                            <span class=\"input-group-addon\"><i class=\"fa fa-phone\"></i>\r\n                            </span>\r\n                            <input type=\"text\" class=\"form-control\" [textMask]=\"{mask: phoneMask}\" [(ngModel)]=\"phoneModel\">\r\n                        </div>\r\n                        <small class=\"text-muted\">ex. (999) 999-9999</small>\r\n                    </fieldset>\r\n                    <fieldset class=\"form-group\">\r\n                        <label>Taxpayer Identification Numbers</label>\r\n                        <div class=\"input-group\">\r\n                            <span class=\"input-group-addon\"><i class=\"fa fa-usd\"></i>\r\n                            </span>\r\n                            <input type=\"text\" class=\"form-control\" [textMask]=\"{mask: taxMask}\" [(ngModel)]=\"taxModel\">\r\n                        </div>\r\n                        <small class=\"text-muted\">ex. 99-9999999</small>\r\n                    </fieldset>\r\n                    <fieldset class=\"form-group\">\r\n                        <label>Social Security Number</label>\r\n                        <div class=\"input-group\">\r\n                            <span class=\"input-group-addon\"><i class=\"fa fa-male\"></i>\r\n                            </span>\r\n                            <input type=\"text\" class=\"form-control\" [textMask]=\"{mask: ssnMask}\" [(ngModel)]=\"ssnModel\">\r\n                        </div>\r\n                        <small class=\"text-muted\">ex. 999-99-9999</small>\r\n                    </fieldset>\r\n                    <fieldset class=\"form-group\">\r\n                        <label>Eye Script</label>\r\n                        <div class=\"input-group\">\r\n                            <span class=\"input-group-addon\"><i class=\"fa fa-asterisk\"></i>\r\n                            </span>\r\n                            <input type=\"text\" class=\"form-control\" [textMask]=\"{mask: eyeScriptMask}\" [(ngModel)]=\"eyeScriptModel\">\r\n                        </div>\r\n                        <small class=\"text-muted\">ex. ~9.99 ~9.99 999</small>\r\n                    </fieldset>\r\n                    <fieldset class=\"form-group\">\r\n                        <label>Credit Card Number</label>\r\n                        <div class=\"input-group\">\r\n                            <span class=\"input-group-addon\"><i class=\"fa fa-credit-card\"></i>\r\n                            </span>\r\n                            <input type=\"text\" class=\"form-control\" [textMask]=\"{mask: ccnMask}\" [(ngModel)]=\"ccnModel\">\r\n                        </div>\r\n                        <small class=\"text-muted\">ex. 9999 9999 9999 9999</small>\r\n                    </fieldset>\r\n                </div>\r\n            </div>\r\n            <div class=\"card\">\r\n                <div class=\"card-header\">\r\n                    <strong>Ng2-select</strong>\r\n                </div>\r\n                <div class=\"card-block\">\r\n                    <ng-select [multiple]=\"true\" [items]=\"items\" (data)=\"refreshValue($event)\" (selected)=\"selected($event)\" (removed)=\"removed($event)\" placeholder=\"No city selected\">\r\n                    </ng-select>\r\n                    <br/>\r\n                    <pre class=\"alert alert-info\">{{itemsToString(value)}}</pre>\r\n                </div>\r\n            </div>\r\n        </div>\r\n        <!-- /.col -->\r\n        <div class=\"col-md-6\">\r\n            <div class=\"card\">\r\n                <div class=\"card-header\">\r\n                    <strong>Timepicker</strong>\r\n                    <small>A lightweight &amp; configurable timepicker directive</small>\r\n                </div>\r\n                <div class=\"card-block\">\r\n                    <timepicker [(ngModel)]=\"mytime\" (change)=\"changed()\" [hourStep]=\"hstep\" [minuteStep]=\"mstep\" [showMeridian]=\"ismeridian\" [readonlyInput]=\"!isEnabled\"></timepicker>\r\n\r\n                    <pre class=\"alert alert-info\">Time is: {{mytime}}</pre>\r\n\r\n                    <div class=\"row\">\r\n                        <div class=\"col-6\">\r\n                            Hours step is:\r\n                            <select class=\"form-control\" [(ngModel)]=\"hstep\">\r\n                                <option *ngFor=\"let opt of options.hstep\" [value]=\"opt\">{{opt}}</option>\r\n                            </select>\r\n                        </div>\r\n                        <div class=\"col-6\">\r\n                            Minutes step is:\r\n                            <select class=\"form-control\" [(ngModel)]=\"mstep\">\r\n                                <option *ngFor=\"let opt of options.mstep\" [value]=\"opt\">{{opt}}</option>\r\n                            </select>\r\n                        </div>\r\n                    </div>\r\n\r\n                    <hr>\r\n\r\n                    <button type=\"button\" class=\"btn btn-info\" (click)=\"toggleMode()\">12H / 24H</button>\r\n                    <button type=\"button\" class=\"btn btn-info\" (click)=\"isEnabled=!isEnabled\">Enable / Disable input</button>\r\n                    <button type=\"button\" class=\"btn btn-primary\" (click)=\"update()\">Set to 14:00</button>\r\n                    <button type=\"button\" class=\"btn btn-danger\" (click)=\"clear()\">Clear</button>\r\n                </div>\r\n            </div>\r\n\r\n            <div class=\"card\">\r\n                <div class=\"card-header\">\r\n                    <strong>Datepicker</strong>\r\n                    <small>A lightweight &amp; configurable datepicker component</small>\r\n                </div>\r\n                <div class=\"card-block\">\r\n                    <pre class=\"card card-block card-header\">Selected date is:\r\n                        <em *ngIf=\"dt\">{{ getDate() | date:'fullDate'}}</em>\r\n                    </pre>\r\n                    <div style=\"display:inline-block; min-height:290px;\">\r\n                        <datepicker [(ngModel)]=\"dt\" [minDate]=\"minDate\" [showWeeks]=\"true\"></datepicker>\r\n                    </div>\r\n\r\n                    <hr />\r\n                    <button type=\"button\" class=\"btn btn-info\" (click)=\"today()\">Today</button>\r\n                    <button type=\"button\" class=\"btn btn-danger\" (click)=\"clearDate()\">Clear</button>\r\n                    <button type=\"button\" class=\"btn btn-outline-secondary\" (click)=\"toggleMin()\" tooltip=\"After today restriction\">Min date</button>\r\n                </div>\r\n            </div>\r\n        </div>\r\n        <!-- /.col -->\r\n    </div>\r\n    <!-- /.row -->\r\n</div>\r\n";
+
+/***/ },
 /* 557 */,
 /* 558 */,
 /* 559 */,
@@ -17381,7 +17381,11 @@ module.exports = "<div class=\"animated fadeIn\">\n    <div class=\"row\">\n    
 /* 574 */,
 /* 575 */,
 /* 576 */,
-/* 577 */
+/* 577 */,
+/* 578 */,
+/* 579 */,
+/* 580 */,
+/* 581 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17427,14 +17431,14 @@ var DatepickerModule = (function () {
 //# sourceMappingURL=datepicker.module.js.map
 
 /***/ },
-/* 578 */
+/* 582 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__datepicker_component__ = __webpack_require__(326);
 /* harmony reexport (binding) */ __webpack_require__.d(exports, "DatePickerComponent", function() { return __WEBPACK_IMPORTED_MODULE_0__datepicker_component__["a"]; });
 Object.defineProperty(exports, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__datepicker_module__ = __webpack_require__(577);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__datepicker_module__ = __webpack_require__(581);
 /* harmony reexport (binding) */ __webpack_require__.d(exports, "DatepickerModule", function() { return __WEBPACK_IMPORTED_MODULE_1__datepicker_module__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__daypicker_component__ = __webpack_require__(327);
 /* harmony reexport (binding) */ __webpack_require__.d(exports, "DayPickerComponent", function() { return __WEBPACK_IMPORTED_MODULE_2__daypicker_component__["a"]; });
@@ -17464,10 +17468,10 @@ Object.defineProperty(exports, "__esModule", { value: true });
 //# sourceMappingURL=index.js.map
 
 /***/ },
-/* 579 */,
-/* 580 */,
-/* 581 */,
-/* 582 */
+/* 583 */,
+/* 584 */,
+/* 585 */,
+/* 586 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17476,7 +17480,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 /* harmony reexport (binding) */ __webpack_require__.d(exports, "TimepickerConfig", function() { return __WEBPACK_IMPORTED_MODULE_0__timepicker_config__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__timepicker_component__ = __webpack_require__(334);
 /* harmony reexport (binding) */ __webpack_require__.d(exports, "TimepickerComponent", function() { return __WEBPACK_IMPORTED_MODULE_1__timepicker_component__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__timepicker_module__ = __webpack_require__(583);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__timepicker_module__ = __webpack_require__(587);
 /* harmony reexport (binding) */ __webpack_require__.d(exports, "TimepickerModule", function() { return __WEBPACK_IMPORTED_MODULE_2__timepicker_module__["a"]; });
 
 
@@ -17484,7 +17488,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 //# sourceMappingURL=index.js.map
 
 /***/ },
-/* 583 */
+/* 587 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17522,12 +17526,12 @@ var TimepickerModule = (function () {
 //# sourceMappingURL=timepicker.module.js.map
 
 /***/ },
-/* 584 */,
-/* 585 */,
-/* 586 */,
-/* 587 */,
 /* 588 */,
-/* 589 */
+/* 589 */,
+/* 590 */,
+/* 591 */,
+/* 592 */,
+/* 593 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17537,14 +17541,14 @@ function __export(m) {
 }
 __export(__webpack_require__(229));
 __export(__webpack_require__(337));
-__export(__webpack_require__(590));
+__export(__webpack_require__(594));
 __export(__webpack_require__(339));
 __export(__webpack_require__(338));
 __export(__webpack_require__(230));
 
 
 /***/ },
-/* 590 */
+/* 594 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";

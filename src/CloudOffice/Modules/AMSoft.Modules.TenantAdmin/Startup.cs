@@ -43,7 +43,6 @@ namespace AMSoft.Modules.TenantAdministration
                 });
             }
             app.UseDeveloperExceptionPage();
-            app.UseBrowserLink();
             app.UseStaticFiles();
  
             app.UseMvc(routes =>

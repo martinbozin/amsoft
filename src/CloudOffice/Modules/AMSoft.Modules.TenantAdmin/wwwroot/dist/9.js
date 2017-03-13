@@ -77,7 +77,7 @@ var parseTokenTimezoneHHMM = /^([+-])(\d{2}):?(\d{2})$/
  * var result = parse('+02014101', {additionalDigits: 1})
  * //=> Fri Apr 11 2014 00:00:00
  */
-function parse (argument, options) {
+function parse (argument, dirtyOptions) {
   if (isDate(argument)) {
     // Prevent the date to lose the milliseconds when passed to new Date() in IE10
     return new Date(argument.getTime())
@@ -85,10 +85,12 @@ function parse (argument, options) {
     return new Date(argument)
   }
 
-  options = options || {}
+  var options = dirtyOptions || {}
   var additionalDigits = options.additionalDigits
   if (additionalDigits == null) {
     additionalDigits = DEFAULT_ADDITIONAL_DIGITS
+  } else {
+    additionalDigits = Number(additionalDigits)
   }
 
   var dateStrings = splitDateString(argument)
@@ -345,8 +347,9 @@ var parse = __webpack_require__(72)
  * var result = addDays(new Date(2014, 8, 1), 10)
  * //=> Thu Sep 11 2014 00:00:00
  */
-function addDays (dirtyDate, amount) {
+function addDays (dirtyDate, dirtyAmount) {
   var date = parse(dirtyDate)
+  var amount = Number(dirtyAmount)
   date.setDate(date.getDate() + amount)
   return date
 }
@@ -491,8 +494,9 @@ var getDaysInMonth = __webpack_require__(213)
  * var result = addMonths(new Date(2014, 8, 1), 5)
  * //=> Sun Feb 01 2015 00:00:00
  */
-function addMonths (dirtyDate, amount) {
+function addMonths (dirtyDate, dirtyAmount) {
   var date = parse(dirtyDate)
+  var amount = Number(dirtyAmount)
   var desiredMonth = date.getMonth() + amount
   var dateWithDesiredMonth = new Date(0)
   dateWithDesiredMonth.setFullYear(date.getFullYear(), desiredMonth, 1)
@@ -665,8 +669,8 @@ var parse = __webpack_require__(72)
  * var result = startOfWeek(new Date(2014, 8, 2, 11, 55, 0), {weekStartsOn: 1})
  * //=> Mon Sep 01 2014 00:00:00
  */
-function startOfWeek (dirtyDate, options) {
-  var weekStartsOn = options ? (options.weekStartsOn || 0) : 0
+function startOfWeek (dirtyDate, dirtyOptions) {
+  var weekStartsOn = dirtyOptions ? (Number(dirtyOptions.weekStartsOn) || 0) : 0
 
   var date = parse(dirtyDate)
   var day = date.getDay()
@@ -834,8 +838,9 @@ var parse = __webpack_require__(72)
  * var result = addMinutes(new Date(2014, 6, 10, 12, 0), 30)
  * //=> Thu Jul 10 2014 12:30:00
  */
-function addMinutes (dirtyDate, amount) {
+function addMinutes (dirtyDate, dirtyAmount) {
   var date = parse(dirtyDate)
+  var amount = Number(dirtyAmount)
   date.setMinutes(date.getMinutes() + amount)
   return date
 }
@@ -865,7 +870,8 @@ var addDays = __webpack_require__(74)
  * var result = addWeeks(new Date(2014, 8, 1), 4)
  * //=> Mon Sep 29 2014 00:00:00
  */
-function addWeeks (dirtyDate, amount) {
+function addWeeks (dirtyDate, dirtyAmount) {
+  var amount = Number(dirtyAmount)
   var days = amount * 7
   return addDays(dirtyDate, days)
 }
@@ -1483,8 +1489,9 @@ var parse = __webpack_require__(72)
  * var result = addHours(new Date(2014, 6, 10, 23, 0), 2)
  * //=> Fri Jul 11 2014 01:00:00
  */
-function addHours (dirtyDate, amount) {
+function addHours (dirtyDate, dirtyAmount) {
   var date = parse(dirtyDate)
+  var amount = Number(dirtyAmount)
   date.setHours(date.getHours() + amount)
   return date
 }
@@ -1514,8 +1521,9 @@ var parse = __webpack_require__(72)
  * var result = addSeconds(new Date(2014, 6, 10, 12, 45, 0), 30)
  * //=> Thu Jul 10 2014 12:45:30
  */
-function addSeconds (dirtyDate, amount) {
+function addSeconds (dirtyDate, dirtyAmount) {
   var date = parse(dirtyDate)
+  var amount = Number(dirtyAmount)
   date.setSeconds(date.getSeconds() + amount)
   return date
 }
@@ -1731,8 +1739,8 @@ var parse = __webpack_require__(72)
  * var result = endOfWeek(new Date(2014, 8, 2, 11, 55, 0), {weekStartsOn: 1})
  * //=> Sun Sep 07 2014 23:59:59.999
  */
-function endOfWeek (dirtyDate, options) {
-  var weekStartsOn = options ? (options.weekStartsOn || 0) : 0
+function endOfWeek (dirtyDate, dirtyOptions) {
+  var weekStartsOn = dirtyOptions ? (Number(dirtyOptions.weekStartsOn) || 0) : 0
 
   var date = parse(dirtyDate)
   var day = date.getDay()
@@ -1949,9 +1957,9 @@ var startOfWeek = __webpack_require__(83)
  * )
  * //=> false
  */
-function isSameWeek (dirtyDateLeft, dirtyDateRight, options) {
-  var dateLeftStartOfWeek = startOfWeek(dirtyDateLeft, options)
-  var dateRightStartOfWeek = startOfWeek(dirtyDateRight, options)
+function isSameWeek (dirtyDateLeft, dirtyDateRight, dirtyOptions) {
+  var dateLeftStartOfWeek = startOfWeek(dirtyDateLeft, dirtyOptions)
+  var dateRightStartOfWeek = startOfWeek(dirtyDateRight, dirtyOptions)
 
   return dateLeftStartOfWeek.getTime() === dateRightStartOfWeek.getTime()
 }
@@ -1999,8 +2007,9 @@ var getDaysInMonth = __webpack_require__(213)
  * var result = setMonth(new Date(2014, 8, 1), 1)
  * //=> Sat Feb 01 2014 00:00:00
  */
-function setMonth (dirtyDate, month) {
+function setMonth (dirtyDate, dirtyMonth) {
   var date = parse(dirtyDate)
+  var month = Number(dirtyMonth)
   var year = date.getFullYear()
   var day = date.getDate()
 
@@ -2418,7 +2427,7 @@ var CalendarComponent = (function () {
 }());
 CalendarComponent = __decorate([
     core_1.Component({
-        template: __webpack_require__(563)
+        template: __webpack_require__(567)
     })
 ], CalendarComponent);
 exports.CalendarComponent = CalendarComponent;
@@ -2459,7 +2468,8 @@ var setISOYear = __webpack_require__(302)
  * var result = addISOYears(new Date(2010, 6, 2), 5)
  * //=> Fri Jun 26 2015 00:00:00
  */
-function addISOYears (dirtyDate, amount) {
+function addISOYears (dirtyDate, dirtyAmount) {
+  var amount = Number(dirtyAmount)
   return setISOYear(dirtyDate, getISOYear(dirtyDate) + amount)
 }
 
@@ -2488,8 +2498,9 @@ var parse = __webpack_require__(72)
  * var result = addMilliseconds(new Date(2014, 6, 10, 12, 45, 30, 0), 750)
  * //=> Thu Jul 10 2014 12:45:30.750
  */
-function addMilliseconds (dirtyDate, amount) {
+function addMilliseconds (dirtyDate, dirtyAmount) {
   var date = parse(dirtyDate)
+  var amount = Number(dirtyAmount)
   date.setMilliseconds(date.getMilliseconds() + amount)
   return date
 }
@@ -2519,7 +2530,8 @@ var addMonths = __webpack_require__(79)
  * var result = addQuarters(new Date(2014, 8, 1), 1)
  * //=> Mon Dec 01 2014 00:00:00
  */
-function addQuarters (dirtyDate, amount) {
+function addQuarters (dirtyDate, dirtyAmount) {
+  var amount = Number(dirtyAmount)
   var months = amount * 3
   return addMonths(dirtyDate, months)
 }
@@ -2549,7 +2561,8 @@ var addMonths = __webpack_require__(79)
  * var result = addYears(new Date(2014, 8, 1), 5)
  * //=> Sun Sep 01 2019 00:00:00
  */
-function addYears (dirtyDate, amount) {
+function addYears (dirtyDate, dirtyAmount) {
+  var amount = Number(dirtyAmount)
   return addMonths(dirtyDate, amount * 12)
 }
 
@@ -2795,8 +2808,8 @@ var MINUTES_IN_TWO_MONTHS = 86400
  * )
  * //=> 'pli ol 1 jaro'
  */
-function distanceInWords (dirtyDateToCompare, dirtyDate, options) {
-  options = options || {}
+function distanceInWords (dirtyDateToCompare, dirtyDate, dirtyOptions) {
+  var options = dirtyOptions || {}
 
   var comparison = compareDesc(dirtyDateToCompare, dirtyDate)
 
@@ -2807,7 +2820,7 @@ function distanceInWords (dirtyDateToCompare, dirtyDate, options) {
   }
 
   var localizeOptions = {
-    addSuffix: options.addSuffix,
+    addSuffix: Boolean(options.addSuffix),
     comparison: comparison
   }
 
@@ -3399,11 +3412,11 @@ var isDate = __webpack_require__(214)
  * var result = isValid(new Date(''))
  * //=> false
  */
-function isValid (date) {
-  if (isDate(date)) {
-    return !isNaN(date)
+function isValid (dirtyDate) {
+  if (isDate(dirtyDate)) {
+    return !isNaN(dirtyDate)
   } else {
-    throw new TypeError(toString.call(date) + ' is not an instance of Date')
+    throw new TypeError(toString.call(dirtyDate) + ' is not an instance of Date')
   }
 }
 
@@ -3439,8 +3452,8 @@ var parse = __webpack_require__(72)
  * var result = lastDayOfWeek(new Date(2014, 8, 2, 11, 55, 0), {weekStartsOn: 1})
  * //=> Sun Sep 07 2014 00:00:00
  */
-function lastDayOfWeek (dirtyDate, options) {
-  var weekStartsOn = options ? (options.weekStartsOn || 0) : 0
+function lastDayOfWeek (dirtyDate, dirtyOptions) {
+  var weekStartsOn = dirtyOptions ? (Number(dirtyOptions.weekStartsOn) || 0) : 0
 
   var date = parse(dirtyDate)
   var day = date.getDay()
@@ -3476,8 +3489,9 @@ var parse = __webpack_require__(72)
  * var result = setDate(new Date(2014, 8, 1), 30)
  * //=> Tue Sep 30 2014 00:00:00
  */
-function setDate (dirtyDate, dayOfMonth) {
+function setDate (dirtyDate, dirtyDayOfMonth) {
   var date = parse(dirtyDate)
+  var dayOfMonth = Number(dirtyDayOfMonth)
   date.setDate(dayOfMonth)
   return date
 }
@@ -3507,8 +3521,9 @@ var parse = __webpack_require__(72)
  * var result = setHours(new Date(2014, 8, 1, 11, 30), 4)
  * //=> Mon Sep 01 2014 04:30:00
  */
-function setHours (dirtyDate, hours) {
+function setHours (dirtyDate, dirtyHours) {
   var date = parse(dirtyDate)
+  var hours = Number(dirtyHours)
   date.setHours(hours)
   return date
 }
@@ -3543,8 +3558,9 @@ var differenceInCalendarDays = __webpack_require__(197)
  * var result = setISOYear(new Date(2008, 11, 29), 2007)
  * //=> Mon Jan 01 2007 00:00:00
  */
-function setISOYear (dirtyDate, isoYear) {
+function setISOYear (dirtyDate, dirtyISOYear) {
   var date = parse(dirtyDate)
+  var isoYear = Number(dirtyISOYear)
   var diff = differenceInCalendarDays(date, startOfISOYear(date))
   var fourthOfJanuary = new Date(0)
   fourthOfJanuary.setFullYear(isoYear, 0, 4)
@@ -3579,8 +3595,9 @@ var parse = __webpack_require__(72)
  * var result = setMinutes(new Date(2014, 8, 1, 11, 30, 40), 45)
  * //=> Mon Sep 01 2014 11:45:40
  */
-function setMinutes (dirtyDate, minutes) {
+function setMinutes (dirtyDate, dirtyMinutes) {
   var date = parse(dirtyDate)
+  var minutes = Number(dirtyMinutes)
   date.setMinutes(minutes)
   return date
 }
@@ -3610,8 +3627,9 @@ var parse = __webpack_require__(72)
  * var result = setYear(new Date(2014, 8, 1), 2013)
  * //=> Sun Sep 01 2013 00:00:00
  */
-function setYear (dirtyDate, year) {
+function setYear (dirtyDate, dirtyYear) {
   var date = parse(dirtyDate)
+  var year = Number(dirtyYear)
   date.setFullYear(year)
   return date
 }
@@ -3829,7 +3847,8 @@ var addDays = __webpack_require__(74)
  * var result = subDays(new Date(2014, 8, 1), 10)
  * //=> Fri Aug 22 2014 00:00:00
  */
-function subDays (dirtyDate, amount) {
+function subDays (dirtyDate, dirtyAmount) {
+  var amount = Number(dirtyAmount)
   return addDays(dirtyDate, -amount)
 }
 
@@ -3860,7 +3879,8 @@ var addISOYears = __webpack_require__(275)
  * var result = subISOYears(new Date(2014, 8, 1), 5)
  * //=> Mon Aug 31 2009 00:00:00
  */
-function subISOYears (dirtyDate, amount) {
+function subISOYears (dirtyDate, dirtyAmount) {
+  var amount = Number(dirtyAmount)
   return addISOYears(dirtyDate, -amount)
 }
 
@@ -3889,7 +3909,8 @@ var addMonths = __webpack_require__(79)
  * var result = subMonths(new Date(2015, 1, 1), 5)
  * //=> Mon Sep 01 2014 00:00:00
  */
-function subMonths (dirtyDate, amount) {
+function subMonths (dirtyDate, dirtyAmount) {
+  var amount = Number(dirtyAmount)
   return addMonths(dirtyDate, -amount)
 }
 
@@ -3918,7 +3939,8 @@ var addWeeks = __webpack_require__(196)
  * var result = subWeeks(new Date(2014, 8, 1), 4)
  * //=> Mon Aug 04 2014 00:00:00
  */
-function subWeeks (dirtyDate, amount) {
+function subWeeks (dirtyDate, dirtyAmount) {
+  var amount = Number(dirtyAmount)
   return addWeeks(dirtyDate, -amount)
 }
 
@@ -5334,7 +5356,7 @@ var CalendarTodayDirective = (function () {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(30);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_positioning__ = __webpack_require__(591);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_positioning__ = __webpack_require__(595);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return CalendarTooltipWindowComponent; });
 /* harmony export (binding) */ __webpack_require__.d(exports, "b", function() { return CalendarTooltipDirective; });
 
@@ -5691,7 +5713,7 @@ var DragAndDropModule = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_Subject___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs_Subject__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__ = __webpack_require__(231);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_observable_merge__ = __webpack_require__(595);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_observable_merge__ = __webpack_require__(599);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_observable_merge___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_add_observable_merge__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map__ = __webpack_require__(342);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map__);
@@ -5701,7 +5723,7 @@ var DragAndDropModule = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_add_operator_takeUntil___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_rxjs_add_operator_takeUntil__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_rxjs_add_operator_take__ = __webpack_require__(343);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_rxjs_add_operator_take___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_rxjs_add_operator_take__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_rxjs_add_operator_takeLast__ = __webpack_require__(597);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_rxjs_add_operator_takeLast__ = __webpack_require__(601);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_rxjs_add_operator_takeLast___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8_rxjs_add_operator_takeLast__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_rxjs_add_operator_pairwise__ = __webpack_require__(233);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_rxjs_add_operator_pairwise___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9_rxjs_add_operator_pairwise__);
@@ -5723,26 +5745,43 @@ var DragAndDropModule = (function () {
 
 var MOVE_CURSOR = 'move';
 var Draggable = (function () {
-    function Draggable(element, renderer, draggableHelper) {
+    /**
+     * @hidden
+     */
+    function Draggable(element, renderer, draggableHelper, zone) {
         this.element = element;
         this.renderer = renderer;
         this.draggableHelper = draggableHelper;
+        this.zone = zone;
         this.dragAxis = { x: true, y: true };
         this.dragSnapGrid = {};
         this.ghostDragEnabled = true;
         this.dragStart = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
         this.dragging = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
         this.dragEnd = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        /**
+         * @hidden
+         */
         this.mouseDown = new __WEBPACK_IMPORTED_MODULE_1_rxjs_Subject__["Subject"]();
+        /**
+         * @hidden
+         */
         this.mouseMove = new __WEBPACK_IMPORTED_MODULE_1_rxjs_Subject__["Subject"]();
+        /**
+         * @hidden
+         */
         this.mouseUp = new __WEBPACK_IMPORTED_MODULE_1_rxjs_Subject__["Subject"]();
+        this.eventListenerSubscriptions = {};
     }
     Draggable.prototype.ngOnInit = function () {
         var _this = this;
+        this.checkEventListeners();
         var mouseDrag = this.mouseDown
             .filter(function () { return _this.canDrag(); })
             .flatMap(function (mouseDownEvent) {
-            _this.dragStart.next({ x: 0, y: 0 });
+            _this.zone.run(function () {
+                _this.dragStart.next({ x: 0, y: 0 });
+            });
             _this.setCursor(MOVE_CURSOR);
             var currentDrag = new __WEBPACK_IMPORTED_MODULE_1_rxjs_Subject__["Subject"]();
             _this.draggableHelper.currentDrag.next(currentDrag);
@@ -5782,7 +5821,9 @@ var Draggable = (function () {
                 .takeUntil(__WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__["Observable"].merge(_this.mouseUp, _this.mouseDown));
             mouseMove.takeLast(1).subscribe(function (_a) {
                 var x = _a.x, y = _a.y;
-                _this.dragEnd.next({ x: x, y: y });
+                _this.zone.run(function () {
+                    _this.dragEnd.next({ x: x, y: y });
+                });
                 currentDrag.complete();
                 _this.setCssTransform(null);
                 if (_this.ghostDragEnabled) {
@@ -5807,7 +5848,9 @@ var Draggable = (function () {
         })
             .subscribe(function (_a) {
             var x = _a.x, y = _a.y, currentDrag = _a.currentDrag, clientX = _a.clientX, clientY = _a.clientY;
-            _this.dragging.next({ x: x, y: y });
+            _this.zone.run(function () {
+                _this.dragging.next({ x: x, y: y });
+            });
             if (_this.ghostDragEnabled) {
                 _this.renderer.setElementStyle(_this.element.nativeElement, 'pointerEvents', 'none');
             }
@@ -5819,40 +5862,60 @@ var Draggable = (function () {
             });
         });
     };
+    Draggable.prototype.ngOnChanges = function (changes) {
+        if (changes['dragAxis']) {
+            this.checkEventListeners();
+        }
+    };
     Draggable.prototype.ngOnDestroy = function () {
+        this.unsubscribeEventListeners();
         this.mouseDown.complete();
         this.mouseMove.complete();
         this.mouseUp.complete();
     };
-    /**
-     * @private
-     */
-    Draggable.prototype.onMouseDown = function (event) {
-        this.mouseDown.next(event);
-    };
-    /**
-     * @private
-     */
-    Draggable.prototype.onMouseMove = function (event) {
-        this.mouseMove.next(event);
-    };
-    /**
-     * @private
-     */
-    Draggable.prototype.onMouseUp = function (event) {
-        this.mouseUp.next(event);
-    };
-    /**
-     * @private
-     */
-    Draggable.prototype.onMouseEnter = function () {
-        if (this.canDrag()) {
-            this.setCursor(MOVE_CURSOR);
+    Draggable.prototype.checkEventListeners = function () {
+        var _this = this;
+        var canDrag = this.canDrag();
+        var hasEventListeners = Object.keys(this.eventListenerSubscriptions).length > 0;
+        if (canDrag && !hasEventListeners) {
+            this.zone.runOutsideAngular(function () {
+                _this.eventListenerSubscriptions.mousedown = _this.renderer.listen(_this.element.nativeElement, 'mousedown', function (event) {
+                    _this.onMouseDown(event);
+                });
+                _this.eventListenerSubscriptions.mouseup = _this.renderer.listenGlobal('document', 'mouseup', function (event) {
+                    _this.onMouseUp(event);
+                });
+                _this.eventListenerSubscriptions.mouseenter = _this.renderer.listen(_this.element.nativeElement, 'mouseenter', function () {
+                    _this.onMouseEnter();
+                });
+                _this.eventListenerSubscriptions.mouseleave = _this.renderer.listen(_this.element.nativeElement, 'mouseleave', function () {
+                    _this.onMouseLeave();
+                });
+            });
+        }
+        else if (!canDrag && hasEventListeners) {
+            this.unsubscribeEventListeners();
         }
     };
-    /**
-     * @private
-     */
+    Draggable.prototype.onMouseDown = function (event) {
+        var _this = this;
+        if (!this.eventListenerSubscriptions.mousemove) {
+            this.eventListenerSubscriptions.mousemove = this.renderer.listenGlobal('document', 'mousemove', function (event) {
+                _this.mouseMove.next(event);
+            });
+        }
+        this.mouseDown.next(event);
+    };
+    Draggable.prototype.onMouseUp = function (event) {
+        if (this.eventListenerSubscriptions.mousemove) {
+            this.eventListenerSubscriptions.mousemove();
+            delete this.eventListenerSubscriptions.mousemove;
+        }
+        this.mouseUp.next(event);
+    };
+    Draggable.prototype.onMouseEnter = function () {
+        this.setCursor(MOVE_CURSOR);
+    };
     Draggable.prototype.onMouseLeave = function () {
         this.setCursor(null);
     };
@@ -5871,6 +5934,13 @@ var Draggable = (function () {
     Draggable.prototype.setCursor = function (value) {
         this.renderer.setElementStyle(this.element.nativeElement, 'cursor', value);
     };
+    Draggable.prototype.unsubscribeEventListeners = function () {
+        var _this = this;
+        Object.keys(this.eventListenerSubscriptions).forEach(function (type) {
+            _this.eventListenerSubscriptions[type]();
+            delete _this.eventListenerSubscriptions[type];
+        });
+    };
     Draggable.decorators = [
         { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Directive"], args: [{
                     selector: '[mwlDraggable]'
@@ -5881,6 +5951,7 @@ var Draggable = (function () {
         { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"], },
         { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Renderer"], },
         { type: __WEBPACK_IMPORTED_MODULE_11__draggableHelper_provider__["a" /* DraggableHelper */], },
+        { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["NgZone"], },
     ]; };
     Draggable.propDecorators = {
         'dropData': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
@@ -5891,11 +5962,6 @@ var Draggable = (function () {
         'dragStart': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"] },],
         'dragging': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"] },],
         'dragEnd': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"] },],
-        'onMouseDown': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["HostListener"], args: ['mousedown', ['$event'],] },],
-        'onMouseMove': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["HostListener"], args: ['document:mousemove', ['$event'],] },],
-        'onMouseUp': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["HostListener"], args: ['document:mouseup', ['$event'],] },],
-        'onMouseEnter': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["HostListener"], args: ['mouseenter',] },],
-        'onMouseLeave': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["HostListener"], args: ['mouseleave',] },],
     };
     return Draggable;
 }());
@@ -5907,7 +5973,7 @@ var Draggable = (function () {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_distinctUntilChanged__ = __webpack_require__(596);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_distinctUntilChanged__ = __webpack_require__(600);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_distinctUntilChanged___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_distinctUntilChanged__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_pairwise__ = __webpack_require__(233);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_pairwise___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_pairwise__);
@@ -5924,9 +5990,10 @@ function isCoordinateWithinRectangle(clientX, clientY, rect) {
     return clientX >= rect.left && clientX <= rect.right && clientY >= rect.top && clientY <= rect.bottom;
 }
 var Droppable = (function () {
-    function Droppable(element, draggableHelper) {
+    function Droppable(element, draggableHelper, zone) {
         this.element = element;
         this.draggableHelper = draggableHelper;
+        this.zone = zone;
         this.dragEnter = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
         this.dragLeave = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
         this.dragOver = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
@@ -5946,13 +6013,17 @@ var Droppable = (function () {
             var dragOverActive; // TODO - see if there's a way of doing this via rxjs
             overlapsChanged.filter(function (overlapsNow) { return overlapsNow; }).subscribe(function () {
                 dragOverActive = true;
-                _this.dragEnter.next({
-                    dropData: currentDragDropData
+                _this.zone.run(function () {
+                    _this.dragEnter.next({
+                        dropData: currentDragDropData
+                    });
                 });
             });
             overlaps.filter(function (overlapsNow) { return overlapsNow; }).subscribe(function () {
-                _this.dragOver.next({
-                    dropData: currentDragDropData
+                _this.zone.run(function () {
+                    _this.dragOver.next({
+                        dropData: currentDragDropData
+                    });
                 });
             });
             overlapsChanged
@@ -5963,15 +6034,19 @@ var Droppable = (function () {
             })
                 .subscribe(function () {
                 dragOverActive = false;
-                _this.dragLeave.next({
-                    dropData: currentDragDropData
+                _this.zone.run(function () {
+                    _this.dragLeave.next({
+                        dropData: currentDragDropData
+                    });
                 });
             });
             drag.flatMap(function () { return overlaps; }).subscribe({
                 complete: function () {
                     if (dragOverActive) {
-                        _this.drop.next({
-                            dropData: currentDragDropData
+                        _this.zone.run(function () {
+                            _this.drop.next({
+                                dropData: currentDragDropData
+                            });
                         });
                     }
                 }
@@ -5990,6 +6065,7 @@ var Droppable = (function () {
     Droppable.ctorParameters = function () { return [
         { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"], },
         { type: __WEBPACK_IMPORTED_MODULE_4__draggableHelper_provider__["a" /* DraggableHelper */], },
+        { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["NgZone"], },
     ]; };
     Droppable.propDecorators = {
         'dragEnter': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"] },],
@@ -6033,7 +6109,7 @@ var Droppable = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_Subject__ = __webpack_require__(193);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_Subject___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs_Subject__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_observable_merge__ = __webpack_require__(598);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_observable_merge__ = __webpack_require__(602);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_observable_merge___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_observable_merge__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__ = __webpack_require__(342);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__);
@@ -6861,9 +6937,9 @@ var MILLISECONDS_IN_WEEK = 604800000
  * )
  * //=> 2
  */
-function differenceInCalendarWeeks (dirtyDateLeft, dirtyDateRight, options) {
-  var startOfWeekLeft = startOfWeek(dirtyDateLeft, options)
-  var startOfWeekRight = startOfWeek(dirtyDateRight, options)
+function differenceInCalendarWeeks (dirtyDateLeft, dirtyDateRight, dirtyOptions) {
+  var startOfWeekLeft = startOfWeek(dirtyDateLeft, dirtyOptions)
+  var startOfWeekRight = startOfWeek(dirtyDateRight, dirtyOptions)
 
   var timestampLeft = startOfWeekLeft.getTime() -
     startOfWeekLeft.getTimezoneOffset() * MILLISECONDS_IN_MINUTE
@@ -7169,8 +7245,8 @@ var MINUTES_IN_YEAR = 525600
  * )
  * //=> '1 jaro'
  */
-function distanceInWordsStrict (dirtyDateToCompare, dirtyDate, options) {
-  options = options || {}
+function distanceInWordsStrict (dirtyDateToCompare, dirtyDate, dirtyOptions) {
+  var options = dirtyOptions || {}
 
   var comparison = compareDesc(dirtyDateToCompare, dirtyDate)
 
@@ -7181,7 +7257,7 @@ function distanceInWordsStrict (dirtyDateToCompare, dirtyDate, options) {
   }
 
   var localizeOptions = {
-    addSuffix: options.addSuffix,
+    addSuffix: Boolean(options.addSuffix),
     comparison: comparison
   }
 
@@ -7194,14 +7270,16 @@ function distanceInWordsStrict (dirtyDateToCompare, dirtyDate, options) {
     dateRight = parse(dirtyDateToCompare)
   }
 
-  var unit = options.unit
-  var mathPartial = Math[options.partialMethod || 'floor']
+  var unit
+  var mathPartial = Math[options.partialMethod ? String(options.partialMethod) : 'floor']
   var seconds = differenceInSeconds(dateRight, dateLeft)
   var offset = dateRight.getTimezoneOffset() - dateLeft.getTimezoneOffset()
   var minutes = mathPartial(seconds / 60) - offset
   var hours, days, months, years
 
-  if (!unit) {
+  if (options.unit) {
+    unit = String(options.unit)
+  } else {
     if (minutes < 1) {
       unit = 's'
     } else if (minutes < 60) {
@@ -7336,8 +7414,8 @@ var distanceInWords = __webpack_require__(283)
  * )
  * //=> 'pli ol 1 jaro'
  */
-function distanceInWordsToNow (dirtyDate, options) {
-  return distanceInWords(Date.now(), dirtyDate, options)
+function distanceInWordsToNow (dirtyDate, dirtyOptions) {
+  return distanceInWords(Date.now(), dirtyDate, dirtyOptions)
 }
 
 module.exports = distanceInWordsToNow
@@ -7818,9 +7896,9 @@ var enLocale = __webpack_require__(219)
  * )
  * //=> '2-a de julio 2014'
  */
-function format (dirtyDate, formatStr, options) {
-  formatStr = formatStr || 'YYYY-MM-DDTHH:mm:ss.SSSZ'
-  options = options || {}
+function format (dirtyDate, dirtyFormatStr, dirtyOptions) {
+  var formatStr = dirtyFormatStr ? String(dirtyFormatStr) : 'YYYY-MM-DDTHH:mm:ss.SSSZ'
+  var options = dirtyOptions || {}
 
   var locale = options.locale
   var localeFormatters = enLocale.format.formatters
@@ -9061,8 +9139,8 @@ var isSameWeek = __webpack_require__(218)
  * var result = isThisWeek(new Date(2014, 8, 21), {weekStartsOn: 1})
  * //=> false
  */
-function isThisWeek (dirtyDate, options) {
-  return isSameWeek(new Date(), dirtyDate, options)
+function isThisWeek (dirtyDate, dirtyOptions) {
+  return isSameWeek(new Date(), dirtyDate, dirtyOptions)
 }
 
 module.exports = isThisWeek
@@ -9855,9 +9933,10 @@ var addDays = __webpack_require__(74)
  * var result = setDay(new Date(2014, 8, 1), 0, {weekStartsOn: 1})
  * //=> Sun Sep 07 2014 00:00:00
  */
-function setDay (dirtyDate, day, options) {
-  var weekStartsOn = options ? (options.weekStartsOn || 0) : 0
+function setDay (dirtyDate, dirtyDay, dirtyOptions) {
+  var weekStartsOn = dirtyOptions ? (Number(dirtyOptions.weekStartsOn) || 0) : 0
   var date = parse(dirtyDate)
+  var day = Number(dirtyDay)
   var currentDay = date.getDay()
 
   var remainder = day % 7
@@ -9892,8 +9971,9 @@ var parse = __webpack_require__(72)
  * var result = setDayOfYear(new Date(2014, 6, 2), 2)
  * //=> Thu Jan 02 2014 00:00:00
  */
-function setDayOfYear (dirtyDate, dayOfYear) {
+function setDayOfYear (dirtyDate, dirtyDayOfYear) {
   var date = parse(dirtyDate)
+  var dayOfYear = Number(dirtyDayOfYear)
   date.setMonth(0)
   date.setDate(dayOfYear)
   return date
@@ -9928,8 +10008,9 @@ var getISODay = __webpack_require__(287)
  * var result = setISODay(new Date(2014, 8, 1), 7)
  * //=> Sun Sep 07 2014 00:00:00
  */
-function setISODay (dirtyDate, day) {
+function setISODay (dirtyDate, dirtyDay) {
   var date = parse(dirtyDate)
+  var day = Number(dirtyDay)
   var currentDay = getISODay(date)
   var diff = day - currentDay
   return addDays(date, diff)
@@ -9963,8 +10044,9 @@ var getISOWeek = __webpack_require__(200)
  * var result = setISOWeek(new Date(2004, 7, 7), 53)
  * //=> Sat Jan 01 2005 00:00:00
  */
-function setISOWeek (dirtyDate, isoWeek) {
+function setISOWeek (dirtyDate, dirtyISOWeek) {
   var date = parse(dirtyDate)
+  var isoWeek = Number(dirtyISOWeek)
   var diff = getISOWeek(date) - isoWeek
   date.setDate(date.getDate() - diff * 7)
   return date
@@ -9995,8 +10077,9 @@ var parse = __webpack_require__(72)
  * var result = setMilliseconds(new Date(2014, 8, 1, 11, 30, 40, 500), 300)
  * //=> Mon Sep 01 2014 11:30:40.300
  */
-function setMilliseconds (dirtyDate, milliseconds) {
+function setMilliseconds (dirtyDate, dirtyMilliseconds) {
   var date = parse(dirtyDate)
+  var milliseconds = Number(dirtyMilliseconds)
   date.setMilliseconds(milliseconds)
   return date
 }
@@ -10027,8 +10110,9 @@ var setMonth = __webpack_require__(220)
  * var result = setQuarter(new Date(2014, 6, 2), 2)
  * //=> Wed Apr 02 2014 00:00:00
  */
-function setQuarter (dirtyDate, quarter) {
+function setQuarter (dirtyDate, dirtyQuarter) {
   var date = parse(dirtyDate)
+  var quarter = Number(dirtyQuarter)
   var oldQuarter = Math.floor(date.getMonth() / 3) + 1
   var diff = quarter - oldQuarter
   return setMonth(date, date.getMonth() + diff * 3)
@@ -10059,8 +10143,9 @@ var parse = __webpack_require__(72)
  * var result = setSeconds(new Date(2014, 8, 1, 11, 30, 40), 45)
  * //=> Mon Sep 01 2014 11:30:45
  */
-function setSeconds (dirtyDate, seconds) {
+function setSeconds (dirtyDate, dirtySeconds) {
   var date = parse(dirtyDate)
+  var seconds = Number(dirtySeconds)
   date.setSeconds(seconds)
   return date
 }
@@ -10156,7 +10241,8 @@ var addHours = __webpack_require__(206)
  * var result = subHours(new Date(2014, 6, 11, 1, 0), 2)
  * //=> Thu Jul 10 2014 23:00:00
  */
-function subHours (dirtyDate, amount) {
+function subHours (dirtyDate, dirtyAmount) {
+  var amount = Number(dirtyAmount)
   return addHours(dirtyDate, -amount)
 }
 
@@ -10185,7 +10271,8 @@ var addMilliseconds = __webpack_require__(276)
  * var result = subMilliseconds(new Date(2014, 6, 10, 12, 45, 30, 0), 750)
  * //=> Thu Jul 10 2014 12:45:29.250
  */
-function subMilliseconds (dirtyDate, amount) {
+function subMilliseconds (dirtyDate, dirtyAmount) {
+  var amount = Number(dirtyAmount)
   return addMilliseconds(dirtyDate, -amount)
 }
 
@@ -10214,7 +10301,8 @@ var addMinutes = __webpack_require__(195)
  * var result = subMinutes(new Date(2014, 6, 10, 12, 0), 30)
  * //=> Thu Jul 10 2014 11:30:00
  */
-function subMinutes (dirtyDate, amount) {
+function subMinutes (dirtyDate, dirtyAmount) {
+  var amount = Number(dirtyAmount)
   return addMinutes(dirtyDate, -amount)
 }
 
@@ -10243,7 +10331,8 @@ var addQuarters = __webpack_require__(277)
  * var result = subQuarters(new Date(2014, 8, 1), 3)
  * //=> Sun Dec 01 2013 00:00:00
  */
-function subQuarters (dirtyDate, amount) {
+function subQuarters (dirtyDate, dirtyAmount) {
+  var amount = Number(dirtyAmount)
   return addQuarters(dirtyDate, -amount)
 }
 
@@ -10272,7 +10361,8 @@ var addSeconds = __webpack_require__(207)
  * var result = subSeconds(new Date(2014, 6, 10, 12, 45, 0), 30)
  * //=> Thu Jul 10 2014 12:44:30
  */
-function subSeconds (dirtyDate, amount) {
+function subSeconds (dirtyDate, dirtyAmount) {
+  var amount = Number(dirtyAmount)
   return addSeconds(dirtyDate, -amount)
 }
 
@@ -10301,7 +10391,8 @@ var addYears = __webpack_require__(278)
  * var result = subYears(new Date(2014, 8, 1), 5)
  * //=> Tue Sep 01 2009 00:00:00
  */
-function subYears (dirtyDate, amount) {
+function subYears (dirtyDate, dirtyAmount) {
+  var amount = Number(dirtyAmount)
   return addYears(dirtyDate, -amount)
 }
 
@@ -10324,16 +10415,16 @@ module.exports = subYears
 /* 560 */,
 /* 561 */,
 /* 562 */,
-/* 563 */
-/***/ function(module, exports) {
-
-module.exports = "<div class=\"animated fadeIn\">\n    <div class=\"card\">\n        <div class=\"card-header\">Calednar</div>\n        <div class=\"card-block\">\n            <div class=\"row text-center\">\n                <div class=\"col-md-4\">\n                    <div class=\"btn-group\">\n                        <div class=\"btn btn-outline-secondary\" (click)=\"decrement()\">\n                            Previous\n                        </div>\n                        <div class=\"btn btn-primary\" (click)=\"today()\">\n                            Today\n                        </div>\n                        <div class=\"btn btn-outline-secondary\" (click)=\"increment()\">\n                            Next\n                        </div>\n                    </div>\n                </div>\n                <div class=\"col-md-4 text-center\">\n                    <h3>{{ viewDate | calendarDate:(view + 'ViewTitle'):'en' }}</h3>\n                </div>\n                <div class=\"col-md-4\">\n                    <div class=\"btn-group float-right\">\n                        <div class=\"btn btn-primary\" (click)=\"view = 'month'\" [class.active]=\"view === 'month'\">Month</div>\n                        <div class=\"btn btn-primary\" (click)=\"view = 'week'\" [class.active]=\"view === 'week'\">Week</div>\n                        <div class=\"btn btn-primary\" (click)=\"view = 'day'\" [class.active]=\"view === 'day'\">Day</div>\n                    </div>\n                </div>\n            </div>\n            <br>\n            <div [ngSwitch]=\"view\">\n                <mwl-calendar-month-view *ngSwitchCase=\"'month'\" [viewDate]=\"viewDate\" [events]=\"events\" [activeDayIsOpen]=\"activeDayIsOpen\" (dayClicked)=\"dayClicked($event.day)\">\n                </mwl-calendar-month-view>\n                <mwl-calendar-week-view *ngSwitchCase=\"'week'\" [viewDate]=\"viewDate\" [events]=\"events\">\n                </mwl-calendar-week-view>\n                <mwl-calendar-day-view *ngSwitchCase=\"'day'\" [viewDate]=\"viewDate\" [events]=\"events\">\n                </mwl-calendar-day-view>\n            </div>\n        </div>\n    </div>\n</div>\n";
-
-/***/ },
+/* 563 */,
 /* 564 */,
 /* 565 */,
 /* 566 */,
-/* 567 */,
+/* 567 */
+/***/ function(module, exports) {
+
+module.exports = "<div class=\"animated fadeIn\">\r\n    <div class=\"card\">\r\n        <div class=\"card-header\">Calednar</div>\r\n        <div class=\"card-block\">\r\n            <div class=\"row text-center\">\r\n                <div class=\"col-md-4\">\r\n                    <div class=\"btn-group\">\r\n                        <div class=\"btn btn-outline-secondary\" (click)=\"decrement()\">\r\n                            Previous\r\n                        </div>\r\n                        <div class=\"btn btn-primary\" (click)=\"today()\">\r\n                            Today\r\n                        </div>\r\n                        <div class=\"btn btn-outline-secondary\" (click)=\"increment()\">\r\n                            Next\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n                <div class=\"col-md-4 text-center\">\r\n                    <h3>{{ viewDate | calendarDate:(view + 'ViewTitle'):'en' }}</h3>\r\n                </div>\r\n                <div class=\"col-md-4\">\r\n                    <div class=\"btn-group float-right\">\r\n                        <div class=\"btn btn-primary\" (click)=\"view = 'month'\" [class.active]=\"view === 'month'\">Month</div>\r\n                        <div class=\"btn btn-primary\" (click)=\"view = 'week'\" [class.active]=\"view === 'week'\">Week</div>\r\n                        <div class=\"btn btn-primary\" (click)=\"view = 'day'\" [class.active]=\"view === 'day'\">Day</div>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n            <br>\r\n            <div [ngSwitch]=\"view\">\r\n                <mwl-calendar-month-view *ngSwitchCase=\"'month'\" [viewDate]=\"viewDate\" [events]=\"events\" [activeDayIsOpen]=\"activeDayIsOpen\" (dayClicked)=\"dayClicked($event.day)\">\r\n                </mwl-calendar-month-view>\r\n                <mwl-calendar-week-view *ngSwitchCase=\"'week'\" [viewDate]=\"viewDate\" [events]=\"events\">\r\n                </mwl-calendar-week-view>\r\n                <mwl-calendar-day-view *ngSwitchCase=\"'day'\" [viewDate]=\"viewDate\" [events]=\"events\">\r\n                </mwl-calendar-day-view>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n";
+
+/***/ },
 /* 568 */,
 /* 569 */,
 /* 570 */,
@@ -10357,7 +10448,11 @@ module.exports = "<div class=\"animated fadeIn\">\n    <div class=\"card\">\n   
 /* 588 */,
 /* 589 */,
 /* 590 */,
-/* 591 */
+/* 591 */,
+/* 592 */,
+/* 593 */,
+/* 594 */,
+/* 595 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10498,28 +10593,28 @@ function positionElements(hostElement, targetElement, placement, appendToBody) {
 //# sourceMappingURL=positioning.js.map
 
 /***/ },
-/* 592 */,
-/* 593 */,
-/* 594 */,
-/* 595 */
+/* 596 */,
+/* 597 */,
+/* 598 */,
+/* 599 */
 /***/ function(module, exports, __webpack_require__) {
 
 module.exports = (__webpack_require__(1))(544);
 
 /***/ },
-/* 596 */
+/* 600 */
 /***/ function(module, exports, __webpack_require__) {
 
 module.exports = (__webpack_require__(1))(576);
 
 /***/ },
-/* 597 */
+/* 601 */
 /***/ function(module, exports, __webpack_require__) {
 
 module.exports = (__webpack_require__(1))(629);
 
 /***/ },
-/* 598 */
+/* 602 */
 /***/ function(module, exports, __webpack_require__) {
 
 module.exports = (__webpack_require__(1))(679);

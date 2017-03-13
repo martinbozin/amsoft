@@ -43,7 +43,6 @@ namespace AMSoft.Modules.Template
                 });
             }
             app.UseDeveloperExceptionPage();
-            app.UseBrowserLink();
             app.UseStaticFiles();
  
             app.UseMvc(routes =>

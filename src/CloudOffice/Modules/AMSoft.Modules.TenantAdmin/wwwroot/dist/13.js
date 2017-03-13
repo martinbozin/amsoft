@@ -510,7 +510,7 @@ var NotificationsComponent = (function () {
 }());
 NotificationsComponent = __decorate([
     core_1.Component({
-        template: __webpack_require__(567)
+        template: __webpack_require__(571)
     }),
     __metadata("design:paramtypes", [angular2_toaster_1.ToasterService])
 ], NotificationsComponent);
@@ -638,10 +638,10 @@ exports.NotificationsModule = NotificationsModule;
 
 /***/ },
 
-/***/ 567:
+/***/ 571:
 /***/ function(module, exports) {
 
-module.exports = "<div class=\"animated fadeIn\">\n    <div class=\"card\">\n        <div class=\"card-header\">Notifications</div>\n        <div class=\"card-block\">\n            <button class=\"btn btn-success\" (click)=\"showSuccess()\">Try Success</button>\n            <button class=\"btn btn-danger\" (click)=\"showError()\">Try Error</button>\n            <button class=\"btn btn-warning\" (click)=\"showWarning()\">Try Warning</button>\n            <button class=\"btn btn-info\" (click)=\"showInfo()\">Try Info</button>\n            <button class=\"btn btn-primary\" (click)=\"showPrimary()\">Try Primary</button>\n        </div>\n    </div>\n</div>\n<toaster-container [toasterconfig]=\"toasterconfig\"></toaster-container>\n";
+module.exports = "<div class=\"animated fadeIn\">\r\n    <div class=\"card\">\r\n        <div class=\"card-header\">Notifications</div>\r\n        <div class=\"card-block\">\r\n            <button class=\"btn btn-success\" (click)=\"showSuccess()\">Try Success</button>\r\n            <button class=\"btn btn-danger\" (click)=\"showError()\">Try Error</button>\r\n            <button class=\"btn btn-warning\" (click)=\"showWarning()\">Try Warning</button>\r\n            <button class=\"btn btn-info\" (click)=\"showInfo()\">Try Info</button>\r\n            <button class=\"btn btn-primary\" (click)=\"showPrimary()\">Try Primary</button>\r\n        </div>\r\n    </div>\r\n</div>\r\n<toaster-container [toasterconfig]=\"toasterconfig\"></toaster-container>\r\n";
 
 /***/ }
 
