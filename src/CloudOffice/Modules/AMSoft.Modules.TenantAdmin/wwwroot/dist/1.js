@@ -1,11 +1,25 @@
 webpackJsonp([1],{
 
-/***/ 225:
+/***/ 202:
+/***/ function(module, exports, __webpack_require__) {
+
+module.exports = (__webpack_require__(1))(234);
+
+/***/ },
+
+/***/ 203:
+/***/ function(module, exports, __webpack_require__) {
+
+module.exports = (__webpack_require__(1))(371);
+
+/***/ },
+
+/***/ 228:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__modal_options_class__ = __webpack_require__(330);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__modal_options_class__ = __webpack_require__(335);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__utils_ng2_bootstrap_config__ = __webpack_require__(26);
 /* harmony export (binding) */ __webpack_require__.d(exports, "b", function() { return ModalBackdropOptions; });
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return ModalBackdropComponent; });
@@ -70,7 +84,7 @@ var ModalBackdropComponent = (function () {
 
 /***/ },
 
-/***/ 248:
+/***/ 250:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -92,7 +106,7 @@ var ModulesComponent = (function () {
 }());
 ModulesComponent = __decorate([
     core_1.Component({
-        template: __webpack_require__(600)
+        template: __webpack_require__(556)
     }),
     __metadata("design:paramtypes", [])
 ], ModulesComponent);
@@ -101,7 +115,7 @@ exports.ModulesComponent = ModulesComponent;
 
 /***/ },
 
-/***/ 249:
+/***/ 251:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -123,7 +137,7 @@ var SettingsComponent = (function () {
 }());
 SettingsComponent = __decorate([
     core_1.Component({
-        template: __webpack_require__(601)
+        template: __webpack_require__(557)
     }),
     __metadata("design:paramtypes", [])
 ], SettingsComponent);
@@ -132,7 +146,7 @@ exports.SettingsComponent = SettingsComponent;
 
 /***/ },
 
-/***/ 250:
+/***/ 252:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -147,23 +161,78 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = __webpack_require__(0);
-var TenantsComponent = (function () {
-    function TenantsComponent() {
+var data_service_1 = __webpack_require__(274);
+var TenantService = (function () {
+    function TenantService(dataService) {
+        this.dataService = dataService;
+        this.getTenanntApi = '/Tenant/TenantName/';
     }
+    TenantService.prototype.getTenant = function (name) {
+        return this.dataService.get(this.getTenanntApi, name);
+    };
+    return TenantService;
+}());
+TenantService = __decorate([
+    core_1.Injectable(),
+    __metadata("design:paramtypes", [data_service_1.DataService])
+], TenantService);
+exports.TenantService = TenantService;
+
+
+/***/ },
+
+/***/ 253:
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var core_1 = __webpack_require__(0);
+var tenant_model_1 = __webpack_require__(426);
+var tenant_service_1 = __webpack_require__(252);
+var TenantsComponent = (function () {
+    function TenantsComponent(tenantService) {
+        this.tenantService = tenantService;
+        this.tenantModel = new tenant_model_1.TenantModel('', '', '');
+        this.notification = new core_1.EventEmitter();
+    }
+    TenantsComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        debugger;
+        this.tenantService.getTenant(this.tenantModel.name)
+            .subscribe(function (res) {
+            debugger;
+            _this.tenantModel.name = res.firstName;
+            _this.tenantModel.address = res.lastName;
+            _this.tenantModel.phone = res.phone;
+        }, function (errors) { return _this.notification.emit(errors[0]); });
+    };
     return TenantsComponent;
 }());
+__decorate([
+    core_1.Output(),
+    __metadata("design:type", Object)
+], TenantsComponent.prototype, "notification", void 0);
 TenantsComponent = __decorate([
     core_1.Component({
-        template: __webpack_require__(602)
+        template: __webpack_require__(558)
     }),
-    __metadata("design:paramtypes", [])
+    __metadata("design:paramtypes", [tenant_service_1.TenantService])
 ], TenantsComponent);
 exports.TenantsComponent = TenantsComponent;
 
 
 /***/ },
 
-/***/ 251:
+/***/ 254:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -185,7 +254,7 @@ var UsersComponent = (function () {
 }());
 UsersComponent = __decorate([
     core_1.Component({
-        template: __webpack_require__(599)
+        template: __webpack_require__(559)
     }),
     __metadata("design:paramtypes", [])
 ], UsersComponent);
@@ -194,13 +263,258 @@ exports.UsersComponent = UsersComponent;
 
 /***/ },
 
-/***/ 322:
+/***/ 273:
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+// CREDIT:
+//  The vast majority of this code came right from Ben Nadel's post:
+//  http://www.bennadel.com/blog/3047-creating-specialized-http-clients-in-angular-2-beta-8.htm
+//
+// My updates are mostly adapting it for Typescript:
+//  1. Importing required modules
+//  2. Adding type notations
+//  3. Using the 'fat-arrow' syntax to properly scope in-line functions
+//
+__webpack_require__(79);
+__webpack_require__(203);
+__webpack_require__(606);
+__webpack_require__(608);
+__webpack_require__(605);
+var core_1 = __webpack_require__(0);
+var http_1 = __webpack_require__(202);
+var Observable_1 = __webpack_require__(79);
+var Subject_1 = __webpack_require__(78);
+var http_error_handler_service_1 = __webpack_require__(449);
+// Import the rxjs operators we need (in a production app you'll
+//  probably want to import only the operators you actually use)
+//
+var ApiGatewayOptions = (function () {
+    function ApiGatewayOptions() {
+        this.headers = {};
+        this.params = {};
+        this.data = {};
+    }
+    return ApiGatewayOptions;
+}());
+exports.ApiGatewayOptions = ApiGatewayOptions;
+var ApiGatewayService = (function () {
+    function ApiGatewayService(http, httpErrorHandler) {
+        this.http = http;
+        this.httpErrorHandler = httpErrorHandler;
+        // Define the internal Subject we'll use to push the command count
+        this.pendingCommandsSubject = new Subject_1.Subject();
+        this.pendingCommandCount = 0;
+        this.pendingCommands$ = this.pendingCommandsSubject.asObservable();
+    }
+    // I perform a GET request to the API, appending the given params
+    // as URL search parameters. Returns a stream.
+    ApiGatewayService.prototype.get = function (url, params) {
+        var options = new ApiGatewayOptions();
+        options.method = http_1.RequestMethod.Get;
+        options.url = url;
+        options.params = params;
+        return this.request(options);
+    };
+    // I perform a POST request to the API. If both the params and data
+    // are present, the params will be appended as URL search parameters
+    // and the data will be serialized as a JSON payload. If only the
+    // data is present, it will be serialized as a JSON payload. Returns
+    // a stream.
+    ApiGatewayService.prototype.post = function (url, data, params) {
+        if (!data) {
+            data = params;
+            params = {};
+        }
+        var options = new ApiGatewayOptions();
+        options.method = http_1.RequestMethod.Post;
+        options.url = url;
+        options.params = params;
+        options.data = data;
+        return this.request(options);
+    };
+    ApiGatewayService.prototype.request = function (options) {
+        var _this = this;
+        options.method = (options.method || http_1.RequestMethod.Get);
+        options.url = (options.url || '');
+        options.headers = (options.headers || {});
+        options.params = (options.params || {});
+        options.data = (options.data || {});
+        this.interpolateUrl(options);
+        this.addXsrfToken(options);
+        this.addContentType(options);
+        // TODO add auth token when available
+        // this.addAuthToken(options);
+        var requestOptions = new http_1.RequestOptions();
+        requestOptions.method = options.method;
+        requestOptions.url = options.url;
+        requestOptions.headers = options.headers;
+        requestOptions.search = this.buildUrlSearchParams(options.params);
+        requestOptions.body = JSON.stringify(options.data);
+        var isCommand = (options.method !== http_1.RequestMethod.Get);
+        if (isCommand) {
+            this.pendingCommandsSubject.next(++this.pendingCommandCount);
+        }
+        var stream = this.http.request(options.url, requestOptions)
+            .catch(function (error) {
+            _this.httpErrorHandler.handle(error);
+            return Observable_1.Observable.throw(error);
+        })
+            .map(this.unwrapHttpValue)
+            .catch(function (error) {
+            return Observable_1.Observable.throw(_this.unwrapHttpError(error));
+        })
+            .finally(function () {
+            if (isCommand) {
+                _this.pendingCommandsSubject.next(--_this.pendingCommandCount);
+            }
+        });
+        return stream;
+    };
+    ApiGatewayService.prototype.addContentType = function (options) {
+        if (options.method !== http_1.RequestMethod.Get) {
+            options.headers['Content-Type'] = 'application/json; charset=UTF-8';
+        }
+        return options;
+    };
+    ApiGatewayService.prototype.addAuthToken = function (options) {
+        options.headers.Authorization = 'Bearer ' + JSON.parse(sessionStorage.getItem('accessToken'));
+        return options;
+    };
+    ApiGatewayService.prototype.extractValue = function (collection, key) {
+        var value = collection[key];
+        delete (collection[key]);
+        return value;
+    };
+    ApiGatewayService.prototype.addXsrfToken = function (options) {
+        var xsrfToken = this.getXsrfCookie();
+        if (xsrfToken) {
+            options.headers['X-XSRF-TOKEN'] = xsrfToken;
+        }
+        return options;
+    };
+    ApiGatewayService.prototype.getXsrfCookie = function () {
+        var matches = document.cookie.match(/\bXSRF-TOKEN=([^\s;]+)/);
+        try {
+            return (matches && decodeURIComponent(matches[1]));
+        }
+        catch (decodeError) {
+            return ('');
+        }
+    };
+    ApiGatewayService.prototype.addCors = function (options) {
+        options.headers['Access-Control-Allow-Origin'] = '*';
+        return options;
+    };
+    ApiGatewayService.prototype.buildUrlSearchParams = function (params) {
+        var searchParams = new http_1.URLSearchParams();
+        for (var key in params) {
+            if (params.hasOwnProperty(key)) {
+                searchParams.append(key, params[key]);
+            }
+        }
+        return searchParams;
+    };
+    ApiGatewayService.prototype.interpolateUrl = function (options) {
+        var _this = this;
+        options.url = options.url.replace(/:([a-zA-Z]+[\w-]*)/g, function ($0, token) {
+            // Try to move matching token from the params collection.
+            if (options.params.hasOwnProperty(token)) {
+                return (_this.extractValue(options.params, token));
+            }
+            // Try to move matching token from the data collection.
+            if (options.data.hasOwnProperty(token)) {
+                return (_this.extractValue(options.data, token));
+            }
+            // If a matching value couldn't be found, just replace
+            // the token with the empty string.
+            return ('');
+        });
+        // Clean up any repeating slashes.
+        options.url = options.url.replace(/\/{2,}/g, '/');
+        // Clean up any trailing slashes.
+        options.url = options.url.replace(/\/+$/g, '');
+        return options;
+    };
+    ApiGatewayService.prototype.unwrapHttpError = function (error) {
+        try {
+            return (error.json());
+        }
+        catch (jsonError) {
+            return ({
+                code: -1,
+                message: 'An unexpected error occurred.'
+            });
+        }
+    };
+    ApiGatewayService.prototype.unwrapHttpValue = function (value) {
+        return (value.json());
+    };
+    return ApiGatewayService;
+}());
+ApiGatewayService = __decorate([
+    core_1.Injectable(),
+    __metadata("design:paramtypes", [http_1.Http, http_error_handler_service_1.HttpErrorHandlerService])
+], ApiGatewayService);
+exports.ApiGatewayService = ApiGatewayService;
+
+
+/***/ },
+
+/***/ 274:
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var core_1 = __webpack_require__(0);
+var api_gateway_service_1 = __webpack_require__(273);
+var DataService = (function () {
+    function DataService(http) {
+        this.http = http;
+    }
+    DataService.prototype.get = function (url, params) {
+        return this.http.get(url, undefined);
+    };
+    DataService.prototype.post = function (url, data, params) {
+        return this.http.post(url, data, params);
+    };
+    return DataService;
+}());
+DataService = __decorate([
+    core_1.Injectable(),
+    __metadata("design:paramtypes", [api_gateway_service_1.ApiGatewayService])
+], DataService);
+exports.DataService = DataService;
+
+
+/***/ },
+
+/***/ 327:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__content_ref_class__ = __webpack_require__(324);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__utils_triggers__ = __webpack_require__(585);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__content_ref_class__ = __webpack_require__(329);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__utils_triggers__ = __webpack_require__(594);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return ComponentLoader; });
 
 
@@ -368,13 +682,13 @@ var ComponentLoader = (function () {
 
 /***/ },
 
-/***/ 323:
+/***/ 328:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__component_loader_class__ = __webpack_require__(322);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__positioning__ = __webpack_require__(332);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__component_loader_class__ = __webpack_require__(327);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__positioning__ = __webpack_require__(337);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return ComponentLoaderFactory; });
 
 
@@ -412,7 +726,7 @@ var ComponentLoaderFactory = (function () {
 
 /***/ },
 
-/***/ 324:
+/***/ 329:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -433,7 +747,7 @@ var ContentRef = (function () {
 
 /***/ },
 
-/***/ 330:
+/***/ 335:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -465,17 +779,17 @@ var Selector = {
 
 /***/ },
 
-/***/ 331:
+/***/ 336:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__utils_facade_browser__ = __webpack_require__(27);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__utils_ng2_bootstrap_config__ = __webpack_require__(26);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__utils_utils_class__ = __webpack_require__(586);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__modal_backdrop_component__ = __webpack_require__(225);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__modal_options_class__ = __webpack_require__(330);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__component_loader_component_loader_factory__ = __webpack_require__(323);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__utils_utils_class__ = __webpack_require__(595);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__modal_backdrop_component__ = __webpack_require__(228);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__modal_options_class__ = __webpack_require__(335);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__component_loader_component_loader_factory__ = __webpack_require__(328);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return ModalDirective; });
 /* tslint:disable:max-file-line-count */
 // todo: should we support enforce focus in?
@@ -795,14 +1109,14 @@ var ModalDirective = (function () {
 
 /***/ },
 
-/***/ 332:
+/***/ 337:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ng_positioning__ = __webpack_require__(333);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ng_positioning__ = __webpack_require__(338);
 /* unused harmony reexport positionElements */
 /* unused harmony reexport Positioning */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__positioning_service__ = __webpack_require__(581);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__positioning_service__ = __webpack_require__(590);
 /* harmony reexport (binding) */ __webpack_require__.d(exports, "a", function() { return __WEBPACK_IMPORTED_MODULE_1__positioning_service__["a"]; });
 
 
@@ -810,7 +1124,7 @@ var ModalDirective = (function () {
 
 /***/ },
 
-/***/ 333:
+/***/ 338:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -957,7 +1271,7 @@ function positionElements(hostElement, targetElement, placement, appendToBody) {
 
 /***/ },
 
-/***/ 422:
+/***/ 425:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -970,10 +1284,10 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 var core_1 = __webpack_require__(0);
 var router_1 = __webpack_require__(12);
-var users_1 = __webpack_require__(251);
-var settings_1 = __webpack_require__(249);
-var modules_1 = __webpack_require__(248);
-var tenants_1 = __webpack_require__(250);
+var users_1 = __webpack_require__(254);
+var settings_1 = __webpack_require__(251);
+var modules_1 = __webpack_require__(250);
+var tenants_1 = __webpack_require__(253);
 var routes = [
     {
         path: '',
@@ -1028,15 +1342,108 @@ exports.ComponentsRoutingModule = ComponentsRoutingModule;
 
 /***/ },
 
-/***/ 576:
+/***/ 426:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__component_loader_class__ = __webpack_require__(322);
+
+var TenantModel = (function () {
+    function TenantModel(name, address, phone) {
+        this.name = name;
+        this.address = address;
+        this.phone = phone;
+    }
+    return TenantModel;
+}());
+exports.TenantModel = TenantModel;
+
+
+/***/ },
+
+/***/ 449:
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+// CREDIT:
+//  The vast majority of this code came right from Ben Nadel's post:
+//  http://www.bennadel.com/blog/3047-creating-specialized-http-clients-in-angular-2-beta-8.htm
+//
+// My updates are mostly adapting it for Typescript:
+//  1. Importing required modules
+//  2. Adding type notations
+//  3. Using the 'fat-arrow' syntax to properly scope in-line functions
+//
+var core_1 = __webpack_require__(0);
+var router_1 = __webpack_require__(12);
+var HttpErrorHandlerService = (function () {
+    function HttpErrorHandlerService(_router) {
+        this._router = _router;
+    }
+    HttpErrorHandlerService.prototype.handle = function (error) {
+        if (error.status === 401) {
+            sessionStorage.clear();
+            // window.location.href = 'login';
+            this._router.navigate(['Login']);
+        }
+    };
+    return HttpErrorHandlerService;
+}());
+HttpErrorHandlerService = __decorate([
+    core_1.Injectable(),
+    __metadata("design:paramtypes", [router_1.Router])
+], HttpErrorHandlerService);
+exports.HttpErrorHandlerService = HttpErrorHandlerService;
+
+
+/***/ },
+
+/***/ 556:
+/***/ function(module, exports) {
+
+module.exports = "<div class=\"animated fadeIn\">\n    <div class=\"row\">\n        <div class=\"col-lg-6\">\n            <div class=\"card\">\n                <div class=\"card-header\">\n                    <i class=\"fa fa-align-justify\"></i> Modules\n                </div>\n                <div class=\"card-block\">\n                    <table class=\"table\">\n                        <thead>\n                            <tr>\n                                <th>Username</th>\n                                <th>Date registered</th>\n                                <th>Role</th>\n                                <th>Status</th>\n                            </tr>\n                        </thead>\n                        <tbody>\n                            <tr>\n                                <td>Samppa Nori</td>\n                                <td>2012/01/01</td>\n                                <td>Member</td>\n                                <td>\n                                    <span class=\"badge badge-success\">Active</span>\n                                </td>\n                            </tr>\n                            <tr>\n                                <td>Estavan Lykos</td>\n                                <td>2012/02/01</td>\n                                <td>Staff</td>\n                                <td>\n                                    <span class=\"badge badge-danger\">Banned</span>\n                                </td>\n                            </tr>\n                            <tr>\n                                <td>Chetan Mohamed</td>\n                                <td>2012/02/01</td>\n                                <td>Admin</td>\n                                <td>\n                                    <span class=\"badge badge-default\">Inactive</span>\n                                </td>\n                            </tr>\n                            <tr>\n                                <td>Derick Maximinus</td>\n                                <td>2012/03/01</td>\n                                <td>Member</td>\n                                <td>\n                                    <span class=\"badge badge-warning\">Pending</span>\n                                </td>\n                            </tr>\n                            <tr>\n                                <td>Friderik Dávid</td>\n                                <td>2012/01/21</td>\n                                <td>Staff</td>\n                                <td>\n                                    <span class=\"badge badge-success\">Active</span>\n                                </td>\n                            </tr>\n                        </tbody>\n                    </table>\n                    <ul class=\"pagination\">\n                        <li class=\"page-item\"><a class=\"page-link\" href=\"#\">Prev</a>\n                        </li>\n                        <li class=\"page-item active\">\n                            <a class=\"page-link\" href=\"#\">1</a>\n                        </li>\n                        <li class=\"page-item\"><a class=\"page-link\" href=\"#\">2</a>\n                        </li>\n                        <li class=\"page-item\"><a class=\"page-link\" href=\"#\">3</a>\n                        </li>\n                        <li class=\"page-item\"><a class=\"page-link\" href=\"#\">4</a>\n                        </li>\n                        <li class=\"page-item\"><a class=\"page-link\" href=\"#\">Next</a>\n                        </li>\n                    </ul>\n                </div>\n            </div>\n        </div>\n    </div>\n</div>\n";
+
+/***/ },
+
+/***/ 557:
+/***/ function(module, exports) {
+
+module.exports = "<div class=\"animated fadeIn\">\n    <div class=\"row\">\n        <div class=\"col-lg-6\">\n            <div class=\"card\">\n                <div class=\"card-header\">\n                    <i class=\"fa fa-align-justify\"></i> Setting\n                </div>\n                <div class=\"card-block\">\n                    <table class=\"table\">\n                        <thead>\n                            <tr>\n                                <th>Username</th>\n                                <th>Date registered</th>\n                                <th>Role</th>\n                                <th>Status</th>\n                            </tr>\n                        </thead>\n                        <tbody>\n                            <tr>\n                                <td>Samppa Nori</td>\n                                <td>2012/01/01</td>\n                                <td>Member</td>\n                                <td>\n                                    <span class=\"badge badge-success\">Active</span>\n                                </td>\n                            </tr>\n                            <tr>\n                                <td>Estavan Lykos</td>\n                                <td>2012/02/01</td>\n                                <td>Staff</td>\n                                <td>\n                                    <span class=\"badge badge-danger\">Banned</span>\n                                </td>\n                            </tr>\n                            <tr>\n                                <td>Chetan Mohamed</td>\n                                <td>2012/02/01</td>\n                                <td>Admin</td>\n                                <td>\n                                    <span class=\"badge badge-default\">Inactive</span>\n                                </td>\n                            </tr>\n                            <tr>\n                                <td>Derick Maximinus</td>\n                                <td>2012/03/01</td>\n                                <td>Member</td>\n                                <td>\n                                    <span class=\"badge badge-warning\">Pending</span>\n                                </td>\n                            </tr>\n                            <tr>\n                                <td>Friderik Dávid</td>\n                                <td>2012/01/21</td>\n                                <td>Staff</td>\n                                <td>\n                                    <span class=\"badge badge-success\">Active</span>\n                                </td>\n                            </tr>\n                        </tbody>\n                    </table>\n                    <ul class=\"pagination\">\n                        <li class=\"page-item\"><a class=\"page-link\" href=\"#\">Prev</a>\n                        </li>\n                        <li class=\"page-item active\">\n                            <a class=\"page-link\" href=\"#\">1</a>\n                        </li>\n                        <li class=\"page-item\"><a class=\"page-link\" href=\"#\">2</a>\n                        </li>\n                        <li class=\"page-item\"><a class=\"page-link\" href=\"#\">3</a>\n                        </li>\n                        <li class=\"page-item\"><a class=\"page-link\" href=\"#\">4</a>\n                        </li>\n                        <li class=\"page-item\"><a class=\"page-link\" href=\"#\">Next</a>\n                        </li>\n                    </ul>\n                </div>\n            </div>\n        </div>\n    </div>\n</div>\n";
+
+/***/ },
+
+/***/ 558:
+/***/ function(module, exports) {
+
+module.exports = "<div class=\"animated fadeIn\">\r\n    <div class=\"row\"> \r\n        <div class=\"col-md-6\">\r\n            <div class=\"card\">\r\n                <div class=\"card-header\">\r\n                    <strong>Tenant Information</strong>\r\n                </div>\r\n                <div class=\"card-block\">\r\n                    <form action=\"\" method=\"post\" class=\"form-horizontal \">\r\n                        <div class=\"form-group row\">\r\n                            <label class=\"col-md-3 form-control-label\" for=\"hf-email\" >Name</label>\r\n                            <div class=\"col-md-9\">\r\n                                <input type=\"text\" id=\"name\" name=\"name\" class=\"form-control\" [(ngModel)]=\"tenantModel.name\">\r\n                            </div>\r\n                        </div>\r\n                        <div class=\"form-group row\">\r\n                            <label class=\"col-md-3 form-control-label\" for=\"hf-password\">Address</label>\r\n                            <div class=\"col-md-9\">\r\n                                <input type=\"text\" id=\"address\" name=\"address\" class=\"form-control\" [(ngModel)]=\"tenantModel.address\">\r\n                            </div>\r\n                        </div>\r\n                        <div class=\"form-group row\">\r\n                            <label class=\"col-md-3 form-control-label\" for=\"hf-password\">Contact phone</label>\r\n                            <div class=\"col-md-9\">\r\n                                <input type=\"text\" id=\"phone\" name=\"phone\" class=\"form-control\" [(ngModel)]=\"tenantModel.phone\">\r\n                            </div>\r\n                        </div>\r\n                        <div class=\"form-group row\">\r\n                            <label class=\"col-md-3 form-control-label\" for=\"hf-password\">Urls</label>\r\n                            <div class=\"col-md-9\">\r\n                                <input type=\"text\" id=\"urls\" name=\"urls\" class=\"form-control\">\r\n                            </div>\r\n                        </div>\r\n                    </form>\r\n                </div>\r\n                <div class=\"card-footer\">\r\n                    <button type=\"submit\" class=\"btn btn-sm btn-primary\"><i class=\"fa fa-dot-circle-o\"></i> Update</button>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n";
+
+/***/ },
+
+/***/ 559:
+/***/ function(module, exports) {
+
+module.exports = "<div class=\"animated fadeIn\">\n    <div class=\"row\">\n        <div class=\"col-lg-6\">\n            <div class=\"card\">\n                <div class=\"card-header\">\n                    <i class=\"fa fa-align-justify\"></i> Users\n                </div>\n                <div class=\"card-block\">\n                    <table class=\"table\">\n                        <thead>\n                            <tr>\n                                <th>Username</th>\n                                <th>Date registered</th>\n                                <th>Role</th>\n                                <th>Status</th>\n                            </tr>\n                        </thead>\n                        <tbody>\n                            <tr>\n                                <td>Samppa Nori</td>\n                                <td>2012/01/01</td>\n                                <td>Member</td>\n                                <td>\n                                    <span class=\"badge badge-success\">Active</span>\n                                </td>\n                            </tr>\n                            <tr>\n                                <td>Estavan Lykos</td>\n                                <td>2012/02/01</td>\n                                <td>Staff</td>\n                                <td>\n                                    <span class=\"badge badge-danger\">Banned</span>\n                                </td>\n                            </tr>\n                            <tr>\n                                <td>Chetan Mohamed</td>\n                                <td>2012/02/01</td>\n                                <td>Admin</td>\n                                <td>\n                                    <span class=\"badge badge-default\">Inactive</span>\n                                </td>\n                            </tr>\n                            <tr>\n                                <td>Derick Maximinus</td>\n                                <td>2012/03/01</td>\n                                <td>Member</td>\n                                <td>\n                                    <span class=\"badge badge-warning\">Pending</span>\n                                </td>\n                            </tr>\n                            <tr>\n                                <td>Friderik Dávid</td>\n                                <td>2012/01/21</td>\n                                <td>Staff</td>\n                                <td>\n                                    <span class=\"badge badge-success\">Active</span>\n                                </td>\n                            </tr>\n                        </tbody>\n                    </table>\n                    <ul class=\"pagination\">\n                        <li class=\"page-item\"><a class=\"page-link\" href=\"#\">Prev</a>\n                        </li>\n                        <li class=\"page-item active\">\n                            <a class=\"page-link\" href=\"#\">1</a>\n                        </li>\n                        <li class=\"page-item\"><a class=\"page-link\" href=\"#\">2</a>\n                        </li>\n                        <li class=\"page-item\"><a class=\"page-link\" href=\"#\">3</a>\n                        </li>\n                        <li class=\"page-item\"><a class=\"page-link\" href=\"#\">4</a>\n                        </li>\n                        <li class=\"page-item\"><a class=\"page-link\" href=\"#\">Next</a>\n                        </li>\n                    </ul>\n                </div>\n            </div>\n        </div>\n    </div>\n</div>\n";
+
+/***/ },
+
+/***/ 585:
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__component_loader_class__ = __webpack_require__(327);
 /* unused harmony reexport ComponentLoader */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__component_loader_factory__ = __webpack_require__(323);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__component_loader_factory__ = __webpack_require__(328);
 /* harmony reexport (binding) */ __webpack_require__.d(exports, "a", function() { return __WEBPACK_IMPORTED_MODULE_1__component_loader_factory__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__content_ref_class__ = __webpack_require__(324);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__content_ref_class__ = __webpack_require__(329);
 /* unused harmony reexport ContentRef */
 
 
@@ -1045,17 +1452,17 @@ exports.ComponentsRoutingModule = ComponentsRoutingModule;
 
 /***/ },
 
-/***/ 579:
+/***/ 588:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__modal_backdrop_component__ = __webpack_require__(225);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__modal_backdrop_component__ = __webpack_require__(228);
 Object.defineProperty(exports, "__esModule", { value: true });
 /* harmony reexport (binding) */ __webpack_require__.d(exports, "ModalBackdropComponent", function() { return __WEBPACK_IMPORTED_MODULE_0__modal_backdrop_component__["a"]; });
 /* harmony reexport (binding) */ __webpack_require__.d(exports, "ModalBackdropOptions", function() { return __WEBPACK_IMPORTED_MODULE_0__modal_backdrop_component__["b"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__modal_component__ = __webpack_require__(331);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__modal_component__ = __webpack_require__(336);
 /* harmony reexport (binding) */ __webpack_require__.d(exports, "ModalDirective", function() { return __WEBPACK_IMPORTED_MODULE_1__modal_component__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__modal_module__ = __webpack_require__(580);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__modal_module__ = __webpack_require__(589);
 /* harmony reexport (binding) */ __webpack_require__.d(exports, "ModalModule", function() { return __WEBPACK_IMPORTED_MODULE_2__modal_module__["a"]; });
 
 
@@ -1064,15 +1471,15 @@ Object.defineProperty(exports, "__esModule", { value: true });
 
 /***/ },
 
-/***/ 580:
+/***/ 589:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__modal_backdrop_component__ = __webpack_require__(225);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__modal_component__ = __webpack_require__(331);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__positioning__ = __webpack_require__(332);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__component_loader__ = __webpack_require__(576);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__modal_backdrop_component__ = __webpack_require__(228);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__modal_component__ = __webpack_require__(336);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__positioning__ = __webpack_require__(337);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__component_loader__ = __webpack_require__(585);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return ModalModule; });
 
 
@@ -1100,12 +1507,12 @@ var ModalModule = (function () {
 
 /***/ },
 
-/***/ 581:
+/***/ 590:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ng_positioning__ = __webpack_require__(333);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ng_positioning__ = __webpack_require__(338);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return PositioningService; });
 
 
@@ -1137,7 +1544,7 @@ var PositioningService = (function () {
 
 /***/ },
 
-/***/ 584:
+/***/ 593:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1158,11 +1565,11 @@ var Trigger = (function () {
 
 /***/ },
 
-/***/ 585:
+/***/ 594:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__trigger_class__ = __webpack_require__(584);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__trigger_class__ = __webpack_require__(593);
 /* unused harmony export parseTriggers */
 /* harmony export (immutable) */ exports["a"] = listenToTriggers;
 
@@ -1211,7 +1618,7 @@ function listenToTriggers(renderer, target, triggers, showFn, hideFn, toggleFn) 
 
 /***/ },
 
-/***/ 586:
+/***/ 595:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1241,31 +1648,24 @@ var Utils = (function () {
 
 /***/ },
 
-/***/ 599:
-/***/ function(module, exports) {
+/***/ 605:
+/***/ function(module, exports, __webpack_require__) {
 
-module.exports = "<div class=\"animated fadeIn\">\n    <div class=\"row\">\n        <div class=\"col-lg-6\">\n            <div class=\"card\">\n                <div class=\"card-header\">\n                    <i class=\"fa fa-align-justify\"></i> Users\n                </div>\n                <div class=\"card-block\">\n                    <table class=\"table\">\n                        <thead>\n                            <tr>\n                                <th>Username</th>\n                                <th>Date registered</th>\n                                <th>Role</th>\n                                <th>Status</th>\n                            </tr>\n                        </thead>\n                        <tbody>\n                            <tr>\n                                <td>Samppa Nori</td>\n                                <td>2012/01/01</td>\n                                <td>Member</td>\n                                <td>\n                                    <span class=\"badge badge-success\">Active</span>\n                                </td>\n                            </tr>\n                            <tr>\n                                <td>Estavan Lykos</td>\n                                <td>2012/02/01</td>\n                                <td>Staff</td>\n                                <td>\n                                    <span class=\"badge badge-danger\">Banned</span>\n                                </td>\n                            </tr>\n                            <tr>\n                                <td>Chetan Mohamed</td>\n                                <td>2012/02/01</td>\n                                <td>Admin</td>\n                                <td>\n                                    <span class=\"badge badge-default\">Inactive</span>\n                                </td>\n                            </tr>\n                            <tr>\n                                <td>Derick Maximinus</td>\n                                <td>2012/03/01</td>\n                                <td>Member</td>\n                                <td>\n                                    <span class=\"badge badge-warning\">Pending</span>\n                                </td>\n                            </tr>\n                            <tr>\n                                <td>Friderik Dávid</td>\n                                <td>2012/01/21</td>\n                                <td>Staff</td>\n                                <td>\n                                    <span class=\"badge badge-success\">Active</span>\n                                </td>\n                            </tr>\n                        </tbody>\n                    </table>\n                    <ul class=\"pagination\">\n                        <li class=\"page-item\"><a class=\"page-link\" href=\"#\">Prev</a>\n                        </li>\n                        <li class=\"page-item active\">\n                            <a class=\"page-link\" href=\"#\">1</a>\n                        </li>\n                        <li class=\"page-item\"><a class=\"page-link\" href=\"#\">2</a>\n                        </li>\n                        <li class=\"page-item\"><a class=\"page-link\" href=\"#\">3</a>\n                        </li>\n                        <li class=\"page-item\"><a class=\"page-link\" href=\"#\">4</a>\n                        </li>\n                        <li class=\"page-item\"><a class=\"page-link\" href=\"#\">Next</a>\n                        </li>\n                    </ul>\n                </div>\n            </div>\n        </div>\n    </div>\n</div>\n";
-
-/***/ },
-
-/***/ 600:
-/***/ function(module, exports) {
-
-module.exports = "<div class=\"animated fadeIn\">\n    <div class=\"row\">\n        <div class=\"col-lg-6\">\n            <div class=\"card\">\n                <div class=\"card-header\">\n                    <i class=\"fa fa-align-justify\"></i> Modules\n                </div>\n                <div class=\"card-block\">\n                    <table class=\"table\">\n                        <thead>\n                            <tr>\n                                <th>Username</th>\n                                <th>Date registered</th>\n                                <th>Role</th>\n                                <th>Status</th>\n                            </tr>\n                        </thead>\n                        <tbody>\n                            <tr>\n                                <td>Samppa Nori</td>\n                                <td>2012/01/01</td>\n                                <td>Member</td>\n                                <td>\n                                    <span class=\"badge badge-success\">Active</span>\n                                </td>\n                            </tr>\n                            <tr>\n                                <td>Estavan Lykos</td>\n                                <td>2012/02/01</td>\n                                <td>Staff</td>\n                                <td>\n                                    <span class=\"badge badge-danger\">Banned</span>\n                                </td>\n                            </tr>\n                            <tr>\n                                <td>Chetan Mohamed</td>\n                                <td>2012/02/01</td>\n                                <td>Admin</td>\n                                <td>\n                                    <span class=\"badge badge-default\">Inactive</span>\n                                </td>\n                            </tr>\n                            <tr>\n                                <td>Derick Maximinus</td>\n                                <td>2012/03/01</td>\n                                <td>Member</td>\n                                <td>\n                                    <span class=\"badge badge-warning\">Pending</span>\n                                </td>\n                            </tr>\n                            <tr>\n                                <td>Friderik Dávid</td>\n                                <td>2012/01/21</td>\n                                <td>Staff</td>\n                                <td>\n                                    <span class=\"badge badge-success\">Active</span>\n                                </td>\n                            </tr>\n                        </tbody>\n                    </table>\n                    <ul class=\"pagination\">\n                        <li class=\"page-item\"><a class=\"page-link\" href=\"#\">Prev</a>\n                        </li>\n                        <li class=\"page-item active\">\n                            <a class=\"page-link\" href=\"#\">1</a>\n                        </li>\n                        <li class=\"page-item\"><a class=\"page-link\" href=\"#\">2</a>\n                        </li>\n                        <li class=\"page-item\"><a class=\"page-link\" href=\"#\">3</a>\n                        </li>\n                        <li class=\"page-item\"><a class=\"page-link\" href=\"#\">4</a>\n                        </li>\n                        <li class=\"page-item\"><a class=\"page-link\" href=\"#\">Next</a>\n                        </li>\n                    </ul>\n                </div>\n            </div>\n        </div>\n    </div>\n</div>\n";
+module.exports = (__webpack_require__(1))(550);
 
 /***/ },
 
-/***/ 601:
-/***/ function(module, exports) {
+/***/ 606:
+/***/ function(module, exports, __webpack_require__) {
 
-module.exports = "<div class=\"animated fadeIn\">\n    <div class=\"row\">\n        <div class=\"col-lg-6\">\n            <div class=\"card\">\n                <div class=\"card-header\">\n                    <i class=\"fa fa-align-justify\"></i> Setting\n                </div>\n                <div class=\"card-block\">\n                    <table class=\"table\">\n                        <thead>\n                            <tr>\n                                <th>Username</th>\n                                <th>Date registered</th>\n                                <th>Role</th>\n                                <th>Status</th>\n                            </tr>\n                        </thead>\n                        <tbody>\n                            <tr>\n                                <td>Samppa Nori</td>\n                                <td>2012/01/01</td>\n                                <td>Member</td>\n                                <td>\n                                    <span class=\"badge badge-success\">Active</span>\n                                </td>\n                            </tr>\n                            <tr>\n                                <td>Estavan Lykos</td>\n                                <td>2012/02/01</td>\n                                <td>Staff</td>\n                                <td>\n                                    <span class=\"badge badge-danger\">Banned</span>\n                                </td>\n                            </tr>\n                            <tr>\n                                <td>Chetan Mohamed</td>\n                                <td>2012/02/01</td>\n                                <td>Admin</td>\n                                <td>\n                                    <span class=\"badge badge-default\">Inactive</span>\n                                </td>\n                            </tr>\n                            <tr>\n                                <td>Derick Maximinus</td>\n                                <td>2012/03/01</td>\n                                <td>Member</td>\n                                <td>\n                                    <span class=\"badge badge-warning\">Pending</span>\n                                </td>\n                            </tr>\n                            <tr>\n                                <td>Friderik Dávid</td>\n                                <td>2012/01/21</td>\n                                <td>Staff</td>\n                                <td>\n                                    <span class=\"badge badge-success\">Active</span>\n                                </td>\n                            </tr>\n                        </tbody>\n                    </table>\n                    <ul class=\"pagination\">\n                        <li class=\"page-item\"><a class=\"page-link\" href=\"#\">Prev</a>\n                        </li>\n                        <li class=\"page-item active\">\n                            <a class=\"page-link\" href=\"#\">1</a>\n                        </li>\n                        <li class=\"page-item\"><a class=\"page-link\" href=\"#\">2</a>\n                        </li>\n                        <li class=\"page-item\"><a class=\"page-link\" href=\"#\">3</a>\n                        </li>\n                        <li class=\"page-item\"><a class=\"page-link\" href=\"#\">4</a>\n                        </li>\n                        <li class=\"page-item\"><a class=\"page-link\" href=\"#\">Next</a>\n                        </li>\n                    </ul>\n                </div>\n            </div>\n        </div>\n    </div>\n</div>\n";
+module.exports = (__webpack_require__(1))(561);
 
 /***/ },
 
-/***/ 602:
-/***/ function(module, exports) {
+/***/ 608:
+/***/ function(module, exports, __webpack_require__) {
 
-module.exports = "<div class=\"animated fadeIn\">\r\n    <div class=\"row\"> \r\n        <div class=\"col-md-6\">\r\n            <div class=\"card\">\r\n                <div class=\"card-header\">\r\n                    <strong>Tenant Information</strong>\r\n                </div>\r\n                <div class=\"card-block\">\r\n                    <form action=\"\" method=\"post\" class=\"form-horizontal \">\r\n                        <div class=\"form-group row\">\r\n                            <label class=\"col-md-3 form-control-label\" for=\"hf-email\">Name</label>\r\n                            <div class=\"col-md-9\">\r\n                                <input type=\"text\" id=\"name\" name=\"name\" class=\"form-control\">\r\n                            </div>\r\n                        </div>\r\n                        <div class=\"form-group row\">\r\n                            <label class=\"col-md-3 form-control-label\" for=\"hf-password\">Address</label>\r\n                            <div class=\"col-md-9\">\r\n                                <input type=\"text\" id=\"address\" name=\"address\" class=\"form-control\">\r\n                            </div>\r\n                        </div>\r\n                        <div class=\"form-group row\">\r\n                            <label class=\"col-md-3 form-control-label\" for=\"hf-password\">Contact phone</label>\r\n                            <div class=\"col-md-9\">\r\n                                <input type=\"text\" id=\"phone\" name=\"phone\" class=\"form-control\">\r\n                            </div>\r\n                        </div>\r\n                        <div class=\"form-group row\">\r\n                            <label class=\"col-md-3 form-control-label\" for=\"hf-password\">Urls</label>\r\n                            <div class=\"col-md-9\">\r\n                                <input type=\"text\" id=\"urls\" name=\"urls\" class=\"form-control\">\r\n                            </div>\r\n                        </div>\r\n                    </form>\r\n                </div>\r\n                <div class=\"card-footer\">\r\n                    <button type=\"submit\" class=\"btn btn-sm btn-primary\"><i class=\"fa fa-dot-circle-o\"></i> Update</button>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n";
+module.exports = (__webpack_require__(1))(584);
 
 /***/ },
 
@@ -1281,16 +1681,20 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 var core_1 = __webpack_require__(0);
-var modules_1 = __webpack_require__(248);
-var settings_1 = __webpack_require__(249);
-var users_1 = __webpack_require__(251);
-var tenants_1 = __webpack_require__(250);
+var modules_1 = __webpack_require__(250);
+var settings_1 = __webpack_require__(251);
+var users_1 = __webpack_require__(254);
+var tenants_1 = __webpack_require__(253);
+var forms_1 = __webpack_require__(73);
 // Modal Component
-var modal_1 = __webpack_require__(579);
+var modal_1 = __webpack_require__(588);
 // Tabs Component
 var tabs_1 = __webpack_require__(33);
 // Components Routing
-var components_routing_module_1 = __webpack_require__(422);
+var components_routing_module_1 = __webpack_require__(425);
+var tenant_service_1 = __webpack_require__(252);
+var data_service_1 = __webpack_require__(274);
+var api_gateway_service_1 = __webpack_require__(273);
 var ComponentsModule = (function () {
     function ComponentsModule() {
     }
@@ -1301,18 +1705,41 @@ ComponentsModule = __decorate([
         imports: [
             components_routing_module_1.ComponentsRoutingModule,
             modal_1.ModalModule.forRoot(),
-            tabs_1.TabsModule
+            tabs_1.TabsModule,
+            forms_1.FormsModule
         ],
         declarations: [
             modules_1.ModulesComponent,
             settings_1.SettingsComponent,
             users_1.UsersComponent,
-            tenants_1.TenantsComponent
-        ]
+            tenants_1.TenantsComponent,
+        ],
+        providers: [tenant_service_1.TenantService, data_service_1.DataService, api_gateway_service_1.ApiGatewayService]
     })
 ], ComponentsModule);
 exports.ComponentsModule = ComponentsModule;
 
+
+/***/ },
+
+/***/ 73:
+/***/ function(module, exports, __webpack_require__) {
+
+module.exports = (__webpack_require__(1))(38);
+
+/***/ },
+
+/***/ 78:
+/***/ function(module, exports, __webpack_require__) {
+
+module.exports = (__webpack_require__(1))(8);
+
+/***/ },
+
+/***/ 79:
+/***/ function(module, exports, __webpack_require__) {
+
+module.exports = (__webpack_require__(1))(1);
 
 /***/ }
 

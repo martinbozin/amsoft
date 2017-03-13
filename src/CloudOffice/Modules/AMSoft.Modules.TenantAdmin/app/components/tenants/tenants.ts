@@ -1,30 +1,35 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Router } from '@angular/router';
+import { Response } from '@angular/http';
+
+import { TenantModel } from './tenant.model';
+import { TenantService } from './tenant.service';
+
 
 @Component({
+
     templateUrl: 'tenants.html'
 })
-export class TenantsComponent {
-    constructor() { }
-    //tenantModel: TenantModel;
-    //errors: string[];
-    //controls: any;
+export class TenantsComponent implements OnInit {
+    tenantModel: TenantModel = new TenantModel('', '','');
+    @Output() notification = new EventEmitter<string>();
+ 
+    errors: string[];
+    controls: any;
 
-    //constructor(private tenantService: TenantService, private router: Router, private authService: AuthService) {
-    //    this.tenantModel = new TenantModel('', '', '');
-    //}
+    constructor(private tenantService: TenantService) {
+    }
 
-    //getTenant(model: any): void {
-    //    this.tenantModel.name = model.email;
-    //    this.tenantModel.address = model.password;
-    //    // this.loginModel.rememberMe = model.rememberMe;
-    //    this.tenantService.getTenant(this.loginModel)
-    //        .subscribe((res: Response) => {
-    //            this.authService.setAuth(res);
-    //            this.router.navigate(['']);
-    //        },
-    //        (errors: string[]) => {
-    //            this.errors = errors;
-    //        });
-    //};
-
+    ngOnInit() {
+        debugger;
+        this.tenantService.getTenant(this.tenantModel.name)
+            .subscribe((res: any) => {
+                    debugger;
+                this.tenantModel.name = res.firstName;
+                this.tenantModel.address = res.lastName;
+                this.tenantModel.phone = res.phone;
+            },
+            (errors: any) => this.notification.emit(errors[0])
+            );
+    }
 }

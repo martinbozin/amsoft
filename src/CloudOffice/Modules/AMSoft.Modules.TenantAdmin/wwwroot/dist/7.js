@@ -1,6 +1,6 @@
 webpackJsonp([7],{
 
-/***/ 442:
+/***/ 446:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -22,27 +22,27 @@ var routes = [
         children: [
             {
                 path: 'calendar',
-                loadChildren: function () { return new Promise(function (resolve) { __webpack_require__.e/* nsure */(9).then((function (require) { resolve(__webpack_require__(432)['CalendarInitModule']); }).bind(null, __webpack_require__)).catch(__webpack_require__.oe); }); }
+                loadChildren: function () { return new Promise(function (resolve) { __webpack_require__.e/* nsure */(9).then((function (require) { resolve(__webpack_require__(436)['CalendarInitModule']); }).bind(null, __webpack_require__)).catch(__webpack_require__.oe); }); }
             },
             {
                 path: 'datatable',
-                loadChildren: function () { return new Promise(function (resolve) { __webpack_require__.e/* nsure */(12).then((function (require) { resolve(__webpack_require__(435)['DatatableInitModule']); }).bind(null, __webpack_require__)).catch(__webpack_require__.oe); }); }
+                loadChildren: function () { return new Promise(function (resolve) { __webpack_require__.e/* nsure */(12).then((function (require) { resolve(__webpack_require__(439)['DatatableInitModule']); }).bind(null, __webpack_require__)).catch(__webpack_require__.oe); }); }
             },
             {
                 path: 'draggable-cards',
-                loadChildren: function () { return new Promise(function (resolve) { __webpack_require__.e/* nsure */(11).then((function (require) { resolve(__webpack_require__(437)['DraggableCardsModule']); }).bind(null, __webpack_require__)).catch(__webpack_require__.oe); }); }
+                loadChildren: function () { return new Promise(function (resolve) { __webpack_require__.e/* nsure */(11).then((function (require) { resolve(__webpack_require__(441)['DraggableCardsModule']); }).bind(null, __webpack_require__)).catch(__webpack_require__.oe); }); }
             },
             {
                 path: 'loading-buttons',
-                loadChildren: function () { return new Promise(function (resolve) { __webpack_require__.e/* nsure */(14).then((function (require) { resolve(__webpack_require__(439)['LoadingButtonsModule']); }).bind(null, __webpack_require__)).catch(__webpack_require__.oe); }); }
+                loadChildren: function () { return new Promise(function (resolve) { __webpack_require__.e/* nsure */(14).then((function (require) { resolve(__webpack_require__(443)['LoadingButtonsModule']); }).bind(null, __webpack_require__)).catch(__webpack_require__.oe); }); }
             },
             {
                 path: 'notifications',
-                loadChildren: function () { return new Promise(function (resolve) { __webpack_require__.e/* nsure */(13).then((function (require) { resolve(__webpack_require__(441)['NotificationsModule']); }).bind(null, __webpack_require__)).catch(__webpack_require__.oe); }); }
+                loadChildren: function () { return new Promise(function (resolve) { __webpack_require__.e/* nsure */(13).then((function (require) { resolve(__webpack_require__(445)['NotificationsModule']); }).bind(null, __webpack_require__)).catch(__webpack_require__.oe); }); }
             },
             {
                 path: 'spinners',
-                loadChildren: function () { return new Promise(function (resolve) { __webpack_require__.e/* nsure */(17).then((function (require) { resolve(__webpack_require__(444)['SpinnersModule']); }).bind(null, __webpack_require__)).catch(__webpack_require__.oe); }); }
+                loadChildren: function () { return new Promise(function (resolve) { __webpack_require__.e/* nsure */(17).then((function (require) { resolve(__webpack_require__(448)['SpinnersModule']); }).bind(null, __webpack_require__)).catch(__webpack_require__.oe); }); }
             }
         ]
     }
@@ -76,7 +76,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 var core_1 = __webpack_require__(0);
 //Routing
-var plugins_routing_module_1 = __webpack_require__(442);
+var plugins_routing_module_1 = __webpack_require__(446);
 var PluginsModule = (function () {
     function PluginsModule() {
     }

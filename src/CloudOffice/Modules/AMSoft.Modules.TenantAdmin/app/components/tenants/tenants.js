@@ -9,16 +9,36 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
+var tenant_model_1 = require("./tenant.model");
+var tenant_service_1 = require("./tenant.service");
 var TenantsComponent = (function () {
-    function TenantsComponent() {
+    function TenantsComponent(tenantService) {
+        this.tenantService = tenantService;
+        this.tenantModel = new tenant_model_1.TenantModel('', '', '');
+        this.notification = new core_1.EventEmitter();
     }
+    TenantsComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        debugger;
+        this.tenantService.getTenant(this.tenantModel.name)
+            .subscribe(function (res) {
+            debugger;
+            _this.tenantModel.name = res.firstName;
+            _this.tenantModel.address = res.lastName;
+            _this.tenantModel.phone = res.phone;
+        }, function (errors) { return _this.notification.emit(errors[0]); });
+    };
     return TenantsComponent;
 }());
+__decorate([
+    core_1.Output(),
+    __metadata("design:type", Object)
+], TenantsComponent.prototype, "notification", void 0);
 TenantsComponent = __decorate([
     core_1.Component({
         templateUrl: 'tenants.html'
     }),
-    __metadata("design:paramtypes", [])
+    __metadata("design:paramtypes", [tenant_service_1.TenantService])
 ], TenantsComponent);
 exports.TenantsComponent = TenantsComponent;
 //# sourceMappingURL=tenants.js.map

@@ -9,14 +9,14 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
-var data_service_1 = require("../shared/services/data.service");
+var data_service_1 = require("../../shared/services/data.service");
 var TenantService = (function () {
-    function TenantService(tenantService) {
-        this.tenantService = tenantService;
-        this.getTenanntApi = 'api/Tenant/getTenant/';
+    function TenantService(dataService) {
+        this.dataService = dataService;
+        this.getTenanntApi = '/Tenant/TenantName/';
     }
-    TenantService.prototype.getTenant = function (creds) {
-        return this.tenantService.get(this.getTenanntApi, creds);
+    TenantService.prototype.getTenant = function (name) {
+        return this.dataService.get(this.getTenanntApi, name);
     };
     return TenantService;
 }());
@@ -25,4 +25,4 @@ TenantService = __decorate([
     __metadata("design:paramtypes", [data_service_1.DataService])
 ], TenantService);
 exports.TenantService = TenantService;
-//# sourceMappingURL=components.service.js.map
+//# sourceMappingURL=tenant.service.js.map
