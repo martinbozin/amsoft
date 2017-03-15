@@ -238,6 +238,7 @@
     <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="1.1.1" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\AMSoft.CloudOffice.ViewModels\AMSoft.CloudOffice.ViewModels.csproj" />
     <ProjectReference Include="..\..\AMSoft.CloudOffice.Data\AMSoft.CloudOffice.Data.csproj" />
     <ProjectReference Include="..\..\AMSoft.CloudOffice.Domain\AMSoft.CloudOffice.Domain.csproj" />
     <ProjectReference Include="..\..\AMSoft.CloudOffice.Infrastructure\AMSoft.CloudOffice.Infrastructure.csproj" />

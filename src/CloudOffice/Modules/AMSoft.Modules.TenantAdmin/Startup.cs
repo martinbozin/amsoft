@@ -44,12 +44,11 @@ namespace AMSoft.Modules.TenantAdministration
             }
             app.UseDeveloperExceptionPage();
             app.UseStaticFiles();
- 
             app.UseMvc(routes =>
             {
-                routes.MapSpaFallbackRoute(
+                routes.MapRoute(
                     name: "default",
-                    defaults: new { controller = "Home", action = "Index" });
+                    template: "{controller=Home}/{action=Index}/{id?}");
             });
         }
     }

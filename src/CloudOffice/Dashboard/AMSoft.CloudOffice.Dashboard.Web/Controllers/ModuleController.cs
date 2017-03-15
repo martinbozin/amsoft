@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using AMSoft.CloudOffice.Data.Interfaces;
 using AMSoft.CloudOffice.Infrastructure.Mvc;
-using AMSoft.CloudOffice.Web.ViewModels;
+using AMSoft.CloudOffice.ViewModels.ViewModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;

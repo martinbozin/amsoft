@@ -21,6 +21,7 @@ var components_routing_module_1 = require("./components-routing.module");
 var tenant_service_1 = require("./tenants/tenant.service");
 var data_service_1 = require("../shared/services/data.service");
 var api_gateway_service_1 = require("../shared/services/api-gateway.service");
+var http_error_handler_service_1 = require("../shared/services/http-error-handler.service");
 var ComponentsModule = (function () {
     function ComponentsModule() {
     }
@@ -29,6 +30,7 @@ var ComponentsModule = (function () {
 ComponentsModule = __decorate([
     core_1.NgModule({
         imports: [
+            http_1.HttpModule,
             components_routing_module_1.ComponentsRoutingModule,
             modal_1.ModalModule.forRoot(),
             tabs_1.TabsModule,
@@ -38,9 +40,9 @@ ComponentsModule = __decorate([
             modules_1.ModulesComponent,
             settings_1.SettingsComponent,
             users_1.UsersComponent,
-            tenants_1.TenantsComponent,
+            tenants_1.TenantsComponent
         ],
-        providers: [tenant_service_1.TenantService, data_service_1.DataService, api_gateway_service_1.ApiGatewayService, http_1.Http]
+        providers: [tenant_service_1.TenantService, data_service_1.DataService, api_gateway_service_1.ApiGatewayService, http_error_handler_service_1.HttpErrorHandlerService]
     })
 ], ComponentsModule);
 exports.ComponentsModule = ComponentsModule;

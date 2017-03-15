@@ -1,6 +1,6 @@
 webpackJsonp([8],{
 
-/***/ 432:
+/***/ 433:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -22,11 +22,11 @@ var routes = [
         children: [
             {
                 path: 'basic-forms',
-                loadChildren: function () { return new Promise(function (resolve) { __webpack_require__.e/* nsure */(18).then((function (require) { resolve(__webpack_require__(431)['BasicFormsModule']); }).bind(null, __webpack_require__)).catch(__webpack_require__.oe); }); }
+                loadChildren: function () { return new Promise(function (resolve) { __webpack_require__.e/* nsure */(18).then((function (require) { resolve(__webpack_require__(432)['BasicFormsModule']); }).bind(null, __webpack_require__)).catch(__webpack_require__.oe); }); }
             },
             {
                 path: 'advanced-forms',
-                loadChildren: function () { return new Promise(function (resolve) { __webpack_require__.e/* nsure */(10).then((function (require) { resolve(__webpack_require__(429)['AdvancedFormsModule']); }).bind(null, __webpack_require__)).catch(__webpack_require__.oe); }); }
+                loadChildren: function () { return new Promise(function (resolve) { __webpack_require__.e/* nsure */(10).then((function (require) { resolve(__webpack_require__(430)['AdvancedFormsModule']); }).bind(null, __webpack_require__)).catch(__webpack_require__.oe); }); }
             }
         ]
     }
@@ -60,7 +60,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 var core_1 = __webpack_require__(0);
 //Routing
-var forms_routing_module_1 = __webpack_require__(432);
+var forms_routing_module_1 = __webpack_require__(433);
 var FormsModule = (function () {
     function FormsModule() {
     }

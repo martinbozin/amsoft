@@ -40,6 +40,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AMSoft.Modules.TenantAdmini
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AMSoft.Modules.Template", "src\CloudOffice\Modules\AMSoft.Modules.Template\AMSoft.Modules.Template.csproj", "{2A67995E-37E2-476A-9F47-D8E3AB4DA019}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AMSoft.CloudOffice.ViewModels", "AMSoft.CloudOffice.ViewModels\AMSoft.CloudOffice.ViewModels.csproj", "{797AF3EE-CE7C-4021-A02B-AEEFF71C5C1C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -158,6 +160,18 @@ Global
 		{2A67995E-37E2-476A-9F47-D8E3AB4DA019}.Release|x64.Build.0 = Release|Any CPU
 		{2A67995E-37E2-476A-9F47-D8E3AB4DA019}.Release|x86.ActiveCfg = Release|Any CPU
 		{2A67995E-37E2-476A-9F47-D8E3AB4DA019}.Release|x86.Build.0 = Release|Any CPU
+		{797AF3EE-CE7C-4021-A02B-AEEFF71C5C1C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{797AF3EE-CE7C-4021-A02B-AEEFF71C5C1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{797AF3EE-CE7C-4021-A02B-AEEFF71C5C1C}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{797AF3EE-CE7C-4021-A02B-AEEFF71C5C1C}.Debug|x64.Build.0 = Debug|Any CPU
+		{797AF3EE-CE7C-4021-A02B-AEEFF71C5C1C}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{797AF3EE-CE7C-4021-A02B-AEEFF71C5C1C}.Debug|x86.Build.0 = Debug|Any CPU
+		{797AF3EE-CE7C-4021-A02B-AEEFF71C5C1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{797AF3EE-CE7C-4021-A02B-AEEFF71C5C1C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{797AF3EE-CE7C-4021-A02B-AEEFF71C5C1C}.Release|x64.ActiveCfg = Release|Any CPU
+		{797AF3EE-CE7C-4021-A02B-AEEFF71C5C1C}.Release|x64.Build.0 = Release|Any CPU
+		{797AF3EE-CE7C-4021-A02B-AEEFF71C5C1C}.Release|x86.ActiveCfg = Release|Any CPU
+		{797AF3EE-CE7C-4021-A02B-AEEFF71C5C1C}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -178,5 +192,6 @@ Global
 		{49D6490A-9258-40B6-95F4-6F6BBAE73B4E} = {9A6C0B7D-7D3E-4F26-BEC3-8FA78E5E5CDD}
 		{2E5CA1FC-A419-4F28-AC13-9E8AFBE20435} = {49D6490A-9258-40B6-95F4-6F6BBAE73B4E}
 		{2A67995E-37E2-476A-9F47-D8E3AB4DA019} = {49D6490A-9258-40B6-95F4-6F6BBAE73B4E}
+		{797AF3EE-CE7C-4021-A02B-AEEFF71C5C1C} = {9A6C0B7D-7D3E-4F26-BEC3-8FA78E5E5CDD}
 	EndGlobalSection
 EndGlobal

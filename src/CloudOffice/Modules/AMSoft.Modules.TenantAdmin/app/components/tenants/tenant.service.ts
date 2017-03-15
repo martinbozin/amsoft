@@ -6,12 +6,12 @@ import { TenantModel } from './tenant.model';
 @Injectable()
 export class TenantService {
 
-    private getTenanntApi: string = '/Tenant/TenantName/';
+    private getTenanntApi: string = '/Tenant/GetTenant/';
 
     constructor(public dataService: DataService) { }
  
-    getTenant(name) {
-        return this.dataService.get(this.getTenanntApi,name);
+    getTenant() {
+        return this.dataService.get(this.getTenanntApi);
     }
 
 }

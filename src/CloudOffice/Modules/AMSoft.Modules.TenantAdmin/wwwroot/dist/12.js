@@ -1,6 +1,13 @@
 webpackJsonp([12],{
 
-/***/ 222:
+/***/ 195:
+/***/ function(module, exports, __webpack_require__) {
+
+module.exports = (__webpack_require__(1))(234);
+
+/***/ },
+
+/***/ 225:
 /***/ function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global, module) {var __WEBPACK_AMD_DEFINE_RESULT__;/**
@@ -17092,7 +17099,7 @@ webpackJsonp([12],{
 
 /***/ },
 
-/***/ 239:
+/***/ 241:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17107,8 +17114,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = __webpack_require__(0);
-var DataTable_1 = __webpack_require__(78);
-var _ = __webpack_require__(222);
+var DataTable_1 = __webpack_require__(80);
+var _ = __webpack_require__(225);
 var BootstrapPaginator = (function () {
     function BootstrapPaginator() {
         this.rowsOnPageSet = [];
@@ -17140,7 +17147,7 @@ exports.BootstrapPaginator = BootstrapPaginator;
 
 /***/ },
 
-/***/ 240:
+/***/ 242:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17155,7 +17162,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = __webpack_require__(0);
-var DataTable_1 = __webpack_require__(78);
+var DataTable_1 = __webpack_require__(80);
 var DefaultSorter = (function () {
     function DefaultSorter(mfTable) {
         this.mfTable = mfTable;
@@ -17195,7 +17202,7 @@ exports.DefaultSorter = DefaultSorter;
 
 /***/ },
 
-/***/ 241:
+/***/ 243:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17213,7 +17220,7 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
     return function (target, key) { decorator(target, key, paramIndex); }
 };
 var core_1 = __webpack_require__(0);
-var DataTable_1 = __webpack_require__(78);
+var DataTable_1 = __webpack_require__(80);
 var Paginator = (function () {
     function Paginator(injectMfTable) {
         var _this = this;
@@ -17256,7 +17263,7 @@ exports.Paginator = Paginator;
 
 /***/ },
 
-/***/ 265:
+/***/ 268:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17271,7 +17278,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = __webpack_require__(0);
-var http_1 = __webpack_require__(341);
+var http_1 = __webpack_require__(195);
 var DataTableComponent = (function () {
     function DataTableComponent(http) {
         var _this = this;
@@ -17294,7 +17301,7 @@ var DataTableComponent = (function () {
 }());
 DataTableComponent = __decorate([
     core_1.Component({
-        template: __webpack_require__(568)
+        template: __webpack_require__(573)
     }),
     __metadata("design:paramtypes", [http_1.Http])
 ], DataTableComponent);
@@ -17303,21 +17310,14 @@ exports.DataTableComponent = DataTableComponent;
 
 /***/ },
 
-/***/ 341:
+/***/ 418:
 /***/ function(module, exports, __webpack_require__) {
 
-module.exports = (__webpack_require__(1))(234);
-
-/***/ },
-
-/***/ 414:
-/***/ function(module, exports, __webpack_require__) {
-
-var dataTable_directive = __webpack_require__(78);
-var defaultSorter_directive = __webpack_require__(240);
-var paginator_component = __webpack_require__(241);
-var bootstrapPaginator_component = __webpack_require__(239);
-var dataTable_module = __webpack_require__(415);
+var dataTable_directive = __webpack_require__(80);
+var defaultSorter_directive = __webpack_require__(242);
+var paginator_component = __webpack_require__(243);
+var bootstrapPaginator_component = __webpack_require__(241);
+var dataTable_module = __webpack_require__(419);
 
 exports.DataTable = dataTable_directive.DataTable;
 exports.DataEvent = dataTable_directive.DataEvent;
@@ -17331,7 +17331,7 @@ exports.DataTableModule = dataTable_module.DataTableModule;
 
 /***/ },
 
-/***/ 415:
+/***/ 419:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17344,10 +17344,10 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 var core_1 = __webpack_require__(0);
 var common_1 = __webpack_require__(13);
-var DataTable_1 = __webpack_require__(78);
-var DefaultSorter_1 = __webpack_require__(240);
-var Paginator_1 = __webpack_require__(241);
-var BootstrapPaginator_1 = __webpack_require__(239);
+var DataTable_1 = __webpack_require__(80);
+var DefaultSorter_1 = __webpack_require__(242);
+var Paginator_1 = __webpack_require__(243);
+var BootstrapPaginator_1 = __webpack_require__(241);
 var DataTableModule = (function () {
     function DataTableModule() {
     }
@@ -17377,7 +17377,7 @@ exports.DataTableModule = DataTableModule;
 
 /***/ },
 
-/***/ 433:
+/***/ 438:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17388,7 +17388,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-var _ = __webpack_require__(222);
+var _ = __webpack_require__(225);
 var core_1 = __webpack_require__(0);
 var DataFilterPipe = (function () {
     function DataFilterPipe() {
@@ -17411,7 +17411,7 @@ exports.DataFilterPipe = DataFilterPipe;
 
 /***/ },
 
-/***/ 434:
+/***/ 439:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17424,7 +17424,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 var core_1 = __webpack_require__(0);
 var router_1 = __webpack_require__(12);
-var datatable_component_1 = __webpack_require__(265);
+var datatable_component_1 = __webpack_require__(268);
 var routes = [
     {
         path: '',
@@ -17450,7 +17450,7 @@ exports.DatatableRoutingModule = DatatableRoutingModule;
 
 /***/ },
 
-/***/ 435:
+/***/ 440:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17464,13 +17464,13 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var core_1 = __webpack_require__(0);
 var common_1 = __webpack_require__(13);
 // DataTable
-var angular2_datatable_1 = __webpack_require__(414);
-var http_1 = __webpack_require__(341);
-var datafilterpipe_1 = __webpack_require__(433);
+var angular2_datatable_1 = __webpack_require__(418);
+var http_1 = __webpack_require__(195);
+var datafilterpipe_1 = __webpack_require__(438);
 var forms_1 = __webpack_require__(73);
-var datatable_component_1 = __webpack_require__(265);
+var datatable_component_1 = __webpack_require__(268);
 //Routing
-var datatable_routing_module_1 = __webpack_require__(434);
+var datatable_routing_module_1 = __webpack_require__(439);
 //
 var DatatableInitModule = (function () {
     function DatatableInitModule() {
@@ -17497,14 +17497,14 @@ exports.DatatableInitModule = DatatableInitModule;
 
 /***/ },
 
-/***/ 568:
+/***/ 573:
 /***/ function(module, exports) {
 
-module.exports = "<div class=\"animated fadeIn\">\r\n    <div class=\"card\">\r\n        <div class=\"card-header\">DataTable</div>\r\n        <div class=\"card-block\">\r\n            <div class=\"row mb-1\">\r\n                <div class=\"col-md-4 offset-md-8\">\r\n                    <div class=\"input-group\">\r\n                        <span class=\"input-group-addon\"><i class=\"fa fa-search\"></i>\r\n                        </span>\r\n                        <input type=\"text\" class=\"form-control\" [(ngModel)]=\"filterQuery\" placeholder=\"Search by name\" />\r\n                    </div>\r\n                </div>\r\n            </div>\r\n            <table class=\"table table-striped\" [mfData]=\"data | dataFilter : filterQuery\" #mf=\"mfDataTable\" [mfRowsOnPage]=\"10\">\r\n                <thead>\r\n                    <tr>\r\n                        <th style=\"width: 20%\">\r\n                            <mfDefaultSorter by=\"name\">Name</mfDefaultSorter>\r\n                        </th>\r\n                        <th style=\"width: 50%\">\r\n                            <mfDefaultSorter by=\"email\">Email</mfDefaultSorter>\r\n                        </th>\r\n                        <th style=\"width: 10%\">\r\n                            <mfDefaultSorter by=\"age\">Age</mfDefaultSorter>\r\n                        </th>\r\n                        <th style=\"width: 20%\">\r\n                            <mfDefaultSorter by=\"city\">City</mfDefaultSorter>\r\n                        </th>\r\n                    </tr>\r\n                </thead>\r\n                <tbody>\r\n                    <tr *ngFor=\"let item of mf.data\">\r\n                        <td>{{item.name}}</td>\r\n                        <td>{{item.email}}</td>\r\n                        <td class=\"text-right\">{{item.age}}</td>\r\n                        <td>{{item.city | uppercase}}</td>\r\n                    </tr>\r\n                </tbody>\r\n                <tfoot>\r\n                    <tr>\r\n                        <td colspan=\"4\">\r\n                            <mfBootstrapPaginator [rowsOnPageSet]=\"[5,10,15]\"></mfBootstrapPaginator>\r\n                        </td>\r\n                    </tr>\r\n                </tfoot>\r\n            </table>\r\n        </div>\r\n    </div>\r\n</div>\r\n";
+module.exports = "<div class=\"animated fadeIn\">\n    <div class=\"card\">\n        <div class=\"card-header\">DataTable</div>\n        <div class=\"card-block\">\n            <div class=\"row mb-1\">\n                <div class=\"col-md-4 offset-md-8\">\n                    <div class=\"input-group\">\n                        <span class=\"input-group-addon\"><i class=\"fa fa-search\"></i>\n                        </span>\n                        <input type=\"text\" class=\"form-control\" [(ngModel)]=\"filterQuery\" placeholder=\"Search by name\" />\n                    </div>\n                </div>\n            </div>\n            <table class=\"table table-striped\" [mfData]=\"data | dataFilter : filterQuery\" #mf=\"mfDataTable\" [mfRowsOnPage]=\"10\">\n                <thead>\n                    <tr>\n                        <th style=\"width: 20%\">\n                            <mfDefaultSorter by=\"name\">Name</mfDefaultSorter>\n                        </th>\n                        <th style=\"width: 50%\">\n                            <mfDefaultSorter by=\"email\">Email</mfDefaultSorter>\n                        </th>\n                        <th style=\"width: 10%\">\n                            <mfDefaultSorter by=\"age\">Age</mfDefaultSorter>\n                        </th>\n                        <th style=\"width: 20%\">\n                            <mfDefaultSorter by=\"city\">City</mfDefaultSorter>\n                        </th>\n                    </tr>\n                </thead>\n                <tbody>\n                    <tr *ngFor=\"let item of mf.data\">\n                        <td>{{item.name}}</td>\n                        <td>{{item.email}}</td>\n                        <td class=\"text-right\">{{item.age}}</td>\n                        <td>{{item.city | uppercase}}</td>\n                    </tr>\n                </tbody>\n                <tfoot>\n                    <tr>\n                        <td colspan=\"4\">\n                            <mfBootstrapPaginator [rowsOnPageSet]=\"[5,10,15]\"></mfBootstrapPaginator>\n                        </td>\n                    </tr>\n                </tfoot>\n            </table>\n        </div>\n    </div>\n</div>\n";
 
 /***/ },
 
-/***/ 598:
+/***/ 603:
 /***/ function(module, exports, __webpack_require__) {
 
 module.exports = (__webpack_require__(1))(410);
@@ -17518,7 +17518,7 @@ module.exports = (__webpack_require__(1))(38);
 
 /***/ },
 
-/***/ 78:
+/***/ 80:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17533,8 +17533,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = __webpack_require__(0);
-var _ = __webpack_require__(222);
-var Rx_1 = __webpack_require__(598);
+var _ = __webpack_require__(225);
+var Rx_1 = __webpack_require__(603);
 var DataTable = (function () {
     function DataTable(differs) {
         this.differs = differs;

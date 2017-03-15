@@ -19,14 +19,14 @@ var TenantsComponent = (function () {
     }
     TenantsComponent.prototype.ngOnInit = function () {
         var _this = this;
-        debugger;
-        this.tenantService.getTenant(this.tenantModel.name)
+        this.tenantService.getTenant()
             .subscribe(function (res) {
-            debugger;
-            _this.tenantModel.name = res.firstName;
-            _this.tenantModel.address = res.lastName;
+            _this.tenantModel.name = res.name;
+            _this.tenantModel.address = res.address;
             _this.tenantModel.phone = res.phone;
-        }, function (errors) { return _this.notification.emit(errors[0]); });
+        }, function (errors) {
+            _this.notification.emit(errors[0]);
+        });
     };
     return TenantsComponent;
 }());

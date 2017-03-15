@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { Http } from '@angular/http';
+import { HttpModule } from '@angular/http';
 import { ModulesComponent } from './modules/modules';
 import { SettingsComponent } from './settings/settings';
 import { UsersComponent } from './users/users';
@@ -15,9 +15,12 @@ import { ComponentsRoutingModule }  from './components-routing.module';
 import { TenantService}  from './tenants/tenant.service'
 import { DataService } from '../shared/services/data.service'
 import { ApiGatewayService } from '../shared/services/api-gateway.service'
+
+import { HttpErrorHandlerService } from '../shared/services/http-error-handler.service';
  
 @NgModule({
-  imports: [
+    imports: [
+        HttpModule,
     ComponentsRoutingModule,
     ModalModule.forRoot(),
       TabsModule,
@@ -27,8 +30,8 @@ import { ApiGatewayService } from '../shared/services/api-gateway.service'
       ModulesComponent,
       SettingsComponent,
       UsersComponent,
-      TenantsComponent,
+      TenantsComponent
   ],
-  providers: [TenantService, DataService, ApiGatewayService, Http]
+  providers: [TenantService, DataService, ApiGatewayService, HttpErrorHandlerService ]
 })
 export class ComponentsModule { }

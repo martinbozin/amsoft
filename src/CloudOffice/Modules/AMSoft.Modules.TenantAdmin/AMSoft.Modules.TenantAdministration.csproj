@@ -59,6 +59,16 @@
     <None Include="wwwroot\dist\style.css" />
     <None Include="wwwroot\style.css" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\AMSoft.CloudOffice.ViewModels\AMSoft.CloudOffice.ViewModels.csproj" />
+    <ProjectReference Include="..\..\AMSoft.CloudOffice.Domain\AMSoft.CloudOffice.Domain.csproj" />
+    <ProjectReference Include="..\..\AMSoft.CloudOffice.Infrastructure\AMSoft.CloudOffice.Infrastructure.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="Startup.d.ts">
+      <DependentUpon>Startup.cs</DependentUpon>
+    </None>
+  </ItemGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
     <DefineConstants>$(DefineConstants);RELEASE</DefineConstants>
   </PropertyGroup>

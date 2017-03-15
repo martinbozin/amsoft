@@ -1,36 +1,37 @@
-﻿using System.Linq;
-using Microsoft.AspNetCore.Hosting;
+﻿using AMSoft.CloudOffice.Domain.Core;
+using AMSoft.CloudOffice.Infrastructure.Mvc;
+using AMSoft.CloudOffice.ViewModels.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AMSoft.Modules.TenantAdministration.Controllers
 {
-    public class TenantController : Controller
+    /// <summary>
+    /// Tenant controller for tenant actions
+    /// </summary>
+    public class TenantController : TenantControllerBase
     {
-        private readonly IHostingEnvironment _env;
-
-        public TenantController(IHostingEnvironment env)
+        public TenantController(AppTenant appTenant)
+            : base(appTenant)
         {
-            _env = env;
+
         }
 
+        /// <summary>
+        /// Action that return the current tenant
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
-        public TenantViewModel TenantName(string name, string address, string phone)
+        public JsonResult GetTenant()
         {
-            TenantViewModel model = new TenantViewModel
+            var tenant = CurrentTenant;
+            if (tenant == null)
             {
-                name = "AM SOFT",
-                address = "Skopje",
-                phone = "070"
-            };
-            return model;
+                return Json(null);
+            }
+            var model = new AppTenantViewModel {Name = tenant.Name};
+            return Json(model);
         }
     }
-
-    public class TenantViewModel
-    {
-        public string name { get; set; }
-        public string address { get; set; }
-        public string phone { get; set; }
-    }
+ 
 
 }
