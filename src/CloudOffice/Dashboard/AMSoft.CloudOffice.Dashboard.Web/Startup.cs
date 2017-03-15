@@ -9,16 +9,21 @@ using AMSoft.CloudOffice.Domain.Core;
 using AMSoft.CloudOffice.Infrastructure.Localization;
 using AMSoft.CloudOffice.Infrastructure.Localization.DbStringLocalizer;
 using AMSoft.CloudOffice.Infrastructure.Multitenancy;
+using AMSoft.CloudOffice.Infrastructure.Mvc;
 using AMSoft.CloudOffice.Web.Services;
+using ExtCore.Infrastructure;
 using ExtCore.WebApplication;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Localization;
+using Microsoft.AspNetCore.Mvc.Razor;
+using Microsoft.CodeAnalysis;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.FileProviders;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
@@ -99,10 +104,30 @@ namespace AMSoft.CloudOffice.Web
                 //}));
             });
 
+            
             // Add framework services.
             services.AddMvc()
-                .AddViewLocalization()
-                .AddDataAnnotationsLocalization();
+                .AddViewLocalization(LanguageViewLocationExpanderFormat.Suffix)
+                .AddDataAnnotationsLocalization()
+                .AddRazorOptions(options =>
+                {
+                    foreach (var assembly in ExtensionManager.Assemblies)
+                    {
+                        var reference = MetadataReference.CreateFromFile(assembly.Location);
+                        options.AdditionalCompilationReferences.Add(reference);
+                    }
+                });
+
+            services.Configure<RazorViewEngineOptions>(options =>
+            {
+                foreach (var assembly in ExtensionManager.Assemblies)
+                {
+                    var embeddedFileProvider = new EmbeddedFileProvider(assembly, assembly.GetName().Name);
+                    options.FileProviders.Add(embeddedFileProvider);
+                }
+
+                options.ViewLocationExpanders.Add(new ViewLocationExpander());
+            });
 
             services.AddRouting(options =>
             {
@@ -127,6 +152,8 @@ namespace AMSoft.CloudOffice.Web
             //Add localization support
             var localizationOptions = app.ApplicationServices.GetService<IOptions<RequestLocalizationOptions>>();
             app.UseRequestLocalization(localizationOptions.Value);
+
+            //app.UseThemes();
 
             app.UseStaticFiles();
             app.UseMultitenancy<AppTenant>();
@@ -183,8 +210,32 @@ namespace AMSoft.CloudOffice.Web
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
+                 name: "Module_default",
+                 template: "{Module:exists}/{controller=Home}/{action=Index}/{id?}",
+                 defaults: null,
+                 constraints: null,
+                 dataTokens: null);
+
+                routes.MapRoute(
+                    name: "Module_api",
+                    template: "{Module:exists}/api/{controller}/{action}",
+                    defaults: null,
+                    constraints: null,
+                    dataTokens: null);
+
+                routes.MapRoute(
                     name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
+                    template: "{controller=Home}/{action=Index}/{id?}",
+                    defaults: null,
+                    constraints: null,
+                    dataTokens: new {Namespaces = new[] { "AMSoft.CloudOffice.Web.Controllers" } });
+
+                routes.MapRoute(
+                    name: "api",
+                    template: "api/{controller}/{action}",
+                    defaults: null,
+                    constraints: null,
+                    dataTokens: new {Namespaces = new[] { "AMSoft.CloudOffice.Web.Api" } });
             });
 
             //Configire extensions

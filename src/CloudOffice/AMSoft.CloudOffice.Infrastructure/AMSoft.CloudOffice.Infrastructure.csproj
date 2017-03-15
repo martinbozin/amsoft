@@ -25,12 +25,5 @@
     <ProjectReference Include="..\AMSoft.CloudOffice.Domain\AMSoft.CloudOffice.Domain.csproj" />
   </ItemGroup>
   
-  <ItemGroup>
-    <Reference Include="Microsoft.AspNetCore.Mvc.Core">
-      <HintPath>..\..\..\..\..\Users\admir\.nuget\packages\microsoft.aspnetcore.mvc.core\1.1.1\lib\netstandard1.6\Microsoft.AspNetCore.Mvc.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.AspNetCore.Mvc.ViewFeatures">
-      <HintPath>..\..\..\..\..\Users\admir\.nuget\packages\microsoft.aspnetcore.mvc.viewfeatures\1.1.1\lib\netstandard1.6\Microsoft.AspNetCore.Mvc.ViewFeatures.dll</HintPath>
-    </Reference>
-  </ItemGroup>
+  
 </Project>

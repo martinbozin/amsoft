@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using System.IO;
+using System.Reflection;
 
 namespace AMSoft.CloudOffice.Web
 {
@@ -35,12 +37,19 @@ namespace AMSoft.CloudOffice.Web
 
         private void DiscoverAssemblies()
         {
-            var extensionsPath = _configuration?["Extensions:Path"];
-            var assembliesPath = string.IsNullOrEmpty(extensionsPath)
-                ? null
-                : _hostingEnvironment.ContentRootPath + extensionsPath;
+            var modulesPath = _configuration?["Modules:Path"];
 
-            var assemblies = _assemblyProvider.GetAssemblies(assembliesPath);
+            var assembliesPath = string.IsNullOrEmpty(modulesPath)
+                ? null
+                : _hostingEnvironment.ContentRootPath + modulesPath;
+
+            var assemblies = new List<Assembly>();
+            foreach (var extDirectory in Directory.GetDirectories(assembliesPath))
+            {
+                var extAssemblies = _assemblyProvider.GetAssemblies(extDirectory);
+                assemblies.AddRange(extAssemblies);
+            }
+
             ExtensionManager.SetAssemblies(assemblies);
         }
 
