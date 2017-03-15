@@ -18,6 +18,8 @@ namespace AMSoft.CloudOffice.Data
             modelBuilder.Entity<AppTenant>().ToTable("AppTenants", "dbo");
             modelBuilder.Entity<AppTenant>().HasKey("AppTenantId");
             modelBuilder.Entity<AppTenant>().Property("Name");
+            modelBuilder.Entity<AppTenant>().Property("Address");
+            modelBuilder.Entity<AppTenant>().Property("Phone");
             modelBuilder.Entity<AppTenant>().Property("Hostname");
             modelBuilder.Entity<AppTenant>().Property("Theme");
             modelBuilder.Entity<AppTenant>().Property("ConnectionString");

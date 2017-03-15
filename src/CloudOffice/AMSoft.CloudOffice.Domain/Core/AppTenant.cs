@@ -6,6 +6,8 @@ namespace AMSoft.CloudOffice.Domain.Core
     {
         public int AppTenantId { get; set; }
         public string Name { get; set; }
+        public string Address { get; set; }
+        public string Phone { get; set; }
         public string Hostname { get; set; }
         public string[] Hostnames { get; set; }
         public string Theme { get; set; }

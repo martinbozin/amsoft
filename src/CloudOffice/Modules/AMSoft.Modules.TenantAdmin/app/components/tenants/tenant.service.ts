@@ -6,7 +6,7 @@ import { TenantModel } from './tenant.model';
 @Injectable()
 export class TenantService {
 
-    private getTenanntApi: string = '/Tenant/GetTenant/';
+    private getTenanntApi: string = 'TenantAdministration/Tenant/GetTenantInfo/';
 
     constructor(public dataService: DataService) { }
  

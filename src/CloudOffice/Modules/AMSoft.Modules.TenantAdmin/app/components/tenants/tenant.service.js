@@ -13,7 +13,7 @@ var data_service_1 = require("../../shared/services/data.service");
 var TenantService = (function () {
     function TenantService(dataService) {
         this.dataService = dataService;
-        this.getTenanntApi = '/Tenant/GetTenant/';
+        this.getTenanntApi = 'TenantAdministration/Tenant/GetTenantInfo/';
     }
     TenantService.prototype.getTenant = function () {
         return this.dataService.get(this.getTenanntApi);
