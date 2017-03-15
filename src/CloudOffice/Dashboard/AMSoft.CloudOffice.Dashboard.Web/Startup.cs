@@ -65,7 +65,7 @@ namespace AMSoft.CloudOffice.Web
             //Add EF services
             services.AddEntityFramework().AddDbContext<AppTenantDbContext>();
             services.AddScoped<ICloudOfficeDbContext, CloudOfficeDbContext>();
-
+            services.AddScoped<IAppTenantDbContext, AppTenantDbContext>();
             // Injection
             services.AddScoped<CurrentUserService>();
 

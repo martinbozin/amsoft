@@ -1,6 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
+using AMSoft.CloudOffice.Data.Interfaces;
 using AMSoft.CloudOffice.Domain.Core;
 using AMSoft.CloudOffice.Infrastructure.Mvc;
 using AMSoft.CloudOffice.ViewModels.ViewModels;
@@ -16,8 +16,8 @@ namespace AMSoft.Modules.TenantAdministration.Controllers
     public class ModuleController : TenantControllerBase
     {
         private readonly ILogger _logger;
-        public ModuleController(AppTenant appTenant, ILogger<TenantController> logger)
-            : base(appTenant)
+        public ModuleController(AppTenant appTenant, ILogger<TenantController> logger, IAppTenantDbContext appTenantContext, ICloudOfficeDbContext cloudOfficeContext)
+            : base(appTenant, appTenantContext,cloudOfficeContext)
         {
             _logger = logger;
         }
@@ -34,16 +34,19 @@ namespace AMSoft.Modules.TenantAdministration.Controllers
             {
                 return Json(false);
             }
-            var tenantModules = tenant.Modules.ToList();
+            var tenantModules = _appTenantContext.TenantModules.ToList();
             if (!tenantModules.Any()) return Json(null);
-            var list = new List<ModuleViewModel>();
+            var list = new List<AppTenantModuleViewModel>();
             foreach (var module in tenantModules)
             {
-                var model = new ModuleViewModel
+                var model = new AppTenantModuleViewModel
                 {
-                    ModuleId = module.ModuleId,
+                    AppModuleId = module.AppModuleId,
                     Name = module.Name,
-                    CategoryName = module.ModuleCategory.Name
+                    ActivatedBy = module.ActivatedBy,
+                    ActivationDate = module.ActivationDate,
+                    ExpirationDate  = module.ExpirationDate,
+                    IsActive = module.IsActive
                 };
                 list.Add(model);
             }

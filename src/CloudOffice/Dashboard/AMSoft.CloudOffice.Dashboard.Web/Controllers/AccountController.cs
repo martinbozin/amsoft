@@ -1,4 +1,5 @@
 using System.Threading.Tasks;
+using AMSoft.CloudOffice.Data.Interfaces;
 using AMSoft.CloudOffice.Domain.Core;
 using AMSoft.CloudOffice.Infrastructure.Mvc;
 using Microsoft.AspNetCore.Http.Authentication;
@@ -11,8 +12,8 @@ namespace AMSoft.CloudOffice.Web.Controllers
     {
         private readonly ILogger<AccountController> _logger;
 
-        public AccountController(ILogger<AccountController> logger, AppTenant appTenant)
-            : base(appTenant)
+        public AccountController(ILogger<AccountController> logger, AppTenant appTenant, IAppTenantDbContext appTenantContext, ICloudOfficeDbContext cloudOfficeContext)
+            : base(appTenant, appTenantContext,  cloudOfficeContext)
         {
             this._logger = logger;
         }

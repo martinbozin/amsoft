@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Linq;
+using System.Threading.Tasks;
+using AMSoft.CloudOffice.Data.Interfaces;
 using AMSoft.CloudOffice.Domain.Core;
 using AMSoft.CloudOffice.Domain.TenantModels;
 using Microsoft.EntityFrameworkCore;
@@ -7,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 
 namespace AMSoft.CloudOffice.Data
 {
-    public class AppTenantDbContext : DbContext
+    public class AppTenantDbContext : DbContext, IAppTenantDbContext
     {
         private readonly AppTenant _tenant;
 
@@ -112,6 +114,20 @@ namespace AMSoft.CloudOffice.Data
         {
             optionsBuilder.UseSqlServer(_tenant.ConnectionString);
             base.OnConfiguring(optionsBuilder);
+        }
+
+        public DbSet<TenantModule> TenantModules { get; set; }
+        public DbSet<TenantModulePermission> TenantModulePermissions { get; set; }
+        public DbSet<TenantModuleRole> TenantModuleRoles { get; set; }
+        public DbSet<TenantUser> TenantUsers { get; set; }
+        public int SaveChanges()
+        {
+            return base.SaveChanges();
+        }
+
+        public Task<int> SaveChangesAsync()
+        {
+            return base.SaveChangesAsync();
         }
     }
 

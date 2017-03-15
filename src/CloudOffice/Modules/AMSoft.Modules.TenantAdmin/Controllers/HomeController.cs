@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using AMSoft.CloudOffice.Data.Interfaces;
 using AMSoft.CloudOffice.Domain.Core;
 using AMSoft.CloudOffice.Infrastructure.Mvc;
 using Microsoft.AspNetCore.Hosting;
@@ -11,8 +12,8 @@ namespace AMSoft.Modules.TenantAdministration.Controllers
     {
         private readonly IHostingEnvironment _env;
 
-        public HomeController(IHostingEnvironment env, AppTenant appTenant)
-            : base(appTenant)
+        public HomeController(IHostingEnvironment env, AppTenant appTenant, IAppTenantDbContext appTenantContext, ICloudOfficeDbContext cloudOfficeContext)
+            : base(appTenant, appTenantContext, cloudOfficeContext)
         {
             _env = env;
         }

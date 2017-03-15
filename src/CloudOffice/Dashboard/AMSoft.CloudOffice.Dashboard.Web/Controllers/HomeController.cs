@@ -1,4 +1,5 @@
-﻿using AMSoft.CloudOffice.Domain.Core;
+﻿using AMSoft.CloudOffice.Data.Interfaces;
+using AMSoft.CloudOffice.Domain.Core;
 using AMSoft.CloudOffice.Infrastructure.Mvc;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -7,8 +8,8 @@ namespace AMSoft.CloudOffice.Web.Controllers
 {
     public class HomeController : TenantControllerBase
     {
-        public HomeController(AppTenant appTenant)
-            : base(appTenant)
+        public HomeController(AppTenant appTenant, IAppTenantDbContext appTenantContext, ICloudOfficeDbContext cloudOfficeContext)
+            : base(appTenant, appTenantContext, cloudOfficeContext)
         {
 
         }
