@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Globalization;
 using System.IdentityModel.Tokens.Jwt;
+using System.IO;
 using AMSoft.Base.Multitenancy;
 using AMSoft.CloudOffice.Data;
 using AMSoft.CloudOffice.Data.Interfaces;
@@ -104,7 +105,7 @@ namespace AMSoft.CloudOffice.Web
                 //}));
             });
 
-            
+
             // Add framework services.
             services.AddMvc()
                 .AddViewLocalization(LanguageViewLocationExpanderFormat.Suffix)
@@ -156,6 +157,14 @@ namespace AMSoft.CloudOffice.Web
             //app.UseThemes();
 
             app.UseStaticFiles();
+
+            app.UseStaticFiles(new StaticFileOptions()
+            {
+                FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), @"Modules", "AMSoft.Modules.TenantAdmin", "wwwroot"))
+            });
+
+          
+
             app.UseMultitenancy<AppTenant>();
 
             app.UsePerTenant<AppTenant>((ctx, builder) =>
@@ -228,14 +237,14 @@ namespace AMSoft.CloudOffice.Web
                     template: "{controller=Home}/{action=Index}/{id?}",
                     defaults: null,
                     constraints: null,
-                    dataTokens: new {Namespaces = new[] { "AMSoft.CloudOffice.Web.Controllers" } });
+                    dataTokens: new { Namespaces = new[] { "AMSoft.CloudOffice.Web.Controllers" } });
 
                 routes.MapRoute(
                     name: "api",
                     template: "api/{controller}/{action}",
                     defaults: null,
                     constraints: null,
-                    dataTokens: new {Namespaces = new[] { "AMSoft.CloudOffice.Web.Api" } });
+                    dataTokens: new { Namespaces = new[] { "AMSoft.CloudOffice.Web.Api" } });
             });
 
             //Configire extensions

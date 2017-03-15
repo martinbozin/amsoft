@@ -8,6 +8,7 @@ namespace AMSoft.Modules.TenantAdministration.Controllers
     /// <summary>
     /// Tenant controller for tenant actions
     /// </summary>
+    [ModuleRoute("TenantAdministration")]
     public class TenantController : TenantControllerBase
     {
         public TenantController(AppTenant appTenant)
