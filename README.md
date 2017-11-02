@@ -1,6 +1,5 @@
 # README #
 
-AM Soft
+AM Soft - Cloud Office App
 - Base Class Library Solution
-- Cloud Office Framework
-- .NET CORE , Entity Framework Core, Angular 2
+- ASP.NET Core , Entity Framework Core , Angular 2 ....
